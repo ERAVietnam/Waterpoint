@@ -1,0 +1,92 @@
+{
+  "_nguon": "canh1..canh5: toa do TINH BANG MAY tu EXIF GPS + RelativeAltitude + GimbalYawDegree (DJI FC3170, bay 08/09/2026). canh6, canh7: anh da bi nen lai, MAT GPS -> phai cham tay.",
+  "_ten_scene": "🔴 Ten scene PHAI bat dau bang chu cai. Dat '01-...' thi krpano hieu la bieu thuc so hoc, vut ten di, tra ve null -> man den (loi 10/09/2026).",
+  "_cach_doc": "diem[] = bieu tuong flycam gim trong canh nay, tro sang canh khac. ath/atv = null nghia la CHUA CHAM.",
+  "_lech": "Neu ca canh lech dong loat mot goc thi sua 'lech' (do) cua canh do, KHONG sua tung ath.",
+  "canh": [
+    {
+      "id": "canh1_truc_duong_vao", "ten": "Trục đường vào", "cao_m": 93.7, "lech": 0.0,
+      "_gps": "10.658900,106.461552", "_yaw": -41.8, "_bay_luc": "08/09 15:57",
+      "diem": [
+        { "toi": "canh2_vong_xoay_loi_vao",  "ten": "Vòng xoay lối vào",     "ath": 96.6,    "atv": 5.6,    "xa_m": 414 },
+        { "toi": "canh3_ho_canh_quan",       "ten": "Vịnh nước ngọt",          "ath": null,    "atv": null,   "xa_m": 1748 },
+        { "toi": "canh4_toan_canh_aquaria",  "ten": "Toàn cảnh Aquaria",     "ath": -80.7,   "atv": 1.8,    "xa_m": 1404 },
+        { "toi": "canh5_aquaria_song_vam_co","ten": "Aquaria & sông Vàm Cỏ", "ath": -84.5,   "atv": -5.2,   "xa_m": 1427 },
+        { "toi": "canh6_rivera",             "ten": "Rivera",                "ath": -37.7,   "atv": -0.9,   "xa_m": null },
+        { "toi": "canh7_the_pearl",          "ten": "The Pearl",             "ath": -55.0,   "atv": 1.5,    "xa_m": null }
+      ]
+    },
+    {
+      "id": "canh2_vong_xoay_loi_vao", "ten": "Vòng xoay lối vào", "cao_m": 259.3, "lech": 0.0,
+      "_gps": "10.661291,106.464452", "_yaw": -130.4, "_bay_luc": "08/09 15:49",
+      "diem": [
+        { "toi": "canh1_truc_duong_vao",     "ten": "Trục đường vào",        "ath": 0.4,    "atv": 21.8,  "xa_m": 414 },
+        { "toi": "canh3_ho_canh_quan",       "ten": "Vịnh nước ngọt",          "ath": 5.6,    "atv": -3.5,  "xa_m": 2160 },
+        { "toi": "canh4_toan_canh_aquaria",  "ten": "Toàn cảnh Aquaria",     "ath": 2.9,    "atv": -4.1,  "xa_m": 1817 },
+        { "toi": "canh5_aquaria_song_vam_co","ten": "Aquaria & sông Vàm Cỏ", "ath": 5.7,    "atv": -4.7,  "xa_m": 1838 },
+        { "toi": "canh6_rivera",             "ten": "Rivera",                "ath": null,   "atv": null,  "xa_m": null },
+        { "toi": "canh7_the_pearl",          "ten": "The Pearl",             "ath": null,   "atv": null,  "xa_m": null }
+      ]
+    },
+    {
+      "id": "canh3_ho_canh_quan", "ten": "Vịnh nước ngọt", "cao_m": 390.7, "lech": 0.0,
+      "_gps": "10.650209,106.448218", "_yaw": -96.3, "_bay_luc": "08/09 14:34",
+      "diem": [
+        { "toi": "canh1_truc_duong_vao",     "ten": "Trục đường vào",        "ath": 152.7,  "atv": 9.6,   "xa_m": 1748 },
+        { "toi": "canh2_vong_xoay_loi_vao",  "ten": "Vòng xoay lối vào",     "ath": 151.5,  "atv": 3.5,   "xa_m": 2160 },
+        { "toi": "canh4_toan_canh_aquaria",  "ten": "Toàn cảnh Aquaria",     "ath": 165.7,  "atv": 0.1,   "xa_m": 356 },
+        { "toi": "canh5_aquaria_song_vam_co","ten": "Aquaria & sông Vàm Cỏ", "ath": 150.8,  "atv": -3.4,  "xa_m": 322 },
+        { "toi": "canh6_rivera",             "ten": "Rivera",                "ath": null,   "atv": null,  "xa_m": null },
+        { "toi": "canh7_the_pearl",          "ten": "The Pearl",             "ath": null,   "atv": null,  "xa_m": null }
+      ]
+    },
+    {
+      "id": "canh4_toan_canh_aquaria", "ten": "Toàn cảnh Aquaria", "cao_m": 390.1, "lech": 0.0,
+      "_gps": "10.651334,106.451266", "_yaw": -8.2, "_bay_luc": "08/09 14:40",
+      "diem": [
+        { "toi": "canh1_truc_duong_vao",     "ten": "Trục đường vào",        "ath": 61.4,   "atv": 11.9,  "xa_m": 1404 },
+        { "toi": "canh2_vong_xoay_loi_vao",  "ten": "Vòng xoay lối vào",     "ath": 60.7,   "atv": 4.1,   "xa_m": 1817 },
+        { "toi": "canh3_ho_canh_quan",       "ten": "Vịnh nước ngọt",          "ath": -102.4, "atv": -0.1,  "xa_m": 356 },
+        { "toi": "canh5_aquaria_song_vam_co","ten": "Aquaria & sông Vàm Cỏ", "ath": -40.7,  "atv": -11.8, "xa_m": 94 },
+        { "toi": "canh6_rivera",             "ten": "Rivera",                "ath": null,   "atv": null,  "xa_m": null },
+        { "toi": "canh7_the_pearl",          "ten": "The Pearl",             "ath": null,   "atv": null,  "xa_m": null }
+      ]
+    },
+    {
+      "id": "canh5_aquaria_song_vam_co", "ten": "Aquaria & sông Vàm Cỏ", "cao_m": 409.8, "lech": 0.0,
+      "_gps": "10.651890,106.450617", "_yaw": 172.3, "_bay_luc": "08/09 14:45",
+      "diem": [
+        { "toi": "canh1_truc_duong_vao",     "ten": "Trục đường vào",        "ath": -115.4, "atv": 12.5,  "xa_m": 1427 },
+        { "toi": "canh2_vong_xoay_loi_vao",  "ten": "Vòng xoay lối vào",     "ath": -117.0, "atv": 4.7,   "xa_m": 1838 },
+        { "toi": "canh3_ho_canh_quan",       "ten": "Vịnh nước ngọt",          "ath": 62.2,   "atv": 3.4,   "xa_m": 322 },
+        { "toi": "canh4_toan_canh_aquaria",  "ten": "Toàn cảnh Aquaria",     "ath": -41.2,  "atv": 11.8,  "xa_m": 94 },
+        { "toi": "canh6_rivera",             "ten": "Rivera",                "ath": null,   "atv": null,  "xa_m": null },
+        { "toi": "canh7_the_pearl",          "ten": "The Pearl",             "ath": null,   "atv": null,  "xa_m": null }
+      ]
+    },
+    {
+      "id": "canh6_rivera", "ten": "Rivera", "cao_m": 399.5, "lech": 0.0,
+      "_gps": "KHONG CO - anh da bi nen lai, mat the GPS", "_yaw": 125.2, "_bay_luc": "05/09",
+      "diem": [
+        { "toi": "canh1_truc_duong_vao",     "ten": "Trục đường vào",        "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh2_vong_xoay_loi_vao",  "ten": "Vòng xoay lối vào",     "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh3_ho_canh_quan",       "ten": "Vịnh nước ngọt",          "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh4_toan_canh_aquaria",  "ten": "Toàn cảnh Aquaria",     "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh5_aquaria_song_vam_co","ten": "Aquaria & sông Vàm Cỏ", "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh7_the_pearl",          "ten": "The Pearl",             "ath": null, "atv": null, "xa_m": null }
+      ]
+    },
+    {
+      "id": "canh7_the_pearl", "ten": "The Pearl", "cao_m": 498.8, "lech": 0.0,
+      "_gps": "KHONG CO - anh da bi nen lai, mat the GPS", "_yaw": 126.9, "_bay_luc": "05/09",
+      "diem": [
+        { "toi": "canh1_truc_duong_vao",     "ten": "Trục đường vào",        "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh2_vong_xoay_loi_vao",  "ten": "Vòng xoay lối vào",     "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh3_ho_canh_quan",       "ten": "Vịnh nước ngọt",          "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh4_toan_canh_aquaria",  "ten": "Toàn cảnh Aquaria",     "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh5_aquaria_song_vam_co","ten": "Aquaria & sông Vàm Cỏ", "ath": null, "atv": null, "xa_m": null },
+        { "toi": "canh6_rivera",             "ten": "Rivera",                "ath": null, "atv": null, "xa_m": null }
+      ]
+    }
+  ]
+}

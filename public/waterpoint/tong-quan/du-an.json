@@ -1,0 +1,48 @@
+{
+  "_ghi_chu": "Anh Tony sua truc tiep file nay. Em Teo dien tam - PHAI XAC NHAN lai truoc khi giao khach.",
+  "du_an": "WATERPOINT",
+  "canh": "Tổng quan khu đô thị",
+  "thong_tin": [
+    {
+      "nhan": "Chủ đầu tư",
+      "gia_tri": "Nam Long Group",
+      "da_xac_nhan": false
+    },
+    {
+      "nhan": "Vị trí",
+      "gia_tri": "Bến Lức, Long An",
+      "da_xac_nhan": false
+    },
+    {
+      "nhan": "Quy mô",
+      "gia_tri": "355 ha",
+      "da_xac_nhan": false
+    },
+    {
+      "nhan": "Phân phối",
+      "gia_tri": "ERA Vietnam — độc quyền Aqua & Park Village",
+      "da_xac_nhan": true
+    }
+  ],
+  "buoc": [
+    {
+      "id": "tong-quan",
+      "ten": "Tổng quan",
+      "bat": true,
+      "link": ""
+    },
+    {
+      "id": "thuc-te",
+      "ten": "Thực tế",
+      "bat": true,
+      "link": "../index.html"
+    },
+    {
+      "id": "gio-hang",
+      "ten": "Giỏ hàng",
+      "bat": true,
+      "link": "../giohang/index.html"
+    }
+  ],
+  "_ghi_chu_buoc": "12/09: bo 'tien-ich' (20 gim da ghep vao chinh trang nay) va 'phan-khu' (8 phan khu cung da co san day). 12/09 toi: BAT 'gio-hang' - anh canh5 nhin thang xuong, gim lo lam sau."
+}

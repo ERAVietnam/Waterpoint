@@ -1,0 +1,127 @@
+<krpano version="1.19" title="Thực tế - Waterpoint">
+
+<!-- ============================================================
+     TAB 2 - "THUC TE"
+     7 canh flycam THAT do ERA tu bay, DJI FC3170.
+     Anh goc 8192x4096 -> MULTIRES 3 level (2624 / 1280 / 640).
+
+       canh1  bay  94 m  truc duong vao       08/09 15:57   co GPS
+       canh2  bay 259 m  vong xoay loi vao    08/09 15:49   co GPS
+       canh3  bay 391 m  ho canh quan         08/09 14:34   co GPS
+       canh4  bay 390 m  toan canh Aquaria    08/09 14:40   co GPS
+       canh5  bay 410 m  Aquaria & song       08/09 14:45   co GPS
+       canh6  bay 400 m  Rivera               05/09         KHONG GPS -> cham tay
+       canh7  bay 499 m  The Pearl            05/09         KHONG GPS -> cham tay
+
+     🔴🔴🔴 BAY MOI (10/09/2026) - TEN SCENE KHONG DUOC BAT DAU BANG CHU SO.
+     Ban truoc dat ten "01-truc-duong-vao" -> krpano hieu la BIEU THUC SO HOC,
+     vut ten di, tu dat lai thanh n1..n5, va scene[0].name tra ve NULL
+     => loadscene(null) => MAN DEN, KHONG MOT DONG LOI NAO.
+     Bang chung: scene.count=6 (thua 1), ten = [null,n1,n2,n3,n4,n5].
+     LUAT: ten scene bat dau bang CHU CAI. Ten THU MUC/FILE thi so van OK.
+
+     Bieu tuong flycam giua cac canh do index.html ve bang HTML,
+     toa do nap tu canh.json.
+     Engine krpano 1.19-pr16 - BAN DA MUA cua ERA.
+     ============================================================ -->
+
+<autorotate enabled="false" waittime="5.0" speed="2.0" horizon="0.0" />
+
+<!-- 12/09: BO tween zoom moi lan vao canh. Anh Tony bi say (dau ong ong,
+     buon non). Zoom cuong buc 120->90 trong 1.2s = chuyen dong nguoi xem
+     KHONG dieu khien duoc -> vection conflict. Vao canh la dung yen. -->
+<action name="vao_canh">
+  <!-- 12/09: bo `set(view.fov,100)`. No GHI DE fov rieng cua tung canh,
+       nen canh nao dat fov khac trong <view> cung bi keo ve 100. -->
+</action>
+
+<!-- 12/09: giam quan tinh keo chuot. mousefriction mac dinh 0.9 = anh con
+     TROI tiep sau khi tha tay -> cam giac lenh denh. 0.5 = dung gan nhu ngay. -->
+<control mousespeed="8.0" mousefriction="0.5" mouseaccelerate="1.0" />
+
+<action name="startup" autorun="onstart">
+  loadscene(canh1_truc_duong_vao, null, MERGE);
+</action>
+
+<scene name="canh1_truc_duong_vao" title="Trục đường vào" cao="94" onstart="vao_canh();">
+  <!-- Mo ra: cum chung cu trang + truc duong doi. ath 0 la BAI DAT SAN LAP - tranh. -->
+  <view hlookat="-115" vlookat="12" fov="100" fovmin="45" fovmax="115" limitview="auto" maxpixelzoom="1.0" />
+  <preview url="pano/01-truc-duong-vao/01-truc-duong-vao.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="pano/01-truc-duong-vao/01-truc-duong-vao.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="pano/01-truc-duong-vao/01-truc-duong-vao.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="pano/01-truc-duong-vao/01-truc-duong-vao.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<scene name="canh2_vong_xoay_loi_vao" title="Vòng xoay lối vào" cao="259" onstart="vao_canh();">
+  <!-- Mo ra: vong xoay + nut giao ha tang. -->
+  <view hlookat="10" vlookat="12" fov="100" fovmin="45" fovmax="115" limitview="auto" maxpixelzoom="1.0" />
+  <preview url="pano/02-vong-xoay-loi-vao/02-vong-xoay-loi-vao.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="pano/02-vong-xoay-loi-vao/02-vong-xoay-loi-vao.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="pano/02-vong-xoay-loi-vao/02-vong-xoay-loi-vao.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="pano/02-vong-xoay-loi-vao/02-vong-xoay-loi-vao.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<scene name="canh3_ho_canh_quan" title="Vịnh nước ngọt" cao="391" onstart="vao_canh();">
+  <!-- Mo ra: ho canh quan + khu nha da xay ben phai. -->
+  <view hlookat="45" vlookat="12" fov="100" fovmin="45" fovmax="115" limitview="auto" maxpixelzoom="1.0" />
+  <preview url="pano/03-ho-canh-quan/03-ho-canh-quan.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="pano/03-ho-canh-quan/03-ho-canh-quan.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="pano/03-ho-canh-quan/03-ho-canh-quan.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="pano/03-ho-canh-quan/03-ho-canh-quan.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<scene name="canh4_toan_canh_aquaria" title="Toàn cảnh Aquaria" cao="390" onstart="vao_canh();">
+  <!-- Mo ra: mang nha lien ke da xay day dac. ath 0 la bai cat - tranh. -->
+  <!-- Anh Tony chot 12/09: mo canh nay bang goc NHIN THANG XUONG (top-down),
+       thay toan bo khu do thi. Do bang may, so anh 1:1. -->
+  <view hlookat="165" vlookat="88" fov="110" fovmin="45" fovmax="120" limitview="auto" maxpixelzoom="1.0" />
+  <preview url="pano/04-toan-canh-aquaria/04-toan-canh-aquaria.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="pano/04-toan-canh-aquaria/04-toan-canh-aquaria.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="pano/04-toan-canh-aquaria/04-toan-canh-aquaria.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="pano/04-toan-canh-aquaria/04-toan-canh-aquaria.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<scene name="canh5_aquaria_song_vam_co" title="Aquaria &amp; sông Vàm Cỏ" cao="410" onstart="vao_canh();">
+  <!-- Mo ra: mang nha lien ke da xay. Tranh -100..-75 (bai dat dang san lap)
+       va +30..+60 (choi nang). -->
+  <!-- Anh Tony chot 12/09: song Vam Co vat ngang, khu Aquaria nam duoi. -->
+  <view hlookat="5" vlookat="45" fov="105" fovmin="45" fovmax="115" limitview="auto" maxpixelzoom="1.0" />
+  <preview url="pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<scene name="canh6_rivera" title="Rivera" cao="400" onstart="vao_canh();">
+  <!-- Mo ra: khu nha Rivera + song ben trai. -->
+  <view hlookat="-117" vlookat="12" fov="100" fovmin="45" fovmax="115" limitview="auto" maxpixelzoom="1.0" />
+  <preview url="pano/06-rivera/06-rivera.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="pano/06-rivera/06-rivera.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="pano/06-rivera/06-rivera.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="pano/06-rivera/06-rivera.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<scene name="canh7_the_pearl" title="The Pearl" cao="499" onstart="vao_canh();">
+  <!-- Mo ra: mang nha The Pearl day dac + song om quanh. -->
+  <view hlookat="-22" vlookat="12" fov="100" fovmin="45" fovmax="115" limitview="auto" maxpixelzoom="1.0" />
+  <preview url="pano/07-the-pearl/07-the-pearl.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="pano/07-the-pearl/07-the-pearl.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="pano/07-the-pearl/07-the-pearl.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="pano/07-the-pearl/07-the-pearl.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+</krpano>

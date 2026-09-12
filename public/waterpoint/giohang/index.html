@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Giỏ hàng | Waterpoint | ERA Vietnam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   BUOC 3 "GIO HANG" - dung chung token + kieu nut .k3d voi 2 tab kia.
+   Anh Tony chot 12/09: lan nay CHI lam GOC NHIN, phan gim lo lam sau.
+   => Trang nay co dung mot thu: mo ra dung khung hinh Anh gui.
+      KHONG them nut, KHONG them bang - da tung bi nhac vi tu them (bo box 12/09).
+   ============================================================ */
+:root{
+  --wp-primary:#003C4B; --wp-primary-hover:#006D88; --wp-primary-tint:#7FD3E3;
+  --wp-canvas:#000000; --wp-hairline:#005A70; --wp-on-primary:#FFFFFF;
+  --wp-text:#FFFFFF; --wp-text-soft:rgba(255,255,255,.9);
+  --wp-text-muted:rgba(255,255,255,.6); --wp-text-disabled:rgba(255,255,255,.3);
+  --wp-surface-360:#0A1214;
+  --wp-overlay-nav:rgba(0,60,75,.9); --wp-overlay-soft:rgba(0,60,75,.3);
+  --wp-font:Montserrat,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --wp-fw-thin:100; --wp-fw-regular:400; --wp-fw-bold:700;
+  --wp-fs-body:16px; --wp-fs-label:12px;
+  --wp-space-xxs:4px; --wp-space-xs:8px; --wp-space-sm:12px;
+  --wp-space-md:16px; --wp-space-lg:24px; --wp-space-xl:32px;
+  --wp-control-h:40px; --wp-control-h-lg:48px; --wp-nav-h:52px;
+  --wp-z-overlay:50; --wp-z-toast:999999999;
+  --wp-vang:#E0B14A; --wp-canh-teal:#00232C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:var(--wp-canvas);
+  font-family:var(--wp-font);color:var(--wp-text);-webkit-tap-highlight-color:transparent}
+#pano{position:fixed;inset:0;background:var(--wp-surface-360)}
+button{font-family:var(--wp-font);cursor:pointer;border:0}
+
+/* ===== NUT THEO FILE Group.svg Anh Tony gui 12/09 - DO THANG TU PATH =====
+   BO 2 GOC DOI NHAU (tren-phai · duoi-trai), ban kinh = 34% chieu cao.
+   Hai goc con lai VUONG. KHONG he co vat cheo.
+   🔴 Co file SVG thi DOC PATH, dung doan tu anh chup (da sai 4 lan).
+   ========================================================================= */
+.k3d{
+  --r:18px; --nen:var(--wp-primary);
+  border-radius:0 var(--r) 0 var(--r);
+  background:var(--nen);
+  color:var(--wp-text);
+  box-shadow:3px 3px 14px rgba(0,0,0,.26);
+  transition:background .15s, box-shadow .15s, transform .08s;
+}
+.k3d:hover{--nen:var(--wp-primary-hover);background:var(--nen)}
+.k3d:active,.k3d.nhan-xuong{transform:translateY(2px);
+  box-shadow:1px 1px 6px rgba(0,0,0,.30)}
+/* nut khong dung duoc: doi MAU NEN dac, KHONG dung opacity */
+.k3d:disabled{--nen:#0A2A34;background:var(--nen);color:rgba(255,255,255,.38);
+  box-shadow:2px 2px 10px rgba(0,0,0,.22);cursor:not-allowed}
+.k3d:disabled:hover{--nen:#0A2A34;background:var(--nen)}
+.k3d:disabled:active{transform:none}
+
+/* Ban kinh = 34% chieu cao, tinh rieng tung co */
+.tab{--r:18px}     /* cao 52px */
+#brand{--r:18px}
+
+/* ---- Brand ---- */
+#brand{position:fixed;top:var(--wp-space-md);left:var(--wp-space-md);z-index:var(--wp-z-overlay);
+  min-height:var(--wp-nav-h);display:flex;align-items:center;gap:var(--wp-space-sm);
+  padding:var(--wp-space-xs) var(--wp-space-md);cursor:default}
+#brand:hover{--nen:var(--wp-primary)}
+#brand:active{transform:none}
+#brand img{height:28px;width:auto;display:block}
+#brand .ten{font-size:var(--wp-fs-body);color:var(--wp-text);letter-spacing:.5px;line-height:1.15}
+#brand .phu{font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);
+  letter-spacing:1px;text-transform:uppercase;color:var(--wp-primary-tint);line-height:1.3}
+
+/* ---- Thanh 3 buoc ---- */
+#nav{position:fixed;left:50%;transform:translateX(-50%);bottom:var(--wp-space-xl);
+  z-index:var(--wp-z-overlay);display:flex;align-items:flex-start;gap:var(--wp-space-xs);
+  max-width:calc(100vw - var(--wp-space-xl));overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+#nav::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;height:var(--wp-nav-h);padding:0 var(--wp-space-lg);
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:1.1px;
+  text-transform:uppercase;white-space:nowrap}
+.tab.on{--nen:var(--wp-primary-hover)}
+
+#tai{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:60;
+  font-size:var(--wp-fs-label);letter-spacing:1px;color:var(--wp-text-muted)}
+
+/* 🔴 Do that 12/09: dien thoai XOAY NGANG chi cao ~390px -
+   phai co CA max-width LAN max-height, `max-width` khong bat duoc ca nay. */
+@media (max-height:600px){
+  #nav{bottom:var(--wp-space-sm)}
+  .tab{height:44px;padding:0 var(--wp-space-md)}
+  #brand{padding:var(--wp-space-xxs) var(--wp-space-sm);min-height:40px}
+}
+@media (max-width:568px){
+  .tab{padding:0 var(--wp-space-sm);letter-spacing:.6px}
+}
+</style>
+</head><body>
+
+<div id="pano"></div>
+
+<div id="brand" class="k3d">
+  <img id="logo-era" src="../skin/logo-era.png" alt="ERA Vietnam" onerror="this.remove()">
+  <div>
+    <div class="ten">WATERPOINT</div>
+    <div class="phu">Giỏ hàng · Lớp mã lô cập nhật sau</div>
+  </div>
+</div>
+
+<nav id="nav"></nav>
+<div id="tai">Đang tải cảnh 360…</div>
+
+<script src="../krpano.js"></script>
+<script>
+var kp = null;
+
+function veNav() {
+  var N = document.getElementById('nav');
+  [['Tổng quan', '../tong-quan/index.html', false],
+   ['Thực tế',   '../index.html',           false],
+   ['Giỏ hàng',  '',                        true]].forEach(function (b) {
+    var e = document.createElement('button');
+    e.className = 'k3d tab' + (b[2] ? ' on' : '');
+    e.textContent = b[0];
+    if (b[1]) e.onclick = function () { location.href = b[1]; };
+    N.appendChild(e);
+  });
+}
+veNav();
+
+/* ============================================================
+   🔴🔴 BAY 50 - DUA VE GOC NHIN THANG XUONG (nadir)
+
+   Hai thu KHONG chay, da thu va da bo:
+     1. Dat thang vlookat="90" trong <view> cua scene
+        -> krpano BO QUA hlookat (nadir la diem ky di, camera khong con
+           huong "len" xac dinh). Do h=0 va h=90, o ca v=89 lan v=90:
+           BON lan ra anh GIONG HET NHAU, xoay 90 do so voi anh Anh Tony.
+           🔴 Doc so bao ve van thay dung "hlookat: 90" -> rat de tuong dung.
+     2. <action> + delayedcall trong tour.xml -> khong chay (view van dung
+        nguyen o <view>, do duoc h=5 v=45 fov=105).
+
+   ✅ Cach chay: vao canh o goc THUONG (v=45 nhu canh5), doi cho <view>
+      va onstart chay xong, ROI MOI xoay xuong nadir bang JS.
+      Luc do hlookat con y nghia nen krpano giu dung goc xoay.
+
+   Dat 2 lan (700ms va 1600ms) cho chac - lan dau co the con vuong
+   hoat canh mo canh. Nguoi xem keo chuot roi thi THOI, khong giat lai.
+   ============================================================ */
+/* 🔴 fovtype HFOV, KHONG phai VFOV (mac dinh).
+   Do that tren iPad gen 9 NGANG (1080x810): de VFOV=80 thi man cang hep
+   cang thay it BE NGANG -> khu dat BI CAT MAT MEP PHAI. Trang gio hang
+   ma cat mat lo la hong han.
+   HFOV khoa be ngang lai: man hep thi thay THEM tren/duoi, khu dat van
+   con nguyen. 117 = quy doi tu vfov 80 o khung 1920x986:
+     hfov = 2*atan( tan(80/2) * 1920/986 ) = 117.1  */
+var GOC = { h: 0, v: 90, fov: 113, fovtype: 'HFOV' };
+var nguoiDaKeo = false;
+
+function veGocChuan() {
+  if (!kp || nguoiDaKeo) return;
+  kp.set('view.fovtype', GOC.fovtype);
+  kp.set('view.hlookat', GOC.h);
+  kp.set('view.vlookat', GOC.v);
+  kp.set('view.fov', GOC.fov);
+}
+
+embedpano({
+  xml: 'tour.xml',
+  target: 'pano',
+  html5: 'auto',
+  passQueryParameters: 'startscene,startlookat',
+  onready: function (k) {
+    kp = k;
+    var t = document.getElementById('tai');
+    if (t) t.style.display = 'none';
+    document.addEventListener('pointerdown', function () { nguoiDaKeo = true; },
+                              { once: true });
+    setTimeout(veGocChuan, 700);
+    setTimeout(veGocChuan, 1600);
+  }
+});
+</script>
+</body></html>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Thực tế | Waterpoint | ERA Vietnam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   TAB 2 "THUC TE" - dung chung token + khoi 3D goc vuong voi tab 1.
+   🔴 Ba ngoai le Anh Tony chot 10/09: mau vang · nut goc vuong · nut 3D.
+   ============================================================ */
+:root{
+  --wp-primary:#003C4B; --wp-primary-hover:#006D88; --wp-primary-tint:#7FD3E3;
+  --wp-canvas:#000000; --wp-hairline:#005A70; --wp-on-primary:#FFFFFF;
+  --wp-text:#FFFFFF; --wp-text-soft:rgba(255,255,255,.9);
+  --wp-text-muted:rgba(255,255,255,.6); --wp-text-disabled:rgba(255,255,255,.3);
+  --wp-surface-360:#0A1214;
+  --wp-overlay-nav:rgba(0,60,75,.9); --wp-overlay-soft:rgba(0,60,75,.3);
+  --wp-font:Montserrat,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --wp-fw-thin:100; --wp-fw-regular:400; --wp-fw-bold:700;
+  --wp-fs-body:16px; --wp-fs-label:12px;
+  --wp-space-xxs:4px; --wp-space-xs:8px; --wp-space-sm:12px;
+  --wp-space-md:16px; --wp-space-lg:24px; --wp-space-xl:32px;
+  --wp-radius-none:0px; --wp-radius-full:9999px;
+  --wp-control-h:40px; --wp-control-h-lg:48px; --wp-nav-h:52px;
+  --wp-z-overlay:50; --wp-z-toast:999999999;
+  --wp-vang:#E0B14A; --wp-vang-canh:#8E6C1C;
+  --wp-canh-teal:#00232C; --wp-canh-trang:#8FA3A9;
+  --wp-3d-sang:rgba(255,255,255,.30); --wp-3d-toi:rgba(0,0,0,.34);
+  --wp-3d-do:0 6px 12px rgba(0,0,0,.42);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:var(--wp-canvas);
+  font-family:var(--wp-font);color:var(--wp-text);-webkit-tap-highlight-color:transparent}
+#pano{position:fixed;inset:0;background:var(--wp-surface-360)}
+button{font-family:var(--wp-font);cursor:pointer;border:0}
+
+/* ============ NUT PHANG — mau Anh Tony gui 12/09 ============
+   Doc ky anh mau, nut co 6 dac diem (ban truoc Em Teo chi lam duoc 1):
+     1. o icon nen TRANG ben trai, noi tren than, co bong rieng o mep phai
+     2. BO GOC MEM  (trai cua o trang · phai-TREN cua than)
+     3. VAT CHEO goc duoi-PHAI cua than
+     4. BONG DO MEM ca nut (flat shadow), KHONG phai bong khoi 3D
+     5. chu IN HOA, gian chu rong
+     6. icon NET MANH mau nen, khong phai khoi dac
+
+   🔴 Vat goc lam bang `linear-gradient(-45deg, transparent Npx, <nen> 0)`
+      => goc do TRONG SUOT THAT. Vi vay bong phai dung `filter:drop-shadow`,
+      KHONG dung `box-shadow` (box-shadow do theo hinh chu nhat nen se
+      lo mot goc vuong thua ra dung cho vua vat).
+   🔴 Doi mau nut phai doi bien `--nen`, KHONG duoc set `background:` truc tiep
+      - set thang la de mat gradient => mat luon goc vat.
+   ⚠️ Bo "goc vuong" ma Anh Tony chot 10/09; Anh chot lai kieu nay 12/09.
+   ============================================================ */
+.k3d{
+  /* ===== NUT THEO FILE Group.svg Anh Tony gui 12/09 - DO THANG TU PATH =====
+     path: M0,0 h2197 a150,150 0 0 1 150,150 v292 h-2197 a150,150 0 0 1 -150,-150 v-292 z
+       => BO 2 GOC DOI NHAU: TREN-PHAI va DUOI-TRAI, ban kinh 150
+       => hai goc con lai (tren-trai, duoi-phai) VUONG
+       => KHONG he co vat cheo, KHONG co tam giac bong gap
+     Kich thuoc goc: 2347 x 442  =>  ban kinh 150/442 = 34% CHIEU CAO
+     O icon trang: 526/2347 = 22.4% be ngang nut, bo cung kieu
+     Bong (filter trong SVG): dx4 dy4 stdDeviation19.5 opacity .22
+
+     🔴 3 lan truoc Em Teo doan tu ANH CHUP nen sai het:
+        lan 1 goc vuong · lan 2-3 VAT CHEO + tam giac bong gap.
+        That ra chi la BO 2 GOC DOI NHAU ban kinh lon.
+     🔴 BAI HOC: co file SVG thi DOC PATH, dung doan tu anh chup.
+     ======================================================================== */
+  --r:18px; --nen:var(--wp-primary);
+  border-radius:0 var(--r) 0 var(--r);
+  background:var(--nen);
+  color:var(--wp-text);
+  box-shadow:3px 3px 14px rgba(0,0,0,.26);
+  transition:background .15s, box-shadow .15s, transform .08s;
+}
+.k3d:hover{--nen:var(--wp-primary-hover);background:var(--nen)}
+.k3d:active,.k3d.nhan-xuong{transform:translateY(2px);
+  box-shadow:1px 1px 6px rgba(0,0,0,.30)}
+/* bien the VANG - phan khu ERA doc quyen */
+.k3d.vang{--nen:var(--wp-vang);background:var(--nen);color:var(--wp-primary)}
+.k3d.vang:hover{--nen:#EBC069;background:var(--nen)}
+/* bien the TRANG - cac phan khu con lai */
+.k3d.trang{--nen:var(--wp-text);background:var(--nen);color:var(--wp-primary)}
+.k3d.trang:hover{--nen:#E8F3F6;background:var(--nen)}
+/* nut khong dung duoc: doi MAU NEN dac, KHONG dung opacity
+   (opacity lam nut mo nhin xuyen thay anh nen - xau) */
+.k3d:disabled{--nen:#0A2A34;background:var(--nen);color:rgba(255,255,255,.38);
+  box-shadow:2px 2px 10px rgba(0,0,0,.22);cursor:not-allowed}
+.k3d:disabled:hover{--nen:#0A2A34;background:var(--nen)}
+.k3d:disabled:active{transform:none}
+
+/* Ban kinh = 34% chieu cao, tinh rieng cho tung co nut */
+.chip,.o{--r:14px}          /* cao 40px */
+.nut-icon{--r:16px}         /* nut icon vuong 48px */
+.tab{--r:18px}              /* cao 52px */
+#brand{--r:18px}
+#bang{--r:22px}
+#dangxem{--r:14px}
+.fly .hop{--r:16px}
+.fly .ten{--r:9px}
+
+
+/* ---- Bieu tuong flycam tren anh ---- */
+#lop-fly{position:fixed;top:0;left:0;width:100%;height:100%;z-index:40;pointer-events:none}
+.fly{position:absolute;transform:translate(-50%,calc(-50% + var(--dy,0px)));
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  pointer-events:auto;cursor:pointer;will-change:transform}
+.fly .hop{width:var(--wp-control-h-lg);height:var(--wp-control-h-lg);
+  display:flex;align-items:center;justify-content:center}
+/* Icon flycam: khoi dac mau trang (theo mau Anh Tony gui 11/09), khong phai net */
+.fly .hop svg{width:30px;height:30px;fill:currentColor;stroke:none;color:var(--wp-on-primary)}
+.fly .ten{padding:var(--wp-space-xxs) var(--wp-space-sm);
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:.5px;
+  white-space:nowrap;line-height:1.3;text-align:center}
+.fly .ten small{display:block;font-weight:var(--wp-fw-regular);letter-spacing:0;opacity:.7}
+.fly:hover{z-index:1}
+
+
+/* 🔴 Do that 12/09 tren dien thoai XOAY NGANG (844x390): cot dieu khien
+   5 nut x 48px + khe = 288px > 390px chieu cao man -> TRAN ra ngoai va de
+   len dai chip. Day dung la ca ma `max-width` khong bat duoc.
+   Man thap: thu nut lai; man RAT thap: xep 2 cot. */
+@media (max-height:600px){
+  }
+
+/* ---- Brand ---- */
+#brand{position:fixed;top:var(--wp-space-md);left:var(--wp-space-md);z-index:var(--wp-z-overlay);
+  min-height:var(--wp-nav-h);display:flex;align-items:center;gap:var(--wp-space-sm);
+  padding:var(--wp-space-xs) var(--wp-space-md);cursor:default}
+#brand:hover{--nen:var(--wp-primary)}
+#brand:active{transform:none}
+#brand img{height:28px;width:auto;display:block}
+#brand .ten{font-size:var(--wp-fs-body);color:var(--wp-text);letter-spacing:.5px;line-height:1.15}
+#brand .phu{font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:.5px;
+  color:var(--wp-primary-tint);text-transform:uppercase;line-height:1.25}
+
+/* ---- Cot dieu khien ---- */
+.nut-icon{width:var(--wp-control-h-lg);height:var(--wp-control-h-lg);
+  display:flex;align-items:center;justify-content:center}
+.nut-icon svg{width:20px;height:20px;fill:none;stroke:var(--wp-on-primary);
+  stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+/* nut bat/tat diem bay dung dung icon flycam khoi dac, khong phai net */
+
+/* ---- Bang thong tin canh dang xem ---- */
+#dangxem{position:fixed;left:var(--wp-space-md);
+  bottom:calc(var(--wp-space-xl) + var(--wp-nav-h) + var(--wp-space-sm));
+  z-index:var(--wp-z-overlay);padding:var(--wp-space-sm) var(--wp-space-md);
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:.5px}
+#dangxem b{display:block;font-size:var(--wp-fs-body);font-weight:var(--wp-fw-regular);
+  letter-spacing:0;margin-bottom:2px}
+#dangxem span{color:var(--wp-primary-tint)}
+
+/* ---- Hang chon canh ---- */
+#ds{position:fixed;left:50%;transform:translateX(-50%);
+  bottom:calc(var(--wp-space-xl) + var(--wp-nav-h) + var(--wp-space-sm));
+  z-index:var(--wp-z-overlay);display:flex;align-items:flex-start;gap:var(--wp-space-xs);
+  max-width:calc(100vw - var(--wp-space-xl));overflow-x:auto;scrollbar-width:none;
+  padding:0 var(--wp-space-xxs) 6px}
+#ds::-webkit-scrollbar{display:none}
+.o{flex:0 0 auto;height:var(--wp-control-h);padding:0 var(--wp-space-md);
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:1px;
+  text-transform:uppercase;white-space:nowrap}
+.o.on{--nen:var(--wp-primary-hover)}
+
+/* ---- Thanh buoc ---- */
+#nav{position:fixed;left:50%;transform:translateX(-50%);bottom:var(--wp-space-xl);
+  z-index:var(--wp-z-overlay);display:flex;align-items:flex-start;gap:var(--wp-space-xs);
+  max-width:calc(100vw - var(--wp-space-xl));overflow-x:auto;scrollbar-width:none;padding-bottom:6px}
+#nav::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;height:var(--wp-nav-h);padding:0 var(--wp-space-lg);
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:1.1px;
+  text-transform:uppercase;white-space:nowrap}
+.tab.on{--nen:var(--wp-primary-hover)}
+/* 🔴 opacity lam nut MO NHIN XUYEN thay cay coi phia sau - xau.
+   Nut khong dung duoc thi doi MAU NEN (dac) + chu nhat, dung opacity. */
+.tab:disabled{cursor:not-allowed}
+.tab:disabled:hover{--nen:rgba(0,60,75,.78)}
+.tab:disabled:active{transform:none}
+
+/* ---- Man tai ---- */
+#tai{position:fixed;inset:0;z-index:var(--wp-z-toast);background:var(--wp-canvas);
+  display:flex;align-items:center;justify-content:center;
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:.5px;
+  text-transform:uppercase;color:var(--wp-primary-tint)}
+#tai.xong{display:none}
+
+/* ---- Tool cham diem (?tool=1) ---- */
+#tool{position:fixed;left:var(--wp-space-md);
+  top:calc(var(--wp-space-md) + var(--wp-nav-h) + var(--wp-space-sm));
+  z-index:var(--wp-z-overlay);width:320px;max-width:calc(100vw - 32px);
+  max-height:calc(100vh - 280px);overflow-y:auto;
+  background:var(--wp-overlay-nav);border:1px solid var(--wp-hairline);
+  padding:var(--wp-space-md);display:none}
+#tool.hien{display:block}
+#tool .tieu{font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:.5px;
+  color:var(--wp-vang);text-transform:uppercase;margin-bottom:var(--wp-space-xs)}
+#tool .gt{font-size:var(--wp-fs-label);color:var(--wp-text-muted);line-height:1.5;
+  margin-bottom:var(--wp-space-sm)}
+.mot{display:block;width:100%;text-align:left;min-height:var(--wp-control-h);
+  padding:var(--wp-space-xs) var(--wp-space-md);margin-bottom:var(--wp-space-xs);
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:.5px}
+.mot small{display:block;font-weight:var(--wp-fw-regular);letter-spacing:0;opacity:.7;margin-top:2px}
+#tool .hang{display:flex;gap:var(--wp-space-xs);margin-top:var(--wp-space-md)}
+#tool .hang button{flex:1;height:var(--wp-control-h);
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:.5px}
+#tro{position:fixed;left:50%;transform:translateX(-50%);top:var(--wp-space-md);
+  z-index:var(--wp-z-toast);height:var(--wp-nav-h);display:none;align-items:center;
+  padding:0 var(--wp-space-lg);font-size:var(--wp-fs-body)}
+#tro.hien{display:flex}
+#xuat{position:fixed;inset:var(--wp-space-xl);z-index:var(--wp-z-toast);
+  background:var(--wp-overlay-nav);border:1px solid var(--wp-hairline);
+  padding:var(--wp-space-lg);display:none;flex-direction:column;gap:var(--wp-space-md)}
+#xuat.hien{display:flex}
+#xuat textarea{flex:1;width:100%;background:var(--wp-canvas);color:var(--wp-text);
+  border:1px solid var(--wp-hairline);padding:var(--wp-space-md);
+  font-family:ui-monospace,Consolas,monospace;font-size:var(--wp-fs-label);
+  line-height:1.5;resize:none;outline:none}
+#xuat .hang{display:flex;gap:var(--wp-space-xs)}
+#xuat .hang button{height:var(--wp-control-h-lg);padding:0 var(--wp-space-lg);
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:.5px}
+
+@media (max-width:820px){ #dangxem{display:none} }
+</style></head><body>
+
+<div id="pano"></div>
+<div id="lop-fly"></div>
+
+<div id="brand" class="k3d">
+  <img id="logo-era" src="skin/logo-era.png" alt="ERA Vietnam" onerror="this.remove()">
+  <div>
+    <div class="ten">WATERPOINT</div>
+    <div class="phu">Thực tế · Cập nhật T9.2026</div>
+  </div>
+</div>
+
+<!-- Cot dieu khien ben phai: Anh Tony yeu cau XOA 12/09.
+     Mat theo: zoom +/- · tu xoay · toan man hinh · an/hien gim.
+     Ban cu con trong index.html.bak-truoc-xoa-cot-20260912 -->
+
+<div class="k3d" id="dangxem"><b id="dx-ten">—</b><span id="dx-cao"></span></div>
+<div id="ds"></div>
+<nav id="nav"></nav>
+<div id="tool">
+  <div class="tieu">Tool chấm điểm bay</div>
+  <div class="gt">Chọn cảnh đích → bấm lên ảnh đúng hướng cảnh đó nằm. Bấm lại dòng đã chấm để xoá. Xong hết bấm XUẤT rồi gửi Em Tèo.</div>
+  <div id="tool-ds"></div>
+  <div class="gt" id="tool-dem"></div>
+  <div class="hang">
+    <button class="k3d vang" id="b-xuat">XUẤT</button>
+    <button class="k3d" id="b-xoa">XOÁ NHÁP</button>
+  </div>
+</div>
+<div class="k3d vang" id="tro"></div>
+<div id="xuat">
+  <textarea id="xuat-txt" readonly></textarea>
+  <div class="hang"><button class="k3d vang" id="b-chep">CHÉP</button><button class="k3d" id="b-dong">ĐÓNG</button></div>
+</div>
+
+<div id="tai">Đang tải cảnh 360…</div>
+
+<script src="krpano.js"></script>
+<script>
+"use strict";
+var kp = null, DL = null, hienFly = true;
+
+/* Flycam - khoi dac, ve lai tu icon Anh Tony gui 11/09 (bon canh quat + gimbal camera) */
+var SVG_FLY =
+  '<svg viewBox="0 0 512 400" aria-hidden="true">' +
+    /* canh quat */
+    '<ellipse cx="62" cy="172" rx="54" ry="7"/><ellipse cx="164" cy="171" rx="50" ry="7"/>' +
+    '<ellipse cx="348" cy="171" rx="50" ry="7"/><ellipse cx="450" cy="172" rx="54" ry="7"/>' +
+    /* dong co */
+    '<rect x="103" y="166" width="17" height="46" rx="8"/><circle cx="111.5" cy="160" r="9"/>' +
+    '<rect x="392" y="166" width="17" height="46" rx="8"/><circle cx="400.5" cy="160" r="9"/>' +
+    /* than may */
+    '<path d="M92 206c56 0 84-9 114-19 28-10 72-10 100 0 30 10 58 19 114 19 9 0 14 5 14 11s-5 11-14 11H92c-9 0-14-5-14-11s5-11 14-11z"/>' +
+    /* hai chan treo */
+    '<path d="M170 228h22c0 22-12 34-12 62v56c0 8-5 12-11 12s-11-4-11-12v-60c0-32 12-44 12-58z"/>' +
+    '<path d="M320 228h22c0 14 12 26 12 58v60c0 8-5 12-11 12s-11-4-11-12v-56c0-28-12-40-12-62z"/>' +
+    /* co gimbal */
+    '<rect x="236" y="238" width="40" height="20" rx="7"/>' +
+    /* khoi camera - lo ong kinh va o ngam la khoang trong */
+    '<path fill-rule="evenodd" d="M215 262h82a12 12 0 0 1 12 12v58a12 12 0 0 1-12 12h-82a12 12 0 0 1-12-12v-58a12 12 0 0 1 12-12z' +
+      'M256 303a30 30 0 1 0 0-60 0 30 30 0 0 0 0 60z' +
+      'M222 274h18a6 6 0 0 1 6 6v7a6 6 0 0 1-6 6h-18a6 6 0 0 1-6-6v-7a6 6 0 0 1 6-6z"/>' +
+    /* tam ong kinh */
+    '<circle cx="256" cy="303" r="15"/>' +
+  '</svg>';
+
+
+embedpano({
+  xml: "tour.xml", target: "pano", html5: "only", mobilescale: 1.0,
+  passQueryParameters: true, bgcolor: "#000000",
+  onready: function (k) {
+    kp = k;
+    document.getElementById('tai').classList.add('xong');
+    requestAnimationFrame(batTheo);
+  }
+});
+
+fetch('canh.json').then(function (r) { return r.json(); }).then(function (d) {
+  DL = d;
+  if (typeof napNhap === 'function') napNhap();
+  veDS(); veNav();
+});
+
+function canhHienTai() { return kp ? kp.get('xml.scene') : null; }
+function timCanh(id) { return DL.canh.find(function (c) { return c.id === id; }); }
+
+function veDS() {
+  var L = document.getElementById('ds'); L.innerHTML = '';
+  DL.canh.forEach(function (c) {
+    var e = document.createElement('button');
+    e.className = 'k3d o'; e.dataset.id = c.id;
+    e.textContent = c.ten;
+    e.onclick = function () { doiCanh(c.id); };
+    L.appendChild(e);
+  });
+}
+
+function veNav() {
+  var N = document.getElementById('nav');
+  /* 12/09: BO buoc "Tien ich" - 20 gim tien ich da ghep vao trang Tong quan
+     (bang "Lop hien thi"), khong can buoc rieng nua. */
+  /* 12/09 toi: BAT buoc "Gio hang" - Anh Tony chot dung anh canh5
+     "Aquaria & song Vam Co" nhin thang xuong. Gim lo lam sau. */
+  [['Tổng quan', 'tong-quan/index.html', false],
+   ['Thực tế', '', true],
+   ['Giỏ hàng', 'giohang/index.html', false]].forEach(function (b) {
+    var e = document.createElement('button');
+    e.className = 'k3d tab' + (b[2] ? ' on' : '');
+    e.textContent = b[0];
+    if (b[1]) e.onclick = function () { location.href = b[1]; };
+    else if (!b[2]) { e.disabled = true; e.title = 'Bước này chưa dựng'; }
+    N.appendChild(e);
+  });
+}
+
+function doiCanh(id) {
+  if (!kp) return;
+  kp.call("loadscene(" + id + ", null, MERGE, BLEND(1.0))");
+}
+
+/* Ve lai bieu tuong flycam moi khi doi canh */
+var canhTruoc = null;
+function veFly() {
+  var L = document.getElementById('lop-fly'); L.innerHTML = '';
+  var c = timCanh(canhHienTai()); if (!c) return;
+  c.diem.forEach(function (p, i) {
+    if (p.ath === null || p.atv === null) return;   /* chua cham thi khong ve */
+    var e = document.createElement('div');
+    e.className = 'fly'; e.dataset.i = i;
+    e.innerHTML = '<div class="k3d hop">' + SVG_FLY + '</div>' +
+                  '<div class="k3d trang ten"></div>';
+    var t = e.querySelector('.ten');
+    t.appendChild(document.createTextNode(p.ten));
+    if (p.xa_m !== null) {
+      var s = document.createElement('small');
+      s.textContent = (p.xa_m >= 1000 ? (p.xa_m / 1000).toFixed(1) + ' km' : p.xa_m + ' m');
+      t.appendChild(s);
+    }
+    e.onclick = function () { doiCanh(p.toi); };
+    L.appendChild(e);
+  });
+}
+
+/* Bam theo anh moi khung hinh.
+   PHAI dung JS API kp.spheretoscreen(...) - truyen so qua kp.call() thi
+   tham so KHONG vao duoc (bay 46, do 09/09). */
+function batTheo() {
+  requestAnimationFrame(batTheo);
+  if (!kp || !DL) return;
+  var id = canhHienTai(); if (!id) return;
+  /* chi lam khi DOI CANH - dung vong lap dinh ky xoa mat lua chon (bay 47, 09/09) */
+  if (id !== canhTruoc) {
+    canhTruoc = id; dangChon = null;
+    document.getElementById('tro').classList.remove('hien');
+    veFly(); capNhatNhan(); veTool();
+  }
+
+  var L = document.getElementById('lop-fly');
+  if (!hienFly) { L.style.display = 'none'; return; }
+  L.style.display = '';
+
+  var c = timCanh(id); if (!c) return;
+  var lech = c.lech || 0;
+  var r = document.getElementById('pano').getBoundingClientRect();
+  var sw = +kp.get('stagewidth') || r.width, sh = +kp.get('stageheight') || r.height;
+  var fx = r.width / sw, fy = r.height / sh;
+  var vv = huong(+kp.get('view.hlookat'), +kp.get('view.vlookat'));
+
+  var hien = [];
+  L.querySelectorAll('.fly').forEach(function (e) {
+    var p = c.diem[+e.dataset.i];
+    var ath = p.ath + lech;
+    if (!truocMat(vv, ath, p.atv)) { e.style.display = 'none'; return; }
+    var s = kp.spheretoscreen(ath, p.atv);
+    var x = s.x * fx, y = s.y * fy;
+    e.style.display = '';
+    e.style.left = x + 'px';
+    e.style.top = y + 'px';
+    hien.push({ e: e, x: x, y: y });
+  });
+
+  /* Nhieu diem bay cung mot huong thi nhan chong len nhau che mat chu
+     (vd tu canh1 nhin sang canh3/4/5 deu nam ath -81..-85).
+     Xep theo truc ngang roi day nhan sau xuong 1 bac cho doc duoc. */
+  hien.sort(function (a, b) { return a.x - b.x; });
+  /* BAC phai >= chieu cao ca khoi (icon 48 + khe 6 + nhan ~30 = 84) */
+  var BAC = 88, GAN = 170;
+  for (var i = 0; i < hien.length; i++) {
+    var dy = 0;
+    for (var j = 0; j < i; j++) {
+      var dyj = +(hien[j].e.style.getPropertyValue('--dy') || '0').replace('px', '');
+      if (Math.abs(hien[i].x - hien[j].x) < GAN &&
+          Math.abs((hien[i].y + dy) - (hien[j].y + dyj)) < BAC) { dy += BAC; j = -1; }
+    }
+    hien[i].e.style.setProperty('--dy', dy + 'px');
+  }
+}
+
+function capNhatNhan() {
+  var c = timCanh(canhHienTai()); if (!c) return;
+  document.getElementById('dx-ten').textContent = c.ten;
+  document.getElementById('dx-cao').textContent = 'Bay ở độ cao ' + c.cao_m + ' m';
+  document.querySelectorAll('#ds .o').forEach(function (e) {
+    var on = e.dataset.id === c.id;
+    e.classList.toggle('on', on);
+    if (on) e.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' });
+  });
+}
+
+function huong(ath, atv) {
+  var a = ath * Math.PI / 180, b = atv * Math.PI / 180;
+  return [Math.cos(b) * Math.sin(a), -Math.sin(b), Math.cos(b) * Math.cos(a)];
+}
+function truocMat(vv, ath, atv) {
+  var p = huong(ath, atv);
+  return (vv[0] * p[0] + vv[1] * p[1] + vv[2] * p[2]) > 0.09;
+}
+
+/* ---- Nut ---- */
+
+/* ================= TOOL CHẤM ĐIỂM (?tool=1) ================= */
+var TOOL = new URLSearchParams(location.search).get('tool') === '1';
+var KHOA = 'wp_thucte_diem', dangChon = null, canhToolTruoc = null;
+
+function luuNhap() {
+  if (!DL) return;
+  try {
+    var g = {};
+    DL.canh.forEach(function (c) {
+      g[c.id] = {};
+      c.diem.forEach(function (p) { if (p.ath !== null) g[c.id][p.toi] = [p.ath, p.atv]; });
+    });
+    localStorage.setItem(KHOA, JSON.stringify(g));
+  } catch (e) {}
+}
+function napNhap() {
+  try {
+    var g = JSON.parse(localStorage.getItem(KHOA) || 'null'); if (!g) return;
+    DL.canh.forEach(function (c) {
+      var m = g[c.id] || {};
+      c.diem.forEach(function (p) {
+        if (m[p.toi]) { p.ath = m[p.toi][0]; p.atv = m[p.toi][1]; }
+      });
+    });
+  } catch (e) {}
+}
+
+function veTool() {
+  if (!TOOL || !DL) return;
+  document.getElementById('tool').classList.add('hien');
+  var c = timCanh(canhHienTai()); if (!c) return;
+  var L = document.getElementById('tool-ds'); L.innerHTML = '';
+  c.diem.forEach(function (p, i) {
+    var co = p.ath !== null;
+    var b = document.createElement('button');
+    b.className = 'k3d mot' + (dangChon === i ? ' vang' : '') + (co ? ' trang' : '');
+    b.appendChild(document.createTextNode((co ? '✓ ' : '+ ') + p.ten));
+    if (co) {
+      var s = document.createElement('small');
+      s.textContent = 'ath ' + p.ath + '°  ·  atv ' + p.atv + '°  ·  bấm để xoá';
+      b.appendChild(s);
+    }
+    b.onclick = function () {
+      if (co) {
+        if (confirm('Xoá điểm sang "' + p.ten + '"?')) {
+          p.ath = null; p.atv = null; p.xa_m = null;
+          luuNhap(); veFly(); veTool();
+        }
+        return;
+      }
+      dangChon = (dangChon === i) ? null : i;
+      var t = document.getElementById('tro');
+      t.textContent = dangChon !== null ? 'Bấm lên ảnh chỗ "' + p.ten + '" nằm' : '';
+      t.classList.toggle('hien', dangChon !== null);
+      veTool();
+    };
+    L.appendChild(b);
+  });
+  var tong = 0, xong = 0;
+  DL.canh.forEach(function (x) { x.diem.forEach(function (p) { tong++; if (p.ath !== null) xong++; }); });
+  document.getElementById('tool-dem').textContent =
+    'Cảnh này ' + c.diem.filter(function (p) { return p.ath !== null; }).length + '/' + c.diem.length +
+    '  ·  Cả tab ' + xong + '/' + tong;
+}
+
+if (TOOL) {
+  document.addEventListener('click', function (e) {
+    if (dangChon === null || !kp || !DL) return;
+    if (e.target.closest('#tool') || e.target.closest('#dk') || e.target.closest('#nav') ||
+        e.target.closest('#ds') || e.target.closest('#xuat') || e.target.closest('#brand') ||
+        e.target.closest('.fly')) return;
+    var c = timCanh(canhHienTai()); if (!c) return;
+    var r = document.getElementById('pano').getBoundingClientRect();
+    var sw = +kp.get('stagewidth') || r.width, sh = +kp.get('stageheight') || r.height;
+    /* JS API - truyen so qua kp.call() thi tham so KHONG vao duoc (bay 46) */
+    var sp = kp.screentosphere((e.clientX - r.left) * (sw / r.width),
+                               (e.clientY - r.top) * (sh / r.height));
+    c.diem[dangChon].ath = Math.round(sp.x * 10) / 10;
+    c.diem[dangChon].atv = Math.round(sp.y * 10) / 10;
+    luuNhap();
+    dangChon = null;
+    document.getElementById('tro').classList.remove('hien');
+    veFly(); veTool();
+  }, true);
+
+  document.getElementById('b-xuat').onclick = function () {
+    var g = {};
+    DL.canh.forEach(function (c) {
+      g[c.id] = {};
+      c.diem.forEach(function (p) { if (p.ath !== null) g[c.id][p.toi] = { ath: p.ath, atv: p.atv }; });
+    });
+    document.getElementById('xuat-txt').value = JSON.stringify(g, null, 1);
+    document.getElementById('xuat').classList.add('hien');
+  };
+  document.getElementById('b-chep').onclick = function () {
+    var t = document.getElementById('xuat-txt'); t.select(); document.execCommand('copy');
+    var me = this; me.textContent = 'ĐÃ CHÉP';
+    setTimeout(function () { me.textContent = 'CHÉP'; }, 1400);
+  };
+  document.getElementById('b-dong').onclick = function () {
+    document.getElementById('xuat').classList.remove('hien');
+  };
+  document.getElementById('b-xoa').onclick = function () {
+    if (confirm('Xoá nháp đã chấm trong trình duyệt? (số tính bằng máy của 5 cảnh cũ không mất)')) {
+      try { localStorage.removeItem(KHOA); } catch (e) {}
+      location.reload();
+    }
+  };
+}
+</script>
+</body></html>
