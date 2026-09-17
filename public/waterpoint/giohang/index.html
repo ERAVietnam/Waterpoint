@@ -83,17 +83,48 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 .tab.on{--nen:var(--wp-primary-hover)}
 
 #tai{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:60;
-  font-size:var(--wp-fs-label);letter-spacing:1px;color:var(--wp-text-muted)}
+  font-size:var(--wp-fs-label);letter-spacing:1px;color:var(--wp-text-muted);
+  max-width:calc(100vw - var(--wp-space-xl));text-align:center;line-height:1.6}
+
+/* ---- Dai chip chon canh con (16/09) ----
+   🔴 CHEP Y CONG THUC cua `#ds` ben trang Thuc te, KHONG tu nghi ra so moi.
+   `--ds-chua` = be ngang phai chua trong o mep PHAI cho qua cau dieu huong;
+   mac dinh 0, `era-globe.js` dat lai con so theo tung kho man - va file do
+   DA duoc nap san o trang nay (dong script cuoi body). Chua mot ben nen
+   TRU MOT LAN roi DOI TAM sang trai NUA khoang do, khong tru ca hai ben
+   (do that ben kia: iPhone doc mat oan 84px).
+   ⚠️ `bottom` phai dung y cong thuc nay - quả cầu, thanh zoom va thanh buoc
+   deu neo theo no. Doi la xo lech het.
+   ⚠️ KHONG chep lop mui ten `#ds-dh`/`#ds-dem` sang day: lop do sinh ra cho
+   dai 5 canh bi tran tren dien thoai. O day chi 2 chip, khong bao gio tran. */
+#ds{position:fixed;left:calc(50% - var(--ds-chua,0px) / 2);
+  transform:translateX(-50%);
+  bottom:calc(var(--wp-space-xl) + var(--wp-nav-h) + var(--wp-space-sm));
+  max-width:calc(100vw - var(--wp-space-xl) - var(--ds-chua,0px));
+  z-index:var(--wp-z-overlay);display:flex;align-items:flex-start;
+  gap:var(--wp-space-xs);overflow-x:auto;scrollbar-width:none;
+  padding:0 var(--wp-space-xxs) 6px}
+#ds::-webkit-scrollbar{display:none}
+.o{flex:0 0 auto;height:var(--wp-control-h);padding:0 var(--wp-space-md);
+  font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:1px;
+  text-transform:uppercase;white-space:nowrap}
+.o.on{--nen:var(--wp-primary-hover)}
 
 /* 🔴 Do that 12/09: dien thoai XOAY NGANG chi cao ~390px -
    phai co CA max-width LAN max-height, `max-width` khong bat duoc ca nay. */
 @media (max-height:600px){
   #nav{bottom:var(--wp-space-sm)}
+  /* Chip phai tut theo thanh buoc, chep y cong thuc trang Tong quan.
+     ⚠️ Khoi nay hien KHONG an thua vi `era-buoc.js` nap sau nen ghi de
+     `#nav{bottom}`. Van giu lai: file do quang cao la ADDITIVE, go 1 dong
+     <script> la tra ve nhu cu - luc do khoi nay phai con dung. */
+  #ds{bottom:calc(var(--wp-space-sm) + var(--wp-nav-h) + var(--wp-space-xxs))}
   .tab{height:44px;padding:0 var(--wp-space-md)}
   #brand{padding:var(--wp-space-xxs) var(--wp-space-sm);min-height:40px}
 }
 @media (max-width:568px){
   .tab{padding:0 var(--wp-space-sm);letter-spacing:.6px}
+  .o{padding:0 var(--wp-space-sm);letter-spacing:.6px}
 }
 </style>
 </head><body>
@@ -108,6 +139,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
   </div>
 </div>
 
+<div id="ds"></div>
 <nav id="nav"></nav>
 <div id="tai">Đang tải cảnh 360…</div>
 
@@ -115,19 +147,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 <script>
 var kp = null;
 
-function veNav() {
-  var N = document.getElementById('nav');
-  [['Tổng quan', '../tong-quan/index.html', false],
-   ['Thực tế',   '../index.html',           false],
-   ['Giỏ hàng',  '',                        true]].forEach(function (b) {
-    var e = document.createElement('button');
-    e.className = 'k3d tab' + (b[2] ? ' on' : '');
-    e.textContent = b[0];
-    if (b[1]) e.onclick = function () { location.href = b[1]; };
-    N.appendChild(e);
-  });
-}
-veNav();
+/* veNav() da chuyen sang file dung chung `era-buoc.js` (15/09) */
 
 /* ============================================================
    🔴🔴 BAY 50 - DUA VE GOC NHIN THANG XUONG (nadir)
@@ -155,15 +175,147 @@ veNav();
    HFOV khoa be ngang lai: man hep thi thay THEM tren/duoi, khu dat van
    con nguyen. 117 = quy doi tu vfov 80 o khung 1920x986:
      hfov = 2*atan( tan(80/2) * 1920/986 ) = 117.1  */
-var GOC = { h: 0, v: 90, fov: 113, fovtype: 'HFOV' };
+/* ============================================================
+   🔴 DANH SACH CANH CON - MOT CHO DUY NHAT  (16/09)
+
+   Anh Tony chot 16/09: gio hang co 2 phan khu ERA. Doi chieu
+   `tong-quan/phan-khu.json` thi dung 2 muc co `era:true` la
+   `aquaria` va `park-village` - khop.
+
+   Them/bo/doi ten canh con thi SUA O DAY, khong sua cho nao khac -
+   dung bai hoc `era-buoc.js` (tab hard-code 4 cho, da dinh that 15/09).
+
+   `goc` = khung hinh nadir cua tung canh, DO BANG MAY chu khong doan
+   (xem BAY 50 + ghi chu fovtype HFOV ngay phia tren).
+
+   `lechBac` = YAW CUA DRONE luc chup, doc thang tu EXIF `GimbalYawDegree`
+   cua anh goc. Bac that nam o `ath = -lechBac`. Quan he `bearing = ath + yaw`
+   da duoc phien `chat-gps-poi` nghiem thu sang 16/09 (16/20 cap canh khop
+   dung 0,0 do).
+   🔴 THEM CANH MOI THI PHAI KHAI CA `lechBac`. Thieu = coi nhu 0 = la ban
+      va qua cau deu coi `hlookat 0` la Bac => CHI SAI, va sai IM LANG,
+      khong co loi nao bao. Lay so bang:
+        python -c "b=open(r'<anh goc>','rb').read(300000); i=b.find(b'GimbalYawDegree'); print(b[i:i+32])"
+   ============================================================ */
+var CANH = [
+  /* ---- PK The Aqua ---- dung lai anh cua canh5 ben trang Thuc te
+     (`../pano/05-aquaria-song-vam-co/`), chi khac goc nhin.
+     yaw 172,3 - khop dung `_yaw` cua `canh5_aquaria_song_vam_co`
+     trong `canh.json`. `_kiem-laban.py` doi chieu lai cho nay moi lan chay. */
+  { id: 'pk_aqua', ten: 'PK The Aqua', lechBac: 172.3,
+    goc: { h: 0, v: 90, fov: 113, fovtype: 'HFOV' } },
+
+  /* ---- PK Park Village ---- anh that gan 16/09 chieu.
+     Anh nguon: `02-NGUON/anh-360/waterpoint/1-tong-the/pk park village.jpg`
+     (chinh la `DJI_0482.jpg` cu, Anh Tony doi ten - md5 887eaa5a…,
+      8192x4096, DJI FC3170, bay 05/09 11:46, cao 360,2 m, yaw -63,3).
+     Tile: `../pano/08-park-village/` - 295 file, dung y so luong canh Aqua.
+
+     🔴 GOC NHIN DO BANG MAY, KHONG DOAN (16/09):
+       h = 0   v = 90   fov = 78
+     Cach ra so nay: dung lai phep chieu nadir cua krpano bang Python
+     (gnomonic, fovtype=HFOV), roi doi chieu 9 cap tren bang anh
+     (fov 62/70/78 x h -8/0/8/16), co ke duong chuan ngang de soi do nghieng.
+       · v=90 thi cum oval DA NAM DUNG TAM san - lech tam chi ~10 px/1280,
+         nen KHONG phai keo vlookat ra khoi nadir.
+       · fov 62 = CAT MAT hai dau oval · fov 70 = sat le trai
+         · fov 78 = tron cum + tron vong kenh, con le deu. Chot 78.
+       · h = 0: o fov 78 truc dai cua oval DA gan nhu nam ngang san
+         (lech ~3 do). Da thu h = -8 va +8, CA HAI deu lam no nghieng
+         THEM chu khong thang ra.
+     ⚠️ Vi sao khong co xoay: quy uoc DAU cua `hlookat` trong ban mo phong
+        cua Em chua doi chieu duoc voi krpano that (nadir la diem ky di,
+        khong co cach kiem bang so). De h=0 thi cau hoi do khong con y nghia
+        - khong con rui ro xoay nguoc chieu. Neu Anh Tony nhin thay muon
+        nan cho that thang thi sua DUY NHAT so `h` o day, thu +3 va -3.
+     ⚠️ So nay do tren khung 16:9. `fovtype HFOV` khoa be ngang nen man
+        hep hon chi thay THEM tren/duoi, cum dat van nguyen - xem ghi chu
+        HFOV phia tren. */
+  /* yaw -63,30 = `drone-dji:GimbalYawDegree` doc thang tu
+     `02-NGUON/anh-360/waterpoint/1-tong-the/pk park village.jpg`.
+     ⚠️ DUNG lay `FlightYawDegree` (-43,40) - do la huong THAN DRONE,
+        khong phai huong GIMBAL. `canh.json` cung lay GimbalYawDegree. */
+  { id: 'pk_park_village', ten: 'PK Park Village', lechBac: -63.3,
+    goc: { h: 0, v: 90, fov: 78, fovtype: 'HFOV' } }
+];
+
+/* ============================================================
+   MOC NOI DO LECH BAC cho `era-globe.js` + `era-laban.js`  (16/09)
+
+   🔴 PHAI LA HAM, khong duoc la mot con so chet: trang nay co 2 canh,
+      moi canh mot yaw khac han (172,3 va -63,3). Khai so chet thi canh
+      thu hai lech 235 do.
+   Ca hai file deu tu tra ve 0 neu thieu moc nay => go 2 dong <script>
+   cuoi body la trang ve y nhu cu, khong con gi thua.
+   ============================================================ */
+window.ERA_LECH_BAC = function () {
+  var c = timCanh(canhDang);
+  return (c && isFinite(c.lechBac)) ? c.lechBac : 0;
+};
+
 var nguoiDaKeo = false;
+var canhDang = CANH[0].id;
+
+function timCanh(id) {
+  for (var i = 0; i < CANH.length; i++) if (CANH[i].id === id) return CANH[i];
+  return null;
+}
 
 function veGocChuan() {
   if (!kp || nguoiDaKeo) return;
-  kp.set('view.fovtype', GOC.fovtype);
-  kp.set('view.hlookat', GOC.h);
-  kp.set('view.vlookat', GOC.v);
-  kp.set('view.fov', GOC.fov);
+  var c = timCanh(canhDang); if (!c) return;
+  kp.set('view.fovtype', c.goc.fovtype);
+  kp.set('view.hlookat', c.goc.h);
+  kp.set('view.vlookat', c.goc.v);
+  kp.set('view.fov', c.goc.fov);
+}
+
+/* An chu "Dang tai canh 360…" khi canh da san sang.
+   Nhanh `chua_co_anh` la LUOI AN TOAN cho canh chua cat tile: mo ra se den,
+   rat de bi chan doan nham la loi (bay T12). Hien 16/09 CA HAI canh deu co
+   anh that nen nhanh do khong chay - giu lai de them phan khu moi thi chi
+   phai them mot dong co, khoi viet lai.
+   Bao bang CHINH `#tai` da co san, KHONG thêm bang/nut moi
+   (Anh Tony da nhac 12/09: trang nay chi lam mot thu, dung tu them). */
+function baoThieuAnh() {
+  var t = document.getElementById('tai'); if (!t) return;
+  var c = timCanh(canhDang);
+  if (c && c.chua_co_anh) {
+    t.textContent = c.ten + ' — chưa có ảnh 360. Khung đã dựng sẵn, ' +
+                    'cắt tile vào pano/08-park-village/ là chạy.';
+    t.style.display = '';
+  } else {
+    t.style.display = 'none';
+  }
+}
+
+function veDS() {
+  var L = document.getElementById('ds'); if (!L) return;
+  L.innerHTML = '';
+  CANH.forEach(function (c) {
+    var e = document.createElement('button');
+    e.type = 'button';
+    e.className = 'k3d o' + (c.id === canhDang ? ' on' : '');
+    e.dataset.id = c.id;
+    e.textContent = c.ten;
+    e.onclick = function () { doiCanh(c.id); };
+    L.appendChild(e);
+  });
+}
+
+function doiCanh(id) {
+  if (!kp || id === canhDang) return;
+  canhDang = id;
+  /* 🔴 `loadscene(ten, ...)` KHONG nhay - y het `doiCanh()` trang Thuc te.
+     Vi vay ten scene ben tour.xml phai dung GACH DUOI, khong gach ngang. */
+  kp.call('loadscene(' + id + ', null, MERGE, BLEND(1.0))');
+  /* Doi canh la nguoi xem CO Y muon xem khung chuan cua canh do
+     => xoa co "da keo", roi lai xoay xuong nadir theo dung BAY 50. */
+  nguoiDaKeo = false;
+  veDS();
+  baoThieuAnh();
+  setTimeout(veGocChuan, 700);
+  setTimeout(veGocChuan, 1600);
 }
 
 embedpano({
@@ -173,13 +325,30 @@ embedpano({
   passQueryParameters: 'startscene,startlookat',
   onready: function (k) {
     kp = k;
-    var t = document.getElementById('tai');
-    if (t) t.style.display = 'none';
-    document.addEventListener('pointerdown', function () { nguoiDaKeo = true; },
-                              { once: true });
+    /* Mo bang ?startscene=... thi canh that co the KHAC CANH[0]
+       -> hoi lai krpano chu dung doan, keo khong thi chip sang sai o. */
+    var s = kp.get('xml.scene');
+    if (s && timCanh(s)) canhDang = s;
+    veDS();
+    baoThieuAnh();
+    /* 🔴 Listener KHONG con `{once:true}`: doi canh xong phai bat lai duoc
+       lan keo tiep theo, khong thi tu canh thu hai tro di keo chuot la
+       `veGocChuan` van giat khung hinh ve cho cu. */
+    document.addEventListener('pointerdown', function () { nguoiDaKeo = true; });
     setTimeout(veGocChuan, 700);
     setTimeout(veGocChuan, 1600);
   }
 });
 </script>
+
+<!-- 🌐 Qua cau dieu huong + thanh zoom — xem chu thich day du o tong-quan/index.html.
+     ADDITIVE: go 1 dong nay la trang ve y nhu cu. Dat TRUOC era-buoc.js. -->
+<script src="../era-globe.js?nc=20260916b"></script>
+
+<!-- 🧭 La ban 2D — CHI DE DOC, `pointer-events:none`, goc PHAI TREN.
+     Anh Tony chot 16/09: qua cau la CAN DIEU KHIEN cho iPad/dien thoai,
+     con chi huong thi tach ra cai nay. ADDITIVE: go 1 dong la mat han. -->
+<script src="../era-laban.js?nc=20260916"></script>
+
+<script src="../era-buoc.js?nc=20260915" data-buoc="gio-hang"></script>
 </body></html>

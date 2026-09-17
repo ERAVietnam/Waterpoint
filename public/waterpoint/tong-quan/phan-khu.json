@@ -3,6 +3,7 @@
   "_anh": "pano/tt-ngay/pano_%s.jpg - cung bo anh voi canh do, nen toa do khop 1:1. KHONG doi anh khac.",
   "_anh_xa": "khu1=The Marina · khu2=Aquaria · khu3=The Pearl · khu4=Park Village · khu5=Rivera · khu9=Solaria · khu10=Solaria Rise · khu11=Ehome Southgate",
   "_can_xac_nhan": "khu9: bundle React gan hotspotName Khu9 cho ST6/ST7/ST8/ST10, nhung nhan hien tren anh la 'Solaria'. Anh Tony xac nhan giup.",
+  "_ten_giu_nguyen": "🔴🔴 ANH TONY CHOT 15/09/2026: TRANG TONG QUAN GIU NGUYEN TEN GOC CDT — 'Aquaria · Rivera · The Pearl · Solaria · The Marina · Park Village · Solaria Rise · Ehome Southgate'. KHONG them tien to 'PK '. Ly do: trang nay la ban THAM KHAO theo tour cua chu dau tu, phai goi dung ten ho dat. ⚠️ Cung ngay do, ben trang Thuc te (gim-tong-quan.json, canh Flycam tong quan) Anh chot NGUOC LAI: ca 8 deu mang tien to 'PK ' vi do la nhan KHACH THAY. ⇒ HAI TRANG GOI KHAC TEN NHAU LA CO Y, KHONG PHAI LOI. 🔴 DUNG 'dong bo' hai ben cho khop — sua la pha dung y Anh Tony. Doi chieu id: aquaria=PK The Aqua · park-village=PK Park Village · rivera=PK Rivera · the-pearl=PK The Pearl · the-marina=PK The Marina · solaria=PK Solaria · solaria-rise=PK Solaria Rise · ehome-southgate=PK Ehome Southgate.",
   "_luat_mau": "era=true -> teal DAC. era=false -> teal trong 90%. Khong them mau moi (luat 2 design system).",
   "phan_khu": [
     {
