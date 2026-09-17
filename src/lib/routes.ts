@@ -8,6 +8,7 @@ export const WP_ROUTES = {
   home: "/",
   tongQuan: "/tong-quan",
   giohang: "/giohang",
+  tienich: "/tienich",
 } as const;
 
 export default WP_ROUTES;
