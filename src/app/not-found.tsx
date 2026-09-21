@@ -1,11 +1,29 @@
-import { redirect } from "next/navigation";
+"use client";
+
+import { useEffect } from "react";
 import { WP_ROUTES } from "@/lib/routes";
 
 /* Moi route khong ton tai (404) tu dong quay ve trang chu.
-   force-dynamic de redirect() chay luc request (mac dinh _not-found bi
-   prerender tinh luc build nen redirect khong kich hoat). */
-export const dynamic = "force-dynamic";
-
+   Dang CLIENT component (khong dung redirect() server-side) de tuong thich
+   voi output: "export" — host tinh se serve trang nay roi JS doi ve home. */
 export default function NotFound() {
-  redirect(WP_ROUTES.home);
+  useEffect(() => {
+    window.location.replace(WP_ROUTES.home);
+  }, []);
+
+  return (
+    <main
+      style={{
+        minHeight: "100dvh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        background: "#000",
+        color: "#7fd3e3",
+        fontFamily: "Montserrat, sans-serif",
+      }}
+    >
+      <p>Đang quay về trang chủ…</p>
+    </main>
+  );
 }
