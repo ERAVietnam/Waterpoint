@@ -41,6 +41,7 @@ function timNguon(): { ma: string; ten: string } | null {
 export function LeadPopup() {
   const [nguon, setNguon] = useState<{ ma: string; ten: string } | null>(null);
   const [hien, setHien] = useState(false);
+  const [daHienLanDau, setDaHienLanDau] = useState(false);
   const [dangGui, setDangGui] = useState(false);
   const [daGui, setDaGui] = useState(false);
   const [loi, setLoi] = useState("");
@@ -51,6 +52,7 @@ export function LeadPopup() {
       const n = timNguon();
       if (!n) return;
       setNguon(n);
+      setDaHienLanDau(true);
       setHien(true);
       sessionStorage.setItem(DA_HIEN_KEY, "1");
     }, 800);
@@ -243,6 +245,36 @@ export function LeadPopup() {
           </>
         )}
       </div>
+
+      {/* Nút floating góc phải dưới — hiện sau khi popup đã hiện lần đầu
+          và đang đóng; bấm để mở lại popup. */}
+      {nguon && !hien && daHienLanDau && (
+        <button
+          type="button"
+          aria-label="Mở form đăng ký nhận giỏ hàng"
+          onClick={() => setHien(true)}
+          style={{
+            position: "fixed",
+            right: 20,
+            bottom: 20,
+            zIndex: 99998,
+            width: 56,
+            height: 56,
+            borderRadius: "50%",
+            background: teal,
+            border: `2px solid ${vang}`,
+            color: "#fff",
+            fontSize: 24,
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: "0 6px 20px rgba(0,0,0,.45)",
+          }}
+        >
+          📋
+        </button>
+      )}
     </div>
   );
 }
