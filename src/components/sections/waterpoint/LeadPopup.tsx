@@ -211,13 +211,19 @@ export function LeadPopup() {
                 fontWeight: 800,
                 textTransform: "uppercase",
                 letterSpacing: "0.02em",
-                color: vang,
                 textAlign: "center",
               }}
             >
-              Đăng ký nhận
+              <span style={{ color: vang }}>Đăng ký nhận</span>
               <br />
-              giỏ hàng độc quyền
+              <span
+                style={{
+                  color: "#ff3b45",
+                  textShadow: "0 0 10px rgba(255,59,69,.45)",
+                }}
+              >
+                giỏ hàng độc quyền
+              </span>
             </h3>
             <p style={{ margin: "0 0 18px", fontSize: 13, opacity: 0.75, textAlign: "center" }}>
               Aquaria &amp; Park Village — ERA Vietnam phân phối độc quyền
