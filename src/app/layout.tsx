@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { LeadPopup } from "@/components/sections/waterpoint/LeadPopup";
 
 /* URL goc cua site (dung de dung link tuyet doi cho OG image khi share).
    Khi deploy len that, set bien moi truong NEXT_PUBLIC_SITE_URL,
@@ -52,7 +53,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" data-scroll-behavior="smooth">
-      <body>{children}</body>
+      <body>
+        {children}
+        <LeadPopup />
+      </body>
     </html>
   );
 }
