@@ -1,0 +1,164 @@
+<krpano>
+
+<!-- CAN ERA DOC QUYEN PK THE AQUA - BO KHUNG CHO LOP ANH THAT (scene pk_aqua).
+     SINH TU DONG boi `01-CONG-CU/can-matbang-flycam/tao-lo-aqua.py` (ham
+     ghi_xml_that, khop-mai-tung-can.py goi lai) tu truong `diem_that` cua
+     lo-goc-aqua.json - DUNG SUA TAY.
+     Ten `lo_t_<ma>` - index.html `eraHienLo()` bat bo nay khi dang o lop anh that,
+     bat bo `lo_<ma>` (lo-aqua.xml) khi o lop ban ve. Cung `ma` => cung the thong tin.
+     Vi sao 2 bo: krpano 1.19 KHONG ve lai da giac khi doi point[].ath/atv luc chay. -->
+
+<style name="kieu_lo_aqua_that" keep="true" zorder="5"
+       fillcolor="0xFFFFFF" fillalpha="0.10"
+       bordercolor="0xFFFFFF" borderalpha="0.90" borderwidth="2.0"
+       handcursor="true" visible="false"
+       onover="js(eraRePhim(get(ma),true))"
+       onout="js(eraRePhim(get(ma),false))"
+       onclick="js(eraChonLo(get(ma)))" />
+
+<hotspot name="lo_t_D4_01" style="kieu_lo_aqua_that" ma="D4-01" loai="gardengrand">
+  <point ath="60.6535" atv="44.8563" /> <point ath="62.5159" atv="43.1357" /> <point ath="65.589" atv="43.8826" /> <point ath="63.8712" atv="45.7025" />
+</hotspot>
+<hotspot name="lo_t_D4_06" style="kieu_lo_aqua_that" ma="D4-06" loai="gardengrand">
+  <point ath="54.4647" atv="40.3659" /> <point ath="53.908" atv="40.1729" /> <point ath="53.7712" atv="40.2568" /> <point ath="53.5212" atv="40.1684" /> <point ath="53.6376" atv="40.0778" /> <point ath="53.0615" atv="39.8723" /> <point ath="53.1111" atv="39.8284" /> <point ath="52.9786" atv="39.7806" /> <point ath="52.9187" atv="39.8207" /> <point ath="53.003" atv="39.8588" /> <point ath="52.6099" atv="40.1205" /> <point ath="52.4489" atv="40.0691" /> <point ath="52.3647" atv="40.1244" /> <point ath="52.4875" atv="40.2013" /> <point ath="52.2948" atv="40.3279" /> <point ath="52.1946" atv="40.2986" /> <point ath="51.8902" atv="40.4962" /> <point ath="51.8002" atv="40.4703" /> <point ath="51.6748" atv="40.5194" /> <point ath="52.5152" atv="40.8347" /> <point ath="52.6508" atv="40.7556" /> <point ath="53.4771" atv="41.0551" />
+</hotspot>
+<hotspot name="lo_t_D13_04" style="kieu_lo_aqua_that" ma="D13-04" loai="gardengrand">
+  <point ath="55.0046" atv="44.399" /> <point ath="53.6571" atv="45.4023" /> <point ath="52.7677" atv="45.0783" /> <point ath="52.9471" atv="44.9184" /> <point ath="52.7259" atv="44.8648" /> <point ath="52.5728" atv="45.0058" /> <point ath="51.7671" atv="44.701" /> <point ath="53.0772" atv="43.8893" /> <point ath="53.9886" atv="44.2354" /> <point ath="54.1922" atv="44.091" />
+</hotspot>
+<hotspot name="lo_t_D13_05" style="kieu_lo_aqua_that" ma="D13-05" loai="gardengrand">
+  <point ath="52.9455" atv="43.7873" /> <point ath="51.9953" atv="44.385" /> <point ath="50.1265" atv="43.6772" /> <point ath="50.1252" atv="43.6208" /> <point ath="50.2878" atv="43.6124" /> <point ath="50.2499" atv="43.5785" /> <point ath="50.4153" atv="43.4421" /> <point ath="50.5163" atv="43.4366" /> <point ath="50.5322" atv="43.3695" /> <point ath="50.6328" atv="43.3641" /> <point ath="50.9359" atv="43.4844" /> <point ath="51.1506" atv="43.4411" /> <point ath="51.2655" atv="43.3678" /> <point ath="51.2161" atv="43.249" /> <point ath="51.1225" atv="43.2394" /> <point ath="51.5845" atv="42.9436" /> <point ath="51.7204" atv="42.9249" /> <point ath="53.2363" atv="43.491" /> <point ath="52.9455" atv="43.7873" />
+</hotspot>
+<hotspot name="lo_t_D13_11" style="kieu_lo_aqua_that" ma="D13-11" loai="gardengrand">
+  <point ath="49.6859" atv="47.7005" /> <point ath="49.4556" atv="47.6053" /> <point ath="49.5363" atv="47.5313" /> <point ath="48.3331" atv="47.0862" /> <point ath="48.5514" atv="46.9231" /> <point ath="48.044" atv="46.7351" /> <point ath="46.7603" atv="47.5953" /> <point ath="47.2869" atv="47.7999" /> <point ath="47.4332" atv="47.7313" /> <point ath="48.6334" atv="48.166" /> <point ath="49.3211" atv="47.7112" /> <point ath="49.5368" atv="47.79" />
+</hotspot>
+<hotspot name="lo_t_D14_02" style="kieu_lo_aqua_that" ma="D14-02" loai="gardengrand">
+  <point ath="42.6079" atv="52.0801" /> <point ath="43.8438" atv="51.3843" /> <point ath="41.9767" atv="50.5985" /> <point ath="40.3714" atv="51.4378" /> <point ath="40.9703" atv="51.7265" /> <point ath="41.3965" atv="51.553" />
+</hotspot>
+<hotspot name="lo_t_D14_04" style="kieu_lo_aqua_that" ma="D14-04" loai="gardengrand">
+  <point ath="39.5581" atv="55.025" /> <point ath="38.297" atv="54.3385" /> <point ath="37.1932" atv="54.7655" /> <point ath="36.7376" atv="54.5366" /> <point ath="35.6883" atv="54.921" /> <point ath="37.3495" atv="55.8919" />
+</hotspot>
+<hotspot name="lo_t_D14_06" style="kieu_lo_aqua_that" ma="D14-06" loai="gardengrand">
+  <point ath="42.5792" atv="59.0737" /> <point ath="43.4504" atv="58.705" /> <point ath="42.9179" atv="58.4429" /> <point ath="44.1598" atv="57.9008" /> <point ath="44.2964" atv="57.947" /> <point ath="44.9895" atv="57.6306" /> <point ath="44.5147" atv="57.4644" /> <point ath="44.2626" atv="57.5637" /> <point ath="43.042" atv="56.9961" /> <point ath="40.4954" atv="58.0527" />
+</hotspot>
+<hotspot name="lo_t_D14_07" style="kieu_lo_aqua_that" ma="D14-07" loai="gardengrand">
+  <point ath="42.1781" atv="59.5049" /> <point ath="41.0971" atv="58.9837" /> <point ath="40.7213" atv="59.1161" /> <point ath="40.3056" atv="58.9067" /> <point ath="40.6474" atv="58.7595" /> <point ath="39.7873" atv="58.3179" /> <point ath="37.23" atv="59.2432" /> <point ath="38.5022" atv="59.9395" /> <point ath="38.213" atv="60.0558" /> <point ath="39.2784" atv="60.6125" />
+</hotspot>
+<hotspot name="lo_t_D14_08" style="kieu_lo_aqua_that" ma="D14-08" loai="gardengrand">
+  <point ath="39.0472" atv="58.0387" /> <point ath="38.2228" atv="57.5854" /> <point ath="38.1149" atv="57.6109" /> <point ath="36.9254" atv="56.837" /> <point ath="36.2957" atv="57.0565" /> <point ath="36.1786" atv="57.0033" /> <point ath="35.8976" atv="57.0991" /> <point ath="35.9768" atv="57.1655" /> <point ath="34.1258" atv="57.77" /> <point ath="35.0101" atv="58.3312" /> <point ath="35.3424" atv="58.2372" /> <point ath="36.5124" atv="58.9371" />
+</hotspot>
+<hotspot name="lo_t_D14_09" style="kieu_lo_aqua_that" ma="D14-09" loai="gardengrand">
+  <point ath="36.4359" atv="56.5786" /> <point ath="34.5399" atv="55.3771" /> <point ath="32.1228" atv="56.1368" /> <point ath="33.1162" atv="56.8322" /> <point ath="32.8197" atv="56.9354" /> <point ath="33.6476" atv="57.4953" />
+</hotspot>
+<hotspot name="lo_t_D14_10" style="kieu_lo_aqua_that" ma="D14-10" loai="gardengrand">
+  <point ath="31.8489" atv="55.8186" /> <point ath="31.0901" atv="56.0402" /> <point ath="30.9736" atv="56.0124" /> <point ath="30.5421" atv="55.6848" /> <point ath="30.7158" atv="55.5992" /> <point ath="30.6824" atv="55.4157" /> <point ath="29.6153" atv="54.6364" /> <point ath="32.0557" atv="53.832" /> <point ath="33.4986" atv="54.7211" /> <point ath="33.7008" atv="54.9504" /> <point ath="33.9864" atv="55.0556" /> <point ath="31.8489" atv="55.8186" />
+</hotspot>
+<hotspot name="lo_t_D14_11" style="kieu_lo_aqua_that" ma="D14-11" loai="gardengrand">
+  <point ath="34.2219" atv="54.5323" /> <point ath="37.1638" atv="53.4387" /> <point ath="35.7657" atv="52.6007" /> <point ath="33.6887" atv="53.347" /> <point ath="33.2846" atv="53.0792" /> <point ath="32.4513" atv="53.3561" />
+</hotspot>
+<hotspot name="lo_t_D14_14" style="kieu_lo_aqua_that" ma="D14-14" loai="gardengrand">
+  <point ath="41.9215" atv="49.9932" /> <point ath="43.4296" atv="49.1444" /> <point ath="42.0048" atv="48.5235" /> <point ath="40.4756" atv="49.3434" /> <point ath="40.6607" atv="49.4608" /> <point ath="40.4204" atv="49.5648" /> <point ath="40.5494" atv="49.6376" /> <point ath="40.8298" atv="49.5156" />
+</hotspot>
+<hotspot name="lo_t_D15_09" style="kieu_lo_aqua_that" ma="D15-09" loai="canalgrand">
+  <point ath="20.1457" atv="57.6031" /> <point ath="20.0129" atv="57.3838" /> <point ath="20.4241" atv="57.3009" /> <point ath="19.3393" atv="55.9747" /> <point ath="17.6775" atv="56.2428" /> <point ath="17.606" atv="56.1766" /> <point ath="17.3911" atv="56.2093" /> <point ath="17.4188" atv="56.2823" /> <point ath="16.5295" atv="56.4131" /> <point ath="17.6513" atv="58.0039" />
+</hotspot>
+<hotspot name="lo_t_D15_10" style="kieu_lo_aqua_that" ma="D15-10" loai="canalgrand">
+  <point ath="26.3614" atv="57.2415" /> <point ath="22.6902" atv="58.0599" /> <point ath="22.0323" atv="57.3623" /> <point ath="22.82" atv="57.2444" /> <point ath="22.6241" atv="57.0383" /> <point ath="22.215" atv="57.118" /> <point ath="21.5499" atv="56.4406" /> <point ath="24.7893" atv="55.7766" /> <point ath="25.4777" atv="56.4345" /> <point ath="25.0656" atv="56.5503" /> <point ath="25.2565" atv="56.7312" /> <point ath="25.691" atv="56.6331" />
+</hotspot>
+<hotspot name="lo_t_D15_13" style="kieu_lo_aqua_that" ma="D15-13" loai="canalgrand">
+  <point ath="33.8967" atv="62.5436" /> <point ath="29.9281" atv="63.5701" /> <point ath="28.8889" atv="62.8493" /> <point ath="29.3747" atv="62.7359" /> <point ath="28.9776" atv="62.5258" /> <point ath="28.1093" atv="62.7244" /> <point ath="27.0945" atv="61.9498" /> <point ath="31.2751" atv="61.0084" /> <point ath="32.3436" atv="61.6488" /> <point ath="31.8768" atv="61.8024" /> <point ath="32.2162" atv="61.978" /> <point ath="32.7149" atv="61.885" />
+</hotspot>
+<hotspot name="lo_t_D16_01" style="kieu_lo_aqua_that" ma="D16-01" loai="gardengrand">
+  <point ath="1.1575" atv="66.1899" /> <point ath="1.0292" atv="64.6491" /> <point ath="0.6765" atv="64.6404" /> <point ath="0.6523" atv="64.2458" /> <point ath="0.3067" atv="64.2487" /> <point ath="0.1596" atv="64.5083" /> <point ath="-0.6669" atv="64.5603" /> <point ath="-0.6986" atv="64.6593" /> <point ath="-2.8432" atv="64.6564" /> <point ath="-2.9507" atv="65.7296" /> <point ath="-0.5299" atv="65.7333" /> <point ath="-0.4915" atv="66.201" />
+</hotspot>
+<hotspot name="lo_t_D16_02" style="kieu_lo_aqua_that" ma="D16-02" loai="canalgrand">
+  <point ath="1.3227" atv="64.1597" /> <point ath="1.1879" atv="62.5862" /> <point ath="-0.2149" atv="62.5982" /> <point ath="-0.2346" atv="63.0662" /> <point ath="-1.0998" atv="63.0664" /> <point ath="-1.1268" atv="62.91" /> <point ath="-2.873" atv="62.882" /> <point ath="-2.9656" atv="64.1565" />
+</hotspot>
+<hotspot name="lo_t_D17_01" style="kieu_lo_aqua_that" ma="D17-01" loai="gardengrand">
+  <point ath="5.3355" atv="78.8123" /> <point ath="4.4468" atv="76.9523" /> <point ath="-3.4861" atv="77.003" /> <point ath="-3.8051" atv="78.3029" /> <point ath="1.4667" atv="78.2968" /> <point ath="1.6578" atv="78.8636" />
+</hotspot>
+<hotspot name="lo_t_D17_03" style="kieu_lo_aqua_that" ma="D17-03" loai="gardengrand">
+  <point ath="2.7788" atv="73.5435" /> <point ath="2.4327" atv="71.8472" /> <point ath="-3.1666" atv="71.8709" /> <point ath="-3.3499" atv="73.0548" /> <point ath="0.2328" atv="73.0557" /> <point ath="0.3155" atv="73.5699" />
+</hotspot>
+<hotspot name="lo_t_D17_04" style="kieu_lo_aqua_that" ma="D17-04" loai="gardengrand">
+  <point ath="2.4351" atv="71.2571" /> <point ath="2.1476" atv="69.5246" /> <point ath="0.1991" atv="69.5456" /> <point ath="0.1832" atv="70.0664" /> <point ath="-2.9087" atv="70.0552" /> <point ath="-3.0182" atv="71.2692" />
+</hotspot>
+<hotspot name="lo_t_D19_05" style="kieu_lo_aqua_that" ma="D19-05" loai="canalgrand">
+  <point ath="-77.1293" atv="63.5882" /> <point ath="-74.0291" atv="63.2526" /> <point ath="-74.568" atv="62.5532" /> <point ath="-73.9059" atv="62.4606" /> <point ath="-74.522" atv="61.599" /> <point ath="-77.4147" atv="61.9165" /> <point ath="-77.6498" atv="61.6011" /> <point ath="-78.1149" atv="61.6454" />
+</hotspot>
+<hotspot name="lo_t_D21_03" style="kieu_lo_aqua_that" ma="D21-03" loai="gardengrand">
+  <point ath="-65.1034" atv="65.5948" /> <point ath="-61.486" atv="64.8809" /> <point ath="-63.2598" atv="63.5933" /> <point ath="-66.7198" atv="64.2516" />
+</hotspot>
+<hotspot name="lo_t_D22_11" style="kieu_lo_aqua_that" ma="D22-11" loai="gardenvilla">
+  <point ath="-28.3789" atv="67.9939" /> <point ath="-32.1621" atv="67.1928" /> <point ath="-30.1825" atv="66.1191" /> <point ath="-27.6321" atv="66.5784" /> <point ath="-28.0662" atv="66.8857" /> <point ath="-27.112" atv="67.0598" />
+</hotspot>
+<hotspot name="lo_t_D24_04" style="kieu_lo_aqua_that" ma="D24-04" loai="canalgrand">
+  <point ath="-18.8805" atv="60.84" /> <point ath="-13.258" atv="61.5574" /> <point ath="-14.9593" atv="64.4318" /> <point ath="-20.0837" atv="63.796" /> <point ath="-20.7174" atv="62.9606" />
+</hotspot>
+<hotspot name="lo_t_D25_04" style="kieu_lo_aqua_that" ma="D25-04" loai="canalgrand">
+  <point ath="-42.4062" atv="52.9077" /> <point ath="-40.5162" atv="53.5667" /> <point ath="-39.0271" atv="54.1921" /> <point ath="-41.1746" atv="55.4362" /> <point ath="-41.8319" atv="55.2764" /> <point ath="-42.4994" atv="55.3711" /> <point ath="-45.0405" atv="54.1857" />
+</hotspot>
+<hotspot name="lo_t_D26_02" style="kieu_lo_aqua_that" ma="D26-02" loai="canalgrand">
+  <point ath="-13.0289" atv="59.2409" /> <point ath="-14.6974" atv="59.0004" /> <point ath="-14.2153" atv="58.3581" /> <point ath="-14.5259" atv="58.3244" /> <point ath="-14.6923" atv="58.4873" /> <point ath="-16.3352" atv="58.2935" /> <point ath="-15.4193" atv="56.9719" /> <point ath="-13.8983" atv="57.1443" /> <point ath="-14.0697" atv="57.3351" /> <point ath="-13.5586" atv="57.4775" /> <point ath="-13.3247" atv="56.9087" /> <point ath="-11.7763" atv="57.1224" />
+</hotspot>
+<hotspot name="lo_t_D26_04" style="kieu_lo_aqua_that" ma="D26-04" loai="canalgrand">
+  <point ath="-21.1199" atv="57.7432" /> <point ath="-21.9309" atv="57.5807" /> <point ath="-21.9458" atv="57.5086" /> <point ath="-22.1927" atv="57.5575" /> <point ath="-22.286" atv="57.5177" /> <point ath="-22.0108" atv="57.347" /> <point ath="-21.7559" atv="56.899" /> <point ath="-22.1501" atv="56.806" /> <point ath="-22.5202" atv="56.9448" /> <point ath="-23.1659" atv="56.8246" /> <point ath="-23.5426" atv="56.6606" /> <point ath="-22.4662" atv="55.6667" /> <point ath="-21.486" atv="55.8664" /> <point ath="-21.4693" atv="56.0809" /> <point ath="-21.155" atv="56.1691" /> <point ath="-20.8358" atv="56.1011" /> <point ath="-20.5526" atv="55.7395" /> <point ath="-19.4716" atv="55.9704" /> <point ath="-21.1199" atv="57.7432" />
+</hotspot>
+<hotspot name="lo_t_D27_02" style="kieu_lo_aqua_that" ma="D27-02" loai="canalgrand">
+  <point ath="-32.2944" atv="54.0059" /> <point ath="-30.867" atv="52.9208" /> <point ath="-31.2783" atv="52.7825" /> <point ath="-31.1539" atv="52.6618" /> <point ath="-31.2908" atv="52.6229" /> <point ath="-31.3888" atv="52.684" /> <point ath="-31.6276" atv="52.6154" /> <point ath="-31.7367" atv="52.6844" /> <point ath="-32.1776" atv="52.5553" /> <point ath="-32.112" atv="52.4852" /> <point ath="-32.2803" atv="52.4354" /> <point ath="-32.4694" atv="52.5471" /> <point ath="-33.2203" atv="52.3192" /> <point ath="-34.4464" atv="53.207" /> <point ath="-33.0815" atv="53.6554" /> <point ath="-33.2637" atv="53.8103" /> <point ath="-32.9482" atv="53.9057" /> <point ath="-32.7894" atv="53.8597" />
+</hotspot>
+<hotspot name="lo_t_D27_05" style="kieu_lo_aqua_that" ma="D27-05" loai="canalgrand">
+  <point ath="-40.6948" atv="51.2168" /> <point ath="-40.4299" atv="50.9901" /> <point ath="-38.8589" atv="50.1367" /> <point ath="-38.6728" atv="50.2083" /> <point ath="-38.3505" atv="50.0038" /> <point ath="-39.258" atv="49.5858" /> <point ath="-39.8045" atv="49.8786" /> <point ath="-40.1103" atv="49.7554" /> <point ath="-39.9091" atv="49.6202" /> <point ath="-40.6537" atv="49.2823" /> <point ath="-41.5126" atv="49.727" /> <point ath="-41.7536" atv="49.6355" /> <point ath="-42.4329" atv="49.9889" /> <point ath="-41.4679" atv="50.4525" /> <point ath="-41.1583" atv="50.2751" /> <point ath="-40.8257" atv="50.4018" /> <point ath="-41.583" atv="50.8227" />
+</hotspot>
+<hotspot name="lo_t_D27_06" style="kieu_lo_aqua_that" ma="D27-06" loai="gardengrand">
+  <point ath="-43.1968" atv="50.235" /> <point ath="-42.9995" atv="50.1419" /> <point ath="-42.8527" atv="50.1953" /> <point ath="-42.5118" atv="50.0221" /> <point ath="-42.6074" atv="49.9681" /> <point ath="-41.1574" atv="49.2164" /> <point ath="-42.0607" atv="48.7833" /> <point ath="-41.906" atv="48.657" /> <point ath="-42.0915" atv="48.5422" /> <point ath="-41.9703" atv="48.4479" /> <point ath="-42.1625" atv="48.3639" /> <point ath="-42.3139" atv="48.4105" /> <point ath="-42.5036" atv="48.3379" /> <point ath="-42.6059" atv="48.3947" /> <point ath="-42.2838" atv="48.5601" /> <point ath="-43.6328" atv="49.2319" /> <point ath="-44.1561" atv="48.9889" /> <point ath="-44.9228" atv="49.3465" /> <point ath="-44.0608" atv="49.7908" /> <point ath="-44.2453" atv="49.8997" /> <point ath="-44.0095" atv="50.0096" /> <point ath="-43.8358" atv="49.9315" />
+</hotspot>
+<hotspot name="lo_t_D27_07" style="kieu_lo_aqua_that" ma="D27-07" loai="canalgrand">
+  <point ath="-45.551" atv="51.4041" /> <point ath="-47.3021" atv="50.5651" /> <point ath="-46.4833" atv="50.1791" /> <point ath="-46.2153" atv="50.2883" /> <point ath="-45.9694" atv="50.2067" /> <point ath="-46.5389" atv="49.8828" /> <point ath="-45.7247" atv="49.4871" /> <point ath="-43.6913" atv="50.3925" /> <point ath="-44.54" atv="50.859" /> <point ath="-44.7386" atv="50.8286" /> <point ath="-44.9202" atv="50.9203" /> <point ath="-44.7719" atv="51.0162" />
+</hotspot>
+<hotspot name="lo_t_D27_08" style="kieu_lo_aqua_that" ma="D27-08" loai="canalgrand">
+  <point ath="-47.8631" atv="52.5206" /> <point ath="-49.8921" atv="51.4204" /> <point ath="-48.9007" atv="50.9949" /> <point ath="-48.2948" atv="51.3223" /> <point ath="-48.1103" atv="51.2022" /> <point ath="-48.3113" atv="51.0678" /> <point ath="-47.464" atv="50.6834" /> <point ath="-45.8046" atv="51.5605" />
+</hotspot>
+<hotspot name="lo_t_D27_09" style="kieu_lo_aqua_that" ma="D27-09" loai="canalgrand">
+  <point ath="-50.7075" atv="53.6522" /> <point ath="-49.8507" atv="53.303" /> <point ath="-49.9944" atv="53.2083" /> <point ath="-49.6583" atv="53.0685" /> <point ath="-49.4836" atv="53.1498" /> <point ath="-48.4655" atv="52.7129" /> <point ath="-48.5976" atv="52.6284" /> <point ath="-48.7141" atv="52.6662" /> <point ath="-50.4109" atv="51.7257" /> <point ath="-51.3316" atv="52.0986" /> <point ath="-50.7842" atv="52.4331" /> <point ath="-51.1182" atv="52.5673" /> <point ath="-51.3845" atv="52.4261" /> <point ath="-52.2328" atv="52.7564" />
+</hotspot>
+<hotspot name="lo_t_D27_10" style="kieu_lo_aqua_that" ma="D27-10" loai="canalgrand">
+  <point ath="-53.8992" atv="54.6558" /> <point ath="-55.3107" atv="53.7376" /> <point ath="-55.2984" atv="53.6608" /> <point ath="-54.4149" atv="53.3919" /> <point ath="-54.4136" atv="53.525" /> <point ath="-54.1018" atv="53.5123" /> <point ath="-53.0153" atv="53.1179" /> <point ath="-52.8737" atv="53.1265" /> <point ath="-51.5876" atv="53.9785" /> <point ath="-52.2899" atv="54.2465" /> <point ath="-52.6017" atv="54.0588" /> <point ath="-52.8108" atv="54.0607" /> <point ath="-53.0871" atv="54.2002" /> <point ath="-53.0145" atv="54.3756" /> <point ath="-53.8992" atv="54.6558" />
+</hotspot>
+<hotspot name="lo_t_D28_02" style="kieu_lo_aqua_that" ma="D28-02" loai="gardengrand">
+  <point ath="0.9537" atv="58.0996" /> <point ath="0.8749" atv="56.8396" /> <point ath="-0.1458" atv="56.8484" /> <point ath="-0.161" atv="57.2326" /> <point ath="-2.1623" atv="57.2255" /> <point ath="-2.1792" atv="57.1075" /> <point ath="-3.0222" atv="57.0948" /> <point ath="-3.039" atv="57.0198" /> <point ath="-3.2256" atv="57.0161" /> <point ath="-3.1707" atv="57.1776" /> <point ath="-2.8925" atv="57.2257" /> <point ath="-2.9024" atv="57.3436" /> <point ath="-2.218" atv="57.3752" /> <point ath="-2.2609" atv="58.101" />
+</hotspot>
+<hotspot name="lo_t_D29_07" style="kieu_lo_aqua_that" ma="D29-07" loai="riverfront">
+  <point ath="-42.5694" atv="43.9985" /> <point ath="-39.2303" atv="45.418" /> <point ath="-42.0732" atv="47.0724" /> <point ath="-44.7892" atv="45.818" /> <point ath="-43.6746" atv="45.1852" /> <point ath="-43.0812" atv="44.811" /> <point ath="-42.8173" atv="44.4594" />
+</hotspot>
+<hotspot name="lo_t_D29_09" style="kieu_lo_aqua_that" ma="D29-09" loai="gardengrand">
+  <point ath="-47.4108" atv="48.03" /> <point ath="-49.3165" atv="46.9885" /> <point ath="-47.8847" atv="46.3208" /> <point ath="-47.1584" atv="46.614" /> <point ath="-47.649" atv="46.8227" /> <point ath="-46.3269" atv="47.512" />
+</hotspot>
+<hotspot name="lo_t_D29_10" style="kieu_lo_aqua_that" ma="D29-10" loai="gardengrand">
+  <point ath="-50.3044" atv="48.8471" /> <point ath="-50.105" atv="48.7515" /> <point ath="-50.1705" atv="48.7004" /> <point ath="-49.3546" atv="48.3491" /> <point ath="-49.1042" atv="48.4768" /> <point ath="-48.1068" atv="48.0062" /> <point ath="-48.1978" atv="47.9569" /> <point ath="-48.4205" atv="48.0467" /> <point ath="-50.1423" atv="47.075" /> <point ath="-50.9314" atv="47.4071" /> <point ath="-50.8489" atv="47.4692" /> <point ath="-51.1931" atv="47.6114" /> <point ath="-51.3008" atv="47.5592" /> <point ath="-51.9862" atv="47.8362" />
+</hotspot>
+<hotspot name="lo_t_D29_11" style="kieu_lo_aqua_that" ma="D29-11" loai="gardengrand">
+  <point ath="-52.5715" atv="49.9348" /> <point ath="-54.2839" atv="48.8232" /> <point ath="-53.4018" atv="48.4951" /> <point ath="-53.2141" atv="48.6168" /> <point ath="-52.9496" atv="48.4941" /> <point ath="-53.148" atv="48.3666" /> <point ath="-52.3905" atv="48.041" /> <point ath="-50.8496" atv="48.942" /> <point ath="-51.866" atv="49.3544" /> <point ath="-51.584" atv="49.5682" />
+</hotspot>
+<hotspot name="lo_t_D29_12" style="kieu_lo_aqua_that" ma="D29-12" loai="gardengrand">
+  <point ath="-55.2463" atv="50.8255" /> <point ath="-56.8084" atv="49.6683" /> <point ath="-55.9867" atv="49.3915" /> <point ath="-55.6401" atv="49.5604" /> <point ath="-55.4386" atv="49.458" /> <point ath="-55.6596" atv="49.2575" /> <point ath="-54.6153" atv="48.909" /> <point ath="-52.7978" atv="50.1436" /> <point ath="-53.7333" atv="50.5183" /> <point ath="-54.1366" atv="50.3737" />
+</hotspot>
+<hotspot name="lo_t_D29_13" style="kieu_lo_aqua_that" ma="D29-13" loai="gardengrand">
+  <point ath="-57.9057" atv="51.8443" /> <point ath="-56.991" atv="51.5525" /> <point ath="-57.2174" atv="51.3697" /> <point ath="-56.6986" atv="51.2006" /> <point ath="-56.377" atv="51.3169" /> <point ath="-55.9678" atv="51.1682" /> <point ath="-56.1601" atv="51.0323" /> <point ath="-56.0474" atv="50.9831" /> <point ath="-57.4331" atv="49.9734" /> <point ath="-58.2094" atv="50.2204" /> <point ath="-57.9984" atv="50.3992" /> <point ath="-58.3544" atv="50.5106" /> <point ath="-58.5267" atv="50.3935" /> <point ath="-59.4284" atv="50.6566" />
+</hotspot>
+<hotspot name="lo_t_D30_07" style="kieu_lo_aqua_that" ma="D30-07" loai="canalgrand">
+  <point ath="-79.5518" atv="58.9495" /> <point ath="-77.8336" atv="58.7877" /> <point ath="-77.7305" atv="58.9368" /> <point ath="-76.0265" atv="58.7509" /> <point ath="-76.5461" atv="57.8477" /> <point ath="-76.9734" atv="57.8844" /> <point ath="-77.2544" atv="57.3591" /> <point ath="-80.1165" atv="57.6354" />
+</hotspot>
+<hotspot name="lo_t_D30_08" style="kieu_lo_aqua_that" ma="D30-08" loai="gardengrand">
+  <point ath="-80.1953" atv="57.1208" /> <point ath="-78.4536" atv="56.9607" /> <point ath="-78.3483" atv="57.0812" /> <point ath="-77.4582" atv="56.945" /> <point ath="-77.7915" atv="56.2862" /> <point ath="-77.3326" atv="56.226" /> <point ath="-77.7544" atv="55.388" /> <point ath="-79.2396" atv="55.5381" /> <point ath="-79.1907" atv="55.702" /> <point ath="-80.7007" atv="55.8356" />
+</hotspot>
+<hotspot name="lo_t_D30_11" style="kieu_lo_aqua_that" ma="D30-11" loai="gardengrand">
+  <point ath="-71.1758" atv="55.2513" /> <point ath="-70.6422" atv="55.1612" /> <point ath="-70.8011" atv="54.7774" /> <point ath="-69.3614" atv="54.5217" /> <point ath="-69.1933" atv="54.6961" /> <point ath="-68.0478" atv="54.4765" /> <point ath="-69.1108" atv="53.2315" /> <point ath="-68.9864" atv="53.1974" /> <point ath="-69.0462" atv="53.1251" /> <point ath="-69.1852" atv="53.1412" /> <point ath="-69.3472" atv="52.943" /> <point ath="-70.5342" atv="53.1593" /> <point ath="-70.4057" atv="53.3544" /> <point ath="-70.8272" atv="53.4282" /> <point ath="-70.9913" atv="53.2388" /> <point ath="-72.049" atv="53.3533" /> <point ath="-70.9394" atv="54.8656" /> <point ath="-71.292" atv="55.0972" />
+</hotspot>
+<hotspot name="lo_t_D30_12" style="kieu_lo_aqua_that" ma="D30-12" loai="gardengrand">
+  <point ath="-67.256" atv="54.4425" /> <point ath="-68.6945" atv="52.8544" /> <point ath="-67.3717" atv="52.588" /> <point ath="-67.1931" atv="52.7386" /> <point ath="-66.9378" atv="52.6847" /> <point ath="-67.0688" atv="52.4932" /> <point ath="-65.8967" atv="52.2694" /> <point ath="-64.5674" atv="53.6112" /> <point ath="-66.1749" atv="53.9522" /> <point ath="-65.9657" atv="54.169" />
+</hotspot>
+<hotspot name="lo_t_D30_13" style="kieu_lo_aqua_that" ma="D30-13" loai="gardengrand">
+  <point ath="-63.4572" atv="53.3093" /> <point ath="-61.9414" atv="52.9222" /> <point ath="-61.7393" atv="53.0784" /> <point ath="-60.6568" atv="52.7837" /> <point ath="-62.2546" atv="51.4007" /> <point ath="-63.3847" atv="51.6921" /> <point ath="-63.2157" atv="51.8708" /> <point ath="-63.6111" atv="51.9699" /> <point ath="-63.8125" atv="51.7987" /> <point ath="-64.7826" atv="52.0325" />
+</hotspot>
+
+</krpano>
