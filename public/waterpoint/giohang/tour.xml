@@ -69,6 +69,37 @@
      man den, KHONG mot dong loi nao.
      Ten cu la `gio-hang`, chi duoc tham chieu trong chinh file nay
      (da grep ca thu muc) nen doi ten khong pha gi. -->
+<!-- ==================================================================
+     CANH 0 - PK THE AQUA, LOP BAN VE 2D   (them 24/09/2026)
+
+     🔴 DAT DAU TIEN CO Y: `startup` nap `scene[0]`, ma Anh Tony chot 17/09
+        "khach xem BAN VE truoc, bam can minh thich, roi moi xem thuc te".
+        Truoc 24/09 Aqua chua co ban ve nen scene[0] la anh that.
+
+     Anh `../pano/10-aqua-ve.jpg` = chinh anh flycam canh5 (05-aquaria-song-vam-co)
+     voi khu villa thay bang MAT BANG 2D cua CDT, dan dung cho bang phep dong
+     dang do duoc:
+       1. `01-CONG-CU/can-matbang-flycam/can-aqua.py`      -> can-aqua.json
+          (phong to 2,645e-4 · xoay 179,29 do · 305 cum do, giu 259,
+           lech trung binh 7,7 px ban ve tren can rong ~250 px)
+       2. `01-CONG-CU/can-matbang-flycam/tao-lop-ve-aqua.py` -> 10-aqua-ve.jpg
+       3. `../TAO-TILE-LOP-VE-AQUA.bat`                     -> pano/10-aqua-ve/
+     So level 2624/1280/640 CHEP TU pano.xml droplet sinh ra (295 tile).
+     Goc nhin + gioi han Y HET canh anh that `pk_aqua` - doi lop dung KEEPVIEW
+     nen hai canh phai cung bo so, lech la khung hinh nhay.
+     ================================================================== -->
+<scene name="pk_aqua_ve" title="PK The Aqua - ban ve" onstart="">
+  <view hlookat="5.0" vlookat="45.0" fov="105.0"
+        fovtype="HFOV" fovmin="30.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="1.0" />
+  <preview url="../pano/10-aqua-ve/10-aqua-ve.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/10-aqua-ve/10-aqua-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/10-aqua-ve/10-aqua-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/10-aqua-ve/10-aqua-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
 <scene name="pk_aqua" title="PK The Aqua" onstart="">
   <!-- 🔴🔴 DA DINH VA DA GO (12/09 toi): ban dau Em Teo dat limitview="range"
        kem hlookatmin/max 65..115 de "khoa khong cho lac mat khu dat".
@@ -134,11 +165,171 @@
   <!-- SCENE_PV_IMAGE_END -->
 </scene>
 
+<!-- ==================================================================
+     CANH 3 - PK PARK VILLAGE, LOP BAN VE 2D   (them 17/09/2026)
+
+     Day la CHINH anh flycam `08-park-village.jpg`, chi khac mot chuyen:
+     vung hon dao da duoc thay bang ANH MAT BANG 2D cua chu dau tu, dan
+     dung vi tri bang phep dong dang do duoc.
+
+     Nguon sinh ra:
+       1. `01-CONG-CU/can-matbang-flycam/can-tu-dong.py`  -> can-park-village.json
+          (tim phep dong dang: phong to 2,376e-4 · xoay 2,178 do
+           · diem duoi may bay = pixel (3919, 2228) tren anh mat bang)
+       2. `01-CONG-CU/can-matbang-flycam/tao-lop-ve.py`   -> 09-park-village-ve.jpg
+       3. `TAO-TILE-LOP-VE.bat`                           -> pano/09-park-village-ve/
+
+     🔴 VI SAO LAM THANH MOT CANH RIENG chu khong phai mot lop anh de len:
+        krpano dan `<hotspot distorted="true">` len MAT CAU, khong phai len
+        MAT DAT. O goc nhin thang xuong fov 78 thi hai cach lech nhau toi
+        ~19% o ria khung - ma ria khung chinh la day villa ngoai cung.
+        Lam thanh canh 360 thi HINH HOC DUNG TUYET DOI, va kiem chung duoc
+        bang Python truoc khi dua len trinh duyet (da ve ra anh doi chieu).
+
+     🔴 DOI LOP PHAI CO `KEEPVIEW`, xem `doiLop()` ben index.html.
+     ================================================================== -->
+<scene name="pk_park_village_ve" title="PK Park Village - ban ve" onstart="">
+  <view hlookat="5.0" vlookat="45.0" fov="105.0"
+        fovtype="HFOV" fovmin="30.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="1.0" />
+  <preview url="../pano/09-park-village-ve/09-park-village-ve.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/09-park-village-ve/09-park-village-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/09-park-village-ve/09-park-village-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/09-park-village-ve/09-park-village-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
 <!-- ============================================================
-     CHO PHAN GIM LO - Anh Tony lam sau (chot 12/09).
-     Khuon mau co san: 08-KHUON-MAU\khung\tour360\era-lots-flycam.xml
-       (dat ma lo tren anh flycam, co GOI Y TU DONG + XUAT CODE)
-     Cham xong thi them mot dong <include url="lo.xml" /> vao day.
+     96 DUONG BAO LO - nam NGOAI moi <scene> va co `keep="true"`,
+     nen no DUNG YEN khi doi qua lai giua canh anh that va canh ban ve.
+     File sinh tu dong, dung sua tay - xem chu thich dau file do.
+     ⚠️ Vi `keep` nen no song ca khi sang canh PK The Aqua =>
+        `eraHienLo()` ben index.html phai tat di. Da co bai kiem.
      ============================================================ -->
+<include url="lo-park-village.xml" />
+
+<!-- 25/09: khung rieng LOP ANH THAT PV - Anh Tony ve lai (01-CONG-CU/ve-lo-that). -->
+<include url="lo-park-village-that.xml" />
+
+<!-- 24/09: khung 48 can ERA doc quyen PK The Aqua. Sinh tu dong tu ket qua
+     Anh Tony cham bang `01-CONG-CU/cham-lo-mat-bang/XEM-CHAM-LO-AQUA.bat`.
+     Chua cham xong thi file nay RONG (khong co hotspot) - trang van chay. -->
+<include url="lo-aqua.xml" />
+
+<!-- 24/09 (phuong an A): BO KHUNG RIENG cho LOP ANH THAT - khop tung can vao
+     mai nha (`khop-mai-tung-can.py` -> `diem_that` -> `lo-aqua-that.xml`, ten `lo_t_<ma>`).
+     🔴 Khong doi point[].ath/atv luc chay duoc: krpano 1.19 NHAN so moi nhung
+        KHONG VE LAI da giac (anh truoc/sau giong het tung pixel). `eraHienLo()`
+        ben index.html bat bo `lo_` o lop ban ve, bo `lo_t_` o lop anh that. -->
+<include url="lo-aqua-that.xml" />
+
+<!-- ==================================================================
+     CANH 4 + 5 - RIVERA NAGOMI   (them 24/09/2026 toi, chat-nagomi)
+
+     Anh Tony: "tao gio hang moi ten Nagomi" + "ghep mat bang do vao o dat
+     trong" (o dat co trong ben trai khu villa Rivera tren anh PK Rivera).
+
+     ANH THAT = CHINH anh canh PK Rivera ben trang Thuc te (`../pano/06-rivera/`),
+     khong chep, khong cat lai. Yaw 125,2 (`canh.json` canh6_rivera `_yaw`).
+     LOP BAN VE `../pano/11-nagomi-ve.jpg` = anh do, trong DUONG RANH khu Nagomi
+     dan MAT BANG CDT (PDF `TMB_Rivera Nagomi_15Sep2026`), mep mo 12 pt:
+       1. `01-CONG-CU/can-matbang-flycam/can-nagomi.py`      -> can-nagomi.json
+          (5 moc cham mat - giao lo D7/D2, vong xoay D3, ho boi Clubhouse,
+           ben River Club; lech TB 5,2 pt ~ 4 m. SIFT/ECC deu chet - ghi trong file)
+       2. `01-CONG-CU/can-matbang-flycam/tao-lop-ve-nagomi.py` -> 11-nagomi-ve.jpg
+       3. `../TAO-TILE-LOP-VE-NAGOMI.bat`                      -> pano/11-nagomi-ve/ (305 tile)
+     So level 2624/1280/640 chep tu pano.xml droplet sinh ra.
+
+     Goc nhin: khu Nagomi KHONG nam duoi drone - ath -111..-73, atv 35..47
+     (`lo-goc-nagomi.json`). Hai canh cung bo <view> (doi lop dung KEEPVIEW).
+     ================================================================== -->
+<scene name="pk_nagomi_ve" title="Rivera Nagomi - ban ve" onstart="">
+  <view hlookat="-92.0" vlookat="40.5" fov="42.0"
+        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/11-nagomi-ve/11-nagomi-ve.tiles/preview.jpg" />
+  <!-- 25/09: LOP NET. Anh Tony: "anh ghep bi mo, lam net duoc thi lam di".
+       Anh 360 chi co ~660 diem anh cho ca khu Nagomi (nam o ria anh drone) ->
+       dat DE LEN mot tam anh 4096 px ve thang tu PDF vector, UON SAN theo phep
+       chieu cua hotspot distorted (1000 px = 90 do, mat phang cach 500).
+       Sinh boi `01-CONG-CU/can-matbang-flycam/tao-anh-net-nagomi.py`, thong so
+       ath/atv/scale chep tu `anh-net-nagomi.json` - chay lai script thi CHEP LAI.
+       Anh 360 ben duoi van co ban ve (mo) - hotspot loi thi van con ban mo, khong den.
+       enabled=false: cu bam xuyen xuong khung lo. -->
+  <hotspot name="nagomi_net" url="nagomi-net.webp" distorted="true"
+           ath="-94.618" atv="40.59439" scale="0.0761461"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/11-nagomi-ve/11-nagomi-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/11-nagomi-ve/11-nagomi-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/11-nagomi-ve/11-nagomi-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<scene name="pk_nagomi" title="Rivera Nagomi" onstart="">
+  <view hlookat="-92.0" vlookat="40.5" fov="42.0"
+        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/06-rivera/06-rivera.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/06-rivera/06-rivera.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/06-rivera/06-rivera.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/06-rivera/06-rivera.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<!-- 158 khung lo Nagomi, ten `lo_ng_<ma>` (KHONG `lo_<ma>` - D14-10 trung can Aqua).
+     Sinh tu dong boi `tao-lo-nagomi.py`. Mot bo dung cho ca 2 lop (dat trong,
+     khong co mai nha de khop rieng nhu Aqua). -->
+<include url="lo-nagomi.xml" />
+
+<!-- ==================================================================
+     CANH 6 + 7 - RIVERA NAGOMI BAN 2, NEN ANH PK PARK VILLAGE  (25/09/2026, chat-nagomi)
+
+     Anh Tony: "lam them 1 phien ban cua PK Rivera Nagomi - lay hinh goc tu phan
+     khu park village, view truc dien sang anh thay cung ok".
+     Anh that = `../pano/08-park-village/` (khong chep). Lop ban ve = `12-nagomi-pv-ve`
+     (`tao-lop-ve-nagomi.py` co co pv, tile `TAO-TILE-LOP-VE-NAGOMI-PV.bat`, 305 file).
+     Phep can `can-nagomi-pv.json`: 🐞 ban dau ghep SIFT toan anh Rivera->PV => lech 20 pt o
+     Nagomi (Anh Tony ve duong do 25/09). ✅ Sua bang `can-nagomi-pv-sua.py`: NCC tung o anh
+     that PV <-> anh that Rivera (da khop) cung khung ban ve, RANSAC => lech ~1,5 pt.
+     Mai nha cao tang van lech ~25 pt = THI SAI THAT (drone PV nhin xien), mat duong moi la chuan.
+     🐞 Lan 2 van sai (Anh Tony ve do: mai nha keo lech phep do). ✅ Lan 3: anh PV NGHIENG chan troi =>
+     mat dat bi PHOI CANH, dung HOMOGRAPHY do CHI tren mat nhua (`can-nagomi-pv-sua.py`, _hinh_hoc.CanH),
+     lech ~1,3 pt; ban co bc-moi.jpg: vach lan D2 lien mach.
+     Khu Nagomi tu goc nay: ath 4..35, atv 30..50 (cao gap ~1,7 lan ban Rivera => it bep hon).
+     Lop net `nagomi-pv-net.webp` + khung lo `lo_np_<ma>` (`lo-nagomi-pv.xml`) - tien to
+     RIENG vi 2 ban cung ma lo, cung `keep`.
+     ================================================================== -->
+<scene name="pk_nagomi_pv_ve" title="Rivera Nagomi (goc PV) - ban ve" onstart="">
+  <view hlookat="20.0" vlookat="40.5" fov="45.0"
+        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/12-nagomi-pv-ve/12-nagomi-pv-ve.tiles/preview.jpg" />
+  <hotspot name="nagomi_pv_net" url="nagomi-pv-net.webp" distorted="true"
+           ath="20.92004" atv="39.62092" scale="0.0643983"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/12-nagomi-pv-ve/12-nagomi-pv-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/12-nagomi-pv-ve/12-nagomi-pv-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/12-nagomi-pv-ve/12-nagomi-pv-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<scene name="pk_nagomi_pv" title="Rivera Nagomi (goc PV)" onstart="">
+  <view hlookat="20.0" vlookat="40.5" fov="45.0"
+        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/08-park-village/08-park-village.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/08-park-village/08-park-village.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/08-park-village/08-park-village.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/08-park-village/08-park-village.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<include url="lo-nagomi-pv.xml" />
 
 </krpano>

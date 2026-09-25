@@ -101,7 +101,7 @@
     /* ===================== QUẢ CẦU ===================== */
     + '#eraGlobe{position:fixed;right:var(--wp-space-md,16px);'
     + 'bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-h,52px) + var(--wp-space-sm,12px)'
-    + ' + 64px /* 21/09: nhuong cho cho nut contact goc phai duoi */);'
+    + ' + 64px /* nhuong cho cho nut contact goc phai duoi */);'
     /* 🔽 16/09: Anh Tony "giảm độ lớn cả thanh và quả cầu, khoảng 70% hiện tại,
        do nó đang hơi chiếm diện tích". Mọi số dưới đây = 70% bản cũ:
          cầu   92 -> 64  ·  74 -> 52  ·  64 -> 45
@@ -143,7 +143,7 @@
     + '#eraZoom{position:fixed;right:var(--wp-space-md,16px);'
     + 'bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-h,52px) + var(--wp-space-sm,12px)'
     + ' + 64px + var(--wp-space-sm,12px)'
-    + ' + 64px /* 21/09: nhuong cho cho nut contact goc phai duoi */);'
+    + ' + 64px /* nhuong cho cho nut contact goc phai duoi */);'
     + 'z-index:var(--wp-z-overlay,50);width:34px;'
     + 'display:flex;flex-direction:column;align-items:center;gap:6px;'
     + 'padding:6px 0;border-radius:0 11px 0 11px;'
@@ -217,7 +217,7 @@
     + '#eraZoom{right:10px;width:30px;'
     + 'bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-h,52px) + var(--wp-space-sm,12px)'
     + ' + 52px + var(--wp-space-sm,12px)'
-    + ' + 64px /* 21/09: nhuong cho nut contact */);}'
+    + ' + 64px /* nhuong cho nut contact */);}'
     + '#eraZoom .z-nut{width:21px;height:21px;border-radius:0 7px 0 7px;}'
     + '#eraZoom .z-ranh{height:50px;}}'
     /* 🔴 Điện thoại XOAY NGANG chỉ cao ~390px (bài học 12/09): cả cột
@@ -229,7 +229,7 @@
     + '#eraGlobe{width:45px;height:45px;}'
     + '#eraZoom{bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-h,52px)'
     + ' + var(--wp-space-sm,12px) + 45px + var(--wp-space-sm,12px)'
-    + ' + 64px /* 21/09: nhuong cho nut contact */);}}';
+    + ' + 64px /* nhuong cho nut contact */);}}';
 
   /* ---------- DOM ---------- */
   function dung() {

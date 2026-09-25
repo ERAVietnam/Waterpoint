@@ -19,6 +19,8 @@ const NGUON_QUANG_CAO = [
   { ma: "batdongsan", ten: "Batdongsan.com.vn", domain: "batdongsan.com.vn" },
 ];
 
+export { NGUON_QUANG_CAO };
+
 const FORM_NAME = "dang-ky-gio-hang-doc-quyen";
 const DA_HIEN_KEY = "wp-lead-popup-da-hien";
 const SAN_PHAM = ["Nhà phố", "Biệt thự đơn lập", "Biệt thự song lập"];
@@ -66,13 +68,15 @@ export function LeadPopup() {
 
   useEffect(() => {
     if (sessionStorage.getItem(DA_HIEN_KEY)) return;
+    /* Khach vang tren trang 60 giay roi moi hien popup — de ho kip xem
+       pano/loc truoc, khong bi popup lam phien ngay khi vao. */
     const timer = setTimeout(() => {
       const n = timNguon();
       if (!n) return;
       setNguon(n);
       setHien(true);
       sessionStorage.setItem(DA_HIEN_KEY, "1");
-    }, 800);
+    }, 60000);
     return () => clearTimeout(timer);
   }, []);
 
