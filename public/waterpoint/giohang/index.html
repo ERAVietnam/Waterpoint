@@ -534,6 +534,91 @@ var loDang = null;         // ma lo dang chon, vd 'A01'
 var LO = null;             // du lieu 96 lo, nap tu `fileLo`
 var BH_XONG = false;       // da nap xong bang hang chua
 
+/* ============================================================
+   🔗 LINK GOI DUNG THE  (28/09 toi, chat-pv-net)
+
+   Anh Tony: "lam luon phan duong link de goi dung the. Vd: Gio hang park
+   villa > khi anh click vao 1 duong link ben ngoai".
+
+     giohang/?pk=park-village                    -> mo thang PK Park Village
+     giohang/?pk=aqua&can=AQU-D15.10             -> + mo san the can do, xoay toi can
+     giohang/?pk=park-village&can=A01&lop=thuc-te -> + lop anh thuc te
+   `pk`  : aqua · park-village · nagomi · nagomi-2 (xem LINK_PK, nhan ca ten goi khac)
+   `can` : ma SAN PHAM (AQU-D15.10) HOAC ma tren ban ve (D15-10) - khong phan biet hoa thuong
+   `lop` : thuc-te (mac dinh ban ve). Phan khu khong co anh that (Nagomi) thi bo qua.
+   Nguoi xem bam chip / chon can / doi lop -> thanh dia chi TU DOI THEO (`ghiLink`)
+   => sale chep link tren trinh duyet la gui duoc dung the dang xem.
+   🔴 Canh mo dau nap qua bien krpano `startscene` (action startup trong tour.xml),
+      KHONG loadscene tu JS luc onready: luc do xml chua doc xong, action startup
+      chay sau se de ve scene[0].
+   ============================================================ */
+var LINK_PK = {
+  'pk_aqua': ['aqua', 'the-aqua', 'pk-the-aqua', 'pk-aqua', 'theaqua'],
+  'pk_park_village': ['park-village', 'parkvillage', 'pk-park-village', 'pv', 'park-villa', 'park'],
+  'pk_nagomi': ['nagomi', 'rivera-nagomi', 'pk-rivera-nagomi', 'rivera'],
+  'pk_nagomi_pv': ['nagomi-2', 'nagomi2', 'rivera-nagomi-2', 'pk-rivera-nagomi-2']
+};
+function slugPK(id) { return (LINK_PK[id] || [id])[0]; }
+function khongDauLink(s) {
+  return String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/\u0111/g, 'd').replace(/[\s_]+/g, '-').trim();
+}
+var LINK = (function () {
+  var q = new URLSearchParams(location.search);
+  var pk = khongDauLink(q.get('pk')), id = null;
+  for (var k in LINK_PK) {
+    if (pk && (k === pk.replace(/-/g, '_') || LINK_PK[k].indexOf(pk) >= 0) && timCanh(k)) id = k;
+  }
+  var lop = khongDauLink(q.get('lop'));
+  return {
+    id: id,
+    that: lop === 'thuc-te' || lop === 'that' || lop === 'anh-that',
+    can: (q.get('can') || '').trim()
+  };
+})();
+if (LINK.id) {
+  canhDang = LINK.id;
+  lopDang = (LINK.that && coAnhThat(timCanh(LINK.id))) || !timCanh(LINK.id).canhVe ? 'that' : 've';
+}
+
+/* Ghi trang thai dang xem len thanh dia chi (khong nap lai trang). Giu nguyen
+   tham so khac (vd `nc`, `vien`). */
+function ghiLink() {
+  if (!window.history || !history.replaceState || !window.URLSearchParams) return;
+  var q = new URLSearchParams(location.search);
+  q.set('pk', slugPK(canhDang));
+  var c = timCanh(canhDang);
+  if (loDang && c) q.set('can', c.maSP ? c.maSP(loDang) : loDang); else q.delete('can');
+  if (lopDang === 'that' && coAnhThat(c)) q.set('lop', 'thuc-te'); else q.delete('lop');
+  q.delete('startscene');
+  history.replaceState(null, '', location.pathname + '?' + q.toString() + location.hash);
+}
+
+/* `&can=`: cho bang hang + lo cua phan khu nap xong, tim can, bam ho, xoay toi can. */
+function moCanTuLink(lan) {
+  if (!LINK.can || !kp) return;
+  lan = (lan || 0) + 1;
+  var c = timCanh(canhDang);
+  if (!(BH_XONG && LO && LO_KHU[canhDang] === LO)) {
+    if (lan < 80) setTimeout(function () { moCanTuLink(lan); }, 250);   /* toi da ~20 s */
+    return;
+  }
+  var tim = LINK.can.toUpperCase(), ma = null;
+  for (var m in LO.lo) {
+    if (m.toUpperCase() === tim || (c && c.maSP && String(c.maSP(m)).toUpperCase() === tim)) { ma = m; break; }
+  }
+  LINK.can = '';                                   /* chi mo MOT lan */
+  if (!ma) { console.warn('[link] khong thay can', tim, 'trong', canhDang); ghiLink(); return; }
+  var o = LO.lo[ma], t = o && o.tam;
+  if (t) {                                         /* xoay toi can, zoom vua du thay xung quanh */
+    nguoiDaKeo = true;                             /* chan veGocChuan keo ve goc chuan */
+    kp.set('view.fovtype', 'HFOV');
+    kp.call('lookto(' + t[0] + ',' + t[1] + ',' + Math.min(40, c.goc.fov) + ',smooth(),true,true)');
+  }
+  eraChonLo(ma);
+  ghiLink();
+}
+
 function timCanh(id) {
   for (var i = 0; i < CANH.length; i++) if (CANH[i].id === id) return CANH[i];
   return null;
@@ -710,6 +795,43 @@ function eraDongBoLo(lan) {
   veLo();
 }
 window.eraDongBoLo = eraDongBoLo;
+
+/* 🔎 28/09 (chat-aqua-net) - O ANH NET DE LEN LOP BAN VE (hien co Aqua: `aqua_net_*`).
+   Hotspot trong tour.xml chi khai `urlnet`, KHONG khai `url`: krpano 1.19 tai anh
+   ca khi hotspot dang an (do bang Playwright 28/09: an 8 o van tai du 8). Ham nay
+   gan `url = urlnet` SAU khi anh 360 tai xong (su kien `onloadcomplete`, + 1 nhip
+   hen gio du phong) => ~3 MB anh net khong tranh bang thong voi luot mo trang.
+   Doi lop / doi canh: krpano dung lai hotspot tu XML (url trong) -> ham chay lai,
+   anh da nam trong bo nho dem trinh duyet nen hien ngay. */
+function eraAnhNet() {
+  if (!kp) return;
+  var n = kp.get('hotspot.count') || 0;
+  for (var i = 0; i < n; i++) {
+    var h = 'hotspot[' + i + '].';
+    var u = kp.get(h + 'urlnet');
+    if (u && !kp.get(h + 'url')) kp.set(h + 'url', u);
+  }
+}
+window.eraAnhNet = eraAnhNet;
+/* `onloadcomplete` bao xong theo goc XML (h5 v45), nhung ngay sau do `veGocChuan` xoay
+   xuong nadir (BAY 50) va tai tiep tile moi. Lui CO DINH khong du: do 28/09 local 2 s la
+   vua, len Vercel that thi anh net van chen giua tile (9,4 s vs tile cuoi 11,3 s).
+   => DO THAT: doi toi khi trinh duyet NGUNG tai tile anh 360 (`.tiles/`) du 1,5 s
+      (Resource Timing), toi da 20 s thi cu gan. */
+window.eraAnhNetSau = function () {
+  var bd = Date.now();
+  (function cho() {
+    var cuoi = 0;
+    if (window.performance && performance.getEntriesByType) {
+      performance.getEntriesByType('resource').forEach(function (r) {
+        if (r.name.indexOf('.tiles/') > 0 && r.responseEnd > cuoi) cuoi = r.responseEnd;
+      });
+    }
+    var yen = performance.now() - cuoi;
+    if (yen >= 1500 || Date.now() - bd > 20000) eraAnhNet();
+    else setTimeout(cho, 500);
+  })();
+};
 
 /* Can nay co phai hang ERA doc quyen khong = co dong trong Sheet khong. */
 function laEra(ma) {
@@ -986,6 +1108,7 @@ function eraChonLo(ma) {
   loDang = ma;
   veLo();
   veCard();
+  ghiLink();
   /* Ngan keo loc (dien thoai) dang mo thi thu lai cho khach thay the can */
   if (locLaNganKeo()) moLoc(false);
 }
@@ -995,6 +1118,7 @@ function boChonLo() {
   loDang = null;
   veLo();
   veCard();
+  ghiLink();
 }
 window.eraBoChonLo = boChonLo;
 
@@ -1110,6 +1234,7 @@ function doiLop(lop) {
     t: kp.get('view.fovtype')
   };
   lopDang = lop;
+  ghiLink();
   kp.call('loadscene(' + tenScene(canhDang, lop) + ', null, KEEPVIEW, BLEND(0.8))');
   eraHienLo();          /* doi bo khung ban ve <-> anh that ngay, khong cho */
   veNutLop();
@@ -1212,6 +1337,7 @@ function doiCanh(id) {
   /* Doi canh la nguoi xem CO Y muon xem khung chuan cua canh do
      => xoa co "da keo", roi lai xoay xuong nadir theo dung BAY 50. */
   nguoiDaKeo = false;
+  ghiLink();
   veDS();
   baoThieuAnh();
   vaoCanh();
@@ -1483,6 +1609,8 @@ embedpano({
   target: 'pano',
   html5: 'auto',
   passQueryParameters: 'startscene,startlookat',
+  /* 28/09: link `?pk=` -> canh mo dau (action startup trong tour.xml doc bien nay) */
+  vars: LINK.id ? { startscene: tenScene(LINK.id, lopDang) } : {},
   onready: function (k) {
     kp = k;
     /* 🐞 DA DINH 24/09 - KHUNG LO BI XML DE LAI THANH AN.
@@ -1492,7 +1620,13 @@ embedpano({
        (Truoc 24/09 khong lo vi canh dau la Aqua chua co khung.)
        => Nho krpano goi lai MOI LAN xml xong (ke ca sau moi loadscene). */
     kp.call('set(events[era_lo].keep, true); ' +
-            'set(events[era_lo].onxmlcomplete, js(eraDongBoLo()));');
+            'set(events[era_lo].onxmlcomplete, js(eraDongBoLo()));' +
+            'set(events[era_lo].onloadcomplete, js(eraAnhNetSau()));');
+    /* du phong: luot mo dau su kien co the chay truoc khi dang ky kip (nhu era_lo 24/09).
+       Goi ban "Sau" (van cho tile yen) - goi thang eraAnhNet la chen tile tren mang cham.
+       Bo dem Resource Timing mac dinh 250 muc, doi canh vai lan la day -> nang len. */
+    if (window.performance && performance.setResourceTimingBufferSize) performance.setResourceTimingBufferSize(3000);
+    setTimeout(eraAnhNetSau, 8000);
     /* Luoi an toan cuoi: do that 24/09 chi co su kien tren thi luot mo dau
        VAN hien 0/48 (su kien chay truoc khi dang ky kip). */
     setTimeout(eraDongBoLo, 1500);
@@ -1503,7 +1637,8 @@ embedpano({
           tach ra bang `tachScene`, khong so thang voi `timCanh` nua. */
     var s = kp.get('xml.scene');
     var t = s ? tachScene(s) : null;
-    if (t) { canhDang = t[0]; lopDang = t[1]; }
+    /* 28/09: mo bang `?pk=` thi DA BIET canh - luc onready krpano co the con bao scene[0] */
+    if (t && !LINK.id) { canhDang = t[0]; lopDang = t[1]; }
     /* 25/09: mo bang ?startscene=pk_nagomi (anh that) => dua ve ban ve,
        phan khu co `khongAnhThat` khong co duong nao vao anh that. */
     if (t && lopDang === 'that' && !coAnhThat(timCanh(canhDang))) {
@@ -1523,6 +1658,9 @@ embedpano({
     document.addEventListener('pointerdown', function () { nguoiDaKeo = true; });
     setTimeout(veGocChuan, 700);
     setTimeout(veGocChuan, 1600);
+    /* chuan hoa link (`?pk=pv` -> `?pk=park-village`; ten sai -> ten phan khu dang hien that) */
+    if (LINK.id || /[?&]pk=/.test(location.search)) ghiLink();
+    moCanTuLink();
   }
 });
 </script>
