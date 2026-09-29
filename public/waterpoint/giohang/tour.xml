@@ -40,8 +40,14 @@
      quan tinh chuot thap, khong tween zoom khi vao canh. -->
 <control mousespeed="8.0" mousefriction="0.5" mouseaccelerate="1.0" />
 
+<!-- 28/09 toi (chat-pv-net): LINK GOI DUNG THE. index.html doc `?pk=...` roi truyen bien
+     `startscene` qua embedpano (vars). Co bien + scene do ton tai thi mo thang, khong thi scene[0]
+     nhu cu. Viet trong XML vi luc JS `onready` chay, xml chua doc xong - loadscene tu JS luc do
+     se bi chinh action nay de ve scene[0]. -->
 <action name="startup" autorun="onstart">
-  loadscene(get(scene[0].name), null, MERGE);
+  if(startscene === null, copy(startscene, scene[0].name));
+  if(scene[get(startscene)].name === null, copy(startscene, scene[0].name));
+  loadscene(get(startscene), null, MERGE);
 </action>
 
 <!-- ==================================================================
@@ -88,16 +94,49 @@
      Goc nhin + gioi han Y HET canh anh that `pk_aqua` - doi lop dung KEEPVIEW
      nen hai canh phai cung bo so, lech la khung hinh nhay.
      ================================================================== -->
+<!-- 🔎 28/09 (chat-aqua-net) - Anh Tony: "tang zoom va do net phan khu the aqua".
+     · fovmin 30 -> 10 · maxpixelzoom 1.0 -> 4.0  (CA HAI scene Aqua - doi lop dung KEEPVIEW
+       nen hai canh phai cung bo so). Lop anh that zoom sau se nhoe (anh chup co gioi han) - chap nhan
+       nhu Nagomi 25/09.
+     · Lop ban ve: 8 O ANH NET dat de len (hotspot distorted uon san, chia luoi vi Aqua rong
+       ~7000 px ban ve, 1 tam la qua nang cho GPU iPad). Anh 360 mo ben duoi van giu - o nao
+       loi thi van con ban mo, khong den. Xem 01-CONG-CU/can-matbang-flycam/tao-anh-net-aqua.py. -->
 <scene name="pk_aqua_ve" title="PK The Aqua - ban ve" onstart="">
   <view hlookat="5.0" vlookat="45.0" fov="105.0"
-        fovtype="HFOV" fovmin="30.0" fovmax="140.0"
-        limitview="auto" maxpixelzoom="1.0" />
+        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="4.0" />
   <preview url="../pano/10-aqua-ve/10-aqua-ve.tiles/preview.jpg" />
   <image type="CUBE" multires="true" tilesize="512">
     <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/10-aqua-ve/10-aqua-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
     <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/10-aqua-ve/10-aqua-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
     <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/10-aqua-ve/10-aqua-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
   </image>
+  <!-- AQUA_NET_BAT_DAU  (sinh boi 01-CONG-CU/can-matbang-flycam/tao-anh-net-aqua.py - DUNG SUA TAY) -->
+  <hotspot name="aqua_net_0_0" urlnet="aqua-net/o-0-0.webp" distorted="true"
+           ath="72.91371" atv="49.13464" rotate="111.4492" scale="0.095136"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="aqua_net_0_1" urlnet="aqua-net/o-0-1.webp" distorted="true"
+           ath="56.6043" atv="65.89012" rotate="125.2641" scale="0.1406687"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="aqua_net_0_2" urlnet="aqua-net/o-0-2.webp" distorted="true"
+           ath="-19.27567" atv="75.70206" rotate="-162.0097" scale="0.1593807"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="aqua_net_0_3" urlnet="aqua-net/o-0-3.webp" distorted="true"
+           ath="-66.29845" atv="59.61991" rotate="-117.9486" scale="0.1248691"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="aqua_net_1_0" urlnet="aqua-net/o-1-0.webp" distorted="true"
+           ath="52.78811" atv="43.81678" rotate="137.2176" scale="0.0918777"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="aqua_net_1_1" urlnet="aqua-net/o-1-1.webp" distorted="true"
+           ath="31.482" atv="53.9337" rotate="153.2443" scale="0.1262695"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="aqua_net_1_2" urlnet="aqua-net/o-1-2.webp" distorted="true"
+           ath="-8.57689" atv="58.11311" rotate="-173.3596" scale="0.1390369"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="aqua_net_1_3" urlnet="aqua-net/o-1-3.webp" distorted="true"
+           ath="-42.12233" atv="50.54317" rotate="-146.0193" scale="0.1148933"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <!-- AQUA_NET_HET -->
 </scene>
 
 <scene name="pk_aqua" title="PK The Aqua" onstart="">
@@ -114,9 +153,10 @@
        Doi mot trong bon so la khung hinh nhay - da thu va da sai 2 lan. -->
   <!-- Goc XUAT PHAT lay y nguyen cua canh5 ben trang Thuc te.
        Goc DICH (nadir) do JS trong index.html dat sau 700ms - xem BAY 50. -->
+  <!-- 28/09: fovmin 10 · maxpixelzoom 4 cho KHOP lop ban ve pk_aqua_ve (KEEPVIEW). -->
   <view hlookat="5.0" vlookat="45.0" fov="105.0"
-        fovtype="HFOV" fovmin="30.0" fovmax="140.0"
-        limitview="auto" maxpixelzoom="1.0" />
+        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="4.0" />
   <preview url="../pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/preview.jpg" />
   <image type="CUBE" multires="true" tilesize="512">
     <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
@@ -152,9 +192,10 @@
   <!-- Bo gioi han giu y het canh Aqua de hai canh con hanh xu giong nhau.
        Goc xuat phat cung o v=45 (goc THUONG) - xem BAY 50 phia tren:
        nadir phai do JS ben index.html xoay xuong sau, khong dat thang o day. -->
+  <!-- 28/09 toi (chat-pv-net): fovmin 30->10 · maxpixelzoom 1->4 cho KHOP lop ban ve (KEEPVIEW). -->
   <view hlookat="5.0" vlookat="45.0" fov="105.0"
-        fovtype="HFOV" fovmin="30.0" fovmax="140.0"
-        limitview="auto" maxpixelzoom="1.0" />
+        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="4.0" />
   <!-- SCENE_PV_IMAGE_START  (moc de script va lai khoi anh tu pano.xml droplet) -->
   <preview url="../pano/08-park-village/08-park-village.tiles/preview.jpg" />
   <image type="CUBE" multires="true" tilesize="512">
@@ -188,16 +229,49 @@
 
      🔴 DOI LOP PHAI CO `KEEPVIEW`, xem `doiLop()` ben index.html.
      ================================================================== -->
+<!-- 🔎 28/09 toi (chat-pv-net) - Anh Tony duyet Aqua net "ok, dep" -> "lam tuong tu voi Park Village".
+     · fovmin 10 · maxpixelzoom 4 (ca 2 scene PV). · O ANH NET de len hon dao (y het Aqua):
+       `tao-anh-net-aqua.py` phan khu pv. ⚠️ Chu thich "distorted lech 19%" o tren noi ve tam anh PHANG
+       chua uon - tam net nay DA UON SAN theo phep chieu nen khop tung diem (do bang Playwright). -->
 <scene name="pk_park_village_ve" title="PK Park Village - ban ve" onstart="">
   <view hlookat="5.0" vlookat="45.0" fov="105.0"
-        fovtype="HFOV" fovmin="30.0" fovmax="140.0"
-        limitview="auto" maxpixelzoom="1.0" />
+        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+        limitview="auto" maxpixelzoom="4.0" />
   <preview url="../pano/09-park-village-ve/09-park-village-ve.tiles/preview.jpg" />
   <image type="CUBE" multires="true" tilesize="512">
     <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/09-park-village-ve/09-park-village-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
     <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/09-park-village-ve/09-park-village-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
     <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/09-park-village-ve/09-park-village-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
   </image>
+  <!-- PV_NET_BAT_DAU  (sinh boi 01-CONG-CU/can-matbang-flycam/tao-anh-net-aqua.py, phan khu pv - DUNG SUA TAY) -->
+  <hotspot name="pv_net_0_0" urlnet="pv-net/o-0-0.webp" distorted="true"
+           ath="-67.67362" atv="67.2788" rotate="68.2713" scale="0.1267835"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="pv_net_0_1" urlnet="pv-net/o-0-1.webp" distorted="true"
+           ath="-5.34218" atv="81.72424" rotate="7.4403" scale="0.146888"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="pv_net_0_2" urlnet="pv-net/o-0-2.webp" distorted="true"
+           ath="70.08525" atv="69.02097" rotate="-66.4704" scale="0.1300394"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="pv_net_1_0" urlnet="pv-net/o-1-0.webp" distorted="true"
+           ath="-99.32899" atv="68.19637" rotate="102.3878" scale="0.1274572"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="pv_net_1_1" urlnet="pv-net/o-1-1.webp" distorted="true"
+           ath="-164.49344" atv="85.31303" rotate="166.715" scale="0.1479629"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="pv_net_1_2" urlnet="pv-net/o-1-2.webp" distorted="true"
+           ath="104.87407" atv="70.04873" rotate="-103.4981" scale="0.130773"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="pv_net_2_0" urlnet="pv-net/o-2-0.webp" distorted="true"
+           ath="-125.34626" atv="63.46663" rotate="130.7089" scale="0.1235946"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="pv_net_2_1" urlnet="pv-net/o-2-1.webp" distorted="true"
+           ath="-174.18012" atv="73.05559" rotate="176.5189" scale="0.141886"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <hotspot name="pv_net_2_2" urlnet="pv-net/o-2-2.webp" distorted="true"
+           ath="132.50071" atv="64.83108" rotate="-133.2228" scale="0.1265791"
+           enabled="false" handcursor="false" capture="false" zorder="1" />
+  <!-- PV_NET_HET -->
 </scene>
 
 <!-- ============================================================
