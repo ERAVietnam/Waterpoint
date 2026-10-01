@@ -68,7 +68,8 @@ window.ERA_BH = (function () {
     COT_TT    : ['trang thai', 'trang thai ban hang'],
     /* Cot khong hien lai trong hop thong tin (da hien o cho khac roi) */
     COT_AN    : ['ma lo', 'ma can', 'ma san pham', 'ma', 'phan khu', 'stt',
-                 'phan khu ban hang'],
+                 'phan khu ban hang',
+                 'era doc quyen', 'era', 'doc quyen', 'hang era', 'era doc quyen?'],   /* 30/09 cot danh dau - khong hien lai */
 
     /* 🆕 24/09 (toi) - BO LOC "san pham + dien tich + gia". Ba cot nay duoc
        DOC RIENG thanh truong co kieu (ngoai viec van hien trong hop thong tin):
@@ -79,6 +80,16 @@ window.ERA_BH = (function () {
     COT_LOAI  : ['loai hinh', 'loai hinh san pham', 'loai san pham'],
     COT_DT    : ['dien tich dat (m2)', 'dien tich dat', 'dien tich dat (m²)'],
     COT_GIA   : ['gia ban', 'gia', 'gia ban (ty)'],
+
+    /* 🆕 30/09 Anh Tony (Nagomi): "tao bang FULL ma can, can nao co cot ERA doc quyen
+       thi sang len, khong thi an di - lam 1 lan code, lan sau chi cap nhat Google Sheet".
+       The CO cot nay  => chi dong DANH DAU moi la can ERA (dong khong danh dau = coi nhu
+                          khong co trong Sheet: web an/mo, khong bam duoc).
+       The KHONG co cot => nhu cu: co dong la can ERA (Park Village / The Aqua giu nguyen).
+       Danh dau nhan: x · v · có · yes · 1 · TRUE (o checkbox Google) · ✓ · ERA · độc quyền.
+       O trong / "không" / FALSE => khong phai ERA. */
+    COT_ERA   : ['era doc quyen', 'era', 'doc quyen', 'hang era', 'era doc quyen?'],
+    CO_ERA    : ['x', 'v', 'co', 'yes', 'y', '1', 'true', 'era', 'doc quyen', 'era doc quyen', '✓', '✔', '☑'],
 
     /* 🔴 4 trang thai - chep y ban PGBL da chay tu 12/08 de khoi phai nho
        hai quy uoc khac nhau. Anh Tony 17/09 de trong cot nay, nen hien gio
@@ -264,7 +275,7 @@ window.ERA_BH = (function () {
                       'đúng chữ "Mã sản phẩm" (hoặc "Mã lô" / "Mã căn").');
     }
     var cot = hang[iTD].map(function (s) { return nfc(s).trim(); });
-    var iMa = -1, iTT = -1, iLoai = -1, iDT = -1, iGia = -1, j;
+    var iMa = -1, iTT = -1, iLoai = -1, iDT = -1, iGia = -1, iEra = -1, j;
     for (j = 0; j < cot.length; j++) {
       var k = khongDau(cot[j]);
       if (iMa < 0 && C.COT_MA.indexOf(k) >= 0) iMa = j;
@@ -272,12 +283,14 @@ window.ERA_BH = (function () {
       if (iLoai < 0 && C.COT_LOAI.indexOf(k) >= 0) iLoai = j;
       if (iDT < 0 && C.COT_DT.indexOf(k) >= 0) iDT = j;
       if (iGia < 0 && C.COT_GIA.indexOf(k) >= 0) iGia = j;
+      if (iEra < 0 && C.COT_ERA.indexOf(k) >= 0) iEra = j;
     }
     function o(r, j) { return j >= 0 ? nfc(r[j] == null ? '' : r[j]).trim() : ''; }
     var dem = 0;
     for (var i = iTD + 1; i < hang.length; i++) {
       var r = hang[i];
       if (!r || !r[iMa] || !nfc(r[iMa]).trim()) continue;
+      if (iEra >= 0 && C.CO_ERA.indexOf(khongDau(r[iEra])) < 0) continue;   /* 30/09: co cot ERA ma khong danh dau */
       var ma = chuanMa(r[iMa]);
       var truong = [];
       for (j = 0; j < cot.length; j++) {
@@ -321,7 +334,7 @@ window.ERA_BH = (function () {
 
   /* Lop 2: ban du phong trong web. Cung bo phan tich y het Sheet. */
   function napDuPhong() {
-    return fetch(C.DU_PHONG + '?nc=20260925a')
+    return fetch(C.DU_PHONG + '?nc=20260930a')
       .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
       .then(function (j) {
         var bang = {};

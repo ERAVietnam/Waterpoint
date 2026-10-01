@@ -49,6 +49,28 @@
 html,body{height:100%;overflow:hidden;background:var(--wp-canvas);
   font-family:var(--wp-font);color:var(--wp-text);-webkit-tap-highlight-color:transparent}
 #pano{position:fixed;inset:0;background:var(--wp-surface-360)}
+/* 29/09 NHAN MA CAN NOI - chu HTML dat len tam can, LUON DUNG THANG (ban ve Aqua bi xoay
+   ~179 do nen ma in san tren ban ve lon nguoc). pointer-events:none -> bam xuyen xuong khung lo.
+   Co chu theo zoom: --tl = 60/fov do JS dat (0.6 zoom ra het .. 1.6 zoom sat) - hoc PGBL.
+   🆕 29/09 KIEU "BANG CO COT" (Anh Tony: "zoom vao thi chu che luon layout"): goc toa do la
+   CHAM o chan cot = tam can; bang chu nam TREN dau cot => zoom vao chu khong de len nha.
+   transform-origin o chan cot -> co theo zoom ma cham van dung tam can. */
+#lop-ma{position:fixed;inset:0;pointer-events:none;z-index:10;overflow:hidden;--tl:1}
+#lop-ma .ma{position:absolute;left:0;top:0;display:flex;flex-direction:column;align-items:center;
+  transform:translate(-50%,-100%) scale(var(--tl));transform-origin:50% 100%;transition:opacity .2s}
+#lop-ma .ma b{padding:2px 7px;border-radius:0 7px 0 7px;background:rgba(0,35,44,.88);color:#fff;
+  font-size:15px;font-weight:var(--wp-fw-bold);letter-spacing:.02em;line-height:1.35;white-space:nowrap;
+  box-shadow:0 1px 5px rgba(0,0,0,.45)}
+/* --cot = chieu cao cot, JS `xepTang()` dat theo tang (24, 50, 76... px) de bang cac can sat nhau khong de nhau */
+#lop-ma .ma i{display:block;width:2px;height:var(--cot,24px);background:#fff;box-shadow:0 0 2px rgba(0,0,0,.7);
+  transition:height .15s}
+#lop-ma .ma i::after{content:"";display:block;width:8px;height:8px;margin:calc(var(--cot,24px) - 4px) 0 0 -3px;border-radius:50%;
+  transition:margin .15s;
+  background:#fff;box-shadow:0 0 0 2px rgba(0,35,44,.9)}
+#lop-ma .ma.mo{opacity:.4}
+#lop-ma .ma.chon{opacity:1;z-index:1}
+#lop-ma .ma.chon b{background:var(--wp-vang);color:#00232C}
+#lop-ma .ma.chon i,#lop-ma .ma.chon i::after{background:var(--wp-vang)}
 button{font-family:var(--wp-font);cursor:pointer;border:0}
 
 /* ===== NUT THEO FILE Group.svg Anh Tony gui 12/09 - DO THANG TU PATH =====
@@ -304,6 +326,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 </head><body>
 
 <div id="pano"></div>
+<div id="lop-ma"></div>
 
 <div id="brand" class="k3d">
   <img id="logo-era" src="../skin/logo-era.png" alt="ERA Vietnam" onerror="this.remove()">
@@ -332,7 +355,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 <!-- 📋 Nguon bang hang (Google Sheet). ADDITIVE: go dong nay thi hop thong tin
      chi con ma lo + loai hinh, trang van chay. Dat TRUOC krpano.js de
      `ERA_BH` co san ngay khi canh dau tien san sang. -->
-<script src="../wp-banghang.js?nc=20260925a"></script>
+<script src="../wp-banghang.js?nc=20260930a"></script>
 
 <script src="../krpano.js"></script>
 <script>
@@ -413,6 +436,8 @@ var CANH = [
   { id: 'pk_aqua', ten: 'PK The Aqua', lechBac: 172.3,
     goc: { h: 0, v: 90, fov: 113, fovtype: 'HFOV' },
     canhVe: 'pk_aqua_ve',
+    mauVien: 'E',     /* 29/09 xanh neon, vien manh - xem BANG_MAU */
+    nhanMa: true,     /* 29/09 nhan ma can NOI (luon dung thang) - xem khoi NHAN MA CAN */
     fileLo: 'lo-goc-aqua.json',
     ngayChup: '08/09/2026',
     maSP: function (ma) {
@@ -473,17 +498,23 @@ var CANH = [
      nghieng, khong phai nadir nhu 2 phan khu tren.
      25/09: Anh Tony gui gio hang - 5 can ERA (the 'Rivera', Nhom 'Rivera Nagomi').
         `maNagomi` doi ma ban ve -> ma san pham. 153 lo con lai mo, khong bam. */
-  { id: 'pk_nagomi', ten: 'PK Rivera Nagomi', lechBac: 125.2,
-    goc: { h: -92, v: 40.5, fov: 42, fovtype: 'HFOV' },   /* 25/09: thu khung cho Nagomi ra giua, Anh Tony hoi */
+  /* 🆕 30/09 (chat-flycam-moi): THAY ANH - flycam MOI 29/09 DJI_0515 (300 m, nhin thang xuong khu Nagomi),
+     mat bang dan theo phep can TAY Anh Tony, chu in san DA XOA + 158 chu dung thang, an icon tien ich.
+     Tile ../pano/13-nagomi-0515/. lechBac = GimbalYawDegree -139,0 cua DJI_0515.
+     Goc chuan (sep goi y: sale chi zoom) = khung vua iPad, fovmax = fov chuan. Sinh boi
+     flycam-moi-20260930/_can/dua_len_web.py. Ban cu (anh Rivera): *.bak-truoc-nagomi-moi-20260930. */
+  { id: 'pk_nagomi', ten: 'PK Rivera Nagomi', lechBac: -139.0,
+    goc: { h: 90.62, v: 90, fov: 88.2, fovtype: 'HFOV' },
     canhVe: 'pk_nagomi_ve',
     /* 25/09 Anh Tony: "Rieng Rivera (Nagomi) thi lo dat trong tron, nen bo
        luon tinh nang xem thuc te can nay." => chi xem lop ban ve. Co nay
        giau nut "Xem thực tế" + nut trong the can, va chan `doiLop('that')`.
        Scene anh that `pk_nagomi` van con trong tour.xml, chi khong co duong vao. */
     khongAnhThat: true,
+    anNgoaiEra: true,      /* 30/09: du 158 khung ve san, CHI can Sheet danh dau "ERA độc quyền" moi hien - con lai AN */
     mauVien: 'D',
     fileLo: 'lo-goc-nagomi.json',
-    ngayChup: '05/09/2026',
+    ngayChup: '29/09/2026',
     maSP: maNagomi },
 
   /* ---- PK Rivera Nagomi BAN 2 - nen anh PK Park Village ---- 25/09 (chat-nagomi).
@@ -492,13 +523,16 @@ var CANH = [
      nen (`../pano/08-park-village/`, yaw -63,3 giong PK Park Village) va khung lo
      `lo_np_` (tien to rieng - 2 ban cung ma, cung `keep`). Xem tour.xml canh 6+7.
      Anh Tony chon giu ban nao thi xoa khoi con lai (CANH + scene + include). */
-  { id: 'pk_nagomi_pv', ten: 'PK Rivera Nagomi 2', lechBac: -63.3,
-    goc: { h: 20, v: 40.5, fov: 45, fovtype: 'HFOV' },
+  /* 🆕 30/09: THAY ANH - flycam MOI 29/09 DJI_0514 (170 m, nhin xien ve MAT DUONG D2 - thay ro day shophouse),
+     tile ../pano/14-nagomi-0514/, lechBac = GimbalYawDegree -47,6 cua DJI_0514. Cung cach lam nhu tren. */
+  { id: 'pk_nagomi_pv', ten: 'PK Rivera Nagomi 2', lechBac: -47.6,
+    goc: { h: -19.5, v: 67.4, fov: 132, fovtype: 'HFOV' },
     canhVe: 'pk_nagomi_pv_ve',
     khongAnhThat: true,    /* 25/09: nhu tren - lo dat trong, chi xem ban ve */
+    anNgoaiEra: true,      /* 30/09: du 158 khung ve san, CHI can Sheet danh dau "ERA độc quyền" moi hien - con lai AN */
     mauVien: 'D',
     fileLo: 'lo-goc-nagomi-pv.json',
-    ngayChup: '05/09/2026',
+    ngayChup: '29/09/2026',
     maSP: maNagomi }
 ];
 
@@ -833,6 +867,137 @@ window.eraAnhNetSau = function () {
   })();
 };
 
+/* ============================================================
+   🆕 NHAN MA CAN NOI  (29/09, Anh Tony - chat-nhan-can)
+
+   Anh Tony: "cham diem len de ve ma can noi ... tu moi huong deu co the thay".
+   Ban ve Aqua dan vao anh bi XOAY ~179 do (`can.xoay_do` trong lo-goc-aqua.json)
+   => moi ma in san tren ban ve lon nguoc / nam nghieng. Nhan nay la chu HTML dat
+   len TAM tung can, luon dung thang, xoay tour huong nao cung doc duoc.
+
+   · Chi phan khu co `nhanMa: true` trong CANH (hien: Aqua). Chi can ERA (co dong
+     trong Sheet) + khop bo loc. Dang chon 1 can -> can do nen vang, can khac mo.
+   · Lop BAN VE dat o `tam` (tam khung ban ve). Lop ANH THAT dat o tam cua
+     `diem_that` (khung da khop mai nha) - cung mot can nhung hai cho khac nhau.
+   · Toa do: `kp.spheretoscreen` x ti le khung/stage (giong trang Thuc te).
+     Tinh lai MOI KHUNG HINH nhung bo qua khi goc nhin + trang thai khong doi.
+   · 🔴 Tam `diem_that` lay TRUNG BINH VECTO 3D, khong trung binh ath - lo nam
+     ngang ath 180/-180 thi trung binh so hoc ra phia doi dien.
+   ============================================================ */
+function vecTo(h, v) {
+  h *= Math.PI / 180; v *= Math.PI / 180;
+  return [Math.cos(v) * Math.sin(h), Math.sin(v), Math.cos(v) * Math.cos(h)];
+}
+function tamDiem(ds) {
+  var x = 0, y = 0, z = 0;
+  ds.forEach(function (p) { var q = vecTo(p[0], p[1]); x += q[0]; y += q[1]; z += q[2]; });
+  var n = Math.sqrt(x * x + y * y + z * z) || 1;
+  return [Math.atan2(x, z) * 180 / Math.PI, Math.asin(y / n) * 180 / Math.PI];
+}
+var NHAN = { L: null, e: {}, khoa: '' };
+function dungNhan(L) {               /* tao lai the chu khi doi phan khu */
+  var hop = document.getElementById('lop-ma');
+  hop.innerHTML = ''; NHAN.e = {}; NHAN.L = L; NHAN.khoa = '';
+  if (!L) return;
+  Object.keys(L.lo).forEach(function (ma) {
+    var o = L.lo[ma];
+    if (!o.tam) return;
+    var d = document.createElement('div');
+    d.className = 'ma';                 /* <b> bang chu · <i> cot + cham o chan (CSS) */
+    d.appendChild(document.createElement('b')).textContent = ma;
+    d.appendChild(document.createElement('i'));
+    hop.appendChild(d);
+    NHAN.e[ma] = { d: d, ve: o.tam, that: (o.diem_that && o.diem_that.length) ? tamDiem(o.diem_that) : o.tam };
+  });
+}
+function veNhan() {
+  requestAnimationFrame(veNhan);
+  var hop = document.getElementById('lop-ma');
+  var c = timCanh(canhDang);
+  var bat = !!(kp && c && c.nhanMa && LO && LO_KHU[canhDang] === LO && BH_XONG);
+  if (!bat) { if (hop.style.display !== 'none') hop.style.display = 'none'; return; }
+  if (NHAN.L !== LO) dungNhan(LO);
+  var h = +kp.get('view.hlookat'), v = +kp.get('view.vlookat'), f = +kp.get('view.fov');
+  var sw = +kp.get('stagewidth'), sh = +kp.get('stageheight');
+  if (!(sw > 0) || !isFinite(h)) return;
+  var khoa = [h.toFixed(3), v.toFixed(3), f.toFixed(3), sw, sh, lopDang, loDang,
+              JSON.stringify(LOC), innerWidth, innerHeight].join('|');
+  /* 🔴 Do that 29/09: vua doi goc thi `get('view.*')` da ra so MOI nhung
+     `spheretoscreen` con tinh theo ma tran KHUNG TRUOC (krpano cap nhat luc ve).
+     Bo qua ngay khi khoa trung => nhan ket o cho cu (lech ~385 px o goc toan canh).
+     => sau moi lan doi, tinh them 8 khung nua roi moi nghi. */
+  if (khoa === NHAN.khoa) { if (!(NHAN.them > 0)) return; NHAN.them--; }
+  else { NHAN.khoa = khoa; NHAN.them = 8; }
+  hop.style.display = '';
+  /* Co chu TI LE NGHICH voi fov - hoc PGBL (`era_lots_scale` trong tour360/era-lots-flycam.xml,
+     scale = 50/fov). 🔴 Ban dau 29/09 Em dat 0.8..1.3 theo % zoom => Anh Tony: "binh thuong
+     thi to, zoom vao thi nho, nguoc" - vi anh phong gap 5 ma chu chi to them 1,6 lan.
+     Nay chu to DUNG NHIP voi ban ve, nhu dan tren mat dat: fov 113 -> 0.60 · fov 60 -> 1.0
+     · fov 37,5 tro xuong -> 1.6 (tran - 29/09 ha tu 2.0 khi doi sang kieu bang co cot,
+     zoom sat chu to qua van che can ben canh). */
+  var tl = 60 / (f || 60);
+  tl = tl < 0.6 ? 0.6 : (tl > 1.6 ? 1.6 : tl);
+  hop.style.setProperty('--tl', tl.toFixed(3));
+  var r = document.getElementById('pano').getBoundingClientRect();
+  var fx = r.width / sw, fy = r.height / sh, vv = vecTo(h, v);
+  var coChon = !!(loDang && LO.lo[loDang]);
+  var hien = [];
+  Object.keys(NHAN.e).forEach(function (ma) {
+    var n = NHAN.e[ma], d = n.d;
+    var p = lopDang === 'that' ? n.that : n.ve;
+    var q = vecTo(p[0], p[1]);
+    if (!laEra(ma) || !hopLoc(ma) || vv[0] * q[0] + vv[1] * q[1] + vv[2] * q[2] < 0.09) {
+      d.style.display = 'none'; return;
+    }
+    var s = kp.spheretoscreen(p[0], p[1]);
+    var x = s.x * fx, y = s.y * fy;
+    d.style.display = '';
+    d.style.left = x.toFixed(1) + 'px';
+    d.style.top = y.toFixed(1) + 'px';
+    d.classList.toggle('chon', ma === loDang);
+    d.classList.toggle('mo', coChon && ma !== loDang);
+    /* kich thuoc GOC cua bang chu (chua scale) - do 1 lan, chu khong doi */
+    if (!(n.w > 0)) { var b = d.firstChild; n.w = b.offsetWidth; n.h = b.offsetHeight; }
+    if (n.w > 0) hien.push({ n: n, x: x, y: y, chon: ma === loDang });
+  });
+  xepTang(hien, tl);
+}
+
+/* ============================================================
+   🆕 XEP TANG COT (29/09, Anh Tony: "do cao nua, cac can gan nhau no chen nhau")
+   Moi bang thu lan luot tang 0,1,2... (cot cao them BUOC px moi tang) toi khi
+   KHONG de len bang nao da dat. Het tang ma van de -> lay tang de it nhat.
+   · Thu tu: can DANG CHON truoc (luon cot thap nhat), roi tu DUOI man len TREN -
+     bang phia tren bi day len thi di vao cho trong phia tren, khong de nguoc xuong.
+   · Moi so tinh o don vi GOC roi nhan `tl` (co theo zoom) => khoang tranh cung co theo.
+   · Chi tranh BANG voi BANG. Cot mong 2 px de len nhau van doc duoc.
+   ============================================================ */
+var COT = { goc: 24, buoc: 26, tang: 5, dem: 3 };
+function xepTang(hien, tl) {
+  hien.sort(function (a, b) { return (b.chon - a.chon) || (b.y - a.y); });
+  var da = [];
+  hien.forEach(function (it) {
+    var w = it.n.w * tl, h = it.n.h * tl, dem = COT.dem;
+    var tot = 0, deIt = Infinity;
+    for (var t = 0; t < COT.tang; t++) {
+      var day = it.y - (COT.goc + t * COT.buoc) * tl;   /* canh duoi bang */
+      var o = { l: it.x - w / 2 - dem, r: it.x + w / 2 + dem, tr: day - h - dem, d: day + dem };
+      var de = 0;
+      for (var i = 0; i < da.length; i++) {
+        var k = da[i];
+        var ox = Math.min(o.r, k.r) - Math.max(o.l, k.l), oy = Math.min(o.d, k.d) - Math.max(o.tr, k.tr);
+        if (ox > 0 && oy > 0) de += ox * oy;
+      }
+      if (de < deIt) { deIt = de; tot = t; it.o = o; }
+      if (de === 0) break;
+    }
+    da.push(it.o);
+    var cot = COT.goc + tot * COT.buoc;
+    if (it.n.cot !== cot) { it.n.cot = cot; it.n.d.style.setProperty('--cot', cot + 'px'); }
+  });
+}
+requestAnimationFrame(veNhan);
+
 /* Can nay co phai hang ERA doc quyen khong = co dong trong Sheet khong. */
 function laEra(ma) {
   var c = timCanh(canhDang);
@@ -896,7 +1061,12 @@ var BANG_MAU = {
   B: { ten: 'trang', vien: '0xFFFFFF', chon: '0xF5C542' },
   /* 25/09 Anh Tony: "PK Aqua giu nguyen mau; PK Park Village va Nagomi doi mau san ho tang them 2 tong do"
      => D = san ho do (A 0xFF7A6B day 2 nac ve do). Gan theo phan khu qua `mauVien` trong CANH. */
-  D: { ten: 'san ho do', vien: '0xF5483A', chon: '0xFFFFFF' }
+  D: { ten: 'san ho do', vien: '0xF5483A', chon: '0xFFFFFF' },
+  /* 29/09 Anh Tony (xem PK The Aqua): "mau vien co the nho hon, mau xanh neon de noi bat"
+     => E = xanh la neon, `day` 0.6 = nhan do day vien moi kieu (bong toi giu nguyen de
+     vien manh van tach khoi co xanh). F = xanh cyan neon CHI DE SO SANH: `?vien=F`. */
+  E: { ten: 'xanh neon', vien: '0x39FF14', chon: '0xFFFFFF', day: 0.6 },
+  F: { ten: 'cyan neon', vien: '0x00F0FF', chon: '0xFFFFFF', day: 0.6 }
 };
 var KIEU_LO = {
   bong: '0x0A1F2A',                 /* mau bong: xanh navy toi (--wp-canh-teal dam hon) */
@@ -914,7 +1084,7 @@ var KIEU_LO = {
 /* 25/09: mau vien THEO PHAN KHU - `mauVien` trong CANH (khong co = C vang).
    `?vien=X` / eraBangMau('X') van ep MOT mau cho moi phan khu (de so sanh). */
 var DANG_MAU = (function () {
-  var m = /[?&]vien=([ABCD])/i.exec(location.search);
+  var m = /[?&]vien=([A-F])/i.exec(location.search);
   return m ? m[1].toUpperCase() : null;
 })();
 function bangMau() {
@@ -931,12 +1101,19 @@ function dangLoc() {
   return Object.keys(LOC.loai).length > 0 || Object.keys(LOC.gia).length > 0 || dtDangLoc();
 }
 
+function anNgoaiEra() { var c = timCanh(canhDang); return !!(c && c.anNgoaiEra); }
 function kieuLo(ma, coTT, coChon) {
   var P = bangMau(), K = KIEU_LO, s;
-  function ra(m, o, fa) { return { m: m, bw: o.bw, ba: o.ba, fa: fa == null ? o.fa : fa, sw: o.sw || 0, sa: o.sa || 0 }; }
+  var day = P.day || 1;    /* 29/09: bang mau `E` ve vien manh hon (0.6) - moi kieu cung ti le */
+  function ra(m, o, fa) { return { m: m, bw: o.bw * day, ba: o.ba, fa: fa == null ? o.fa : fa, sw: o.sw || 0, sa: o.sa || 0 }; }
   if (ma === loDang) return ra(P.chon, K.chon, nhipChon ? K.chon.fa2 : K.chon.fa);
   if (!laEra(ma)) {
-    s = ra(K.khongEra.m, K.khongEra); if (coChon) s.ba = K.khongEra.baMo; return s;
+    s = ra(K.khongEra.m, K.khongEra); if (coChon) s.ba = K.khongEra.baMo;
+    /* 🆕 30/09 Anh Tony (Nagomi): "can nao trong gio hang co cot ERA doc quyen thi SANG LEN,
+       con khong thi AN DI" - canh co co `anNgoaiEra` => vien 0, nen 0, bong 0 (khung van
+       nam san, Sheet danh dau la sang, KHONG phai sua code). */
+    if (anNgoaiEra()) { s.ba = 0; s.fa = 0; s.sa = 0; }
+    return s;
   }
   var loc = dangLoc();
   /* can ERA KHONG khop loc -> lui han: vien mo, khong nen, khong bong, khong bam duoc */
