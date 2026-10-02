@@ -68,12 +68,12 @@ export function LeadPopup() {
 
   useEffect(() => {
     if (sessionStorage.getItem(DA_HIEN_KEY)) return;
-    /* Khach vang tren trang 60 giay roi moi hien popup — de ho kip xem
-       pano/loc truoc, khong bi popup lam phien ngay khi vao. */
+    const n = timNguon();
+    if (!n) return;
+    /* Nhan dien nguon ngay khi vao trang de nut floating hien som;
+       popup thi cho 60 giay de khach kip xem pano/loc truoc. */
+    queueMicrotask(() => setNguon(n));
     const timer = setTimeout(() => {
-      const n = timNguon();
-      if (!n) return;
-      setNguon(n);
       setHien(true);
       sessionStorage.setItem(DA_HIEN_KEY, "1");
     }, 60000);
@@ -310,8 +310,8 @@ export function LeadPopup() {
       </div>
       </div>
 
-      {/* Nút floating góc phải dưới — LUÔN hiện để khách tự mở form;
-          bấm để mở lại popup. */}
+      {/* Nút floating góc phải dưới — CHỈ hiện khi khách đến từ nguồn quảng cáo;
+          bấm để mở popup ngay (không cần chờ 60 giây). */}
       <style>{`
         @keyframes wpRung {
           0%, 100% { transform: rotate(0deg); }
@@ -330,7 +330,7 @@ export function LeadPopup() {
         @media (max-width: 480px) { .wp-popup-card { zoom: .85; } }
         @media (max-width: 380px) { .wp-popup-card { zoom: .78; } }
       `}</style>
-      {!hien && (
+      {nguon && !hien && (
         <button
           type="button"
           aria-label="Mở form đăng ký nhận giỏ hàng"
