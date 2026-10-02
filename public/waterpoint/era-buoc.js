@@ -101,21 +101,26 @@
     + 'bottom:var(--wp-space-xl,32px);z-index:var(--wp-z-overlay,50);'
     + 'display:flex;align-items:stretch;gap:var(--wp-space-xxs,4px);'
     + 'width:calc(100vw - var(--wp-space-xl,32px));max-width:520px;'
-    + 'height:var(--wp-nav-h,52px);'
+    + 'height:var(--wp-nav-bar-h,40px);'
     /* 🔴 BỎ HẲN cuộn ngang — đây chính là thứ làm mất tab. Nay không tràn nữa. */
     + 'overflow:visible;padding:0}'
     /* min-width:0 BẮT BUỘC: thiếu nó thì flex item không co được xuống dưới
        bề rộng nội dung, `flex:1` thành vô nghĩa và vẫn tràn y như cũ. */
-    + '#nav .tab{flex:1 1 0;min-width:0;height:100%;--r:16px;'
-    + 'display:flex;flex-direction:column;align-items:center;justify-content:center;'
-    + 'gap:2px;padding:0 2px}'
-    + '#nav .tab svg{width:18px;height:18px;flex:0 0 auto;fill:none;stroke:currentColor;'
-    + 'stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}'
-    + '#nav .tab span{font-size:10px;font-weight:var(--wp-fw-bold,700);letter-spacing:.3px;'
+    /* 🆕 01/10 Anh Tony: "4 cai nut duoi - icon 1 ben trai, chu ben phai - do chiem dien tich"
+       => xep NGANG, thanh cao 40px (cu 52). Cac lop neo theo thanh (dai chip, qua cau, zoom) doc
+       `--wp-nav-bar-h` (khai o :root ben duoi), thieu bien thi lui ve --wp-nav-h 52px => go file nay
+       van tra ve nhu cu. --wp-nav-h GIU 52 vi brand/the can phia tren con dung no. */
+    + ':root{--wp-nav-bar-h:40px}'
+    + '#nav .tab{flex:1 1 0;min-width:0;height:100%;--r:14px;'
+    + 'display:flex;flex-direction:row;align-items:center;justify-content:center;'
+    + 'gap:7px;padding:0 4px}'
+    + '#nav .tab svg{width:17px;height:17px;flex:0 0 auto;fill:none;stroke:currentColor;'
+    + 'stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}'
+    + '#nav .tab span{font-size:11px;font-weight:var(--wp-fw-bold,700);letter-spacing:.4px;'
     + 'text-transform:uppercase;white-space:nowrap;line-height:1}'
     /* Màn hẹp: thu chữ + icon (học đúng mốc 560px của PGBL) */
-    + '@media (max-width:560px){#nav .tab span{font-size:9px;letter-spacing:.1px}'
-    + '#nav .tab svg{width:16px;height:16px}}'
+    + '@media (max-width:560px){#nav .tab{gap:4px;padding:0 2px}#nav .tab span{font-size:9px;letter-spacing:.1px}'
+    + '#nav .tab svg{width:14px;height:14px}}'
     /* Màn RẤT thấp (điện thoại xoay ngang ~390px cao): bỏ icon, chỉ còn chữ,
        khỏi chiếm chiều cao quý hiếm. */
     + '@media (max-height:420px){#nav .tab svg{display:none}'

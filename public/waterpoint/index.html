@@ -238,6 +238,8 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 .gim.lop-tat *{pointer-events:none}
 
 /* Het cho day -> thu nhan ve, chi con cai cham. Re chuot moi bung chu ra. */
+.gim.pk:not(.co-canh) .nhan{cursor:default}   /* 01/10: chi nhan co canh rieng moi bam duoc */
+.gim.co-canh .nhan:hover{filter:brightness(1.08);box-shadow:0 0 0 2px var(--wp-vang)}
 .gim.gon .nhan{display:none}
 .gim.gon .day{display:none}
 .gim.gon:hover .nhan{display:flex}
@@ -270,8 +272,9 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 /* nut bat/tat diem bay dung dung icon flycam khoi dac, khong phai net */
 
 /* ---- Bang thong tin canh dang xem ---- */
+/* 01/10: TRUOC DAY cung day voi dai chip `#ds` => bi 6 chip de (iPad 1080 dai chip trai tu mep 16px). Nhac len TREN dai chip. */
 #dangxem{position:fixed;left:var(--wp-space-md);
-  bottom:calc(var(--wp-space-xl) + var(--wp-nav-h) + var(--wp-space-sm));
+  bottom:calc(var(--wp-space-xl) + var(--wp-nav-bar-h,var(--wp-nav-h)) + var(--wp-space-sm) + var(--wp-control-h) + 6px + var(--wp-space-xs));
   z-index:var(--wp-z-overlay);padding:var(--wp-space-sm) var(--wp-space-md);
   font-size:var(--wp-fs-label);font-weight:var(--wp-fw-bold);letter-spacing:.5px}
 #dangxem b{display:block;font-size:var(--wp-fs-body);font-weight:var(--wp-fw-regular);
@@ -287,7 +290,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
    khong duoc tru ca hai ben (do that: iPhone doc mat oan 84px). */
 #ds,#ds-dh{position:fixed;left:calc(50% - var(--ds-chua,0px) / 2);
   transform:translateX(-50%);
-  bottom:calc(var(--wp-space-xl) + var(--wp-nav-h) + var(--wp-space-sm));
+  bottom:calc(var(--wp-space-xl) + var(--wp-nav-bar-h,var(--wp-nav-h)) + var(--wp-space-sm));
   max-width:calc(100vw - var(--wp-space-xl) - var(--ds-chua,0px))}
 #ds{z-index:var(--wp-z-overlay);display:flex;align-items:flex-start;gap:var(--wp-space-xs);
   overflow-x:auto;scrollbar-width:none;scroll-behavior:smooth;
@@ -317,7 +320,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 #ds-dh{z-index:calc(var(--wp-z-overlay) + 1);pointer-events:none;
   width:calc(100vw - var(--wp-space-xl) - var(--ds-chua,0px));
   height:var(--wp-control-h);display:none;
-  bottom:calc(var(--wp-space-xl) + var(--wp-nav-h) + var(--wp-space-sm) + 6px)}
+  bottom:calc(var(--wp-space-xl) + var(--wp-nav-bar-h,var(--wp-nav-h)) + var(--wp-space-sm) + 6px)}
 #ds-dh.hien{display:block}
 /* 🔴 Mui ten + so dem NOI DE LEN chip, ma chip cung mau teal `--wp-primary`
    => de nguyen la CHIM HAN vao nhau, nhin anh chup moi thay. Dung ton mau
@@ -1003,9 +1006,29 @@ function veGim() {
       '<span class="t"></span></div>' +
       '<div class="cham"></div>';
     e.querySelector('.t').textContent = p.ten;
+    /* 🆕 01/10 Anh Tony: "co the click tu nhan nay vao thang scene cua phan khu".
+       Nhan phan khu CO canh flycam rieng -> bam la bay vao canh do. Phan khu chua co
+       canh (Marina, Solaria, Solaria Rise, Ehome) thi nhan van nhu cu, khong bam.
+       Tool cham diem (?tool=1) giu nguyen thao tac cu. */
+    var toi = pk && GIM_TOI_CANH[p.id];
+    if (toi) {
+      e.classList.add('co-canh');
+      e.querySelector('.nhan').addEventListener('click', function (ev) {
+        if (TOOL) return;
+        ev.stopPropagation();
+        if (canhHienTai() !== toi) doiCanh(toi);
+      });
+    }
     L.appendChild(e);
   });
 }
+/* nhan phan khu (id trong gim-tong-quan.json) -> canh flycam cua phan khu (id trong canh.json) */
+var GIM_TOI_CANH = {
+  'pk-the-aqua': 'canh5_aquaria_song_vam_co',
+  'pk-park-village': 'canh8_park_village',
+  'pk-rivera': 'canh6_rivera',
+  'pk-the-pearl': 'canh7_the_pearl'
+};
 
 /* Dat lop gim len dung toa do moi khung hinh. Tach rieng khoi batTheo cho de doc. */
 /* ═══ CO GIAN NHAN GIM THEO MUC ZOOM — chinh 2 so nay la xong (Anh Tony 16/09) ═══
@@ -1808,7 +1831,7 @@ if (TOOL) {
 <!-- Quả cầu điều hướng + thanh zoom. ADDITIVE 100%: gỡ dòng này là trang về
      y như cũ. Chép từ PGBL (`06-WEB/PGBL-web/tour360/era-globe.js`) rồi đổi
      màu/chữ/chỗ đứng cho hợp trang này + thêm thanh zoom. -->
-<script src="era-globe.js?nc=20260916b"></script>
+<script src="era-globe.js?nc=20261001n"></script>
 
 <!-- Thanh buoc dung chung cho ca 4 trang. Go 1 dong nay la ve nav cu.
      🔴 `data-buoc="thuc-te"` phai KHOP dung id trong bien BUOC cua era-buoc.js
@@ -1818,5 +1841,5 @@ if (TOOL) {
         era-buoc.js ghi de khoi `#nav`, era-globe.js ghi de `#ds` - hai id khac
         nhau nen thu tu khong anh huong, nhung giu cung thu tu voi 3 trang kia
         cho de doi chieu. -->
-<script src="era-buoc.js?nc=20260915" data-buoc="thuc-te"></script>
+<script src="era-buoc.js?nc=20261001n" data-buoc="thuc-te"></script>
 </body></html>

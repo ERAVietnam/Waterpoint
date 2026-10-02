@@ -313,7 +313,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
   #brand img{height:22px}
   /* thanh buoc + chip an sat day de chua lay khung nhin */
   #nav{bottom:var(--wp-space-sm)}
-  #chip{bottom:calc(var(--wp-space-sm) + var(--wp-nav-h) + var(--wp-space-xxs))}
+  #chip{bottom:calc(var(--wp-space-sm) + var(--wp-nav-bar-h,var(--wp-nav-h)) + var(--wp-space-xxs))}
   .tab{height:44px;font-size:var(--wp-fs-label)}
 }
 
@@ -407,7 +407,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 /* ============ Chip phan khu ============ */
 #chip,#chip-dh{position:fixed;left:calc(50% - var(--ds-chua,0px) / 2);
   transform:translateX(-50%);
-  bottom:calc(var(--wp-space-xl) + var(--wp-nav-h) + var(--wp-space-sm));
+  bottom:calc(var(--wp-space-xl) + var(--wp-nav-bar-h,var(--wp-nav-h)) + var(--wp-space-sm));
   max-width:calc(100vw - var(--wp-space-xl) - var(--ds-chua,0px))}
 #chip{z-index:var(--wp-z-overlay);display:flex;align-items:flex-start;gap:var(--wp-space-xs);
   overflow-x:auto;scrollbar-width:none;scroll-behavior:smooth;
@@ -435,7 +435,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 #chip-dh{z-index:calc(var(--wp-z-overlay) + 1);pointer-events:none;
   width:calc(100vw - var(--wp-space-xl) - var(--ds-chua,0px));
   height:var(--wp-control-h);display:none;
-  bottom:calc(var(--wp-space-xl) + var(--wp-nav-h) + var(--wp-space-sm) + 6px)}
+  bottom:calc(var(--wp-space-xl) + var(--wp-nav-bar-h,var(--wp-nav-h)) + var(--wp-space-sm) + 6px)}
 #chip-dh.hien{display:block}
 /* 🔴 Mui ten noi de len chip, ma chip o day mau VANG hoac TRANG (phan khu ERA
    / phan khu khac) - de mau teal thuong thi chim vao nen anh. Dung ton dam
@@ -1087,6 +1087,6 @@ document.getElementById('l-ti').onclick = function () { hienTI = !hienTI; dongBo
      ⚠️ Dat TRUOC era-buoc.js — ca hai deu chen <style> luc chay, cai SAU thang.
         Hai file ghi de hai id khac nhau (#nav vs #ds) nen khong dam nhau, nhung
         giu dung thu tu nhu ben tab Thuc te cho khoi phai nghi lai. -->
-<script src="../era-globe.js?nc=20260916"></script>
-<script src="../era-buoc.js?nc=20260915" data-buoc="tong-quan"></script>
+<script src="../era-globe.js?nc=20261001n"></script>
+<script src="../era-buoc.js?nc=20261001n" data-buoc="tong-quan"></script>
 </body></html>

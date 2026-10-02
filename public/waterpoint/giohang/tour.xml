@@ -102,41 +102,296 @@
        ~7000 px ban ve, 1 tam la qua nang cho GPU iPad). Anh 360 mo ben duoi van giu - o nao
        loi thi van con ban mo, khong den. Xem 01-CONG-CU/can-matbang-flycam/tao-anh-net-aqua.py. -->
 <scene name="pk_aqua_ve" title="PK The Aqua - ban ve" onstart="">
-  <view hlookat="5.0" vlookat="45.0" fov="105.0"
-        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+  <view hlookat="-3.9" vlookat="53.2" fov="135"
+        fovtype="HFOV" fovmin="12.0" fovmax="135"
         limitview="auto" maxpixelzoom="4.0" />
-  <preview url="../pano/10-aqua-ve/10-aqua-ve.tiles/preview.jpg" />
+  <preview url="../pano/17-aqua-0540-ve/17-aqua-0540-ve.tiles/preview.jpg" />
   <image type="CUBE" multires="true" tilesize="512">
-    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/10-aqua-ve/10-aqua-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
-    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/10-aqua-ve/10-aqua-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
-    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/10-aqua-ve/10-aqua-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/17-aqua-0540-ve/17-aqua-0540-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/17-aqua-0540-ve/17-aqua-0540-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/17-aqua-0540-ve/17-aqua-0540-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
   </image>
-  <!-- AQUA_NET_BAT_DAU  (sinh boi 01-CONG-CU/can-matbang-flycam/tao-anh-net-aqua.py - DUNG SUA TAY) -->
-  <hotspot name="aqua_net_0_0" urlnet="aqua-net/o-0-0.webp" distorted="true"
-           ath="72.91371" atv="49.13464" rotate="111.4492" scale="0.095136"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="aqua_net_0_1" urlnet="aqua-net/o-0-1.webp" distorted="true"
-           ath="56.6043" atv="65.89012" rotate="125.2641" scale="0.1406687"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="aqua_net_0_2" urlnet="aqua-net/o-0-2.webp" distorted="true"
-           ath="-19.27567" atv="75.70206" rotate="-162.0097" scale="0.1593807"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="aqua_net_0_3" urlnet="aqua-net/o-0-3.webp" distorted="true"
-           ath="-66.29845" atv="59.61991" rotate="-117.9486" scale="0.1248691"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="aqua_net_1_0" urlnet="aqua-net/o-1-0.webp" distorted="true"
-           ath="52.78811" atv="43.81678" rotate="137.2176" scale="0.0918777"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="aqua_net_1_1" urlnet="aqua-net/o-1-1.webp" distorted="true"
-           ath="31.482" atv="53.9337" rotate="153.2443" scale="0.1262695"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="aqua_net_1_2" urlnet="aqua-net/o-1-2.webp" distorted="true"
-           ath="-8.57689" atv="58.11311" rotate="-173.3596" scale="0.1390369"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="aqua_net_1_3" urlnet="aqua-net/o-1-3.webp" distorted="true"
-           ath="-42.12233" atv="50.54317" rotate="-146.0193" scale="0.1148933"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <!-- AQUA_NET_HET -->
+  <!-- CHU DUNG THANG 274 lo (01/10): chu in san tren ban ve DA XOA, chu nay luon dung thang khi xoay.
+       Sinh boi flycam-moi-20260930/_can/dua_len_web_gd2.py tu dan_mb.py TRON=1 - dung sua tay. -->
+  <hotspot name="chu_aqm_D1_01" style="kieu_chu_lo_toi" ath="-52.6808" atv="23.9959" scale="0.040" html="D1-01" />
+  <hotspot name="chu_aqm_D1_02" style="kieu_chu_lo_toi" ath="-54.9750" atv="24.5419" scale="0.042" html="D1-02" />
+  <hotspot name="chu_aqm_D1_03" style="kieu_chu_lo_toi" ath="-56.7067" atv="24.9206" scale="0.043" html="D1-03" />
+  <hotspot name="chu_aqm_D1_04" style="kieu_chu_lo_toi" ath="-58.8799" atv="25.4064" scale="0.044" html="D1-04" />
+  <hotspot name="chu_aqm_D1_05" style="kieu_chu_lo_toi" ath="-61.4523" atv="25.9088" scale="0.045" html="D1-05" />
+  <hotspot name="chu_aqm_D1_06" style="kieu_chu_lo_toi" ath="-63.4358" atv="26.2288" scale="0.046" html="D1-06" />
+  <hotspot name="chu_aqm_D10_01" style="kieu_chu_lo_toi" ath="-15.9788" atv="40.0269" scale="0.081" html="D10-01" />
+  <hotspot name="chu_aqm_D10_02" style="kieu_chu_lo_toi" ath="-17.0401" atv="41.6760" scale="0.085" html="D10-02" />
+  <hotspot name="chu_aqm_D10_03" style="kieu_chu_lo_toi" ath="-18.7666" atv="44.1653" scale="0.091" html="D10-03" />
+  <hotspot name="chu_aqm_D10_04" style="kieu_chu_lo_toi" ath="-20.2734" atv="46.3362" scale="0.096" html="D10-04" />
+  <hotspot name="chu_aqm_D11_01" style="kieu_chu_lo_toi" ath="-57.7753" atv="29.3365" scale="0.054" html="D11-01" />
+  <hotspot name="chu_aqm_D11_02" style="kieu_chu_lo_toi" ath="-56.2710" atv="30.3050" scale="0.056" html="D11-02" />
+  <hotspot name="chu_aqm_D11_03" style="kieu_chu_lo_toi" ath="-55.4881" atv="31.3399" scale="0.059" html="D11-03" />
+  <hotspot name="chu_aqm_D11_04" style="kieu_chu_lo_toi" ath="-54.0233" atv="32.2805" scale="0.061" html="D11-04" />
+  <hotspot name="chu_aqm_D11_05" style="kieu_chu_lo_toi" ath="-52.5935" atv="33.2422" scale="0.064" html="D11-05" />
+  <hotspot name="chu_aqm_D11_06" style="kieu_chu_lo_toi" ath="-50.9071" atv="34.2430" scale="0.066" html="D11-06" />
+  <hotspot name="chu_aqm_D11_07" style="kieu_chu_lo_toi" ath="-49.2108" atv="35.2833" scale="0.069" html="D11-07" />
+  <hotspot name="chu_aqm_D11_08" style="kieu_chu_lo_toi" ath="-51.1920" atv="36.0183" scale="0.071" html="D11-08" />
+  <hotspot name="chu_aqm_D11_09" style="kieu_chu_lo_toi" ath="-52.8891" atv="34.9546" scale="0.068" html="D11-09" />
+  <hotspot name="chu_aqm_D11_10" style="kieu_chu_lo_toi" ath="-54.4599" atv="33.8652" scale="0.065" html="D11-10" />
+  <hotspot name="chu_aqm_D11_11" style="kieu_chu_lo_toi" ath="-55.9143" atv="32.8889" scale="0.063" html="D11-11" />
+  <hotspot name="chu_aqm_D11_12" style="kieu_chu_lo_toi" ath="-57.2623" atv="31.8752" scale="0.060" html="D11-12" />
+  <hotspot name="chu_aqm_D11_13" style="kieu_chu_lo_toi" ath="-58.5551" atv="30.9565" scale="0.058" html="D11-13" />
+  <hotspot name="chu_aqm_D11_14" style="kieu_chu_lo_toi" ath="-60.1749" atv="29.9091" scale="0.055" html="D11-14" />
+  <hotspot name="chu_aqm_D12_01" style="kieu_chu_lo_toi" ath="-46.7214" atv="36.6226" scale="0.072" html="D12-01" />
+  <hotspot name="chu_aqm_D12_02" style="kieu_chu_lo_toi" ath="-44.3869" atv="37.3708" scale="0.074" html="D12-02" />
+  <hotspot name="chu_aqm_D12_03" style="kieu_chu_lo_toi" ath="-41.7899" atv="38.5764" scale="0.077" html="D12-03" />
+  <hotspot name="chu_aqm_D12_04" style="kieu_chu_lo_toi" ath="-44.5750" atv="39.9349" scale="0.081" html="D12-04" />
+  <hotspot name="chu_aqm_D12_05" style="kieu_chu_lo_toi" ath="-46.8732" atv="38.5466" scale="0.077" html="D12-05" />
+  <hotspot name="chu_aqm_D12_06" style="kieu_chu_lo_toi" ath="-48.7957" atv="37.4770" scale="0.074" html="D12-06" />
+  <hotspot name="chu_aqm_D13_01" style="kieu_chu_lo_toi" ath="-64.0721" atv="31.0310" scale="0.058" html="D13-01" />
+  <hotspot name="chu_aqm_D13_02" style="kieu_chu_lo_toi" ath="-67.6474" atv="31.6422" scale="0.060" html="D13-02" />
+  <hotspot name="chu_aqm_D13_03" style="kieu_chu_lo_toi" ath="-71.1123" atv="32.1767" scale="0.061" html="D13-03" />
+  <hotspot name="chu_aqm_D13_04" style="kieu_chu_lo_toi" ath="-74.1240" atv="33.1452" scale="0.064" html="D13-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_05" style="kieu_chu_lo_toi" ath="-77.6853" atv="33.2371" scale="0.064" html="D13-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_06" style="kieu_chu_lo_toi" ath="-76.9775" atv="34.9099" scale="0.069" html="D13-06" />
+  <hotspot name="chu_aqm_D13_07" style="kieu_chu_lo_toi" ath="-76.6598" atv="37.0622" scale="0.074" html="D13-07" />
+  <hotspot name="chu_aqm_D13_08" style="kieu_chu_lo_toi" ath="-75.3851" atv="38.9320" scale="0.079" html="D13-08" />
+  <hotspot name="chu_aqm_D13_09" style="kieu_chu_lo_toi" ath="-73.6989" atv="41.2294" scale="0.085" html="D13-09" />
+  <hotspot name="chu_aqm_D13_10" style="kieu_chu_lo_toi" ath="-69.9853" atv="40.1677" scale="0.082" html="D13-10" />
+  <hotspot name="chu_aqm_D13_11" style="kieu_chu_lo_toi" ath="-71.5839" atv="38.3443" scale="0.077" html="D13-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_12" style="kieu_chu_lo_toi" ath="-73.4421" atv="36.3072" scale="0.072" html="D13-12" />
+  <hotspot name="chu_aqm_D13_13" style="kieu_chu_lo_toi" ath="-73.6916" atv="34.6696" scale="0.068" html="D13-13" />
+  <hotspot name="chu_aqm_D13_14" style="kieu_chu_lo_toi" ath="-69.9466" atv="33.4690" scale="0.065" html="D13-14" />
+  <hotspot name="chu_aqm_D13_15" style="kieu_chu_lo_toi" ath="-66.8014" atv="32.9226" scale="0.063" html="D13-15" />
+  <hotspot name="chu_aqm_D13_16" style="kieu_chu_lo_toi" ath="-63.1020" atv="32.0827" scale="0.061" html="D13-16" />
+  <hotspot name="chu_aqm_D14_01" style="kieu_chu_lo_toi" ath="-66.7014" atv="43.3677" scale="0.090" html="D14-01" />
+  <hotspot name="chu_aqm_D14_02" style="kieu_chu_lo_toi" ath="-64.4734" atv="45.3771" scale="0.095" html="D14-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_03" style="kieu_chu_lo_toi" ath="-61.6471" atv="47.9638" scale="0.101" html="D14-03" />
+  <hotspot name="chu_aqm_D14_04" style="kieu_chu_lo_toi" ath="-53.4321" atv="50.3590" scale="0.107" html="D14-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_05" style="kieu_chu_lo_toi" ath="-47.8844" atv="48.5801" scale="0.102" html="D14-05" />
+  <hotspot name="chu_aqm_D14_06" style="kieu_chu_lo_toi" ath="-44.1651" atv="46.7397" scale="0.098" html="D14-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_07" style="kieu_chu_lo_toi" ath="-38.9901" atv="48.5959" scale="0.102" html="D14-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_08" style="kieu_chu_lo_toi" ath="-43.6008" atv="51.1330" scale="0.108" html="D14-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_09" style="kieu_chu_lo_toi" ath="-48.7558" atv="53.4478" scale="0.113" html="D14-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_10" style="kieu_chu_lo_toi" ath="-55.1182" atv="55.9185" scale="0.119" html="D14-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_11" style="kieu_chu_lo_toi" ath="-59.5607" atv="52.5841" scale="0.112" html="D14-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_12" style="kieu_chu_lo_toi" ath="-65.8842" atv="49.5226" scale="0.105" html="D14-12" />
+  <hotspot name="chu_aqm_D14_13" style="kieu_chu_lo_toi" ath="-68.7059" atv="47.0021" scale="0.099" html="D14-13" />
+  <hotspot name="chu_aqm_D14_14" style="kieu_chu_lo_toi" ath="-71.2458" atv="44.2319" scale="0.092" html="D14-14[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D15_01" style="kieu_chu_lo_toi" ath="-80.8622" atv="46.3627" scale="0.097" html="D15-01" />
+  <hotspot name="chu_aqm_D15_02" style="kieu_chu_lo_toi" ath="-79.2206" atv="49.8468" scale="0.106" html="D15-02" />
+  <hotspot name="chu_aqm_D15_03" style="kieu_chu_lo_toi" ath="-77.0658" atv="53.2415" scale="0.114" html="D15-03" />
+  <hotspot name="chu_aqm_D15_04" style="kieu_chu_lo_toi" ath="-74.4408" atv="56.4913" scale="0.121" html="D15-04" />
+  <hotspot name="chu_aqm_D15_05" style="kieu_chu_lo_toi" ath="-70.7762" atv="60.4534" scale="0.128" html="D15-05" />
+  <hotspot name="chu_aqm_D15_06" style="kieu_chu_lo_toi" ath="-67.0851" atv="64.4462" scale="0.136" html="D15-06" />
+  <hotspot name="chu_aqm_D15_07" style="kieu_chu_lo_toi" ath="-61.8356" atv="68.3302" scale="0.142" html="D15-07" />
+  <hotspot name="chu_aqm_D15_08" style="kieu_chu_lo_toi" ath="-49.9951" atv="73.1030" scale="0.148" html="D15-08" />
+  <hotspot name="chu_aqm_D15_09" style="kieu_chu_lo_toi" ath="-32.2367" atv="68.6151" scale="0.142" html="D15-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D15_10" style="kieu_chu_lo_toi" ath="-40.7599" atv="63.3700" scale="0.133" html="D15-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D15_11" style="kieu_chu_lo_toi" ath="-33.9456" atv="59.6406" scale="0.126" html="D15-11" />
+  <hotspot name="chu_aqm_D15_12" style="kieu_chu_lo_toi" ath="-29.4315" atv="56.4775" scale="0.120" html="D15-12" />
+  <hotspot name="chu_aqm_D15_13" style="kieu_chu_lo_toi" ath="-25.1691" atv="53.0297" scale="0.112" html="D15-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D16_01" style="kieu_chu_lo_toi" ath="19.2218" atv="55.3953" scale="0.117" html="D16-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D16_02" style="kieu_chu_lo_toi" ath="21.7990" atv="58.5569" scale="0.124" html="D16-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D17_01" style="kieu_chu_lo_toi" ath="11.6332" atv="40.6388" scale="0.082" html="D17-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D17_02" style="kieu_chu_lo_toi" ath="12.5165" atv="42.6197" scale="0.087" html="D17-02" />
+  <hotspot name="chu_aqm_D17_03" style="kieu_chu_lo_toi" ath="13.7170" atv="45.6855" scale="0.095" html="D17-03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D17_04" style="kieu_chu_lo_toi" ath="15.0058" atv="48.1342" scale="0.101" html="D17-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D18_01" style="kieu_chu_lo_toi" ath="9.6633" atv="36.5367" scale="0.071" html="D18-01" />
+  <hotspot name="chu_aqm_D18_02" style="kieu_chu_lo_toi" ath="12.9483" atv="36.4617" scale="0.071" html="D18-02" />
+  <hotspot name="chu_aqm_D18_03" style="kieu_chu_lo_toi" ath="15.9907" atv="36.1546" scale="0.070" html="D18-03" />
+  <hotspot name="chu_aqm_D18_04" style="kieu_chu_lo_toi" ath="18.7483" atv="35.7815" scale="0.069" html="D18-04" />
+  <hotspot name="chu_aqm_D18_05" style="kieu_chu_lo_toi" ath="21.4960" atv="35.3443" scale="0.068" html="D18-05" />
+  <hotspot name="chu_aqm_D18_06" style="kieu_chu_lo_toi" ath="23.8211" atv="34.6744" scale="0.067" html="D18-06" />
+  <hotspot name="chu_aqm_D18_07" style="kieu_chu_lo_toi" ath="26.3947" atv="34.1495" scale="0.065" html="D18-07" />
+  <hotspot name="chu_aqm_D18_08" style="kieu_chu_lo_toi" ath="28.6917" atv="33.5851" scale="0.064" html="D18-08" />
+  <hotspot name="chu_aqm_D18_09" style="kieu_chu_lo_toi" ath="31.0666" atv="32.9953" scale="0.062" html="D18-09" />
+  <hotspot name="chu_aqm_D18_10" style="kieu_chu_lo_toi" ath="33.2903" atv="32.3959" scale="0.061" html="D18-10" />
+  <hotspot name="chu_aqm_D19_01" style="kieu_chu_lo_toi" ath="35.9589" atv="31.6120" scale="0.059" html="D19-01" />
+  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="38.3393" atv="31.1279" scale="0.058" html="D19-02" />
+  <hotspot name="chu_aqm_D19_03" style="kieu_chu_lo_toi" ath="40.3393" atv="30.4748" scale="0.056" html="D19-03" />
+  <hotspot name="chu_aqm_D19_04" style="kieu_chu_lo_toi" ath="42.1213" atv="29.8311" scale="0.054" html="D19-04" />
+  <hotspot name="chu_aqm_D19_05" style="kieu_chu_lo_toi" ath="44.0649" atv="28.6387" scale="0.051" html="D19-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D19_06" style="kieu_chu_lo_toi" ath="47.3462" atv="29.7753" scale="0.054" html="D19-06" />
+  <hotspot name="chu_aqm_D19_07" style="kieu_chu_lo_toi" ath="49.6891" atv="30.4883" scale="0.056" html="D19-07" />
+  <hotspot name="chu_aqm_D19_08" style="kieu_chu_lo_toi" ath="52.0854" atv="31.4813" scale="0.059" html="D19-08" />
+  <hotspot name="chu_aqm_D19_09" style="kieu_chu_lo_toi" ath="54.7013" atv="32.4632" scale="0.061" html="D19-09" />
+  <hotspot name="chu_aqm_D19_10" style="kieu_chu_lo_toi" ath="57.9411" atv="33.6672" scale="0.065" html="D19-10" />
+  <hotspot name="chu_aqm_D2_01" style="kieu_chu_lo_toi" ath="-67.9587" atv="26.9516" scale="0.048" html="D2-01" />
+  <hotspot name="chu_aqm_D2_02" style="kieu_chu_lo_toi" ath="-70.8123" atv="27.3125" scale="0.049" html="D2-02" />
+  <hotspot name="chu_aqm_D2_03" style="kieu_chu_lo_toi" ath="-73.6766" atv="27.5969" scale="0.050" html="D2-03" />
+  <hotspot name="chu_aqm_D2_04" style="kieu_chu_lo_toi" ath="-76.1439" atv="27.7925" scale="0.050" html="D2-04" />
+  <hotspot name="chu_aqm_D2_05" style="kieu_chu_lo_toi" ath="-79.4697" atv="28.1571" scale="0.051" html="D2-05" />
+  <hotspot name="chu_aqm_D2_06" style="kieu_chu_lo_toi" ath="-82.6258" atv="28.3177" scale="0.052" html="D2-06" />
+  <hotspot name="chu_aqm_D2_07" style="kieu_chu_lo_toi" ath="-85.7190" atv="28.3806" scale="0.052" html="D2-07" />
+  <hotspot name="chu_aqm_D2_08" style="kieu_chu_lo_toi" ath="-88.7027" atv="28.4344" scale="0.052" html="D2-08" />
+  <hotspot name="chu_aqm_D20_01" style="kieu_chu_lo_toi" ath="20.7992" atv="39.1185" scale="0.078" html="D20-01" />
+  <hotspot name="chu_aqm_D20_02" style="kieu_chu_lo_toi" ath="24.1504" atv="38.4446" scale="0.076" html="D20-02" />
+  <hotspot name="chu_aqm_D20_03" style="kieu_chu_lo_toi" ath="27.1259" atv="38.0656" scale="0.075" html="D20-03" />
+  <hotspot name="chu_aqm_D20_04" style="kieu_chu_lo_toi" ath="29.9235" atv="37.3991" scale="0.074" html="D20-04" />
+  <hotspot name="chu_aqm_D20_05" style="kieu_chu_lo_toi" ath="32.5632" atv="36.6480" scale="0.072" html="D20-05" />
+  <hotspot name="chu_aqm_D20_06" style="kieu_chu_lo_toi" ath="35.0840" atv="35.9109" scale="0.070" html="D20-06" />
+  <hotspot name="chu_aqm_D20_07" style="kieu_chu_lo_toi" ath="37.4241" atv="35.1177" scale="0.068" html="D20-07" />
+  <hotspot name="chu_aqm_D20_08" style="kieu_chu_lo_toi" ath="39.0018" atv="36.0914" scale="0.070" html="D20-08" />
+  <hotspot name="chu_aqm_D20_09" style="kieu_chu_lo_toi" ath="36.6088" atv="36.9537" scale="0.073" html="D20-09" />
+  <hotspot name="chu_aqm_D20_10" style="kieu_chu_lo_toi" ath="34.0527" atv="37.7617" scale="0.075" html="D20-10" />
+  <hotspot name="chu_aqm_D20_11" style="kieu_chu_lo_toi" ath="31.3168" atv="38.5872" scale="0.077" html="D20-11" />
+  <hotspot name="chu_aqm_D20_12" style="kieu_chu_lo_toi" ath="28.4340" atv="39.3285" scale="0.079" html="D20-12" />
+  <hotspot name="chu_aqm_D20_13" style="kieu_chu_lo_toi" ath="25.8582" atv="40.2836" scale="0.081" html="D20-13" />
+  <hotspot name="chu_aqm_D20_14" style="kieu_chu_lo_toi" ath="22.2893" atv="41.0200" scale="0.083" html="D20-14" />
+  <hotspot name="chu_aqm_D21_01" style="kieu_chu_lo_toi" ath="40.2033" atv="34.0879" scale="0.065" html="D21-01" />
+  <hotspot name="chu_aqm_D21_02" style="kieu_chu_lo_toi" ath="42.1138" atv="33.1265" scale="0.063" html="D21-02" />
+  <hotspot name="chu_aqm_D21_03" style="kieu_chu_lo_toi" ath="44.3860" atv="32.2220" scale="0.061" html="D21-03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D21_04" style="kieu_chu_lo_toi" ath="46.6027" atv="33.2646" scale="0.063" html="D21-04" />
+  <hotspot name="chu_aqm_D21_05" style="kieu_chu_lo_toi" ath="44.3590" atv="34.2667" scale="0.066" html="D21-05" />
+  <hotspot name="chu_aqm_D21_06" style="kieu_chu_lo_toi" ath="41.8121" atv="34.9768" scale="0.068" html="D21-06" />
+  <hotspot name="chu_aqm_D22_01" style="kieu_chu_lo_toi" ath="25.7263" atv="45.0365" scale="0.093" html="D22-01" />
+  <hotspot name="chu_aqm_D22_02" style="kieu_chu_lo_toi" ath="29.6977" atv="43.9601" scale="0.090" html="D22-02" />
+  <hotspot name="chu_aqm_D22_03" style="kieu_chu_lo_toi" ath="33.1257" atv="43.3603" scale="0.089" html="D22-03" />
+  <hotspot name="chu_aqm_D22_04" style="kieu_chu_lo_toi" ath="36.2707" atv="42.2950" scale="0.086" html="D22-04" />
+  <hotspot name="chu_aqm_D22_05" style="kieu_chu_lo_toi" ath="39.1108" atv="41.2151" scale="0.084" html="D22-05" />
+  <hotspot name="chu_aqm_D22_06" style="kieu_chu_lo_toi" ath="41.8312" atv="40.1494" scale="0.081" html="D22-06" />
+  <hotspot name="chu_aqm_D22_07" style="kieu_chu_lo_toi" ath="44.3763" atv="39.0961" scale="0.078" html="D22-07" />
+  <hotspot name="chu_aqm_D22_08" style="kieu_chu_lo_toi" ath="46.4104" atv="40.1053" scale="0.081" html="D22-08" />
+  <hotspot name="chu_aqm_D22_09" style="kieu_chu_lo_toi" ath="43.9806" atv="41.2781" scale="0.084" html="D22-09" />
+  <hotspot name="chu_aqm_D22_10" style="kieu_chu_lo_toi" ath="41.1708" atv="42.4580" scale="0.087" html="D22-10" />
+  <hotspot name="chu_aqm_D22_11" style="kieu_chu_lo_toi" ath="38.4083" atv="43.6093" scale="0.090" html="D22-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Villa[/span]" />
+  <hotspot name="chu_aqm_D22_12" style="kieu_chu_lo_toi" ath="35.0906" atv="44.7211" scale="0.092" html="D22-12" />
+  <hotspot name="chu_aqm_D22_13" style="kieu_chu_lo_toi" ath="31.5946" atv="45.8692" scale="0.095" html="D22-13" />
+  <hotspot name="chu_aqm_D22_14" style="kieu_chu_lo_toi" ath="27.2113" atv="47.0480" scale="0.098" html="D22-14" />
+  <hotspot name="chu_aqm_D23_01" style="kieu_chu_lo_toi" ath="47.2505" atv="37.6904" scale="0.075" html="D23-01" />
+  <hotspot name="chu_aqm_D23_02" style="kieu_chu_lo_toi" ath="48.7843" atv="36.4520" scale="0.072" html="D23-02" />
+  <hotspot name="chu_aqm_D23_03" style="kieu_chu_lo_toi" ath="51.0381" atv="35.2118" scale="0.068" html="D23-03" />
+  <hotspot name="chu_aqm_D23_04" style="kieu_chu_lo_toi" ath="53.6908" atv="36.2274" scale="0.071" html="D23-04" />
+  <hotspot name="chu_aqm_D23_05" style="kieu_chu_lo_toi" ath="51.1587" atv="37.5043" scale="0.074" html="D23-05" />
+  <hotspot name="chu_aqm_D23_06" style="kieu_chu_lo_toi" ath="49.1728" atv="38.6158" scale="0.077" html="D23-06" />
+  <hotspot name="chu_aqm_D24_01" style="kieu_chu_lo_toi" ath="35.2812" atv="54.1881" scale="0.115" html="D24-01" />
+  <hotspot name="chu_aqm_D24_02" style="kieu_chu_lo_toi" ath="32.3303" atv="51.3109" scale="0.108" html="D24-02" />
+  <hotspot name="chu_aqm_D24_03" style="kieu_chu_lo_toi" ath="37.1712" atv="49.7228" scale="0.104" html="D24-03" />
+  <hotspot name="chu_aqm_D24_04" style="kieu_chu_lo_toi" ath="43.6186" atv="52.2987" scale="0.111" html="D24-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D24_05" style="kieu_chu_lo_toi" ath="51.3016" atv="50.5063" scale="0.107" html="D24-05" />
+  <hotspot name="chu_aqm_D24_06" style="kieu_chu_lo_toi" ath="54.9110" atv="48.7151" scale="0.102" html="D24-06" />
+  <hotspot name="chu_aqm_D24_07" style="kieu_chu_lo_toi" ath="58.0724" atv="47.1209" scale="0.099" html="D24-07" />
+  <hotspot name="chu_aqm_D24_08" style="kieu_chu_lo_toi" ath="60.9244" atv="45.3536" scale="0.094" html="D24-08" />
+  <hotspot name="chu_aqm_D25_01" style="kieu_chu_lo_toi" ath="64.3045" atv="43.4041" scale="0.090" html="D25-01" />
+  <hotspot name="chu_aqm_D25_02" style="kieu_chu_lo_toi" ath="66.4744" atv="41.7292" scale="0.085" html="D25-02" />
+  <hotspot name="chu_aqm_D25_03" style="kieu_chu_lo_toi" ath="68.4183" atv="40.2719" scale="0.082" html="D25-03" />
+  <hotspot name="chu_aqm_D25_04" style="kieu_chu_lo_toi" ath="69.5745" atv="37.4720" scale="0.075" html="D25-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D25_05" style="kieu_chu_lo_toi" ath="65.6314" atv="36.0035" scale="0.071" html="D25-05" />
+  <hotspot name="chu_aqm_D25_06" style="kieu_chu_lo_toi" ath="62.1597" atv="35.1042" scale="0.068" html="D25-06" />
+  <hotspot name="chu_aqm_D26_01" style="kieu_chu_lo_toi" ath="50.5278" atv="60.5934" scale="0.128" html="D26-01" />
+  <hotspot name="chu_aqm_D26_02" style="kieu_chu_lo_toi" ath="57.4623" atv="58.1694" scale="0.123" html="D26-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D26_03" style="kieu_chu_lo_toi" ath="63.0983" atv="54.6663" scale="0.116" html="D26-03" />
+  <hotspot name="chu_aqm_D26_04" style="kieu_chu_lo_toi" ath="66.2552" atv="52.1491" scale="0.111" html="D26-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D26_05" style="kieu_chu_lo_toi" ath="68.9732" atv="49.1878" scale="0.104" html="D26-05" />
+  <hotspot name="chu_aqm_D27_01" style="kieu_chu_lo_toi" ath="72.9517" atv="45.0545" scale="0.094" html="D27-01" />
+  <hotspot name="chu_aqm_D27_02" style="kieu_chu_lo_toi" ath="75.4344" atv="42.7397" scale="0.088" html="D27-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_03" style="kieu_chu_lo_toi" ath="77.2163" atv="40.5597" scale="0.083" html="D27-03" />
+  <hotspot name="chu_aqm_D27_04" style="kieu_chu_lo_toi" ath="78.6816" atv="38.3790" scale="0.077" html="D27-04" />
+  <hotspot name="chu_aqm_D27_05" style="kieu_chu_lo_toi" ath="79.6196" atv="36.4727" scale="0.072" html="D27-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_06" style="kieu_chu_lo_toi" ath="79.7521" atv="34.7520" scale="0.068" html="D27-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D27_07" style="kieu_chu_lo_toi" ath="76.2842" atv="34.3064" scale="0.066" html="D27-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_08" style="kieu_chu_lo_toi" ath="72.4065" atv="33.6539" scale="0.065" html="D27-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_09" style="kieu_chu_lo_toi" ath="69.2118" atv="33.2565" scale="0.063" html="D27-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_10" style="kieu_chu_lo_toi" ath="65.4855" atv="32.3632" scale="0.061" html="D27-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D28_01" style="kieu_chu_lo_toi" ath="31.5093" atv="66.7386" scale="0.139" html="D28-01" />
+  <hotspot name="chu_aqm_D28_02" style="kieu_chu_lo_toi" ath="38.6062" atv="70.1368" scale="0.144" html="D28-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D28_03" style="kieu_chu_lo_toi" ath="57.7705" atv="73.2301" scale="0.148" html="D28-03" />
+  <hotspot name="chu_aqm_D28_04" style="kieu_chu_lo_toi" ath="66.7263" atv="67.0288" scale="0.140" html="D28-04" />
+  <hotspot name="chu_aqm_D28_05" style="kieu_chu_lo_toi" ath="72.5534" atv="62.8145" scale="0.133" html="D28-05" />
+  <hotspot name="chu_aqm_D28_06" style="kieu_chu_lo_toi" ath="76.4404" atv="58.8783" scale="0.125" html="D28-06" />
+  <hotspot name="chu_aqm_D28_07" style="kieu_chu_lo_toi" ath="78.6719" atv="55.4803" scale="0.118" html="D28-07" />
+  <hotspot name="chu_aqm_D28_08" style="kieu_chu_lo_toi" ath="81.2669" atv="51.8194" scale="0.110" html="D28-08" />
+  <hotspot name="chu_aqm_D29_01" style="kieu_chu_lo_toi" ath="84.8072" atv="46.1217" scale="0.097" html="D29-01" />
+  <hotspot name="chu_aqm_D29_02" style="kieu_chu_lo_toi" ath="85.8374" atv="43.2778" scale="0.090" html="D29-02" />
+  <hotspot name="chu_aqm_D29_03" style="kieu_chu_lo_toi" ath="86.6651" atv="40.8743" scale="0.084" html="D29-03" />
+  <hotspot name="chu_aqm_D29_04" style="kieu_chu_lo_toi" ath="86.7903" atv="38.5047" scale="0.078" html="D29-04" />
+  <hotspot name="chu_aqm_D29_05" style="kieu_chu_lo_toi" ath="87.4994" atv="36.6291" scale="0.073" html="D29-05" />
+  <hotspot name="chu_aqm_D29_06" style="kieu_chu_lo_toi" ath="88.1107" atv="34.6202" scale="0.068" html="D29-06" />
+  <hotspot name="chu_aqm_D29_07" style="kieu_chu_lo_toi" ath="89.4691" atv="31.8021" scale="0.062" html="D29-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Riverfront[/span]" />
+  <hotspot name="chu_aqm_D29_08" style="kieu_chu_lo_toi" ath="84.3863" atv="31.4874" scale="0.059" html="D29-08" />
+  <hotspot name="chu_aqm_D29_09" style="kieu_chu_lo_toi" ath="80.9286" atv="31.3125" scale="0.059" html="D29-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_10" style="kieu_chu_lo_toi" ath="77.8974" atv="30.8289" scale="0.058" html="D29-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_11" style="kieu_chu_lo_toi" ath="74.5978" atv="30.4402" scale="0.057" html="D29-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_12" style="kieu_chu_lo_toi" ath="71.6473" atv="30.0669" scale="0.056" html="D29-12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_13" style="kieu_chu_lo_toi" ath="68.4435" atv="29.5220" scale="0.054" html="D29-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D3_01" style="kieu_chu_lo_toi" ath="-54.5740" atv="25.8795" scale="0.045" html="D3-01" />
+  <hotspot name="chu_aqm_D3_02" style="kieu_chu_lo_toi" ath="-56.9484" atv="26.4566" scale="0.047" html="D3-02" />
+  <hotspot name="chu_aqm_D3_03" style="kieu_chu_lo_toi" ath="-59.1198" atv="26.9496" scale="0.048" html="D3-03" />
+  <hotspot name="chu_aqm_D3_04" style="kieu_chu_lo_toi" ath="-61.8128" atv="27.4183" scale="0.049" html="D3-04" />
+  <hotspot name="chu_aqm_D30_01" style="kieu_chu_lo_toi" ath="60.7706" atv="31.1223" scale="0.058" html="D30-01" />
+  <hotspot name="chu_aqm_D30_02" style="kieu_chu_lo_toi" ath="58.2848" atv="30.4974" scale="0.056" html="D30-02" />
+  <hotspot name="chu_aqm_D30_03" style="kieu_chu_lo_toi" ath="56.2211" atv="29.8751" scale="0.055" html="D30-03" />
+  <hotspot name="chu_aqm_D30_04" style="kieu_chu_lo_toi" ath="54.3233" atv="29.3401" scale="0.053" html="D30-04" />
+  <hotspot name="chu_aqm_D30_05" style="kieu_chu_lo_toi" ath="52.5163" atv="28.7262" scale="0.052" html="D30-05" />
+  <hotspot name="chu_aqm_D30_06" style="kieu_chu_lo_toi" ath="50.7721" atv="28.1589" scale="0.050" html="D30-06" />
+  <hotspot name="chu_aqm_D30_07" style="kieu_chu_lo_toi" ath="49.0119" atv="27.0116" scale="0.047" html="D30-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D30_08" style="kieu_chu_lo_toi" ath="50.8722" atv="26.1681" scale="0.045" html="D30-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_09" style="kieu_chu_lo_toi" ath="53.2338" atv="26.5134" scale="0.046" html="D30-09" />
+  <hotspot name="chu_aqm_D30_10" style="kieu_chu_lo_toi" ath="55.0083" atv="27.0286" scale="0.048" html="D30-10" />
+  <hotspot name="chu_aqm_D30_11" style="kieu_chu_lo_toi" ath="57.7116" atv="27.2762" scale="0.048" html="D30-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_12" style="kieu_chu_lo_toi" ath="60.0828" atv="27.8790" scale="0.050" html="D30-12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_13" style="kieu_chu_lo_toi" ath="63.4723" atv="28.6461" scale="0.052" html="D30-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_01" style="kieu_chu_lo_toi" ath="-67.9121" atv="28.8155" scale="0.053" html="D4-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_02" style="kieu_chu_lo_toi" ath="-71.0483" atv="28.8726" scale="0.053" html="D4-02" />
+  <hotspot name="chu_aqm_D4_03" style="kieu_chu_lo_toi" ath="-73.9542" atv="29.2081" scale="0.054" html="D4-03" />
+  <hotspot name="chu_aqm_D4_04" style="kieu_chu_lo_toi" ath="-77.1221" atv="29.5199" scale="0.055" html="D4-04" />
+  <hotspot name="chu_aqm_D4_05" style="kieu_chu_lo_toi" ath="-80.1397" atv="29.7329" scale="0.055" html="D4-05" />
+  <hotspot name="chu_aqm_D4_06" style="kieu_chu_lo_toi" ath="-83.4246" atv="29.8912" scale="0.056" html="D4-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_07" style="kieu_chu_lo_toi" ath="-88.0775" atv="30.0904" scale="0.058" html="D4-07" />
+  <hotspot name="chu_aqm_D4_08" style="kieu_chu_lo_toi" ath="-86.9380" atv="33.1657" scale="0.064" html="D4-08" />
+  <hotspot name="chu_aqm_D4_09" style="kieu_chu_lo_toi" ath="-85.9171" atv="35.0836" scale="0.069" html="D4-09" />
+  <hotspot name="chu_aqm_D4_10" style="kieu_chu_lo_toi" ath="-85.3788" atv="36.8387" scale="0.074" html="D4-10" />
+  <hotspot name="chu_aqm_D4_11" style="kieu_chu_lo_toi" ath="-84.7022" atv="39.0447" scale="0.079" html="D4-11" />
+  <hotspot name="chu_aqm_D4_12" style="kieu_chu_lo_toi" ath="-82.4920" atv="41.6679" scale="0.086" html="D4-12" />
+  <hotspot name="chu_aqm_D5_01" style="kieu_chu_lo_toi" ath="-51.1916" atv="24.5349" scale="0.042" html="D5-01" />
+  <hotspot name="chu_aqm_D5_02" style="kieu_chu_lo_toi" ath="-50.1718" atv="25.1890" scale="0.043" html="D5-02" />
+  <hotspot name="chu_aqm_D5_03" style="kieu_chu_lo_toi" ath="-48.9254" atv="25.7876" scale="0.045" html="D5-03" />
+  <hotspot name="chu_aqm_D5_04" style="kieu_chu_lo_toi" ath="-47.8166" atv="26.3062" scale="0.046" html="D5-04" />
+  <hotspot name="chu_aqm_D5_05" style="kieu_chu_lo_toi" ath="-46.4289" atv="26.9370" scale="0.048" html="D5-05" />
+  <hotspot name="chu_aqm_D5_06" style="kieu_chu_lo_toi" ath="-44.4747" atv="27.6202" scale="0.049" html="D5-06" />
+  <hotspot name="chu_aqm_D5_07" style="kieu_chu_lo_toi" ath="-42.9285" atv="28.2639" scale="0.051" html="D5-07" />
+  <hotspot name="chu_aqm_D5_08" style="kieu_chu_lo_toi" ath="-41.4015" atv="28.8758" scale="0.052" html="D5-08" />
+  <hotspot name="chu_aqm_D5_09" style="kieu_chu_lo_toi" ath="-39.6779" atv="29.5374" scale="0.054" html="D5-09" />
+  <hotspot name="chu_aqm_D5_10" style="kieu_chu_lo_toi" ath="-37.9129" atv="30.1833" scale="0.056" html="D5-10" />
+  <hotspot name="chu_aqm_D6_01" style="kieu_chu_lo_toi" ath="-51.3049" atv="27.6407" scale="0.049" html="D6-01" />
+  <hotspot name="chu_aqm_D6_02" style="kieu_chu_lo_toi" ath="-49.8857" atv="28.3535" scale="0.051" html="D6-02" />
+  <hotspot name="chu_aqm_D6_03" style="kieu_chu_lo_toi" ath="-48.7311" atv="29.1923" scale="0.053" html="D6-03" />
+  <hotspot name="chu_aqm_D6_04" style="kieu_chu_lo_toi" ath="-47.2514" atv="29.9523" scale="0.055" html="D6-04" />
+  <hotspot name="chu_aqm_D6_05" style="kieu_chu_lo_toi" ath="-45.6338" atv="30.7145" scale="0.057" html="D6-05" />
+  <hotspot name="chu_aqm_D6_06" style="kieu_chu_lo_toi" ath="-43.9602" atv="31.5074" scale="0.059" html="D6-06" />
+  <hotspot name="chu_aqm_D6_07" style="kieu_chu_lo_toi" ath="-42.1492" atv="32.2884" scale="0.061" html="D6-07" />
+  <hotspot name="chu_aqm_D6_08" style="kieu_chu_lo_toi" ath="-43.7721" atv="33.0406" scale="0.063" html="D6-08" />
+  <hotspot name="chu_aqm_D6_09" style="kieu_chu_lo_toi" ath="-45.6058" atv="32.1997" scale="0.061" html="D6-09" />
+  <hotspot name="chu_aqm_D6_10" style="kieu_chu_lo_toi" ath="-47.2465" atv="31.3603" scale="0.059" html="D6-10" />
+  <hotspot name="chu_aqm_D6_11" style="kieu_chu_lo_toi" ath="-48.8785" atv="30.5427" scale="0.057" html="D6-11" />
+  <hotspot name="chu_aqm_D6_12" style="kieu_chu_lo_toi" ath="-50.3229" atv="29.7413" scale="0.055" html="D6-12" />
+  <hotspot name="chu_aqm_D6_13" style="kieu_chu_lo_toi" ath="-52.0825" atv="29.0624" scale="0.053" html="D6-13" />
+  <hotspot name="chu_aqm_D6_14" style="kieu_chu_lo_toi" ath="-53.5751" atv="28.1901" scale="0.051" html="D6-14" />
+  <hotspot name="chu_aqm_D7_01" style="kieu_chu_lo_toi" ath="-35.5229" atv="31.0075" scale="0.058" html="D7-01" />
+  <hotspot name="chu_aqm_D7_02" style="kieu_chu_lo_toi" ath="-34.0131" atv="31.7260" scale="0.059" html="D7-02" />
+  <hotspot name="chu_aqm_D7_03" style="kieu_chu_lo_toi" ath="-31.8849" atv="32.3820" scale="0.061" html="D7-03" />
+  <hotspot name="chu_aqm_D7_04" style="kieu_chu_lo_toi" ath="-29.0838" atv="33.1512" scale="0.063" html="D7-04" />
+  <hotspot name="chu_aqm_D7_05" style="kieu_chu_lo_toi" ath="-26.6945" atv="33.7698" scale="0.065" html="D7-05" />
+  <hotspot name="chu_aqm_D7_06" style="kieu_chu_lo_toi" ath="-24.2706" atv="34.3421" scale="0.066" html="D7-06" />
+  <hotspot name="chu_aqm_D7_07" style="kieu_chu_lo_toi" ath="-21.6145" atv="34.9063" scale="0.067" html="D7-07" />
+  <hotspot name="chu_aqm_D7_08" style="kieu_chu_lo_toi" ath="-18.8149" atv="35.4254" scale="0.069" html="D7-08" />
+  <hotspot name="chu_aqm_D7_09" style="kieu_chu_lo_toi" ath="-15.9450" atv="35.8677" scale="0.070" html="D7-09" />
+  <hotspot name="chu_aqm_D7_10" style="kieu_chu_lo_toi" ath="-12.2223" atv="36.1271" scale="0.070" html="D7-10" />
+  <hotspot name="chu_aqm_D8_01" style="kieu_chu_lo_toi" ath="-39.7014" atv="33.3248" scale="0.064" html="D8-01" />
+  <hotspot name="chu_aqm_D8_02" style="kieu_chu_lo_toi" ath="-37.4847" atv="33.8707" scale="0.065" html="D8-02" />
+  <hotspot name="chu_aqm_D8_03" style="kieu_chu_lo_toi" ath="-35.2342" atv="34.7467" scale="0.067" html="D8-03" />
+  <hotspot name="chu_aqm_D8_04" style="kieu_chu_lo_toi" ath="-37.2656" atv="36.0751" scale="0.071" html="D8-04" />
+  <hotspot name="chu_aqm_D8_05" style="kieu_chu_lo_toi" ath="-39.7337" atv="35.0484" scale="0.068" html="D8-05" />
+  <hotspot name="chu_aqm_D8_06" style="kieu_chu_lo_toi" ath="-41.3388" atv="34.1511" scale="0.066" html="D8-06" />
+  <hotspot name="chu_aqm_D9_01" style="kieu_chu_lo_toi" ath="-28.3424" atv="36.8932" scale="0.073" html="D9-01" />
+  <hotspot name="chu_aqm_D9_02" style="kieu_chu_lo_toi" ath="-30.6240" atv="38.6853" scale="0.077" html="D9-02" />
+  <hotspot name="chu_aqm_D9_03" style="kieu_chu_lo_toi" ath="-33.0368" atv="40.4883" scale="0.082" html="D9-03" />
+  <hotspot name="chu_aqm_D9_04" style="kieu_chu_lo_toi" ath="-36.1268" atv="42.6351" scale="0.087" html="D9-04" />
+  <hotspot name="chu_aqm_D9_05" style="kieu_chu_lo_toi" ath="-31.4220" atv="44.0850" scale="0.091" html="D9-05" />
+  <hotspot name="chu_aqm_D9_06" style="kieu_chu_lo_toi" ath="-29.0196" atv="42.1405" scale="0.086" html="D9-06" />
+  <hotspot name="chu_aqm_D9_07" style="kieu_chu_lo_toi" ath="-26.3409" atv="39.7592" scale="0.080" html="D9-07" />
+  <hotspot name="chu_aqm_D9_08" style="kieu_chu_lo_toi" ath="-24.7018" atv="38.1831" scale="0.076" html="D9-08" />
+  <!-- /CHU -->
+  <!-- O_VIEW --><!-- 01/10: 2 o view sang canh con (Anh Tony khoanh do) -->
+  <hotspot name="o_view_trai" style="kieu_o_view" ath="-47.33" atv="11.46" html="&#9664; TOP DOWN[br]THE AQUA 1" onclick="js(doiCanh('pk_aqua_trai'));" />
+  <hotspot name="o_view_phai" style="kieu_o_view" ath="41.21" atv="10.11" html="TOP DOWN &#9654;[br]THE AQUA 2" onclick="js(doiCanh('pk_aqua_phai'));" />
+  <!-- /O_VIEW -->
 </scene>
 
 <scene name="pk_aqua" title="PK The Aqua" onstart="">
@@ -154,15 +409,19 @@
   <!-- Goc XUAT PHAT lay y nguyen cua canh5 ben trang Thuc te.
        Goc DICH (nadir) do JS trong index.html dat sau 700ms - xem BAY 50. -->
   <!-- 28/09: fovmin 10 · maxpixelzoom 4 cho KHOP lop ban ve pk_aqua_ve (KEEPVIEW). -->
-  <view hlookat="5.0" vlookat="45.0" fov="105.0"
-        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+  <view hlookat="-3.9" vlookat="53.2" fov="135"
+        fovtype="HFOV" fovmin="12.0" fovmax="135"
         limitview="auto" maxpixelzoom="4.0" />
-  <preview url="../pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/preview.jpg" />
+  <preview url="../pano/18-aqua-0540/18-aqua-0540.tiles/preview.jpg" />
   <image type="CUBE" multires="true" tilesize="512">
-    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
-    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
-    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/05-aquaria-song-vam-co/05-aquaria-song-vam-co.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/18-aqua-0540/18-aqua-0540.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/18-aqua-0540/18-aqua-0540.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/18-aqua-0540/18-aqua-0540.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
   </image>
+  <!-- O_VIEW --><!-- 01/10: 2 o view sang canh con (Anh Tony khoanh do) -->
+  <hotspot name="o_view_trai" style="kieu_o_view" ath="-47.33" atv="11.46" html="&#9664; TOP DOWN[br]THE AQUA 1" onclick="js(doiCanh('pk_aqua_trai'));" />
+  <hotspot name="o_view_phai" style="kieu_o_view" ath="41.21" atv="10.11" html="TOP DOWN &#9654;[br]THE AQUA 2" onclick="js(doiCanh('pk_aqua_phai'));" />
+  <!-- /O_VIEW -->
 </scene>
 
 <!-- ==================================================================
@@ -193,15 +452,15 @@
        Goc xuat phat cung o v=45 (goc THUONG) - xem BAY 50 phia tren:
        nadir phai do JS ben index.html xoay xuong sau, khong dat thang o day. -->
   <!-- 28/09 toi (chat-pv-net): fovmin 30->10 · maxpixelzoom 1->4 cho KHOP lop ban ve (KEEPVIEW). -->
-  <view hlookat="5.0" vlookat="45.0" fov="105.0"
-        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+  <view hlookat="7.39" vlookat="90" fov="113.3"
+        fovtype="HFOV" fovmin="12.0" fovmax="113.3"
         limitview="auto" maxpixelzoom="4.0" />
   <!-- SCENE_PV_IMAGE_START  (moc de script va lai khoi anh tu pano.xml droplet) -->
-  <preview url="../pano/08-park-village/08-park-village.tiles/preview.jpg" />
+  <preview url="../pano/16-pv-0512/16-pv-0512.tiles/preview.jpg" />
   <image type="CUBE" multires="true" tilesize="512">
-    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/08-park-village/08-park-village.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
-    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/08-park-village/08-park-village.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
-    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/08-park-village/08-park-village.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/16-pv-0512/16-pv-0512.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/16-pv-0512/16-pv-0512.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/16-pv-0512/16-pv-0512.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
   </image>
   <!-- SCENE_PV_IMAGE_END -->
 </scene>
@@ -234,44 +493,114 @@
        `tao-anh-net-aqua.py` phan khu pv. ⚠️ Chu thich "distorted lech 19%" o tren noi ve tam anh PHANG
        chua uon - tam net nay DA UON SAN theo phep chieu nen khop tung diem (do bang Playwright). -->
 <scene name="pk_park_village_ve" title="PK Park Village - ban ve" onstart="">
-  <view hlookat="5.0" vlookat="45.0" fov="105.0"
-        fovtype="HFOV" fovmin="10.0" fovmax="140.0"
+  <view hlookat="7.39" vlookat="90" fov="113.3"
+        fovtype="HFOV" fovmin="12.0" fovmax="113.3"
         limitview="auto" maxpixelzoom="4.0" />
-  <preview url="../pano/09-park-village-ve/09-park-village-ve.tiles/preview.jpg" />
+  <preview url="../pano/15-pv-0512-ve/15-pv-0512-ve.tiles/preview.jpg" />
   <image type="CUBE" multires="true" tilesize="512">
-    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/09-park-village-ve/09-park-village-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
-    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/09-park-village-ve/09-park-village-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
-    <level tiledimagewidth="640"  tiledimageheight="640"><cube url="../pano/09-park-village-ve/09-park-village-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/15-pv-0512-ve/15-pv-0512-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/15-pv-0512-ve/15-pv-0512-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/15-pv-0512-ve/15-pv-0512-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
   </image>
-  <!-- PV_NET_BAT_DAU  (sinh boi 01-CONG-CU/can-matbang-flycam/tao-anh-net-aqua.py, phan khu pv - DUNG SUA TAY) -->
-  <hotspot name="pv_net_0_0" urlnet="pv-net/o-0-0.webp" distorted="true"
-           ath="-67.67362" atv="67.2788" rotate="68.2713" scale="0.1267835"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="pv_net_0_1" urlnet="pv-net/o-0-1.webp" distorted="true"
-           ath="-5.34218" atv="81.72424" rotate="7.4403" scale="0.146888"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="pv_net_0_2" urlnet="pv-net/o-0-2.webp" distorted="true"
-           ath="70.08525" atv="69.02097" rotate="-66.4704" scale="0.1300394"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="pv_net_1_0" urlnet="pv-net/o-1-0.webp" distorted="true"
-           ath="-99.32899" atv="68.19637" rotate="102.3878" scale="0.1274572"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="pv_net_1_1" urlnet="pv-net/o-1-1.webp" distorted="true"
-           ath="-164.49344" atv="85.31303" rotate="166.715" scale="0.1479629"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="pv_net_1_2" urlnet="pv-net/o-1-2.webp" distorted="true"
-           ath="104.87407" atv="70.04873" rotate="-103.4981" scale="0.130773"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="pv_net_2_0" urlnet="pv-net/o-2-0.webp" distorted="true"
-           ath="-125.34626" atv="63.46663" rotate="130.7089" scale="0.1235946"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="pv_net_2_1" urlnet="pv-net/o-2-1.webp" distorted="true"
-           ath="-174.18012" atv="73.05559" rotate="176.5189" scale="0.141886"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <hotspot name="pv_net_2_2" urlnet="pv-net/o-2-2.webp" distorted="true"
-           ath="132.50071" atv="64.83108" rotate="-133.2228" scale="0.1265791"
-           enabled="false" handcursor="false" capture="false" zorder="1" />
-  <!-- PV_NET_HET -->
+  <!-- CHU DUNG THANG 96 lo (01/10): chu in san tren ban ve DA XOA, chu nay luon dung thang khi xoay.
+       Sinh boi flycam-moi-20260930/_can/dua_len_web_gd2.py tu dan_mb.py TRON=1 - dung sua tay. -->
+  <hotspot name="chu_pvm_A01" style="kieu_chu_lo_toi" ath="-61.9850" atv="50.1560" scale="0.131" html="A01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A02" style="kieu_chu_lo_toi" ath="-68.0042" atv="51.2097" scale="0.132" html="A02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_A03" style="kieu_chu_lo_toi" ath="-77.8701" atv="53.0073" scale="0.136" html="A03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_A04" style="kieu_chu_lo_toi" ath="-84.0652" atv="52.9128" scale="0.135" html="A04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_A05" style="kieu_chu_lo_toi" ath="-91.0349" atv="52.9442" scale="0.135" html="A05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A06" style="kieu_chu_lo_toi" ath="-96.7931" atv="55.0721" scale="0.140" html="A06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A07" style="kieu_chu_lo_toi" ath="-103.5002" atv="56.4578" scale="0.143" html="A07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A08" style="kieu_chu_lo_toi" ath="-108.7973" atv="57.8955" scale="0.146" html="A08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A09" style="kieu_chu_lo_toi" ath="-115.2882" atv="59.6765" scale="0.151" html="A09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A10" style="kieu_chu_lo_toi" ath="-120.7707" atv="61.2905" scale="0.154" html="A10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A11" style="kieu_chu_lo_toi" ath="-128.1354" atv="63.0412" scale="0.158" html="A11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A12" style="kieu_chu_lo_toi" ath="-134.6746" atv="64.2831" scale="0.161" html="A12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A13" style="kieu_chu_lo_toi" ath="-143.5190" atv="65.6001" scale="0.163" html="A13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A14" style="kieu_chu_lo_toi" ath="-151.2430" atv="66.8193" scale="0.166" html="A14[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A15" style="kieu_chu_lo_toi" ath="-160.9786" atv="67.5624" scale="0.167" html="A15[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A16" style="kieu_chu_lo_toi" ath="-170.8870" atv="67.8830" scale="0.168" html="A16[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A17" style="kieu_chu_lo_toi" ath="-86.3685" atv="49.8160" scale="0.125" html="A17[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A18" style="kieu_chu_lo_toi" ath="-80.8165" atv="47.1737" scale="0.119" html="A18[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A19" style="kieu_chu_lo_toi" ath="-76.3171" atv="46.4065" scale="0.117" html="A19[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A20" style="kieu_chu_lo_toi" ath="-70.9053" atv="45.9796" scale="0.117" html="A20[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_A21" style="kieu_chu_lo_toi" ath="-64.0191" atv="46.5544" scale="0.121" html="A21[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_B01" style="kieu_chu_lo_toi" ath="-56.0472" atv="57.4346" scale="0.140" html="B01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Park Grand[/span]" />
+  <hotspot name="chu_pvm_B02" style="kieu_chu_lo_toi" ath="-44.6246" atv="59.3081" scale="0.143" html="B02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B03" style="kieu_chu_lo_toi" ath="-37.1527" atv="62.5012" scale="0.154" html="B03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B04" style="kieu_chu_lo_toi" ath="-28.5737" atv="65.3224" scale="0.163" html="B04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B05" style="kieu_chu_lo_toi" ath="-17.1880" atv="67.1658" scale="0.166" html="B05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B06" style="kieu_chu_lo_toi" ath="-2.7504" atv="68.3084" scale="0.168" html="B06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B07" style="kieu_chu_lo_toi" ath="12.4584" atv="68.2630" scale="0.168" html="B07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B08" style="kieu_chu_lo_toi" ath="27.1998" atv="66.9932" scale="0.166" html="B08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B09" style="kieu_chu_lo_toi" ath="38.9234" atv="65.0055" scale="0.163" html="B09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B10" style="kieu_chu_lo_toi" ath="46.8711" atv="62.4381" scale="0.157" html="B10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B11" style="kieu_chu_lo_toi" ath="55.5398" atv="59.4128" scale="0.151" html="B11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B12" style="kieu_chu_lo_toi" ath="60.4215" atv="56.6789" scale="0.144" html="B12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B13" style="kieu_chu_lo_toi" ath="65.0004" atv="53.9660" scale="0.137" html="B13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B14" style="kieu_chu_lo_toi" ath="69.6975" atv="51.4149" scale="0.130" html="B14[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B15" style="kieu_chu_lo_toi" ath="75.8323" atv="49.5640" scale="0.125" html="B15[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B16" style="kieu_chu_lo_toi" ath="83.2184" atv="48.9851" scale="0.123" html="B16[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B17" style="kieu_chu_lo_toi" ath="90.9661" atv="49.8679" scale="0.126" html="B17[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_B18" style="kieu_chu_lo_toi" ath="96.4041" atv="51.0511" scale="0.130" html="B18[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_C01" style="kieu_chu_lo_toi" ath="-70.9324" atv="60.9797" scale="0.151" html="C01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C02" style="kieu_chu_lo_toi" ath="-67.0001" atv="63.9284" scale="0.158" html="C02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C03" style="kieu_chu_lo_toi" ath="-61.8445" atv="66.5176" scale="0.162" html="C03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C04" style="kieu_chu_lo_toi" ath="-55.6062" atv="69.5172" scale="0.171" html="C04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C05" style="kieu_chu_lo_toi" ath="-47.3696" atv="72.1741" scale="0.175" html="C05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C06" style="kieu_chu_lo_toi" ath="-36.0631" atv="74.9182" scale="0.178" html="C06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C07" style="kieu_chu_lo_toi" ath="-21.6729" atv="76.6845" scale="0.181" html="C07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C08" style="kieu_chu_lo_toi" ath="-3.4851" atv="77.5606" scale="0.181" html="C08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C09" style="kieu_chu_lo_toi" ath="14.1884" atv="77.2293" scale="0.181" html="C09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C10" style="kieu_chu_lo_toi" ath="31.3407" atv="75.8078" scale="0.179" html="C10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C11" style="kieu_chu_lo_toi" ath="44.4997" atv="73.8558" scale="0.177" html="C11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C12" style="kieu_chu_lo_toi" ath="54.4064" atv="71.1776" scale="0.173" html="C12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C13" style="kieu_chu_lo_toi" ath="61.5392" atv="68.4270" scale="0.169" html="C13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C14" style="kieu_chu_lo_toi" ath="67.2267" atv="65.3671" scale="0.163" html="C14[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C15" style="kieu_chu_lo_toi" ath="71.9728" atv="62.5975" scale="0.157" html="C15[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C16" style="kieu_chu_lo_toi" ath="75.2502" atv="59.6181" scale="0.151" html="C16[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C17" style="kieu_chu_lo_toi" ath="78.8903" atv="56.7780" scale="0.144" html="C17[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C18" style="kieu_chu_lo_toi" ath="86.2620" atv="58.0301" scale="0.147" html="C18[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C19" style="kieu_chu_lo_toi" ath="83.6304" atv="61.1160" scale="0.154" html="C19[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C20" style="kieu_chu_lo_toi" ath="80.8669" atv="64.3368" scale="0.161" html="C20[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C21" style="kieu_chu_lo_toi" ath="77.5758" atv="67.3424" scale="0.167" html="C21[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C22" style="kieu_chu_lo_toi" ath="72.9911" atv="70.7889" scale="0.173" html="C22[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C23" style="kieu_chu_lo_toi" ath="68.1019" atv="73.8655" scale="0.177" html="C23[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C24" style="kieu_chu_lo_toi" ath="58.7976" atv="77.2493" scale="0.181" html="C24[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C25" style="kieu_chu_lo_toi" ath="46.0949" atv="79.9609" scale="0.184" html="C25[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C26" style="kieu_chu_lo_toi" ath="21.3834" atv="82.1991" scale="0.185" html="C26[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C27" style="kieu_chu_lo_toi" ath="-6.3294" atv="82.4635" scale="0.186" html="C27[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C28" style="kieu_chu_lo_toi" ath="-34.4156" atv="80.7850" scale="0.184" html="C28[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C29" style="kieu_chu_lo_toi" ath="-49.8005" atv="78.3463" scale="0.182" html="C29[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C30" style="kieu_chu_lo_toi" ath="-60.7505" atv="74.9917" scale="0.179" html="C30[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C31" style="kieu_chu_lo_toi" ath="-68.1665" atv="72.2124" scale="0.175" html="C31[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C32" style="kieu_chu_lo_toi" ath="-73.1338" atv="68.6472" scale="0.167" html="C32[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C33" style="kieu_chu_lo_toi" ath="-76.7983" atv="65.7102" scale="0.162" html="C33[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_C34" style="kieu_chu_lo_toi" ath="-79.5983" atv="62.4664" scale="0.155" html="C34[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D01" style="kieu_chu_lo_toi" ath="-98.8306" atv="64.2978" scale="0.160" html="D01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D02" style="kieu_chu_lo_toi" ath="-97.5233" atv="68.7526" scale="0.169" html="D02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D03" style="kieu_chu_lo_toi" ath="-99.6320" atv="72.5339" scale="0.175" html="D03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D04" style="kieu_chu_lo_toi" ath="-103.3579" atv="75.9832" scale="0.180" html="D04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D05" style="kieu_chu_lo_toi" ath="-109.3320" atv="80.2392" scale="0.184" html="D05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D06" style="kieu_chu_lo_toi" ath="-103.6887" atv="84.9600" scale="0.187" html="D06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D07" style="kieu_chu_lo_toi" ath="-137.5332" atv="82.6014" scale="0.186" html="D07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D08" style="kieu_chu_lo_toi" ath="-151.9823" atv="79.2891" scale="0.183" html="D08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D09" style="kieu_chu_lo_toi" ath="-158.8947" atv="75.5769" scale="0.179" html="D09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D10" style="kieu_chu_lo_toi" ath="-136.6889" atv="75.9996" scale="0.180" html="D10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D11" style="kieu_chu_lo_toi" ath="-124.5995" atv="73.1125" scale="0.176" html="D11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D12" style="kieu_chu_lo_toi" ath="-115.6778" atv="70.6086" scale="0.172" html="D12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_D13" style="kieu_chu_lo_toi" ath="-109.7057" atv="67.3921" scale="0.167" html="D13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_E01" style="kieu_chu_lo_toi" ath="104.3079" atv="84.8691" scale="0.187" html="E01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_E02" style="kieu_chu_lo_toi" ath="138.7678" atv="82.7818" scale="0.186" html="E02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_E03" style="kieu_chu_lo_toi" ath="154.8149" atv="79.5265" scale="0.183" html="E03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_E04" style="kieu_chu_lo_toi" ath="163.2135" atv="76.0603" scale="0.180" html="E04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_pvm_F01" style="kieu_chu_lo_toi" ath="170.0027" atv="68.1019" scale="0.168" html="F01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_F02" style="kieu_chu_lo_toi" ath="156.0489" atv="67.9298" scale="0.168" html="F02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_F03" style="kieu_chu_lo_toi" ath="140.8523" atv="66.9366" scale="0.166" html="F03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_F04" style="kieu_chu_lo_toi" ath="131.6270" atv="65.3519" scale="0.162" html="F04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_F05" style="kieu_chu_lo_toi" ath="119.3381" atv="61.8339" scale="0.156" html="F05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_pvm_F06" style="kieu_chu_lo_toi" ath="112.7038" atv="58.8242" scale="0.147" html="F06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <!-- /CHU -->
 </scene>
 
 <!-- ============================================================
@@ -297,6 +626,930 @@
         KHONG VE LAI da giac (anh truoc/sau giong het tung pixel). `eraHienLo()`
         ben index.html bat bo `lo_` o lop ban ve, bo `lo_t_` o lop anh that. -->
 <include url="lo-aqua-that.xml" />
+
+<!-- AQUA_CON_BAT_DAU  (01/10 sinh boi flycam-moi-20260930/_can/dua_len_web_aqua_con.py - DUNG SUA TAY)
+     2 canh con PK The Aqua: cum trai (DJI_0538) + cum phai (DJI_0537), flycam 29/09, 200 m. -->
+<scene name="pk_aqua_trai_ve" title="PK The Aqua - The Aqua 1 - ban ve" onstart="">
+  <view hlookat="-1.15" vlookat="90" fov="112.8"
+        fovtype="HFOV" fovmin="12.0" fovmax="112.8"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/19-aqua-0538-ve/19-aqua-0538-ve.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/19-aqua-0538-ve/19-aqua-0538-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/19-aqua-0538-ve/19-aqua-0538-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/19-aqua-0538-ve/19-aqua-0538-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+  <layer name="o_tc_pk_aqua_trai_ve" style="kieu_o_view" align="top" x="0" y="16" html="&#8617; TOÀN CẢNH PK THE AQUA" onclick="js(doiCanh(&apos;pk_aqua&apos;));" />
+  <!-- CHU DUNG THANG -->
+  <hotspot name="chu_aqm_D1_01" style="kieu_chu_lo_toi" ath="129.1610" atv="50.1250" scale="0.105" html="D1-01" />
+  <hotspot name="chu_aqm_D1_02" style="kieu_chu_lo_toi" ath="123.0324" atv="52.2940" scale="0.110" html="D1-02" />
+  <hotspot name="chu_aqm_D1_03" style="kieu_chu_lo_toi" ath="118.0128" atv="53.6796" scale="0.112" html="D1-03" />
+  <hotspot name="chu_aqm_D1_04" style="kieu_chu_lo_toi" ath="111.2573" atv="55.2465" scale="0.116" html="D1-04" />
+  <hotspot name="chu_aqm_D1_05" style="kieu_chu_lo_toi" ath="102.8168" atv="56.4721" scale="0.118" html="D1-05" />
+  <hotspot name="chu_aqm_D1_06" style="kieu_chu_lo_toi" ath="96.2342" atv="56.8856" scale="0.119" html="D1-06" />
+  <hotspot name="chu_aqm_D10_01" style="kieu_chu_lo_toi" ath="-114.0713" atv="48.1264" scale="0.102" html="D10-01" />
+  <hotspot name="chu_aqm_D10_02" style="kieu_chu_lo_toi" ath="-109.7059" atv="48.9507" scale="0.104" html="D10-02" />
+  <hotspot name="chu_aqm_D10_03" style="kieu_chu_lo_toi" ath="-103.2037" atv="49.8379" scale="0.106" html="D10-03" />
+  <hotspot name="chu_aqm_D10_04" style="kieu_chu_lo_toi" ath="-97.7398" atv="50.2108" scale="0.107" html="D10-04" />
+  <hotspot name="chu_aqm_D11_01" style="kieu_chu_lo_toi" ath="109.5423" atv="69.7988" scale="0.142" html="D11-01" />
+  <hotspot name="chu_aqm_D11_02" style="kieu_chu_lo_toi" ath="115.5917" atv="73.5790" scale="0.147" html="D11-02" />
+  <hotspot name="chu_aqm_D11_03" style="kieu_chu_lo_toi" ath="119.3558" atv="77.3335" scale="0.150" html="D11-03" />
+  <hotspot name="chu_aqm_D11_04" style="kieu_chu_lo_toi" ath="132.0159" atv="80.4706" scale="0.153" html="D11-04" />
+  <hotspot name="chu_aqm_D11_05" style="kieu_chu_lo_toi" ath="153.3022" atv="82.8720" scale="0.155" html="D11-05" />
+  <hotspot name="chu_aqm_D11_06" style="kieu_chu_lo_toi" ath="-172.5524" atv="83.4477" scale="0.155" html="D11-06" />
+  <hotspot name="chu_aqm_D11_07" style="kieu_chu_lo_toi" ath="-143.2240" atv="81.9495" scale="0.154" html="D11-07" />
+  <hotspot name="chu_aqm_D11_08" style="kieu_chu_lo_toi" ath="-121.0801" atv="84.2721" scale="0.155" html="D11-08" />
+  <hotspot name="chu_aqm_D11_09" style="kieu_chu_lo_toi" ath="-160.8870" atv="86.9442" scale="0.156" html="D11-09" />
+  <hotspot name="chu_aqm_D11_10" style="kieu_chu_lo_toi" ath="133.5212" atv="85.7723" scale="0.156" html="D11-10" />
+  <hotspot name="chu_aqm_D11_11" style="kieu_chu_lo_toi" ath="112.0293" atv="82.5612" scale="0.154" html="D11-11" />
+  <hotspot name="chu_aqm_D11_12" style="kieu_chu_lo_toi" ath="104.4196" atv="78.7781" scale="0.152" html="D11-12" />
+  <hotspot name="chu_aqm_D11_13" style="kieu_chu_lo_toi" ath="100.2132" atv="75.1606" scale="0.148" html="D11-13" />
+  <hotspot name="chu_aqm_D11_14" style="kieu_chu_lo_toi" ath="96.4236" atv="70.8601" scale="0.143" html="D11-14" />
+  <hotspot name="chu_aqm_D12_01" style="kieu_chu_lo_toi" ath="-123.5252" atv="78.1695" scale="0.152" html="D12-01" />
+  <hotspot name="chu_aqm_D12_02" style="kieu_chu_lo_toi" ath="-118.9893" atv="74.8233" scale="0.149" html="D12-02" />
+  <hotspot name="chu_aqm_D12_03" style="kieu_chu_lo_toi" ath="-112.8095" atv="70.9980" scale="0.145" html="D12-03" />
+  <hotspot name="chu_aqm_D12_04" style="kieu_chu_lo_toi" ath="-98.7401" atv="72.1395" scale="0.146" html="D12-04" />
+  <hotspot name="chu_aqm_D12_05" style="kieu_chu_lo_toi" ath="-102.4829" atv="76.1429" scale="0.150" html="D12-05" />
+  <hotspot name="chu_aqm_D12_06" style="kieu_chu_lo_toi" ath="-106.5322" atv="79.6045" scale="0.153" html="D12-06" />
+  <hotspot name="chu_aqm_D13_01" style="kieu_chu_lo_toi" ath="73.1822" atv="71.2909" scale="0.143" html="D13-01" />
+  <hotspot name="chu_aqm_D13_02" style="kieu_chu_lo_toi" ath="57.4178" atv="68.9748" scale="0.140" html="D13-02" />
+  <hotspot name="chu_aqm_D13_03" style="kieu_chu_lo_toi" ath="46.1318" atv="65.9947" scale="0.136" html="D13-03" />
+  <hotspot name="chu_aqm_D13_04" style="kieu_chu_lo_toi" ath="35.3941" atv="63.7526" scale="0.132" html="D13-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_05" style="kieu_chu_lo_toi" ath="31.0765" atv="60.0035" scale="0.125" html="D13-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_06" style="kieu_chu_lo_toi" ath="22.5602" atv="61.8491" scale="0.129" html="D13-06" />
+  <hotspot name="chu_aqm_D13_07" style="kieu_chu_lo_toi" ath="11.0233" atv="62.6336" scale="0.130" html="D13-07" />
+  <hotspot name="chu_aqm_D13_08" style="kieu_chu_lo_toi" ath="1.2235" atv="63.4921" scale="0.132" html="D13-08" />
+  <hotspot name="chu_aqm_D13_09" style="kieu_chu_lo_toi" ath="-10.4234" atv="63.6213" scale="0.132" html="D13-09" />
+  <hotspot name="chu_aqm_D13_10" style="kieu_chu_lo_toi" ath="-9.5334" atv="67.7140" scale="0.139" html="D13-10" />
+  <hotspot name="chu_aqm_D13_11" style="kieu_chu_lo_toi" ath="2.3137" atv="67.5503" scale="0.138" html="D13-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_12" style="kieu_chu_lo_toi" ath="15.5784" atv="66.0717" scale="0.136" html="D13-12" />
+  <hotspot name="chu_aqm_D13_13" style="kieu_chu_lo_toi" ath="26.0588" atv="65.3588" scale="0.135" html="D13-13" />
+  <hotspot name="chu_aqm_D13_14" style="kieu_chu_lo_toi" ath="38.5034" atv="68.9053" scale="0.140" html="D13-14" />
+  <hotspot name="chu_aqm_D13_15" style="kieu_chu_lo_toi" ath="48.8450" atv="72.0634" scale="0.144" html="D13-15" />
+  <hotspot name="chu_aqm_D13_16" style="kieu_chu_lo_toi" ath="68.3072" atv="74.7725" scale="0.148" html="D13-16" />
+  <hotspot name="chu_aqm_D14_01" style="kieu_chu_lo_toi" ath="-28.0452" atv="66.3380" scale="0.137" html="D14-01" />
+  <hotspot name="chu_aqm_D14_02" style="kieu_chu_lo_toi" ath="-37.1816" atv="64.6370" scale="0.134" html="D14-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_03" style="kieu_chu_lo_toi" ath="-45.8160" atv="61.9203" scale="0.130" html="D14-03" />
+  <hotspot name="chu_aqm_D14_04" style="kieu_chu_lo_toi" ath="-59.1488" atv="59.4474" scale="0.125" html="D14-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_05" style="kieu_chu_lo_toi" ath="-68.2811" atv="61.0735" scale="0.129" html="D14-05" />
+  <hotspot name="chu_aqm_D14_06" style="kieu_chu_lo_toi" ath="-76.6053" atv="62.4004" scale="0.131" html="D14-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_07" style="kieu_chu_lo_toi" ath="-80.0013" atv="58.2737" scale="0.124" html="D14-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_08" style="kieu_chu_lo_toi" ath="-71.1267" atv="57.1014" scale="0.121" html="D14-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_09" style="kieu_chu_lo_toi" ath="-63.6724" atv="55.5663" scale="0.118" html="D14-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_10" style="kieu_chu_lo_toi" ath="-56.8698" atv="53.4349" scale="0.113" html="D14-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_11" style="kieu_chu_lo_toi" ath="-51.7316" atv="56.6267" scale="0.120" html="D14-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_12" style="kieu_chu_lo_toi" ath="-41.6578" atv="58.9288" scale="0.124" html="D14-12" />
+  <hotspot name="chu_aqm_D14_13" style="kieu_chu_lo_toi" ath="-33.9880" atv="60.8283" scale="0.128" html="D14-13" />
+  <hotspot name="chu_aqm_D14_14" style="kieu_chu_lo_toi" ath="-23.8778" atv="62.5862" scale="0.131" html="D14-14[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D15_01" style="kieu_chu_lo_toi" ath="-20.9858" atv="55.1727" scale="0.116" html="D15-01" />
+  <hotspot name="chu_aqm_D15_02" style="kieu_chu_lo_toi" ath="-29.3420" atv="53.7079" scale="0.113" html="D15-02" />
+  <hotspot name="chu_aqm_D15_03" style="kieu_chu_lo_toi" ath="-36.1579" atv="52.1223" scale="0.110" html="D15-03" />
+  <hotspot name="chu_aqm_D15_04" style="kieu_chu_lo_toi" ath="-41.6796" atv="50.5215" scale="0.106" html="D15-04" />
+  <hotspot name="chu_aqm_D15_05" style="kieu_chu_lo_toi" ath="-47.0934" atv="48.4522" scale="0.102" html="D15-05" />
+  <hotspot name="chu_aqm_D15_06" style="kieu_chu_lo_toi" ath="-51.0428" atv="46.2884" scale="0.097" html="D15-06" />
+  <hotspot name="chu_aqm_D15_07" style="kieu_chu_lo_toi" ath="-54.3687" atv="44.2931" scale="0.092" html="D15-07" />
+  <hotspot name="chu_aqm_D15_08" style="kieu_chu_lo_toi" ath="-58.3346" atv="41.8522" scale="0.086" html="D15-08" />
+  <hotspot name="chu_aqm_D15_09" style="kieu_chu_lo_toi" ath="-65.0809" atv="43.1035" scale="0.089" html="D15-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D15_10" style="kieu_chu_lo_toi" ath="-64.4623" atv="46.7574" scale="0.098" html="D15-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D15_11" style="kieu_chu_lo_toi" ath="-70.4782" atv="48.1298" scale="0.101" html="D15-11" />
+  <hotspot name="chu_aqm_D15_12" style="kieu_chu_lo_toi" ath="-76.1167" atv="49.0353" scale="0.104" html="D15-12" />
+  <hotspot name="chu_aqm_D15_13" style="kieu_chu_lo_toi" ath="-83.0176" atv="49.6180" scale="0.105" html="D15-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D16_01" style="kieu_chu_lo_toi" ath="-85.3142" atv="35.4805" scale="0.070" html="D16-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D16_02" style="kieu_chu_lo_toi" ath="-81.9050" atv="35.2531" scale="0.070" html="D16-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D17_01" style="kieu_chu_lo_toi" ath="-105.4498" atv="34.7144" scale="0.069" html="D17-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D17_02" style="kieu_chu_lo_toi" ath="-102.2308" atv="35.0276" scale="0.069" html="D17-02" />
+  <hotspot name="chu_aqm_D17_03" style="kieu_chu_lo_toi" ath="-97.6502" atv="35.4185" scale="0.070" html="D17-03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D17_04" style="kieu_chu_lo_toi" ath="-94.2071" atv="35.5283" scale="0.071" html="D17-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D18_01" style="kieu_chu_lo_toi" ath="-112.8092" atv="33.8034" scale="0.066" html="D18-01" />
+  <hotspot name="chu_aqm_D18_02" style="kieu_chu_lo_toi" ath="-111.3909" atv="32.6000" scale="0.063" html="D18-02" />
+  <hotspot name="chu_aqm_D18_03" style="kieu_chu_lo_toi" ath="-110.4109" atv="31.4573" scale="0.060" html="D18-03" />
+  <hotspot name="chu_aqm_D18_04" style="kieu_chu_lo_toi" ath="-109.6098" atv="30.4400" scale="0.058" html="D18-04" />
+  <hotspot name="chu_aqm_D18_05" style="kieu_chu_lo_toi" ath="-108.8478" atv="29.4506" scale="0.055" html="D18-05" />
+  <hotspot name="chu_aqm_D18_06" style="kieu_chu_lo_toi" ath="-108.5555" atv="28.5110" scale="0.053" html="D18-06" />
+  <hotspot name="chu_aqm_D18_07" style="kieu_chu_lo_toi" ath="-107.8804" atv="27.6142" scale="0.051" html="D18-07" />
+  <hotspot name="chu_aqm_D18_08" style="kieu_chu_lo_toi" ath="-107.3509" atv="26.8016" scale="0.049" html="D18-08" />
+  <hotspot name="chu_aqm_D18_09" style="kieu_chu_lo_toi" ath="-106.7608" atv="25.9909" scale="0.047" html="D18-09" />
+  <hotspot name="chu_aqm_D18_10" style="kieu_chu_lo_toi" ath="-106.2190" atv="25.2370" scale="0.045" html="D18-10" />
+  <hotspot name="chu_aqm_D19_01" style="kieu_chu_lo_toi" ath="-105.5833" atv="24.3349" scale="0.043" html="D19-01" />
+  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="-104.7314" atv="23.6682" scale="0.041" html="D19-02" />
+  <hotspot name="chu_aqm_D19_03" style="kieu_chu_lo_toi" ath="-104.2474" atv="23.0063" scale="0.040" html="D19-03" />
+  <hotspot name="chu_aqm_D19_04" style="kieu_chu_lo_toi" ath="-103.8488" atv="22.4007" scale="0.038" html="D19-04" />
+  <hotspot name="chu_aqm_D19_05" style="kieu_chu_lo_toi" ath="-103.8695" atv="21.5035" scale="0.036" html="D19-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D19_06" style="kieu_chu_lo_toi" ath="-100.7784" atv="21.6204" scale="0.036" html="D19-06" />
+  <hotspot name="chu_aqm_D19_07" style="kieu_chu_lo_toi" ath="-98.7542" atv="21.6502" scale="0.036" html="D19-07" />
+  <hotspot name="chu_aqm_D19_08" style="kieu_chu_lo_toi" ath="-96.5314" atv="21.7985" scale="0.037" html="D19-08" />
+  <hotspot name="chu_aqm_D19_09" style="kieu_chu_lo_toi" ath="-94.2871" atv="21.9066" scale="0.037" html="D19-09" />
+  <hotspot name="chu_aqm_D19_10" style="kieu_chu_lo_toi" ath="-91.6411" atv="22.0301" scale="0.037" html="D19-10" />
+  <hotspot name="chu_aqm_D2_01" style="kieu_chu_lo_toi" ath="81.3732" atv="56.8604" scale="0.119" html="D2-01" />
+  <hotspot name="chu_aqm_D2_02" style="kieu_chu_lo_toi" ath="72.8826" atv="55.9818" scale="0.117" html="D2-02" />
+  <hotspot name="chu_aqm_D2_03" style="kieu_chu_lo_toi" ath="65.3625" atv="54.5977" scale="0.114" html="D2-03" />
+  <hotspot name="chu_aqm_D2_04" style="kieu_chu_lo_toi" ath="59.6745" atv="53.1495" scale="0.111" html="D2-04" />
+  <hotspot name="chu_aqm_D2_05" style="kieu_chu_lo_toi" ath="52.4069" atv="51.2860" scale="0.106" html="D2-05" />
+  <hotspot name="chu_aqm_D2_06" style="kieu_chu_lo_toi" ath="46.9865" atv="49.1429" scale="0.101" html="D2-06" />
+  <hotspot name="chu_aqm_D2_07" style="kieu_chu_lo_toi" ath="42.5667" atv="46.9647" scale="0.096" html="D2-07" />
+  <hotspot name="chu_aqm_D2_08" style="kieu_chu_lo_toi" ath="38.7198" atv="44.9611" scale="0.091" html="D2-08" />
+  <hotspot name="chu_aqm_D20_01" style="kieu_chu_lo_toi" ath="-104.0941" atv="31.2555" scale="0.060" html="D20-01" />
+  <hotspot name="chu_aqm_D20_02" style="kieu_chu_lo_toi" ath="-103.5372" atv="30.0724" scale="0.057" html="D20-02" />
+  <hotspot name="chu_aqm_D20_03" style="kieu_chu_lo_toi" ath="-102.6882" atv="29.1627" scale="0.055" html="D20-03" />
+  <hotspot name="chu_aqm_D20_04" style="kieu_chu_lo_toi" ath="-102.1945" atv="28.2267" scale="0.052" html="D20-04" />
+  <hotspot name="chu_aqm_D20_05" style="kieu_chu_lo_toi" ath="-101.7951" atv="27.3282" scale="0.050" html="D20-05" />
+  <hotspot name="chu_aqm_D20_06" style="kieu_chu_lo_toi" ath="-101.3672" atv="26.4917" scale="0.048" html="D20-06" />
+  <hotspot name="chu_aqm_D20_07" style="kieu_chu_lo_toi" ath="-101.0260" atv="25.6934" scale="0.046" html="D20-07" />
+  <hotspot name="chu_aqm_D20_08" style="kieu_chu_lo_toi" ath="-99.2476" atv="25.8125" scale="0.046" html="D20-08" />
+  <hotspot name="chu_aqm_D20_09" style="kieu_chu_lo_toi" ath="-99.5352" atv="26.6227" scale="0.048" html="D20-09" />
+  <hotspot name="chu_aqm_D20_10" style="kieu_chu_lo_toi" ath="-99.8879" atv="27.4667" scale="0.050" html="D20-10" />
+  <hotspot name="chu_aqm_D20_11" style="kieu_chu_lo_toi" ath="-100.2276" atv="28.3841" scale="0.053" html="D20-11" />
+  <hotspot name="chu_aqm_D20_12" style="kieu_chu_lo_toi" ath="-100.6397" atv="29.3361" scale="0.055" html="D20-12" />
+  <hotspot name="chu_aqm_D20_13" style="kieu_chu_lo_toi" ath="-100.5837" atv="30.3246" scale="0.058" html="D20-13" />
+  <hotspot name="chu_aqm_D20_14" style="kieu_chu_lo_toi" ath="-101.0679" atv="31.5288" scale="0.061" html="D20-14" />
+  <hotspot name="chu_aqm_D21_01" style="kieu_chu_lo_toi" ath="-100.6320" atv="24.7360" scale="0.044" html="D21-01" />
+  <hotspot name="chu_aqm_D21_02" style="kieu_chu_lo_toi" ath="-100.5594" atv="23.9810" scale="0.042" html="D21-02" />
+  <hotspot name="chu_aqm_D21_03" style="kieu_chu_lo_toi" ath="-100.1813" atv="23.2069" scale="0.040" html="D21-03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D21_04" style="kieu_chu_lo_toi" ath="-98.0027" atv="23.3408" scale="0.040" html="D21-04" />
+  <hotspot name="chu_aqm_D21_05" style="kieu_chu_lo_toi" ath="-98.2780" atv="24.1212" scale="0.042" html="D21-05" />
+  <hotspot name="chu_aqm_D21_06" style="kieu_chu_lo_toi" ath="-98.9260" atv="24.8448" scale="0.044" html="D21-06" />
+  <hotspot name="chu_aqm_D22_01" style="kieu_chu_lo_toi" ath="-95.1730" atv="31.8739" scale="0.061" html="D22-01" />
+  <hotspot name="chu_aqm_D22_02" style="kieu_chu_lo_toi" ath="-95.0588" atv="30.6065" scale="0.058" html="D22-02" />
+  <hotspot name="chu_aqm_D22_03" style="kieu_chu_lo_toi" ath="-94.4820" atv="29.6562" scale="0.056" html="D22-03" />
+  <hotspot name="chu_aqm_D22_04" style="kieu_chu_lo_toi" ath="-94.3649" atv="28.6560" scale="0.053" html="D22-04" />
+  <hotspot name="chu_aqm_D22_05" style="kieu_chu_lo_toi" ath="-94.2682" atv="27.7355" scale="0.051" html="D22-05" />
+  <hotspot name="chu_aqm_D22_06" style="kieu_chu_lo_toi" ath="-94.1116" atv="26.8618" scale="0.049" html="D22-06" />
+  <hotspot name="chu_aqm_D22_07" style="kieu_chu_lo_toi" ath="-93.9347" atv="26.0413" scale="0.047" html="D22-07" />
+  <hotspot name="chu_aqm_D22_08" style="kieu_chu_lo_toi" ath="-92.1848" atv="26.0725" scale="0.047" html="D22-08" />
+  <hotspot name="chu_aqm_D22_09" style="kieu_chu_lo_toi" ath="-92.2217" atv="26.8827" scale="0.049" html="D22-09" />
+  <hotspot name="chu_aqm_D22_10" style="kieu_chu_lo_toi" ath="-92.3209" atv="27.7729" scale="0.051" html="D22-10" />
+  <hotspot name="chu_aqm_D22_11" style="kieu_chu_lo_toi" ath="-92.3284" atv="28.6602" scale="0.053" html="D22-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Villa[/span]" />
+  <hotspot name="chu_aqm_D22_12" style="kieu_chu_lo_toi" ath="-92.4620" atv="29.6614" scale="0.056" html="D22-12" />
+  <hotspot name="chu_aqm_D22_13" style="kieu_chu_lo_toi" ath="-92.4827" atv="30.7361" scale="0.058" html="D22-13" />
+  <hotspot name="chu_aqm_D22_14" style="kieu_chu_lo_toi" ath="-92.5644" atv="32.0503" scale="0.062" html="D22-14" />
+  <hotspot name="chu_aqm_D23_01" style="kieu_chu_lo_toi" ath="-93.8245" atv="25.0526" scale="0.044" html="D23-01" />
+  <hotspot name="chu_aqm_D23_02" style="kieu_chu_lo_toi" ath="-94.1265" atv="24.3413" scale="0.043" html="D23-02" />
+  <hotspot name="chu_aqm_D23_03" style="kieu_chu_lo_toi" ath="-94.0236" atv="23.5253" scale="0.041" html="D23-03" />
+  <hotspot name="chu_aqm_D23_04" style="kieu_chu_lo_toi" ath="-91.9026" atv="23.5704" scale="0.041" html="D23-04" />
+  <hotspot name="chu_aqm_D23_05" style="kieu_chu_lo_toi" ath="-92.1362" atv="24.4040" scale="0.043" html="D23-05" />
+  <hotspot name="chu_aqm_D23_06" style="kieu_chu_lo_toi" ath="-92.1752" atv="25.1068" scale="0.044" html="D23-06" />
+  <hotspot name="chu_aqm_D24_01" style="kieu_chu_lo_toi" ath="-83.8611" atv="31.9696" scale="0.061" html="D24-01" />
+  <hotspot name="chu_aqm_D24_02" style="kieu_chu_lo_toi" ath="-87.0650" atv="31.9330" scale="0.061" html="D24-02" />
+  <hotspot name="chu_aqm_D24_03" style="kieu_chu_lo_toi" ath="-87.2618" atv="30.6150" scale="0.058" html="D24-03" />
+  <hotspot name="chu_aqm_D24_04" style="kieu_chu_lo_toi" ath="-83.4314" atv="30.1163" scale="0.057" html="D24-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D24_05" style="kieu_chu_lo_toi" ath="-82.5644" atv="28.5011" scale="0.053" html="D24-05" />
+  <hotspot name="chu_aqm_D24_06" style="kieu_chu_lo_toi" ath="-82.6215" atv="27.5192" scale="0.050" html="D24-06" />
+  <hotspot name="chu_aqm_D24_07" style="kieu_chu_lo_toi" ath="-82.5572" atv="26.6572" scale="0.048" html="D24-07" />
+  <hotspot name="chu_aqm_D24_08" style="kieu_chu_lo_toi" ath="-82.5948" atv="25.7862" scale="0.046" html="D24-08" />
+  <hotspot name="chu_aqm_D25_01" style="kieu_chu_lo_toi" ath="-82.4139" atv="24.8019" scale="0.044" html="D25-01" />
+  <hotspot name="chu_aqm_D25_02" style="kieu_chu_lo_toi" ath="-82.4586" atv="24.0366" scale="0.042" html="D25-02" />
+  <hotspot name="chu_aqm_D25_03" style="kieu_chu_lo_toi" ath="-82.4149" atv="23.3627" scale="0.040" html="D25-03" />
+  <hotspot name="chu_aqm_D25_04" style="kieu_chu_lo_toi" ath="-83.4083" atv="22.2883" scale="0.038" html="D25-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D25_05" style="kieu_chu_lo_toi" ath="-86.1673" atv="22.1252" scale="0.037" html="D25-05" />
+  <hotspot name="chu_aqm_D25_06" style="kieu_chu_lo_toi" ath="-88.4706" atv="22.1371" scale="0.037" html="D25-06" />
+  <hotspot name="chu_aqm_D26_01" style="kieu_chu_lo_toi" ath="-76.0051" atv="30.9518" scale="0.059" html="D26-01" />
+  <hotspot name="chu_aqm_D26_02" style="kieu_chu_lo_toi" ath="-76.0288" atv="29.5984" scale="0.055" html="D26-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D26_03" style="kieu_chu_lo_toi" ath="-76.5597" atv="28.1253" scale="0.052" html="D26-03" />
+  <hotspot name="chu_aqm_D26_04" style="kieu_chu_lo_toi" ath="-76.9566" atv="27.1392" scale="0.049" html="D26-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D26_05" style="kieu_chu_lo_toi" ath="-77.5651" atv="26.0534" scale="0.047" html="D26-05" />
+  <hotspot name="chu_aqm_D27_01" style="kieu_chu_lo_toi" ath="-78.0946" atv="24.4735" scale="0.043" html="D27-01" />
+  <hotspot name="chu_aqm_D27_02" style="kieu_chu_lo_toi" ath="-78.1554" atv="23.5471" scale="0.041" html="D27-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_03" style="kieu_chu_lo_toi" ath="-78.3661" atv="22.7062" scale="0.039" html="D27-03" />
+  <hotspot name="chu_aqm_D27_04" style="kieu_chu_lo_toi" ath="-78.6626" atv="21.8707" scale="0.037" html="D27-04" />
+  <hotspot name="chu_aqm_D27_05" style="kieu_chu_lo_toi" ath="-79.0516" atv="21.1460" scale="0.035" html="D27-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_06" style="kieu_chu_lo_toi" ath="-79.7479" atv="20.5207" scale="0.033" html="D27-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D27_07" style="kieu_chu_lo_toi" ath="-81.7251" atv="20.5941" scale="0.034" html="D27-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_08" style="kieu_chu_lo_toi" ath="-84.0665" atv="20.6396" scale="0.034" html="D27-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_09" style="kieu_chu_lo_toi" ath="-85.9655" atv="20.7479" scale="0.034" html="D27-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_10" style="kieu_chu_lo_toi" ath="-88.4999" atv="20.7219" scale="0.034" html="D27-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D28_01" style="kieu_chu_lo_toi" ath="-74.0415" atv="34.3964" scale="0.067" html="D28-01" />
+  <hotspot name="chu_aqm_D28_02" style="kieu_chu_lo_toi" ath="-70.9590" atv="33.8824" scale="0.066" html="D28-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D28_03" style="kieu_chu_lo_toi" ath="-67.1819" atv="32.6038" scale="0.063" html="D28-03" />
+  <hotspot name="chu_aqm_D28_04" style="kieu_chu_lo_toi" ath="-69.3055" atv="30.6794" scale="0.058" html="D28-04" />
+  <hotspot name="chu_aqm_D28_05" style="kieu_chu_lo_toi" ath="-70.1488" atv="29.2560" scale="0.054" html="D28-05" />
+  <hotspot name="chu_aqm_D28_06" style="kieu_chu_lo_toi" ath="-70.8944" atv="27.9904" scale="0.051" html="D28-06" />
+  <hotspot name="chu_aqm_D28_07" style="kieu_chu_lo_toi" ath="-71.6359" atv="26.9467" scale="0.049" html="D28-07" />
+  <hotspot name="chu_aqm_D28_08" style="kieu_chu_lo_toi" ath="-72.2180" atv="25.7731" scale="0.046" html="D28-08" />
+  <hotspot name="chu_aqm_D29_01" style="kieu_chu_lo_toi" ath="-72.9939" atv="23.9085" scale="0.041" html="D29-01" />
+  <hotspot name="chu_aqm_D29_02" style="kieu_chu_lo_toi" ath="-73.5702" atv="22.9849" scale="0.039" html="D29-02" />
+  <hotspot name="chu_aqm_D29_03" style="kieu_chu_lo_toi" ath="-74.0493" atv="22.1812" scale="0.037" html="D29-03" />
+  <hotspot name="chu_aqm_D29_04" style="kieu_chu_lo_toi" ath="-74.8240" atv="21.4007" scale="0.035" html="D29-04" />
+  <hotspot name="chu_aqm_D29_05" style="kieu_chu_lo_toi" ath="-75.1514" atv="20.7278" scale="0.034" html="D29-05" />
+  <hotspot name="chu_aqm_D29_06" style="kieu_chu_lo_toi" ath="-75.5632" atv="19.9931" scale="0.032" html="D29-06" />
+  <hotspot name="chu_aqm_D29_07" style="kieu_chu_lo_toi" ath="-75.8608" atv="18.8969" scale="0.030" html="D29-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Riverfront[/span]" />
+  <hotspot name="chu_aqm_D29_08" style="kieu_chu_lo_toi" ath="-78.7231" atv="19.0243" scale="0.030" html="D29-08" />
+  <hotspot name="chu_aqm_D29_09" style="kieu_chu_lo_toi" ath="-80.6798" atv="19.1489" scale="0.030" html="D29-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_10" style="kieu_chu_lo_toi" ath="-82.5747" atv="19.1426" scale="0.030" html="D29-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_11" style="kieu_chu_lo_toi" ath="-84.6110" atv="19.2040" scale="0.031" html="D29-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_12" style="kieu_chu_lo_toi" ath="-86.4805" atv="19.2610" scale="0.031" html="D29-12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_13" style="kieu_chu_lo_toi" ath="-88.6380" atv="19.2762" scale="0.031" html="D29-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D3_01" style="kieu_chu_lo_toi" ath="124.3055" atv="57.1897" scale="0.120" html="D3-01" />
+  <hotspot name="chu_aqm_D3_02" style="kieu_chu_lo_toi" ath="116.4119" atv="59.3243" scale="0.124" html="D3-02" />
+  <hotspot name="chu_aqm_D3_03" style="kieu_chu_lo_toi" ath="108.4816" atv="60.8104" scale="0.127" html="D3-03" />
+  <hotspot name="chu_aqm_D3_04" style="kieu_chu_lo_toi" ath="98.2831" atv="61.6120" scale="0.128" html="D3-04" />
+  <hotspot name="chu_aqm_D30_01" style="kieu_chu_lo_toi" ath="-91.9319" atv="20.6582" scale="0.034" html="D30-01" />
+  <hotspot name="chu_aqm_D30_02" style="kieu_chu_lo_toi" ath="-93.7970" atv="20.6422" scale="0.034" html="D30-02" />
+  <hotspot name="chu_aqm_D30_03" style="kieu_chu_lo_toi" ath="-95.4688" atv="20.5840" scale="0.034" html="D30-03" />
+  <hotspot name="chu_aqm_D30_04" style="kieu_chu_lo_toi" ath="-97.0170" atv="20.5471" scale="0.034" html="D30-04" />
+  <hotspot name="chu_aqm_D30_05" style="kieu_chu_lo_toi" ath="-98.6174" atv="20.4611" scale="0.034" html="D30-05" />
+  <hotspot name="chu_aqm_D30_06" style="kieu_chu_lo_toi" ath="-100.1813" atv="20.3870" scale="0.033" html="D30-06" />
+  <hotspot name="chu_aqm_D30_07" style="kieu_chu_lo_toi" ath="-102.3399" atv="20.0099" scale="0.033" html="D30-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D30_08" style="kieu_chu_lo_toi" ath="-101.9290" atv="19.3505" scale="0.031" html="D30-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_09" style="kieu_chu_lo_toi" ath="-100.0980" atv="19.2743" scale="0.031" html="D30-09" />
+  <hotspot name="chu_aqm_D30_10" style="kieu_chu_lo_toi" ath="-98.5302" atv="19.3498" scale="0.031" html="D30-10" />
+  <hotspot name="chu_aqm_D30_11" style="kieu_chu_lo_toi" ath="-96.6404" atv="19.1998" scale="0.031" html="D30-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_12" style="kieu_chu_lo_toi" ath="-94.7156" atv="19.2617" scale="0.031" html="D30-12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_13" style="kieu_chu_lo_toi" ath="-92.1224" atv="19.3072" scale="0.031" html="D30-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_01" style="kieu_chu_lo_toi" ath="73.8059" atv="62.1628" scale="0.129" html="D4-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_02" style="kieu_chu_lo_toi" ath="65.5408" atv="59.7125" scale="0.124" html="D4-02" />
+  <hotspot name="chu_aqm_D4_03" style="kieu_chu_lo_toi" ath="57.6759" atv="57.9155" scale="0.121" html="D4-03" />
+  <hotspot name="chu_aqm_D4_04" style="kieu_chu_lo_toi" ath="50.4708" atv="55.6854" scale="0.116" html="D4-04" />
+  <hotspot name="chu_aqm_D4_05" style="kieu_chu_lo_toi" ath="44.8779" atv="53.3904" scale="0.111" html="D4-05" />
+  <hotspot name="chu_aqm_D4_06" style="kieu_chu_lo_toi" ath="39.8461" atv="50.8578" scale="0.105" html="D4-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_07" style="kieu_chu_lo_toi" ath="33.7768" atv="47.4712" scale="0.099" html="D4-07" />
+  <hotspot name="chu_aqm_D4_08" style="kieu_chu_lo_toi" ath="23.5976" atv="51.3080" scale="0.107" html="D4-08" />
+  <hotspot name="chu_aqm_D4_09" style="kieu_chu_lo_toi" ath="16.9393" atv="53.3451" scale="0.111" html="D4-09" />
+  <hotspot name="chu_aqm_D4_10" style="kieu_chu_lo_toi" ath="10.4579" atv="54.4251" scale="0.114" html="D4-10" />
+  <hotspot name="chu_aqm_D4_11" style="kieu_chu_lo_toi" ath="2.4513" atv="55.1991" scale="0.116" html="D4-11" />
+  <hotspot name="chu_aqm_D4_12" style="kieu_chu_lo_toi" ath="-6.9120" atv="56.4253" scale="0.116" html="D4-12" />
+  <hotspot name="chu_aqm_D5_01" style="kieu_chu_lo_toi" ath="133.5453" atv="51.8078" scale="0.109" html="D5-01" />
+  <hotspot name="chu_aqm_D5_02" style="kieu_chu_lo_toi" ath="137.0811" atv="53.9168" scale="0.113" html="D5-02" />
+  <hotspot name="chu_aqm_D5_03" style="kieu_chu_lo_toi" ath="141.5571" atv="55.6762" scale="0.117" html="D5-03" />
+  <hotspot name="chu_aqm_D5_04" style="kieu_chu_lo_toi" ath="145.8262" atv="57.0787" scale="0.120" html="D5-04" />
+  <hotspot name="chu_aqm_D5_05" style="kieu_chu_lo_toi" ath="151.5186" atv="58.5896" scale="0.123" html="D5-05" />
+  <hotspot name="chu_aqm_D5_06" style="kieu_chu_lo_toi" ath="159.4423" atv="59.6724" scale="0.126" html="D5-06" />
+  <hotspot name="chu_aqm_D5_07" style="kieu_chu_lo_toi" ath="166.3171" atv="60.5384" scale="0.127" html="D5-07" />
+  <hotspot name="chu_aqm_D5_08" style="kieu_chu_lo_toi" ath="173.1333" atv="61.0205" scale="0.128" html="D5-08" />
+  <hotspot name="chu_aqm_D5_09" style="kieu_chu_lo_toi" ath="-179.3685" atv="61.1458" scale="0.129" html="D5-09" />
+  <hotspot name="chu_aqm_D5_10" style="kieu_chu_lo_toi" ath="-172.1239" atv="60.8706" scale="0.128" html="D5-10" />
+  <hotspot name="chu_aqm_D6_01" style="kieu_chu_lo_toi" ath="136.9057" atv="63.1473" scale="0.132" html="D6-01" />
+  <hotspot name="chu_aqm_D6_02" style="kieu_chu_lo_toi" ath="143.7246" atv="65.1862" scale="0.135" html="D6-02" />
+  <hotspot name="chu_aqm_D6_03" style="kieu_chu_lo_toi" ath="150.8767" atv="67.4878" scale="0.139" html="D6-03" />
+  <hotspot name="chu_aqm_D6_04" style="kieu_chu_lo_toi" ath="160.0775" atv="68.9313" scale="0.141" html="D6-04" />
+  <hotspot name="chu_aqm_D6_05" style="kieu_chu_lo_toi" ath="170.5331" atv="69.7451" scale="0.142" html="D6-05" />
+  <hotspot name="chu_aqm_D6_06" style="kieu_chu_lo_toi" ath="-178.4430" atv="69.9884" scale="0.143" html="D6-06" />
+  <hotspot name="chu_aqm_D6_07" style="kieu_chu_lo_toi" ath="-167.6529" atv="69.4701" scale="0.142" html="D6-07" />
+  <hotspot name="chu_aqm_D6_08" style="kieu_chu_lo_toi" ath="-164.8716" atv="72.6315" scale="0.146" html="D6-08" />
+  <hotspot name="chu_aqm_D6_09" style="kieu_chu_lo_toi" ath="-177.9178" atv="73.2934" scale="0.147" html="D6-09" />
+  <hotspot name="chu_aqm_D6_10" style="kieu_chu_lo_toi" ath="168.9003" atv="72.9909" scale="0.147" html="D6-10" />
+  <hotspot name="chu_aqm_D6_11" style="kieu_chu_lo_toi" ath="156.4078" atv="71.9784" scale="0.145" html="D6-11" />
+  <hotspot name="chu_aqm_D6_12" style="kieu_chu_lo_toi" ath="146.1557" atv="70.2411" scale="0.143" html="D6-12" />
+  <hotspot name="chu_aqm_D6_13" style="kieu_chu_lo_toi" ath="136.3164" atv="68.5720" scale="0.140" html="D6-13" />
+  <hotspot name="chu_aqm_D6_14" style="kieu_chu_lo_toi" ath="128.7882" atv="65.7081" scale="0.136" html="D6-14" />
+  <hotspot name="chu_aqm_D7_01" style="kieu_chu_lo_toi" ath="-163.2791" atv="59.9813" scale="0.127" html="D7-01" />
+  <hotspot name="chu_aqm_D7_02" style="kieu_chu_lo_toi" ath="-157.1165" atv="59.5182" scale="0.126" html="D7-02" />
+  <hotspot name="chu_aqm_D7_03" style="kieu_chu_lo_toi" ath="-151.0104" atv="58.1509" scale="0.124" html="D7-03" />
+  <hotspot name="chu_aqm_D7_04" style="kieu_chu_lo_toi" ath="-144.4510" atv="56.1313" scale="0.120" html="D7-04" />
+  <hotspot name="chu_aqm_D7_05" style="kieu_chu_lo_toi" ath="-139.7544" atv="54.3645" scale="0.116" html="D7-05" />
+  <hotspot name="chu_aqm_D7_06" style="kieu_chu_lo_toi" ath="-135.7548" atv="52.5733" scale="0.112" html="D7-06" />
+  <hotspot name="chu_aqm_D7_07" style="kieu_chu_lo_toi" ath="-132.0772" atv="50.6569" scale="0.108" html="D7-07" />
+  <hotspot name="chu_aqm_D7_08" style="kieu_chu_lo_toi" ath="-128.8463" atv="48.7154" scale="0.103" html="D7-08" />
+  <hotspot name="chu_aqm_D7_09" style="kieu_chu_lo_toi" ath="-126.1018" atv="46.8188" scale="0.099" html="D7-09" />
+  <hotspot name="chu_aqm_D7_10" style="kieu_chu_lo_toi" ath="-123.6872" atv="44.4203" scale="0.093" html="D7-10" />
+  <hotspot name="chu_aqm_D8_01" style="kieu_chu_lo_toi" ath="-155.0432" atv="68.0053" scale="0.140" html="D8-01" />
+  <hotspot name="chu_aqm_D8_02" style="kieu_chu_lo_toi" ath="-148.3627" atv="65.8944" scale="0.137" html="D8-02" />
+  <hotspot name="chu_aqm_D8_03" style="kieu_chu_lo_toi" ath="-140.7483" atv="63.9092" scale="0.134" html="D8-03" />
+  <hotspot name="chu_aqm_D8_04" style="kieu_chu_lo_toi" ath="-132.9638" atv="66.7472" scale="0.139" html="D8-04" />
+  <hotspot name="chu_aqm_D8_05" style="kieu_chu_lo_toi" ath="-141.4379" atv="69.4100" scale="0.142" html="D8-05" />
+  <hotspot name="chu_aqm_D8_06" style="kieu_chu_lo_toi" ath="-150.4252" atv="70.8517" scale="0.144" html="D8-06" />
+  <hotspot name="chu_aqm_D9_01" style="kieu_chu_lo_toi" ath="-126.8306" atv="57.4950" scale="0.122" html="D9-01" />
+  <hotspot name="chu_aqm_D9_02" style="kieu_chu_lo_toi" ath="-118.9511" atv="59.7369" scale="0.127" html="D9-02" />
+  <hotspot name="chu_aqm_D9_03" style="kieu_chu_lo_toi" ath="-110.1977" atv="61.3754" scale="0.130" html="D9-03" />
+  <hotspot name="chu_aqm_D9_04" style="kieu_chu_lo_toi" ath="-99.1223" atv="62.4535" scale="0.132" html="D9-04" />
+  <hotspot name="chu_aqm_D9_05" style="kieu_chu_lo_toi" ath="-98.3140" atv="58.0478" scale="0.123" html="D9-05" />
+  <hotspot name="chu_aqm_D9_06" style="kieu_chu_lo_toi" ath="-105.9988" atv="57.3600" scale="0.122" html="D9-06" />
+  <hotspot name="chu_aqm_D9_07" style="kieu_chu_lo_toi" ath="-115.2078" atv="55.8459" scale="0.119" html="D9-07" />
+  <hotspot name="chu_aqm_D9_08" style="kieu_chu_lo_toi" ath="-121.0225" atv="54.4460" scale="0.116" html="D9-08" />
+  <!-- /CHU -->
+</scene>
+
+<scene name="pk_aqua_trai" title="PK The Aqua - The Aqua 1" onstart="">
+  <view hlookat="-1.15" vlookat="90" fov="112.8"
+        fovtype="HFOV" fovmin="12.0" fovmax="112.8"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/20-aqua-0538/20-aqua-0538.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/20-aqua-0538/20-aqua-0538.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/20-aqua-0538/20-aqua-0538.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/20-aqua-0538/20-aqua-0538.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+  <layer name="o_tc_pk_aqua_trai" style="kieu_o_view" align="top" x="0" y="16" html="&#8617; TOÀN CẢNH PK THE AQUA" onclick="js(doiCanh(&apos;pk_aqua&apos;));" />
+</scene>
+
+<include url="lo-aqua-trai.xml" />
+<scene name="pk_aqua_phai_ve" title="PK The Aqua - The Aqua 2 - ban ve" onstart="">
+  <view hlookat="0.77" vlookat="90" fov="107.4"
+        fovtype="HFOV" fovmin="12.0" fovmax="107.4"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/21-aqua-0537-ve/21-aqua-0537-ve.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/21-aqua-0537-ve/21-aqua-0537-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/21-aqua-0537-ve/21-aqua-0537-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/21-aqua-0537-ve/21-aqua-0537-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+  <layer name="o_tc_pk_aqua_phai_ve" style="kieu_o_view" align="top" x="0" y="16" html="&#8617; TOÀN CẢNH PK THE AQUA" onclick="js(doiCanh(&apos;pk_aqua&apos;));" />
+  <!-- CHU DUNG THANG -->
+  <hotspot name="chu_aqm_D1_01" style="kieu_chu_lo_toi" ath="104.0419" atv="19.6775" scale="0.031" html="D1-01" />
+  <hotspot name="chu_aqm_D1_02" style="kieu_chu_lo_toi" ath="101.8536" atv="19.8446" scale="0.032" html="D1-02" />
+  <hotspot name="chu_aqm_D1_03" style="kieu_chu_lo_toi" ath="100.2622" atv="19.9447" scale="0.032" html="D1-03" />
+  <hotspot name="chu_aqm_D1_04" style="kieu_chu_lo_toi" ath="98.2944" atv="20.0730" scale="0.032" html="D1-04" />
+  <hotspot name="chu_aqm_D1_05" style="kieu_chu_lo_toi" ath="96.0710" atv="20.1766" scale="0.032" html="D1-05" />
+  <hotspot name="chu_aqm_D1_06" style="kieu_chu_lo_toi" ath="94.4384" atv="20.2159" scale="0.032" html="D1-06" />
+  <hotspot name="chu_aqm_D10_01" style="kieu_chu_lo_toi" ath="110.9853" atv="37.2122" scale="0.075" html="D10-01" />
+  <hotspot name="chu_aqm_D10_02" style="kieu_chu_lo_toi" ath="107.9720" atv="37.7484" scale="0.076" html="D10-02" />
+  <hotspot name="chu_aqm_D10_03" style="kieu_chu_lo_toi" ath="103.5759" atv="38.3806" scale="0.078" html="D10-03" />
+  <hotspot name="chu_aqm_D10_04" style="kieu_chu_lo_toi" ath="99.9554" atv="38.8212" scale="0.079" html="D10-04" />
+  <hotspot name="chu_aqm_D11_01" style="kieu_chu_lo_toi" ath="96.0772" atv="22.4911" scale="0.037" html="D11-01" />
+  <hotspot name="chu_aqm_D11_02" style="kieu_chu_lo_toi" ath="96.3445" atv="23.1925" scale="0.039" html="D11-02" />
+  <hotspot name="chu_aqm_D11_03" style="kieu_chu_lo_toi" ath="96.0590" atv="23.8544" scale="0.041" html="D11-03" />
+  <hotspot name="chu_aqm_D11_04" style="kieu_chu_lo_toi" ath="96.2682" atv="24.5421" scale="0.042" html="D11-04" />
+  <hotspot name="chu_aqm_D11_05" style="kieu_chu_lo_toi" ath="96.4079" atv="25.2428" scale="0.044" html="D11-05" />
+  <hotspot name="chu_aqm_D11_06" style="kieu_chu_lo_toi" ath="96.6424" atv="26.0051" scale="0.046" html="D11-06" />
+  <hotspot name="chu_aqm_D11_07" style="kieu_chu_lo_toi" ath="96.8093" atv="26.7993" scale="0.048" html="D11-07" />
+  <hotspot name="chu_aqm_D11_08" style="kieu_chu_lo_toi" ath="95.0134" atv="26.8915" scale="0.048" html="D11-08" />
+  <hotspot name="chu_aqm_D11_09" style="kieu_chu_lo_toi" ath="94.8541" atv="26.1085" scale="0.046" html="D11-09" />
+  <hotspot name="chu_aqm_D11_10" style="kieu_chu_lo_toi" ath="94.7504" atv="25.3362" scale="0.044" html="D11-10" />
+  <hotspot name="chu_aqm_D11_11" style="kieu_chu_lo_toi" ath="94.5951" atv="24.6434" scale="0.043" html="D11-11" />
+  <hotspot name="chu_aqm_D11_12" style="kieu_chu_lo_toi" ath="94.5050" atv="23.9475" scale="0.041" html="D11-12" />
+  <hotspot name="chu_aqm_D11_13" style="kieu_chu_lo_toi" ath="94.3522" atv="23.3119" scale="0.039" html="D11-13" />
+  <hotspot name="chu_aqm_D11_14" style="kieu_chu_lo_toi" ath="94.0516" atv="22.5773" scale="0.038" html="D11-14" />
+  <hotspot name="chu_aqm_D12_01" style="kieu_chu_lo_toi" ath="97.1390" atv="27.8845" scale="0.051" html="D12-01" />
+  <hotspot name="chu_aqm_D12_02" style="kieu_chu_lo_toi" ath="97.8316" atv="28.6626" scale="0.053" html="D12-02" />
+  <hotspot name="chu_aqm_D12_03" style="kieu_chu_lo_toi" ath="98.1915" atv="29.7498" scale="0.055" html="D12-03" />
+  <hotspot name="chu_aqm_D12_04" style="kieu_chu_lo_toi" ath="95.4025" atv="29.9095" scale="0.056" html="D12-04" />
+  <hotspot name="chu_aqm_D12_05" style="kieu_chu_lo_toi" ath="95.3702" atv="28.8327" scale="0.053" html="D12-05" />
+  <hotspot name="chu_aqm_D12_06" style="kieu_chu_lo_toi" ath="95.1990" atv="27.9894" scale="0.051" html="D12-06" />
+  <hotspot name="chu_aqm_D13_01" style="kieu_chu_lo_toi" ath="90.7379" atv="22.8161" scale="0.038" html="D13-01" />
+  <hotspot name="chu_aqm_D13_02" style="kieu_chu_lo_toi" ath="88.0799" atv="22.8173" scale="0.038" html="D13-02" />
+  <hotspot name="chu_aqm_D13_03" style="kieu_chu_lo_toi" ath="85.6065" atv="22.8008" scale="0.038" html="D13-03" />
+  <hotspot name="chu_aqm_D13_04" style="kieu_chu_lo_toi" ath="83.2373" atv="23.0366" scale="0.038" html="D13-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_05" style="kieu_chu_lo_toi" ath="81.0536" atv="22.8261" scale="0.038" html="D13-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_06" style="kieu_chu_lo_toi" ath="80.6495" atv="23.6430" scale="0.040" html="D13-06" />
+  <hotspot name="chu_aqm_D13_07" style="kieu_chu_lo_toi" ath="79.7760" atv="24.6236" scale="0.042" html="D13-07" />
+  <hotspot name="chu_aqm_D13_08" style="kieu_chu_lo_toi" ath="79.5512" atv="25.5325" scale="0.044" html="D13-08" />
+  <hotspot name="chu_aqm_D13_09" style="kieu_chu_lo_toi" ath="79.2769" atv="26.6427" scale="0.047" html="D13-09" />
+  <hotspot name="chu_aqm_D13_10" style="kieu_chu_lo_toi" ath="81.7620" atv="26.5507" scale="0.047" html="D13-10" />
+  <hotspot name="chu_aqm_D13_11" style="kieu_chu_lo_toi" ath="81.9082" atv="25.6123" scale="0.044" html="D13-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_12" style="kieu_chu_lo_toi" ath="81.9643" atv="24.5483" scale="0.042" html="D13-12" />
+  <hotspot name="chu_aqm_D13_13" style="kieu_chu_lo_toi" ath="82.6856" atv="23.7828" scale="0.040" html="D13-13" />
+  <hotspot name="chu_aqm_D13_14" style="kieu_chu_lo_toi" ath="85.5748" atv="23.5237" scale="0.039" html="D13-14" />
+  <hotspot name="chu_aqm_D13_15" style="kieu_chu_lo_toi" ath="87.8142" atv="23.5318" scale="0.040" html="D13-15" />
+  <hotspot name="chu_aqm_D13_16" style="kieu_chu_lo_toi" ath="90.6524" atv="23.4530" scale="0.040" html="D13-16" />
+  <hotspot name="chu_aqm_D14_01" style="kieu_chu_lo_toi" ath="81.5957" atv="28.2314" scale="0.051" html="D14-01" />
+  <hotspot name="chu_aqm_D14_02" style="kieu_chu_lo_toi" ath="81.4512" atv="29.2995" scale="0.054" html="D14-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_03" style="kieu_chu_lo_toi" ath="81.0946" atv="30.6621" scale="0.057" html="D14-03" />
+  <hotspot name="chu_aqm_D14_04" style="kieu_chu_lo_toi" ath="82.8090" atv="32.7465" scale="0.062" html="D14-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_05" style="kieu_chu_lo_toi" ath="86.4106" atv="33.0162" scale="0.063" html="D14-05" />
+  <hotspot name="chu_aqm_D14_06" style="kieu_chu_lo_toi" ath="89.5372" atv="32.9867" scale="0.063" html="D14-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_07" style="kieu_chu_lo_toi" ath="89.9617" atv="34.7674" scale="0.068" html="D14-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_08" style="kieu_chu_lo_toi" ath="85.8877" atv="34.7536" scale="0.068" html="D14-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_09" style="kieu_chu_lo_toi" ath="82.1325" atv="34.6079" scale="0.067" html="D14-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_10" style="kieu_chu_lo_toi" ath="78.1548" atv="34.4037" scale="0.066" html="D14-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_11" style="kieu_chu_lo_toi" ath="78.9193" atv="32.6348" scale="0.062" html="D14-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_12" style="kieu_chu_lo_toi" ath="78.3529" atv="30.7149" scale="0.057" html="D14-12" />
+  <hotspot name="chu_aqm_D14_13" style="kieu_chu_lo_toi" ath="78.5855" atv="29.4423" scale="0.054" html="D14-13" />
+  <hotspot name="chu_aqm_D14_14" style="kieu_chu_lo_toi" ath="78.9241" atv="28.0939" scale="0.050" html="D14-14[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D15_01" style="kieu_chu_lo_toi" ath="73.4247" atv="28.0473" scale="0.050" html="D15-01" />
+  <hotspot name="chu_aqm_D15_02" style="kieu_chu_lo_toi" ath="72.6321" atv="29.4705" scale="0.054" html="D15-02" />
+  <hotspot name="chu_aqm_D15_03" style="kieu_chu_lo_toi" ath="71.9564" atv="30.8708" scale="0.057" html="D15-03" />
+  <hotspot name="chu_aqm_D15_04" style="kieu_chu_lo_toi" ath="71.3486" atv="32.2362" scale="0.061" html="D15-04" />
+  <hotspot name="chu_aqm_D15_05" style="kieu_chu_lo_toi" ath="70.4685" atv="33.9096" scale="0.065" html="D15-05" />
+  <hotspot name="chu_aqm_D15_06" style="kieu_chu_lo_toi" ath="69.2068" atv="35.5391" scale="0.069" html="D15-06" />
+  <hotspot name="chu_aqm_D15_07" style="kieu_chu_lo_toi" ath="67.9256" atv="37.2169" scale="0.073" html="D15-07" />
+  <hotspot name="chu_aqm_D15_08" style="kieu_chu_lo_toi" ath="66.2438" atv="39.6464" scale="0.079" html="D15-08" />
+  <hotspot name="chu_aqm_D15_09" style="kieu_chu_lo_toi" ath="72.0413" atv="41.2418" scale="0.084" html="D15-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D15_10" style="kieu_chu_lo_toi" ath="75.7992" atv="38.8457" scale="0.078" html="D15-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D15_11" style="kieu_chu_lo_toi" ath="80.6426" atv="39.2665" scale="0.079" html="D15-11" />
+  <hotspot name="chu_aqm_D15_12" style="kieu_chu_lo_toi" ath="84.9086" atv="39.4988" scale="0.080" html="D15-12" />
+  <hotspot name="chu_aqm_D15_13" style="kieu_chu_lo_toi" ath="89.8802" atv="39.6553" scale="0.080" html="D15-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D16_01" style="kieu_chu_lo_toi" ath="87.6800" atv="56.6098" scale="0.120" html="D16-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D16_02" style="kieu_chu_lo_toi" ath="80.3980" atv="56.3140" scale="0.120" html="D16-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D17_01" style="kieu_chu_lo_toi" ath="125.7808" atv="50.8956" scale="0.109" html="D17-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D17_02" style="kieu_chu_lo_toi" ath="120.8093" atv="52.5696" scale="0.113" html="D17-02" />
+  <hotspot name="chu_aqm_D17_03" style="kieu_chu_lo_toi" ath="112.7171" atv="54.4391" scale="0.117" html="D17-03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D17_04" style="kieu_chu_lo_toi" ath="106.2061" atv="55.6020" scale="0.119" html="D17-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D18_01" style="kieu_chu_lo_toi" ath="135.0635" atv="46.4539" scale="0.099" html="D18-01" />
+  <hotspot name="chu_aqm_D18_02" style="kieu_chu_lo_toi" ath="138.1420" atv="48.3792" scale="0.104" html="D18-02" />
+  <hotspot name="chu_aqm_D18_03" style="kieu_chu_lo_toi" ath="141.8723" atv="50.0315" scale="0.108" html="D18-03" />
+  <hotspot name="chu_aqm_D18_04" style="kieu_chu_lo_toi" ath="145.8224" atv="51.4862" scale="0.111" html="D18-04" />
+  <hotspot name="chu_aqm_D18_05" style="kieu_chu_lo_toi" ath="150.3127" atv="52.8862" scale="0.115" html="D18-05" />
+  <hotspot name="chu_aqm_D18_06" style="kieu_chu_lo_toi" ath="155.4159" atv="53.6482" scale="0.116" html="D18-06" />
+  <hotspot name="chu_aqm_D18_07" style="kieu_chu_lo_toi" ath="160.7813" atv="54.7123" scale="0.119" html="D18-07" />
+  <hotspot name="chu_aqm_D18_08" style="kieu_chu_lo_toi" ath="166.2622" atv="55.4160" scale="0.120" html="D18-08" />
+  <hotspot name="chu_aqm_D18_09" style="kieu_chu_lo_toi" ath="172.3163" atv="55.9872" scale="0.122" html="D18-09" />
+  <hotspot name="chu_aqm_D18_10" style="kieu_chu_lo_toi" ath="178.4376" atv="56.2560" scale="0.122" html="D18-10" />
+  <hotspot name="chu_aqm_D19_01" style="kieu_chu_lo_toi" ath="-173.7472" atv="56.1547" scale="0.122" html="D19-01" />
+  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="-167.1820" atv="56.2943" scale="0.122" html="D19-02" />
+  <hotspot name="chu_aqm_D19_03" style="kieu_chu_lo_toi" ath="-161.0261" atv="55.5905" scale="0.121" html="D19-03" />
+  <hotspot name="chu_aqm_D19_04" style="kieu_chu_lo_toi" ath="-155.5452" atv="54.6050" scale="0.119" html="D19-04" />
+  <hotspot name="chu_aqm_D19_05" style="kieu_chu_lo_toi" ath="-149.1545" atv="51.9623" scale="0.113" html="D19-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D19_06" style="kieu_chu_lo_toi" ath="-142.3536" atv="56.0159" scale="0.121" html="D19-06" />
+  <hotspot name="chu_aqm_D19_07" style="kieu_chu_lo_toi" ath="-136.5967" atv="58.5321" scale="0.126" html="D19-07" />
+  <hotspot name="chu_aqm_D19_08" style="kieu_chu_lo_toi" ath="-129.9661" atv="61.7157" scale="0.132" html="D19-08" />
+  <hotspot name="chu_aqm_D19_09" style="kieu_chu_lo_toi" ath="-121.3653" atv="64.5869" scale="0.137" html="D19-09" />
+  <hotspot name="chu_aqm_D19_10" style="kieu_chu_lo_toi" ath="-108.6403" atv="67.4420" scale="0.141" html="D19-10" />
+  <hotspot name="chu_aqm_D2_01" style="kieu_chu_lo_toi" ath="90.8135" atv="20.3054" scale="0.032" html="D2-01" />
+  <hotspot name="chu_aqm_D2_02" style="kieu_chu_lo_toi" ath="88.6469" atv="20.3140" scale="0.032" html="D2-02" />
+  <hotspot name="chu_aqm_D2_03" style="kieu_chu_lo_toi" ath="86.5559" atv="20.2876" scale="0.032" html="D2-03" />
+  <hotspot name="chu_aqm_D2_04" style="kieu_chu_lo_toi" ath="84.8072" atv="20.2457" scale="0.032" html="D2-04" />
+  <hotspot name="chu_aqm_D2_05" style="kieu_chu_lo_toi" ath="82.4319" atv="20.2517" scale="0.032" html="D2-05" />
+  <hotspot name="chu_aqm_D2_06" style="kieu_chu_lo_toi" ath="80.3019" atv="20.1746" scale="0.031" html="D2-06" />
+  <hotspot name="chu_aqm_D2_07" style="kieu_chu_lo_toi" ath="78.2767" atv="20.0652" scale="0.031" html="D2-07" />
+  <hotspot name="chu_aqm_D2_08" style="kieu_chu_lo_toi" ath="76.3397" atv="19.9692" scale="0.031" html="D2-08" />
+  <hotspot name="chu_aqm_D20_01" style="kieu_chu_lo_toi" ath="136.9437" atv="56.3427" scale="0.122" html="D20-01" />
+  <hotspot name="chu_aqm_D20_02" style="kieu_chu_lo_toi" ath="142.4615" atv="58.4226" scale="0.126" html="D20-02" />
+  <hotspot name="chu_aqm_D20_03" style="kieu_chu_lo_toi" ath="147.1650" atv="60.5311" scale="0.130" html="D20-03" />
+  <hotspot name="chu_aqm_D20_04" style="kieu_chu_lo_toi" ath="153.5819" atv="62.1732" scale="0.133" html="D20-04" />
+  <hotspot name="chu_aqm_D20_05" style="kieu_chu_lo_toi" ath="161.0261" atv="63.4359" scale="0.136" html="D20-05" />
+  <hotspot name="chu_aqm_D20_06" style="kieu_chu_lo_toi" ath="169.0604" atv="64.3841" scale="0.137" html="D20-06" />
+  <hotspot name="chu_aqm_D20_07" style="kieu_chu_lo_toi" ath="177.6625" atv="64.7680" scale="0.138" html="D20-07" />
+  <hotspot name="chu_aqm_D20_08" style="kieu_chu_lo_toi" ath="177.1669" atv="67.9186" scale="0.143" html="D20-08" />
+  <hotspot name="chu_aqm_D20_09" style="kieu_chu_lo_toi" ath="167.2267" atv="67.4311" scale="0.142" html="D20-09" />
+  <hotspot name="chu_aqm_D20_10" style="kieu_chu_lo_toi" ath="158.1910" atv="66.3227" scale="0.140" html="D20-10" />
+  <hotspot name="chu_aqm_D20_11" style="kieu_chu_lo_toi" ath="149.9567" atv="64.8014" scale="0.138" html="D20-11" />
+  <hotspot name="chu_aqm_D20_12" style="kieu_chu_lo_toi" ath="143.1205" atv="62.9098" scale="0.134" html="D20-12" />
+  <hotspot name="chu_aqm_D20_13" style="kieu_chu_lo_toi" ath="136.6257" atv="61.3985" scale="0.132" html="D20-13" />
+  <hotspot name="chu_aqm_D20_14" style="kieu_chu_lo_toi" ath="131.1814" atv="58.8892" scale="0.127" html="D20-14" />
+  <hotspot name="chu_aqm_D21_01" style="kieu_chu_lo_toi" ath="-171.2813" atv="64.5066" scale="0.138" html="D21-01" />
+  <hotspot name="chu_aqm_D21_02" style="kieu_chu_lo_toi" ath="-162.9278" atv="63.2981" scale="0.136" html="D21-02" />
+  <hotspot name="chu_aqm_D21_03" style="kieu_chu_lo_toi" ath="-154.1931" atv="61.9922" scale="0.133" html="D21-03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D21_04" style="kieu_chu_lo_toi" ath="-149.5396" atv="65.7194" scale="0.139" html="D21-04" />
+  <hotspot name="chu_aqm_D21_05" style="kieu_chu_lo_toi" ath="-159.5106" atv="67.3971" scale="0.142" html="D21-05" />
+  <hotspot name="chu_aqm_D21_06" style="kieu_chu_lo_toi" ath="-170.0443" atv="67.6178" scale="0.142" html="D21-06" />
+  <hotspot name="chu_aqm_D22_01" style="kieu_chu_lo_toi" ath="116.6674" atv="63.0284" scale="0.134" html="D22-01" />
+  <hotspot name="chu_aqm_D22_02" style="kieu_chu_lo_toi" ath="121.6532" atv="66.2953" scale="0.139" html="D22-02" />
+  <hotspot name="chu_aqm_D22_03" style="kieu_chu_lo_toi" ath="125.1509" atv="69.3583" scale="0.144" html="D22-03" />
+  <hotspot name="chu_aqm_D22_04" style="kieu_chu_lo_toi" ath="132.6490" atv="72.2350" scale="0.148" html="D22-04" />
+  <hotspot name="chu_aqm_D22_05" style="kieu_chu_lo_toi" ath="142.8311" atv="74.7297" scale="0.151" html="D22-05" />
+  <hotspot name="chu_aqm_D22_06" style="kieu_chu_lo_toi" ath="156.5284" atv="76.7639" scale="0.153" html="D22-06" />
+  <hotspot name="chu_aqm_D22_07" style="kieu_chu_lo_toi" ath="173.8931" atv="77.9192" scale="0.154" html="D22-07" />
+  <hotspot name="chu_aqm_D22_08" style="kieu_chu_lo_toi" ath="171.1082" atv="81.3497" scale="0.156" html="D22-08" />
+  <hotspot name="chu_aqm_D22_09" style="kieu_chu_lo_toi" ath="148.2622" atv="79.9579" scale="0.155" html="D22-09" />
+  <hotspot name="chu_aqm_D22_10" style="kieu_chu_lo_toi" ath="132.7318" atv="77.3070" scale="0.153" html="D22-10" />
+  <hotspot name="chu_aqm_D22_11" style="kieu_chu_lo_toi" ath="123.0709" atv="74.4383" scale="0.150" html="D22-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Villa[/span]" />
+  <hotspot name="chu_aqm_D22_12" style="kieu_chu_lo_toi" ath="116.8660" atv="71.0831" scale="0.146" html="D22-12" />
+  <hotspot name="chu_aqm_D22_13" style="kieu_chu_lo_toi" ath="112.1498" atv="67.7682" scale="0.141" html="D22-13" />
+  <hotspot name="chu_aqm_D22_14" style="kieu_chu_lo_toi" ath="108.5311" atv="64.0318" scale="0.135" html="D22-14" />
+  <hotspot name="chu_aqm_D23_01" style="kieu_chu_lo_toi" ath="-162.2486" atv="77.4067" scale="0.154" html="D23-01" />
+  <hotspot name="chu_aqm_D23_02" style="kieu_chu_lo_toi" ath="-148.9298" atv="75.1329" scale="0.151" html="D23-02" />
+  <hotspot name="chu_aqm_D23_03" style="kieu_chu_lo_toi" ath="-135.7314" atv="72.3873" scale="0.148" html="D23-03" />
+  <hotspot name="chu_aqm_D23_04" style="kieu_chu_lo_toi" ath="-123.0244" atv="75.3534" scale="0.151" html="D23-04" />
+  <hotspot name="chu_aqm_D23_05" style="kieu_chu_lo_toi" ath="-138.5250" atv="78.6328" scale="0.154" html="D23-05" />
+  <hotspot name="chu_aqm_D23_06" style="kieu_chu_lo_toi" ath="-156.7942" atv="80.6591" scale="0.156" html="D23-06" />
+  <hotspot name="chu_aqm_D24_01" style="kieu_chu_lo_toi" ath="79.3780" atv="64.5441" scale="0.135" html="D24-01" />
+  <hotspot name="chu_aqm_D24_02" style="kieu_chu_lo_toi" ath="90.1227" atv="65.4219" scale="0.137" html="D24-02" />
+  <hotspot name="chu_aqm_D24_03" style="kieu_chu_lo_toi" ath="90.0615" atv="69.5267" scale="0.143" html="D24-03" />
+  <hotspot name="chu_aqm_D24_04" style="kieu_chu_lo_toi" ath="71.6836" atv="69.7085" scale="0.143" html="D24-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D24_05" style="kieu_chu_lo_toi" ath="56.4439" atv="73.8951" scale="0.148" html="D24-05" />
+  <hotspot name="chu_aqm_D24_06" style="kieu_chu_lo_toi" ath="44.2886" atv="76.6860" scale="0.151" html="D24-06" />
+  <hotspot name="chu_aqm_D24_07" style="kieu_chu_lo_toi" ath="27.6407" atv="78.3643" scale="0.153" html="D24-07" />
+  <hotspot name="chu_aqm_D24_08" style="kieu_chu_lo_toi" ath="6.0091" atv="79.0300" scale="0.153" html="D24-08" />
+  <hotspot name="chu_aqm_D25_01" style="kieu_chu_lo_toi" ath="-17.9778" atv="77.3493" scale="0.152" html="D25-01" />
+  <hotspot name="chu_aqm_D25_02" style="kieu_chu_lo_toi" ath="-32.8822" atv="75.0863" scale="0.150" html="D25-02" />
+  <hotspot name="chu_aqm_D25_03" style="kieu_chu_lo_toi" ath="-42.1771" atv="72.3083" scale="0.146" html="D25-03" />
+  <hotspot name="chu_aqm_D25_04" style="kieu_chu_lo_toi" ath="-57.7858" atv="68.1314" scale="0.141" html="D25-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D25_05" style="kieu_chu_lo_toi" ath="-74.9104" atv="68.9285" scale="0.143" html="D25-05" />
+  <hotspot name="chu_aqm_D25_06" style="kieu_chu_lo_toi" ath="-89.6269" atv="69.3174" scale="0.143" html="D25-06" />
+  <hotspot name="chu_aqm_D26_01" style="kieu_chu_lo_toi" ath="54.5081" atv="61.2409" scale="0.129" html="D26-01" />
+  <hotspot name="chu_aqm_D26_02" style="kieu_chu_lo_toi" ath="46.3688" atv="63.6296" scale="0.133" html="D26-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D26_03" style="kieu_chu_lo_toi" ath="35.2692" atv="66.5539" scale="0.138" html="D26-03" />
+  <hotspot name="chu_aqm_D26_04" style="kieu_chu_lo_toi" ath="25.4224" atv="68.2057" scale="0.140" html="D26-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D26_05" style="kieu_chu_lo_toi" ath="12.0171" atv="69.6237" scale="0.142" html="D26-05" />
+  <hotspot name="chu_aqm_D27_01" style="kieu_chu_lo_toi" ath="-10.5068" atv="68.9199" scale="0.141" html="D27-01" />
+  <hotspot name="chu_aqm_D27_02" style="kieu_chu_lo_toi" ath="-22.2546" atv="66.7069" scale="0.138" html="D27-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_03" style="kieu_chu_lo_toi" ath="-31.7772" atv="64.1907" scale="0.134" html="D27-03" />
+  <hotspot name="chu_aqm_D27_04" style="kieu_chu_lo_toi" ath="-39.9858" atv="61.2215" scale="0.129" html="D27-04" />
+  <hotspot name="chu_aqm_D27_05" style="kieu_chu_lo_toi" ath="-46.3980" atv="58.4150" scale="0.123" html="D27-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_06" style="kieu_chu_lo_toi" ath="-52.3926" atv="56.0650" scale="0.119" html="D27-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D27_07" style="kieu_chu_lo_toi" ath="-59.3552" atv="57.8905" scale="0.123" html="D27-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_08" style="kieu_chu_lo_toi" ath="-68.8063" atv="59.4810" scale="0.126" html="D27-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_09" style="kieu_chu_lo_toi" ath="-77.0387" atv="60.7929" scale="0.129" html="D27-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_10" style="kieu_chu_lo_toi" ath="-88.9392" atv="60.8834" scale="0.129" html="D27-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D28_01" style="kieu_chu_lo_toi" ath="64.5303" atv="53.9927" scale="0.114" html="D28-01" />
+  <hotspot name="chu_aqm_D28_02" style="kieu_chu_lo_toi" ath="58.7975" atv="52.6022" scale="0.111" html="D28-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D28_03" style="kieu_chu_lo_toi" ath="50.3629" atv="51.0418" scale="0.107" html="D28-03" />
+  <hotspot name="chu_aqm_D28_04" style="kieu_chu_lo_toi" ath="43.9615" atv="54.7904" scale="0.115" html="D28-04" />
+  <hotspot name="chu_aqm_D28_05" style="kieu_chu_lo_toi" ath="36.8660" atv="56.9603" scale="0.120" html="D28-05" />
+  <hotspot name="chu_aqm_D28_06" style="kieu_chu_lo_toi" ath="28.9524" atv="58.7143" scale="0.123" html="D28-06" />
+  <hotspot name="chu_aqm_D28_07" style="kieu_chu_lo_toi" ath="21.1196" atv="60.0584" scale="0.126" html="D28-07" />
+  <hotspot name="chu_aqm_D28_08" style="kieu_chu_lo_toi" ath="10.8338" atv="60.6700" scale="0.127" html="D28-08" />
+  <hotspot name="chu_aqm_D29_01" style="kieu_chu_lo_toi" ath="-7.1568" atv="59.6014" scale="0.125" html="D29-01" />
+  <hotspot name="chu_aqm_D29_02" style="kieu_chu_lo_toi" ath="-16.3785" atv="58.3676" scale="0.122" html="D29-02" />
+  <hotspot name="chu_aqm_D29_03" style="kieu_chu_lo_toi" ath="-24.0061" atv="56.7082" scale="0.119" html="D29-03" />
+  <hotspot name="chu_aqm_D29_04" style="kieu_chu_lo_toi" ath="-31.6882" atv="54.9966" scale="0.116" html="D29-04" />
+  <hotspot name="chu_aqm_D29_05" style="kieu_chu_lo_toi" ath="-36.9248" atv="52.8079" scale="0.111" html="D29-05" />
+  <hotspot name="chu_aqm_D29_06" style="kieu_chu_lo_toi" ath="-42.1961" atv="50.2356" scale="0.105" html="D29-06" />
+  <hotspot name="chu_aqm_D29_07" style="kieu_chu_lo_toi" ath="-48.1295" atv="45.8787" scale="0.097" html="D29-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Riverfront[/span]" />
+  <hotspot name="chu_aqm_D29_08" style="kieu_chu_lo_toi" ath="-55.6145" atv="48.2201" scale="0.101" html="D29-08" />
+  <hotspot name="chu_aqm_D29_09" style="kieu_chu_lo_toi" ath="-61.1849" atv="49.8935" scale="0.105" html="D29-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_10" style="kieu_chu_lo_toi" ath="-67.4196" atv="50.7273" scale="0.107" html="D29-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_11" style="kieu_chu_lo_toi" ath="-74.3293" atv="51.7333" scale="0.110" html="D29-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_12" style="kieu_chu_lo_toi" ath="-81.0004" atv="52.4069" scale="0.112" html="D29-12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_13" style="kieu_chu_lo_toi" ath="-88.9471" atv="52.5551" scale="0.112" html="D29-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D3_01" style="kieu_chu_lo_toi" ath="101.0481" atv="20.7313" scale="0.034" html="D3-01" />
+  <hotspot name="chu_aqm_D3_02" style="kieu_chu_lo_toi" ath="98.8701" atv="20.8765" scale="0.034" html="D3-02" />
+  <hotspot name="chu_aqm_D3_03" style="kieu_chu_lo_toi" ath="96.9509" atv="20.9837" scale="0.034" html="D3-03" />
+  <hotspot name="chu_aqm_D3_04" style="kieu_chu_lo_toi" ath="94.7291" atv="21.0310" scale="0.034" html="D3-04" />
+  <hotspot name="chu_aqm_D30_01" style="kieu_chu_lo_toi" ath="-104.4747" atv="59.5503" scale="0.127" html="D30-01" />
+  <hotspot name="chu_aqm_D30_02" style="kieu_chu_lo_toi" ath="-112.2481" atv="58.3942" scale="0.125" html="D30-02" />
+  <hotspot name="chu_aqm_D30_03" style="kieu_chu_lo_toi" ath="-118.4490" atv="56.8850" scale="0.123" html="D30-03" />
+  <hotspot name="chu_aqm_D30_04" style="kieu_chu_lo_toi" ath="-123.7581" atv="55.4303" scale="0.120" html="D30-04" />
+  <hotspot name="chu_aqm_D30_05" style="kieu_chu_lo_toi" ath="-128.4846" atv="53.6116" scale="0.116" html="D30-05" />
+  <hotspot name="chu_aqm_D30_06" style="kieu_chu_lo_toi" ath="-132.7045" atv="51.8407" scale="0.112" html="D30-06" />
+  <hotspot name="chu_aqm_D30_07" style="kieu_chu_lo_toi" ath="-136.3671" atv="48.3480" scale="0.104" html="D30-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D30_08" style="kieu_chu_lo_toi" ath="-131.9644" atv="46.1386" scale="0.099" html="D30-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_09" style="kieu_chu_lo_toi" ath="-126.8094" atv="47.2314" scale="0.101" html="D30-09" />
+  <hotspot name="chu_aqm_D30_10" style="kieu_chu_lo_toi" ath="-122.7321" atv="48.7013" scale="0.105" html="D30-10" />
+  <hotspot name="chu_aqm_D30_11" style="kieu_chu_lo_toi" ath="-116.4440" atv="49.2497" scale="0.106" html="D30-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_12" style="kieu_chu_lo_toi" ath="-110.4930" atv="50.6421" scale="0.109" html="D30-12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_13" style="kieu_chu_lo_toi" ath="-101.6878" atv="52.0072" scale="0.112" html="D30-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_01" style="kieu_chu_lo_toi" ath="89.6652" atv="21.3260" scale="0.034" html="D4-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_02" style="kieu_chu_lo_toi" ath="87.5618" atv="21.1303" scale="0.034" html="D4-02" />
+  <hotspot name="chu_aqm_D4_03" style="kieu_chu_lo_toi" ath="85.4739" atv="21.1097" scale="0.034" html="D4-03" />
+  <hotspot name="chu_aqm_D4_04" style="kieu_chu_lo_toi" ath="83.2655" atv="21.0702" scale="0.034" html="D4-04" />
+  <hotspot name="chu_aqm_D4_05" style="kieu_chu_lo_toi" ath="81.2354" atv="21.0021" scale="0.033" html="D4-05" />
+  <hotspot name="chu_aqm_D4_06" style="kieu_chu_lo_toi" ath="79.0863" atv="20.9063" scale="0.033" html="D4-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_07" style="kieu_chu_lo_toi" ath="76.0907" atv="20.7846" scale="0.033" html="D4-07" />
+  <hotspot name="chu_aqm_D4_08" style="kieu_chu_lo_toi" ath="75.5863" atv="22.2479" scale="0.036" html="D4-08" />
+  <hotspot name="chu_aqm_D4_09" style="kieu_chu_lo_toi" ath="75.4286" atv="23.1478" scale="0.038" html="D4-09" />
+  <hotspot name="chu_aqm_D4_10" style="kieu_chu_lo_toi" ath="75.0391" atv="23.9320" scale="0.040" html="D4-10" />
+  <hotspot name="chu_aqm_D4_11" style="kieu_chu_lo_toi" ath="74.5331" atv="24.8941" scale="0.042" html="D4-11" />
+  <hotspot name="chu_aqm_D4_12" style="kieu_chu_lo_toi" ath="74.6135" atv="26.1054" scale="0.045" html="D4-12" />
+  <hotspot name="chu_aqm_D5_01" style="kieu_chu_lo_toi" ath="104.7035" atv="20.1664" scale="0.032" html="D5-01" />
+  <hotspot name="chu_aqm_D5_02" style="kieu_chu_lo_toi" ath="104.8953" atv="20.6962" scale="0.034" html="D5-02" />
+  <hotspot name="chu_aqm_D5_03" style="kieu_chu_lo_toi" ath="105.2929" atv="21.2161" scale="0.035" html="D5-03" />
+  <hotspot name="chu_aqm_D5_04" style="kieu_chu_lo_toi" ath="105.6471" atv="21.6755" scale="0.036" html="D5-04" />
+  <hotspot name="chu_aqm_D5_05" style="kieu_chu_lo_toi" ath="106.0914" atv="22.2465" scale="0.037" html="D5-05" />
+  <hotspot name="chu_aqm_D5_06" style="kieu_chu_lo_toi" ath="106.8828" atv="22.9319" scale="0.039" html="D5-06" />
+  <hotspot name="chu_aqm_D5_07" style="kieu_chu_lo_toi" ath="107.3897" atv="23.5565" scale="0.040" html="D5-07" />
+  <hotspot name="chu_aqm_D5_08" style="kieu_chu_lo_toi" ath="107.8931" atv="24.1706" scale="0.042" html="D5-08" />
+  <hotspot name="chu_aqm_D5_09" style="kieu_chu_lo_toi" ath="108.4664" atv="24.8606" scale="0.044" html="D5-09" />
+  <hotspot name="chu_aqm_D5_10" style="kieu_chu_lo_toi" ath="109.0599" atv="25.5647" scale="0.045" html="D5-10" />
+  <hotspot name="chu_aqm_D6_01" style="kieu_chu_lo_toi" ath="101.9283" atv="22.1532" scale="0.037" html="D6-01" />
+  <hotspot name="chu_aqm_D6_02" style="kieu_chu_lo_toi" ath="102.3193" atv="22.7516" scale="0.038" html="D6-02" />
+  <hotspot name="chu_aqm_D6_03" style="kieu_chu_lo_toi" ath="102.3927" atv="23.4037" scale="0.040" html="D6-03" />
+  <hotspot name="chu_aqm_D6_04" style="kieu_chu_lo_toi" ath="102.7394" atv="24.0540" scale="0.041" html="D6-04" />
+  <hotspot name="chu_aqm_D6_05" style="kieu_chu_lo_toi" ath="103.1531" atv="24.7349" scale="0.043" html="D6-05" />
+  <hotspot name="chu_aqm_D6_06" style="kieu_chu_lo_toi" ath="103.5469" atv="25.4554" scale="0.045" html="D6-06" />
+  <hotspot name="chu_aqm_D6_07" style="kieu_chu_lo_toi" ath="104.0117" atv="26.2049" scale="0.047" html="D6-07" />
+  <hotspot name="chu_aqm_D6_08" style="kieu_chu_lo_toi" ath="102.2244" atv="26.3913" scale="0.047" html="D6-08" />
+  <hotspot name="chu_aqm_D6_09" style="kieu_chu_lo_toi" ath="101.8054" atv="25.6223" scale="0.045" html="D6-09" />
+  <hotspot name="chu_aqm_D6_10" style="kieu_chu_lo_toi" ath="101.4768" atv="24.8969" scale="0.043" html="D6-10" />
+  <hotspot name="chu_aqm_D6_11" style="kieu_chu_lo_toi" ath="101.1032" atv="24.1975" scale="0.042" html="D6-11" />
+  <hotspot name="chu_aqm_D6_12" style="kieu_chu_lo_toi" ath="100.8142" atv="23.5421" scale="0.040" html="D6-12" />
+  <hotspot name="chu_aqm_D6_13" style="kieu_chu_lo_toi" ath="100.1792" atv="22.9328" scale="0.039" html="D6-13" />
+  <hotspot name="chu_aqm_D6_14" style="kieu_chu_lo_toi" ath="99.8646" atv="22.2489" scale="0.037" html="D6-14" />
+  <hotspot name="chu_aqm_D7_01" style="kieu_chu_lo_toi" ath="109.8761" atv="26.5157" scale="0.048" html="D7-01" />
+  <hotspot name="chu_aqm_D7_02" style="kieu_chu_lo_toi" ath="110.1470" atv="27.2660" scale="0.050" html="D7-02" />
+  <hotspot name="chu_aqm_D7_03" style="kieu_chu_lo_toi" ath="110.8878" atv="28.1145" scale="0.052" html="D7-03" />
+  <hotspot name="chu_aqm_D7_04" style="kieu_chu_lo_toi" ath="111.9212" atv="29.2168" scale="0.055" html="D7-04" />
+  <hotspot name="chu_aqm_D7_05" style="kieu_chu_lo_toi" ath="112.8045" atv="30.1771" scale="0.057" html="D7-05" />
+  <hotspot name="chu_aqm_D7_06" style="kieu_chu_lo_toi" ath="113.7310" atv="31.1584" scale="0.060" html="D7-06" />
+  <hotspot name="chu_aqm_D7_07" style="kieu_chu_lo_toi" ath="114.7869" atv="32.2446" scale="0.063" html="D7-07" />
+  <hotspot name="chu_aqm_D7_08" style="kieu_chu_lo_toi" ath="115.9611" atv="33.4011" scale="0.066" html="D7-08" />
+  <hotspot name="chu_aqm_D7_09" style="kieu_chu_lo_toi" ath="117.2566" atv="34.5949" scale="0.069" html="D7-09" />
+  <hotspot name="chu_aqm_D7_10" style="kieu_chu_lo_toi" ath="119.3923" atv="36.0324" scale="0.073" html="D7-10" />
+  <hotspot name="chu_aqm_D8_01" style="kieu_chu_lo_toi" ath="104.6034" atv="27.2343" scale="0.049" html="D8-01" />
+  <hotspot name="chu_aqm_D8_02" style="kieu_chu_lo_toi" ath="105.4910" atv="27.9611" scale="0.051" html="D8-02" />
+  <hotspot name="chu_aqm_D8_03" style="kieu_chu_lo_toi" ath="106.0142" atv="28.9213" scale="0.054" html="D8-03" />
+  <hotspot name="chu_aqm_D8_04" style="kieu_chu_lo_toi" ath="103.3339" atv="29.2857" scale="0.055" html="D8-04" />
+  <hotspot name="chu_aqm_D8_05" style="kieu_chu_lo_toi" ath="102.8526" atv="28.2333" scale="0.052" html="D8-05" />
+  <hotspot name="chu_aqm_D8_06" style="kieu_chu_lo_toi" ath="102.7258" atv="27.4346" scale="0.050" html="D8-06" />
+  <hotspot name="chu_aqm_D9_01" style="kieu_chu_lo_toi" ath="107.8913" atv="31.7406" scale="0.061" html="D9-01" />
+  <hotspot name="chu_aqm_D9_02" style="kieu_chu_lo_toi" ath="104.4178" atv="32.1995" scale="0.062" html="D9-02" />
+  <hotspot name="chu_aqm_D9_03" style="kieu_chu_lo_toi" ath="101.0469" atv="32.5694" scale="0.063" html="D9-03" />
+  <hotspot name="chu_aqm_D9_04" style="kieu_chu_lo_toi" ath="97.1672" atv="32.8971" scale="0.063" html="D9-04" />
+  <hotspot name="chu_aqm_D9_05" style="kieu_chu_lo_toi" ath="97.8694" atv="34.6783" scale="0.068" html="D9-05" />
+  <hotspot name="chu_aqm_D9_06" style="kieu_chu_lo_toi" ath="101.2583" atv="34.3890" scale="0.067" html="D9-06" />
+  <hotspot name="chu_aqm_D9_07" style="kieu_chu_lo_toi" ath="105.5527" atv="33.8842" scale="0.066" html="D9-07" />
+  <hotspot name="chu_aqm_D9_08" style="kieu_chu_lo_toi" ath="108.4861" atv="33.4492" scale="0.065" html="D9-08" />
+  <!-- /CHU -->
+</scene>
+
+<scene name="pk_aqua_phai" title="PK The Aqua - The Aqua 2" onstart="">
+  <view hlookat="0.77" vlookat="90" fov="107.4"
+        fovtype="HFOV" fovmin="12.0" fovmax="107.4"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/22-aqua-0537/22-aqua-0537.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/22-aqua-0537/22-aqua-0537.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/22-aqua-0537/22-aqua-0537.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/22-aqua-0537/22-aqua-0537.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+  <layer name="o_tc_pk_aqua_phai" style="kieu_o_view" align="top" x="0" y="16" html="&#8617; TOÀN CẢNH PK THE AQUA" onclick="js(doiCanh(&apos;pk_aqua&apos;));" />
+</scene>
+
+<include url="lo-aqua-phai.xml" />
+<!-- AQUA_CON_HET -->
+<!-- AQUA_TRONG_BAT_DAU  (01/10 toi sinh boi flycam-moi-20260930/_can/dua_len_web_aqua_trong.py - DUNG SUA TAY)
+     Canh con PK The Aqua "tu trong nhin ra song": DJI_0535, flycam 29/09, 333 m. -->
+<scene name="pk_aqua_trong_ve" title="PK The Aqua - tu trong nhin ra song - ban ve" onstart="">
+  <view hlookat="0.9" vlookat="57" fov="107"
+        fovtype="HFOV" fovmin="12.0" fovmax="107"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/23-aqua-0535-ve/23-aqua-0535-ve.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/23-aqua-0535-ve/23-aqua-0535-ve.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/23-aqua-0535-ve/23-aqua-0535-ve.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/23-aqua-0535-ve/23-aqua-0535-ve.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+  <!-- CHU DUNG THANG -->
+  <hotspot name="chu_aqm_D1_01" style="kieu_chu_lo_toi" ath="86.6878" atv="42.8442" scale="0.052" html="D1-01" />
+  <hotspot name="chu_aqm_D1_02" style="kieu_chu_lo_toi" ath="83.3840" atv="42.6623" scale="0.051" html="D1-02" />
+  <hotspot name="chu_aqm_D1_03" style="kieu_chu_lo_toi" ath="81.0484" atv="42.4654" scale="0.051" html="D1-03" />
+  <hotspot name="chu_aqm_D1_04" style="kieu_chu_lo_toi" ath="78.1984" atv="42.2137" scale="0.051" html="D1-04" />
+  <hotspot name="chu_aqm_D1_05" style="kieu_chu_lo_toi" ath="75.1035" atv="41.8241" scale="0.050" html="D1-05" />
+  <hotspot name="chu_aqm_D1_06" style="kieu_chu_lo_toi" ath="72.9315" atv="41.4554" scale="0.049" html="D1-06" />
+  <hotspot name="chu_aqm_D10_01" style="kieu_chu_lo_toi" ath="50.3008" atv="74.3328" scale="0.088" html="D10-01" />
+  <hotspot name="chu_aqm_D10_02" style="kieu_chu_lo_toi" ath="44.2602" atv="72.8172" scale="0.087" html="D10-02" />
+  <hotspot name="chu_aqm_D10_03" style="kieu_chu_lo_toi" ath="37.5579" atv="70.4995" scale="0.085" html="D10-03" />
+  <hotspot name="chu_aqm_D10_04" style="kieu_chu_lo_toi" ath="33.1882" atv="68.5902" scale="0.083" html="D10-04" />
+  <hotspot name="chu_aqm_D11_01" style="kieu_chu_lo_toi" ath="71.3084" atv="46.3641" scale="0.057" html="D11-01" />
+  <hotspot name="chu_aqm_D11_02" style="kieu_chu_lo_toi" ath="70.4226" atv="47.7660" scale="0.059" html="D11-02" />
+  <hotspot name="chu_aqm_D11_03" style="kieu_chu_lo_toi" ath="68.8351" atv="48.8728" scale="0.060" html="D11-03" />
+  <hotspot name="chu_aqm_D11_04" style="kieu_chu_lo_toi" ath="67.8132" atv="50.1700" scale="0.062" html="D11-04" />
+  <hotspot name="chu_aqm_D11_05" style="kieu_chu_lo_toi" ath="66.6292" atv="51.4335" scale="0.064" html="D11-05" />
+  <hotspot name="chu_aqm_D11_06" style="kieu_chu_lo_toi" ath="65.3956" atv="52.8036" scale="0.066" html="D11-06" />
+  <hotspot name="chu_aqm_D11_07" style="kieu_chu_lo_toi" ath="63.9443" atv="54.1564" scale="0.067" html="D11-07" />
+  <hotspot name="chu_aqm_D11_08" style="kieu_chu_lo_toi" ath="61.4164" atv="53.5350" scale="0.067" html="D11-08" />
+  <hotspot name="chu_aqm_D11_09" style="kieu_chu_lo_toi" ath="62.8517" atv="52.2396" scale="0.065" html="D11-09" />
+  <hotspot name="chu_aqm_D11_10" style="kieu_chu_lo_toi" ath="64.2784" atv="50.9405" scale="0.063" html="D11-10" />
+  <hotspot name="chu_aqm_D11_11" style="kieu_chu_lo_toi" ath="65.4316" atv="49.7156" scale="0.061" html="D11-11" />
+  <hotspot name="chu_aqm_D11_12" style="kieu_chu_lo_toi" ath="66.6321" atv="48.4778" scale="0.060" html="D11-12" />
+  <hotspot name="chu_aqm_D11_13" style="kieu_chu_lo_toi" ath="67.6011" atv="47.2952" scale="0.058" html="D11-13" />
+  <hotspot name="chu_aqm_D11_14" style="kieu_chu_lo_toi" ath="68.5208" atv="45.8587" scale="0.056" html="D11-14" />
+  <hotspot name="chu_aqm_D12_01" style="kieu_chu_lo_toi" ath="61.9843" atv="55.9747" scale="0.070" html="D12-01" />
+  <hotspot name="chu_aqm_D12_02" style="kieu_chu_lo_toi" ath="61.0924" atv="57.4377" scale="0.072" html="D12-02" />
+  <hotspot name="chu_aqm_D12_03" style="kieu_chu_lo_toi" ath="58.9167" atv="59.1314" scale="0.074" html="D12-03" />
+  <hotspot name="chu_aqm_D12_04" style="kieu_chu_lo_toi" ath="55.0216" atv="57.9869" scale="0.072" html="D12-04" />
+  <hotspot name="chu_aqm_D12_05" style="kieu_chu_lo_toi" ath="57.5431" atv="56.5321" scale="0.070" html="D12-05" />
+  <hotspot name="chu_aqm_D12_06" style="kieu_chu_lo_toi" ath="59.2532" atv="55.2584" scale="0.069" html="D12-06" />
+  <hotspot name="chu_aqm_D13_01" style="kieu_chu_lo_toi" ath="63.9395" atv="45.1888" scale="0.055" html="D13-01" />
+  <hotspot name="chu_aqm_D13_02" style="kieu_chu_lo_toi" ath="60.7290" atv="44.3119" scale="0.054" html="D13-02" />
+  <hotspot name="chu_aqm_D13_03" style="kieu_chu_lo_toi" ath="57.8675" atv="43.4782" scale="0.052" html="D13-03" />
+  <hotspot name="chu_aqm_D13_04" style="kieu_chu_lo_toi" ath="54.7761" atv="43.0928" scale="0.052" html="D13-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_05" style="kieu_chu_lo_toi" ath="52.7241" atv="42.0702" scale="0.050" html="D13-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_06" style="kieu_chu_lo_toi" ath="50.8996" atv="43.1848" scale="0.052" html="D13-06" />
+  <hotspot name="chu_aqm_D13_07" style="kieu_chu_lo_toi" ath="48.2779" atv="44.3212" scale="0.054" html="D13-07" />
+  <hotspot name="chu_aqm_D13_08" style="kieu_chu_lo_toi" ath="46.4480" atv="45.5040" scale="0.055" html="D13-08" />
+  <hotspot name="chu_aqm_D13_09" style="kieu_chu_lo_toi" ath="44.1812" atv="46.8696" scale="0.057" html="D13-09" />
+  <hotspot name="chu_aqm_D13_10" style="kieu_chu_lo_toi" ath="46.8935" atv="47.6808" scale="0.058" html="D13-10" />
+  <hotspot name="chu_aqm_D13_11" style="kieu_chu_lo_toi" ath="48.7712" atv="46.4609" scale="0.057" html="D13-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D13_12" style="kieu_chu_lo_toi" ath="50.7407" atv="44.9642" scale="0.055" html="D13-12" />
+  <hotspot name="chu_aqm_D13_13" style="kieu_chu_lo_toi" ath="52.8732" atv="44.0685" scale="0.053" html="D13-13" />
+  <hotspot name="chu_aqm_D13_14" style="kieu_chu_lo_toi" ath="56.5688" atv="44.6369" scale="0.054" html="D13-14" />
+  <hotspot name="chu_aqm_D13_15" style="kieu_chu_lo_toi" ath="59.1520" atv="45.4123" scale="0.055" html="D13-15" />
+  <hotspot name="chu_aqm_D13_16" style="kieu_chu_lo_toi" ath="62.6993" atv="46.2589" scale="0.056" html="D13-16" />
+  <hotspot name="chu_aqm_D14_01" style="kieu_chu_lo_toi" ath="43.5472" atv="49.7474" scale="0.061" html="D14-01" />
+  <hotspot name="chu_aqm_D14_02" style="kieu_chu_lo_toi" ath="41.3312" atv="50.9423" scale="0.063" html="D14-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_03" style="kieu_chu_lo_toi" ath="38.2971" atv="52.2769" scale="0.065" html="D14-03" />
+  <hotspot name="chu_aqm_D14_04" style="kieu_chu_lo_toi" ath="35.5428" atv="55.0860" scale="0.069" html="D14-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_05" style="kieu_chu_lo_toi" ath="38.1479" atv="57.0256" scale="0.071" html="D14-05" />
+  <hotspot name="chu_aqm_D14_06" style="kieu_chu_lo_toi" ath="41.1310" atv="58.5281" scale="0.073" html="D14-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_07" style="kieu_chu_lo_toi" ath="37.1114" atv="60.3319" scale="0.075" html="D14-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_08" style="kieu_chu_lo_toi" ath="33.6970" atv="58.2784" scale="0.072" html="D14-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_09" style="kieu_chu_lo_toi" ath="31.0059" atv="56.3712" scale="0.070" html="D14-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_10" style="kieu_chu_lo_toi" ath="28.3517" atv="54.4110" scale="0.068" html="D14-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_11" style="kieu_chu_lo_toi" ath="32.4640" atv="53.2504" scale="0.066" html="D14-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D14_12" style="kieu_chu_lo_toi" ath="35.7109" atv="51.1737" scale="0.063" html="D14-12" />
+  <hotspot name="chu_aqm_D14_13" style="kieu_chu_lo_toi" ath="38.3383" atv="49.9279" scale="0.062" html="D14-13" />
+  <hotspot name="chu_aqm_D14_14" style="kieu_chu_lo_toi" ath="41.1778" atv="48.5254" scale="0.060" html="D14-14[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D15_01" style="kieu_chu_lo_toi" ath="36.1017" atv="46.4098" scale="0.056" html="D15-01" />
+  <hotspot name="chu_aqm_D15_02" style="kieu_chu_lo_toi" ath="32.9487" atv="47.6503" scale="0.058" html="D15-02" />
+  <hotspot name="chu_aqm_D15_03" style="kieu_chu_lo_toi" ath="29.9591" atv="48.7822" scale="0.060" html="D15-03" />
+  <hotspot name="chu_aqm_D15_04" style="kieu_chu_lo_toi" ath="27.1110" atv="49.7919" scale="0.061" html="D15-04" />
+  <hotspot name="chu_aqm_D15_05" style="kieu_chu_lo_toi" ath="23.5654" atv="50.8345" scale="0.063" html="D15-05" />
+  <hotspot name="chu_aqm_D15_06" style="kieu_chu_lo_toi" ath="19.9147" atv="51.5535" scale="0.064" html="D15-06" />
+  <hotspot name="chu_aqm_D15_07" style="kieu_chu_lo_toi" ath="16.3000" atv="52.1751" scale="0.065" html="D15-07" />
+  <hotspot name="chu_aqm_D15_08" style="kieu_chu_lo_toi" ath="11.4075" atv="52.9483" scale="0.066" html="D15-08" />
+  <hotspot name="chu_aqm_D15_09" style="kieu_chu_lo_toi" ath="11.7049" atv="56.0021" scale="0.070" html="D15-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D15_10" style="kieu_chu_lo_toi" ath="18.0953" atv="56.3538" scale="0.070" html="D15-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D15_11" style="kieu_chu_lo_toi" ath="20.0167" atv="58.7426" scale="0.073" html="D15-11" />
+  <hotspot name="chu_aqm_D15_12" style="kieu_chu_lo_toi" ath="21.9176" atv="60.8843" scale="0.076" html="D15-12" />
+  <hotspot name="chu_aqm_D15_13" style="kieu_chu_lo_toi" ath="24.3492" atv="63.4590" scale="0.078" html="D15-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D16_01" style="kieu_chu_lo_toi" ath="-14.0178" atv="64.2069" scale="0.079" html="D16-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D16_02" style="kieu_chu_lo_toi" ath="-12.7750" atv="62.0013" scale="0.077" html="D16-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D17_01" style="kieu_chu_lo_toi" ath="-33.8792" atv="78.0127" scale="0.090" html="D17-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D17_02" style="kieu_chu_lo_toi" ath="-27.9741" atv="75.7362" scale="0.089" html="D17-02" />
+  <hotspot name="chu_aqm_D17_03" style="kieu_chu_lo_toi" ath="-21.9475" atv="72.5296" scale="0.087" html="D17-03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D17_04" style="kieu_chu_lo_toi" ath="-19.1389" atv="70.1284" scale="0.085" html="D17-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D18_01" style="kieu_chu_lo_toi" ath="-60.9893" atv="82.6987" scale="0.092" html="D18-01" />
+  <hotspot name="chu_aqm_D18_02" style="kieu_chu_lo_toi" ath="-66.5864" atv="80.2326" scale="0.091" html="D18-02" />
+  <hotspot name="chu_aqm_D18_03" style="kieu_chu_lo_toi" ath="-70.9808" atv="77.9319" scale="0.090" html="D18-03" />
+  <hotspot name="chu_aqm_D18_04" style="kieu_chu_lo_toi" ath="-73.9337" atv="75.7859" scale="0.089" html="D18-04" />
+  <hotspot name="chu_aqm_D18_05" style="kieu_chu_lo_toi" ath="-76.1283" atv="73.5961" scale="0.088" html="D18-05" />
+  <hotspot name="chu_aqm_D18_06" style="kieu_chu_lo_toi" ath="-78.9616" atv="71.6244" scale="0.087" html="D18-06" />
+  <hotspot name="chu_aqm_D18_07" style="kieu_chu_lo_toi" ath="-80.1538" atv="69.4685" scale="0.085" html="D18-07" />
+  <hotspot name="chu_aqm_D18_08" style="kieu_chu_lo_toi" ath="-81.2437" atv="67.4878" scale="0.083" html="D18-08" />
+  <hotspot name="chu_aqm_D18_09" style="kieu_chu_lo_toi" ath="-82.0146" atv="65.4290" scale="0.081" html="D18-09" />
+  <hotspot name="chu_aqm_D18_10" style="kieu_chu_lo_toi" ath="-82.6374" atv="63.4713" scale="0.079" html="D18-10" />
+  <hotspot name="chu_aqm_D19_01" style="kieu_chu_lo_toi" ath="-83.2956" atv="61.0795" scale="0.077" html="D19-01" />
+  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="-82.9122" atv="59.1462" scale="0.075" html="D19-02" />
+  <hotspot name="chu_aqm_D19_03" style="kieu_chu_lo_toi" ath="-83.2697" atv="57.3316" scale="0.073" html="D19-03" />
+  <hotspot name="chu_aqm_D19_04" style="kieu_chu_lo_toi" ath="-83.6468" atv="55.6656" scale="0.071" html="D19-04" />
+  <hotspot name="chu_aqm_D19_05" style="kieu_chu_lo_toi" ath="-85.2973" atv="53.3424" scale="0.068" html="D19-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D19_06" style="kieu_chu_lo_toi" ath="-79.3447" atv="52.7018" scale="0.067" html="D19-06" />
+  <hotspot name="chu_aqm_D19_07" style="kieu_chu_lo_toi" ath="-75.6777" atv="52.1019" scale="0.066" html="D19-07" />
+  <hotspot name="chu_aqm_D19_08" style="kieu_chu_lo_toi" ath="-71.5479" atv="51.6725" scale="0.065" html="D19-08" />
+  <hotspot name="chu_aqm_D19_09" style="kieu_chu_lo_toi" ath="-67.6018" atv="51.0869" scale="0.064" html="D19-09" />
+  <hotspot name="chu_aqm_D19_10" style="kieu_chu_lo_toi" ath="-63.1411" atv="50.3345" scale="0.063" html="D19-10" />
+  <hotspot name="chu_aqm_D2_01" style="kieu_chu_lo_toi" ath="68.2380" atv="40.6285" scale="0.048" html="D2-01" />
+  <hotspot name="chu_aqm_D2_02" style="kieu_chu_lo_toi" ath="65.5885" atv="40.0466" scale="0.047" html="D2-02" />
+  <hotspot name="chu_aqm_D2_03" style="kieu_chu_lo_toi" ath="63.1443" atv="39.4253" scale="0.046" html="D2-03" />
+  <hotspot name="chu_aqm_D2_04" style="kieu_chu_lo_toi" ath="61.1728" atv="38.8767" scale="0.045" html="D2-04" />
+  <hotspot name="chu_aqm_D2_05" style="kieu_chu_lo_toi" ath="58.4526" atv="38.2517" scale="0.045" html="D2-05" />
+  <hotspot name="chu_aqm_D2_06" style="kieu_chu_lo_toi" ath="56.1960" atv="37.5604" scale="0.043" html="D2-06" />
+  <hotspot name="chu_aqm_D2_07" style="kieu_chu_lo_toi" ath="54.1484" atv="36.8575" scale="0.042" html="D2-07" />
+  <hotspot name="chu_aqm_D2_08" style="kieu_chu_lo_toi" ath="52.2119" atv="36.2143" scale="0.041" html="D2-08" />
+  <hotspot name="chu_aqm_D20_01" style="kieu_chu_lo_toi" ath="-54.6242" atv="73.6848" scale="0.088" html="D20-01" />
+  <hotspot name="chu_aqm_D20_02" style="kieu_chu_lo_toi" ath="-59.4196" atv="71.6400" scale="0.086" html="D20-02" />
+  <hotspot name="chu_aqm_D20_03" style="kieu_chu_lo_toi" ath="-61.6108" atv="69.6809" scale="0.085" html="D20-03" />
+  <hotspot name="chu_aqm_D20_04" style="kieu_chu_lo_toi" ath="-64.2837" atv="67.7910" scale="0.083" html="D20-04" />
+  <hotspot name="chu_aqm_D20_05" style="kieu_chu_lo_toi" ath="-66.6685" atv="65.9194" scale="0.082" html="D20-05" />
+  <hotspot name="chu_aqm_D20_06" style="kieu_chu_lo_toi" ath="-68.5158" atv="64.0667" scale="0.080" html="D20-06" />
+  <hotspot name="chu_aqm_D20_07" style="kieu_chu_lo_toi" ath="-70.2190" atv="62.2648" scale="0.078" html="D20-07" />
+  <hotspot name="chu_aqm_D20_08" style="kieu_chu_lo_toi" ath="-66.3907" atv="61.6518" scale="0.077" html="D20-08" />
+  <hotspot name="chu_aqm_D20_09" style="kieu_chu_lo_toi" ath="-64.4508" atv="63.3883" scale="0.079" html="D20-09" />
+  <hotspot name="chu_aqm_D20_10" style="kieu_chu_lo_toi" ath="-62.3233" atv="65.1473" scale="0.081" html="D20-10" />
+  <hotspot name="chu_aqm_D20_11" style="kieu_chu_lo_toi" ath="-59.6503" atv="66.9390" scale="0.083" html="D20-11" />
+  <hotspot name="chu_aqm_D20_12" style="kieu_chu_lo_toi" ath="-56.6490" atv="68.7190" scale="0.084" html="D20-12" />
+  <hotspot name="chu_aqm_D20_13" style="kieu_chu_lo_toi" ath="-52.1862" atv="70.1225" scale="0.085" html="D20-13" />
+  <hotspot name="chu_aqm_D20_14" style="kieu_chu_lo_toi" ath="-47.1850" atv="71.9742" scale="0.087" html="D20-14" />
+  <hotspot name="chu_aqm_D21_01" style="kieu_chu_lo_toi" ath="-72.0690" atv="60.0284" scale="0.076" html="D21-01" />
+  <hotspot name="chu_aqm_D21_02" style="kieu_chu_lo_toi" ath="-73.8338" atv="58.3045" scale="0.074" html="D21-02" />
+  <hotspot name="chu_aqm_D21_03" style="kieu_chu_lo_toi" ath="-74.9339" atv="56.3592" scale="0.071" html="D21-03[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D21_04" style="kieu_chu_lo_toi" ath="-70.6412" atv="55.8007" scale="0.071" html="D21-04" />
+  <hotspot name="chu_aqm_D21_05" style="kieu_chu_lo_toi" ath="-69.2200" atv="57.6504" scale="0.073" html="D21-05" />
+  <hotspot name="chu_aqm_D21_06" style="kieu_chu_lo_toi" ath="-68.5192" atv="59.4980" scale="0.075" html="D21-06" />
+  <hotspot name="chu_aqm_D22_01" style="kieu_chu_lo_toi" ath="-36.6891" atv="68.2763" scale="0.084" html="D22-01" />
+  <hotspot name="chu_aqm_D22_02" style="kieu_chu_lo_toi" ath="-41.9278" atv="66.8411" scale="0.082" html="D22-02" />
+  <hotspot name="chu_aqm_D22_03" style="kieu_chu_lo_toi" ath="-44.8692" atv="65.2935" scale="0.081" html="D22-03" />
+  <hotspot name="chu_aqm_D22_04" style="kieu_chu_lo_toi" ath="-48.4175" atv="63.8476" scale="0.079" html="D22-04" />
+  <hotspot name="chu_aqm_D22_05" style="kieu_chu_lo_toi" ath="-51.4844" atv="62.4008" scale="0.078" html="D22-05" />
+  <hotspot name="chu_aqm_D22_06" style="kieu_chu_lo_toi" ath="-54.1028" atv="60.8868" scale="0.076" html="D22-06" />
+  <hotspot name="chu_aqm_D22_07" style="kieu_chu_lo_toi" ath="-56.3513" atv="59.3634" scale="0.075" html="D22-07" />
+  <hotspot name="chu_aqm_D22_08" style="kieu_chu_lo_toi" ath="-53.4881" atv="58.4926" scale="0.074" html="D22-08" />
+  <hotspot name="chu_aqm_D22_09" style="kieu_chu_lo_toi" ath="-51.0774" atv="59.8723" scale="0.075" html="D22-09" />
+  <hotspot name="chu_aqm_D22_10" style="kieu_chu_lo_toi" ath="-48.3650" atv="61.3252" scale="0.077" html="D22-10" />
+  <hotspot name="chu_aqm_D22_11" style="kieu_chu_lo_toi" ath="-45.3670" atv="62.6158" scale="0.078" html="D22-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Villa[/span]" />
+  <hotspot name="chu_aqm_D22_12" style="kieu_chu_lo_toi" ath="-41.9722" atv="64.0201" scale="0.080" html="D22-12" />
+  <hotspot name="chu_aqm_D22_13" style="kieu_chu_lo_toi" ath="-37.9431" atv="65.2955" scale="0.081" html="D22-13" />
+  <hotspot name="chu_aqm_D22_14" style="kieu_chu_lo_toi" ath="-32.8181" atv="66.6689" scale="0.082" html="D22-14" />
+  <hotspot name="chu_aqm_D23_01" style="kieu_chu_lo_toi" ath="-59.0315" atv="57.4764" scale="0.072" html="D23-01" />
+  <hotspot name="chu_aqm_D23_02" style="kieu_chu_lo_toi" ath="-61.4589" atv="56.2285" scale="0.071" html="D23-02" />
+  <hotspot name="chu_aqm_D23_03" style="kieu_chu_lo_toi" ath="-63.3840" atv="54.5089" scale="0.069" html="D23-03" />
+  <hotspot name="chu_aqm_D23_04" style="kieu_chu_lo_toi" ath="-59.8824" atv="53.6612" scale="0.068" html="D23-04" />
+  <hotspot name="chu_aqm_D23_05" style="kieu_chu_lo_toi" ath="-58.0979" atv="55.4128" scale="0.070" html="D23-05" />
+  <hotspot name="chu_aqm_D23_06" style="kieu_chu_lo_toi" ath="-56.2486" atv="56.7596" scale="0.072" html="D23-06" />
+  <hotspot name="chu_aqm_D24_01" style="kieu_chu_lo_toi" ath="-24.4705" atv="60.9938" scale="0.076" html="D24-01" />
+  <hotspot name="chu_aqm_D24_02" style="kieu_chu_lo_toi" ath="-27.5488" atv="62.9603" scale="0.078" html="D24-02" />
+  <hotspot name="chu_aqm_D24_03" style="kieu_chu_lo_toi" ath="-32.2538" atv="61.8338" scale="0.077" html="D24-03" />
+  <hotspot name="chu_aqm_D24_04" style="kieu_chu_lo_toi" ath="-29.8211" atv="58.9982" scale="0.074" html="D24-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D24_05" style="kieu_chu_lo_toi" ath="-33.6664" atv="56.6929" scale="0.071" html="D24-05" />
+  <hotspot name="chu_aqm_D24_06" style="kieu_chu_lo_toi" ath="-36.5033" atv="55.4925" scale="0.070" html="D24-06" />
+  <hotspot name="chu_aqm_D24_07" style="kieu_chu_lo_toi" ath="-38.7930" atv="54.2905" scale="0.068" html="D24-07" />
+  <hotspot name="chu_aqm_D24_08" style="kieu_chu_lo_toi" ath="-41.1571" atv="53.0490" scale="0.067" html="D24-08" />
+  <hotspot name="chu_aqm_D25_01" style="kieu_chu_lo_toi" ath="-43.4631" atv="51.4411" scale="0.065" html="D25-01" />
+  <hotspot name="chu_aqm_D25_02" style="kieu_chu_lo_toi" ath="-45.4182" atv="50.2131" scale="0.063" html="D25-02" />
+  <hotspot name="chu_aqm_D25_03" style="kieu_chu_lo_toi" ath="-46.9859" atv="49.0457" scale="0.061" html="D25-03" />
+  <hotspot name="chu_aqm_D25_04" style="kieu_chu_lo_toi" ath="-50.7817" atv="47.5304" scale="0.059" html="D25-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D25_05" style="kieu_chu_lo_toi" ath="-54.8994" atv="48.3377" scale="0.060" html="D25-05" />
+  <hotspot name="chu_aqm_D25_06" style="kieu_chu_lo_toi" ath="-58.1488" atv="49.2926" scale="0.062" html="D25-06" />
+  <hotspot name="chu_aqm_D26_01" style="kieu_chu_lo_toi" ath="-20.6621" atv="55.5934" scale="0.070" html="D26-01" />
+  <hotspot name="chu_aqm_D26_02" style="kieu_chu_lo_toi" ath="-24.1766" atv="54.3352" scale="0.068" html="D26-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D26_03" style="kieu_chu_lo_toi" ath="-28.4340" atv="53.0353" scale="0.066" html="D26-03" />
+  <hotspot name="chu_aqm_D26_04" style="kieu_chu_lo_toi" ath="-31.3173" atv="52.0617" scale="0.065" html="D26-04[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D26_05" style="kieu_chu_lo_toi" ath="-34.6598" atv="50.9512" scale="0.064" html="D26-05" />
+  <hotspot name="chu_aqm_D27_01" style="kieu_chu_lo_toi" ath="-39.0719" atv="48.9292" scale="0.061" html="D27-01" />
+  <hotspot name="chu_aqm_D27_02" style="kieu_chu_lo_toi" ath="-41.3048" atv="47.5103" scale="0.059" html="D27-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_03" style="kieu_chu_lo_toi" ath="-43.4648" atv="46.2155" scale="0.057" html="D27-03" />
+  <hotspot name="chu_aqm_D27_04" style="kieu_chu_lo_toi" ath="-45.6702" atv="44.8922" scale="0.055" html="D27-04" />
+  <hotspot name="chu_aqm_D27_05" style="kieu_chu_lo_toi" ath="-47.7085" atv="43.7341" scale="0.054" html="D27-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_06" style="kieu_chu_lo_toi" ath="-49.8937" atv="42.8140" scale="0.052" html="D27-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D27_07" style="kieu_chu_lo_toi" ath="-52.2732" atv="43.6497" scale="0.054" html="D27-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_08" style="kieu_chu_lo_toi" ath="-55.2770" atv="44.5713" scale="0.055" html="D27-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_09" style="kieu_chu_lo_toi" ath="-57.6471" atv="45.4734" scale="0.056" html="D27-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D27_10" style="kieu_chu_lo_toi" ath="-61.2974" atv="46.3259" scale="0.058" html="D27-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D28_01" style="kieu_chu_lo_toi" ath="-10.4485" atv="57.0575" scale="0.071" html="D28-01" />
+  <hotspot name="chu_aqm_D28_02" style="kieu_chu_lo_toi" ath="-9.7928" atv="55.1299" scale="0.069" html="D28-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D28_03" style="kieu_chu_lo_toi" ath="-10.2235" atv="52.4046" scale="0.065" html="D28-03" />
+  <hotspot name="chu_aqm_D28_04" style="kieu_chu_lo_toi" ath="-15.9826" atv="51.9254" scale="0.065" html="D28-04" />
+  <hotspot name="chu_aqm_D28_05" style="kieu_chu_lo_toi" ath="-19.8807" atv="51.0379" scale="0.064" html="D28-05" />
+  <hotspot name="chu_aqm_D28_06" style="kieu_chu_lo_toi" ath="-23.4107" atv="50.1005" scale="0.062" html="D28-06" />
+  <hotspot name="chu_aqm_D28_07" style="kieu_chu_lo_toi" ath="-26.4770" atv="49.2739" scale="0.061" html="D28-07" />
+  <hotspot name="chu_aqm_D28_08" style="kieu_chu_lo_toi" ath="-29.7067" atv="48.1003" scale="0.060" html="D28-08" />
+  <hotspot name="chu_aqm_D29_01" style="kieu_chu_lo_toi" ath="-34.6626" atv="45.8882" scale="0.057" html="D29-01" />
+  <hotspot name="chu_aqm_D29_02" style="kieu_chu_lo_toi" ath="-37.3004" atv="44.7393" scale="0.055" html="D29-02" />
+  <hotspot name="chu_aqm_D29_03" style="kieu_chu_lo_toi" ath="-39.5562" atv="43.6550" scale="0.053" html="D29-03" />
+  <hotspot name="chu_aqm_D29_04" style="kieu_chu_lo_toi" ath="-42.0871" atv="42.6468" scale="0.052" html="D29-04" />
+  <hotspot name="chu_aqm_D29_05" style="kieu_chu_lo_toi" ath="-43.8592" atv="41.5985" scale="0.050" html="D29-05" />
+  <hotspot name="chu_aqm_D29_06" style="kieu_chu_lo_toi" ath="-45.8332" atv="40.4200" scale="0.049" html="D29-06" />
+  <hotspot name="chu_aqm_D29_07" style="kieu_chu_lo_toi" ath="-48.3418" atv="38.4674" scale="0.046" html="D29-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Riverfront[/span]" />
+  <hotspot name="chu_aqm_D29_08" style="kieu_chu_lo_toi" ath="-51.6138" atv="39.5728" scale="0.048" html="D29-08" />
+  <hotspot name="chu_aqm_D29_09" style="kieu_chu_lo_toi" ath="-53.8513" atv="40.4215" scale="0.049" html="D29-09[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_10" style="kieu_chu_lo_toi" ath="-56.3290" atv="40.9941" scale="0.050" html="D29-10[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_11" style="kieu_chu_lo_toi" ath="-58.9304" atv="41.7554" scale="0.051" html="D29-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_12" style="kieu_chu_lo_toi" ath="-61.3869" atv="42.4604" scale="0.052" html="D29-12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D29_13" style="kieu_chu_lo_toi" ath="-64.4068" atv="43.1621" scale="0.053" html="D29-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D3_01" style="kieu_chu_lo_toi" ath="80.9444" atv="44.3499" scale="0.054" html="D3-01" />
+  <hotspot name="chu_aqm_D3_02" style="kieu_chu_lo_toi" ath="77.7289" atv="44.0358" scale="0.053" html="D3-02" />
+  <hotspot name="chu_aqm_D3_03" style="kieu_chu_lo_toi" ath="74.9856" atv="43.6983" scale="0.053" html="D3-03" />
+  <hotspot name="chu_aqm_D3_04" style="kieu_chu_lo_toi" ath="72.0034" atv="43.1412" scale="0.052" html="D3-04" />
+  <hotspot name="chu_aqm_D30_01" style="kieu_chu_lo_toi" ath="-66.5417" atv="47.3904" scale="0.059" html="D30-01" />
+  <hotspot name="chu_aqm_D30_02" style="kieu_chu_lo_toi" ath="-69.4744" atv="47.9908" scale="0.060" html="D30-02" />
+  <hotspot name="chu_aqm_D30_03" style="kieu_chu_lo_toi" ath="-72.2640" atv="48.4081" scale="0.061" html="D30-03" />
+  <hotspot name="chu_aqm_D30_04" style="kieu_chu_lo_toi" ath="-74.8742" atv="48.8165" scale="0.061" html="D30-04" />
+  <hotspot name="chu_aqm_D30_05" style="kieu_chu_lo_toi" ath="-77.7209" atv="49.0965" scale="0.062" html="D30-05" />
+  <hotspot name="chu_aqm_D30_06" style="kieu_chu_lo_toi" ath="-80.5365" atv="49.3676" scale="0.062" html="D30-06" />
+  <hotspot name="chu_aqm_D30_07" style="kieu_chu_lo_toi" ath="-84.9387" atv="48.9584" scale="0.062" html="D30-07[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
+  <hotspot name="chu_aqm_D30_08" style="kieu_chu_lo_toi" ath="-85.2307" atv="47.0813" scale="0.059" html="D30-08[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_09" style="kieu_chu_lo_toi" ath="-82.2376" atv="46.4285" scale="0.058" html="D30-09" />
+  <hotspot name="chu_aqm_D30_10" style="kieu_chu_lo_toi" ath="-79.5083" atv="46.2207" scale="0.058" html="D30-10" />
+  <hotspot name="chu_aqm_D30_11" style="kieu_chu_lo_toi" ath="-76.6922" atv="45.3250" scale="0.056" html="D30-11[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_12" style="kieu_chu_lo_toi" ath="-73.5389" atv="44.9414" scale="0.056" html="D30-12[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D30_13" style="kieu_chu_lo_toi" ath="-69.4746" atv="44.2927" scale="0.055" html="D30-13[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_01" style="kieu_chu_lo_toi" ath="65.1742" atv="42.1938" scale="0.051" html="D4-01[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_02" style="kieu_chu_lo_toi" ath="62.9706" atv="41.2209" scale="0.049" html="D4-02" />
+  <hotspot name="chu_aqm_D4_03" style="kieu_chu_lo_toi" ath="60.5544" atv="40.5789" scale="0.048" html="D4-03" />
+  <hotspot name="chu_aqm_D4_04" style="kieu_chu_lo_toi" ath="58.0871" atv="39.8796" scale="0.047" html="D4-04" />
+  <hotspot name="chu_aqm_D4_05" style="kieu_chu_lo_toi" ath="55.9204" atv="39.1953" scale="0.046" html="D4-05" />
+  <hotspot name="chu_aqm_D4_06" style="kieu_chu_lo_toi" ath="53.7128" atv="38.4475" scale="0.045" html="D4-06[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
+  <hotspot name="chu_aqm_D4_07" style="kieu_chu_lo_toi" ath="50.6919" atv="37.4538" scale="0.044" html="D4-07" />
+  <hotspot name="chu_aqm_D4_08" style="kieu_chu_lo_toi" ath="47.8600" atv="39.5558" scale="0.046" html="D4-08" />
+  <hotspot name="chu_aqm_D4_09" style="kieu_chu_lo_toi" ath="46.2497" atv="40.8235" scale="0.048" html="D4-09" />
+  <hotspot name="chu_aqm_D4_10" style="kieu_chu_lo_toi" ath="44.5748" atv="41.8084" scale="0.050" html="D4-10" />
+  <hotspot name="chu_aqm_D4_11" style="kieu_chu_lo_toi" ath="42.4828" atv="42.9464" scale="0.052" html="D4-11" />
+  <hotspot name="chu_aqm_D4_12" style="kieu_chu_lo_toi" ath="40.5296" atv="44.5285" scale="0.053" html="D4-12" />
+  <hotspot name="chu_aqm_D5_01" style="kieu_chu_lo_toi" ath="86.9485" atv="44.1020" scale="0.054" html="D5-01" />
+  <hotspot name="chu_aqm_D5_02" style="kieu_chu_lo_toi" ath="86.4664" atv="45.3279" scale="0.055" html="D5-02" />
+  <hotspot name="chu_aqm_D5_03" style="kieu_chu_lo_toi" ath="86.2815" atv="46.5803" scale="0.057" html="D5-03" />
+  <hotspot name="chu_aqm_D5_04" style="kieu_chu_lo_toi" ath="86.1114" atv="47.6829" scale="0.059" html="D5-04" />
+  <hotspot name="chu_aqm_D5_05" style="kieu_chu_lo_toi" ath="85.8906" atv="49.0481" scale="0.061" html="D5-05" />
+  <hotspot name="chu_aqm_D5_06" style="kieu_chu_lo_toi" ath="85.9999" atv="50.7567" scale="0.063" html="D5-06" />
+  <hotspot name="chu_aqm_D5_07" style="kieu_chu_lo_toi" ath="85.7507" atv="52.2372" scale="0.065" html="D5-07" />
+  <hotspot name="chu_aqm_D5_08" style="kieu_chu_lo_toi" ath="85.4894" atv="53.6818" scale="0.067" html="D5-08" />
+  <hotspot name="chu_aqm_D5_09" style="kieu_chu_lo_toi" ath="85.1762" atv="55.2910" scale="0.069" html="D5-09" />
+  <hotspot name="chu_aqm_D5_10" style="kieu_chu_lo_toi" ath="84.8329" atv="56.9163" scale="0.071" html="D5-10" />
+  <hotspot name="chu_aqm_D6_01" style="kieu_chu_lo_toi" ath="79.9196" atv="47.5752" scale="0.058" html="D6-01" />
+  <hotspot name="chu_aqm_D6_02" style="kieu_chu_lo_toi" ath="79.4760" atv="48.9201" scale="0.060" html="D6-02" />
+  <hotspot name="chu_aqm_D6_03" style="kieu_chu_lo_toi" ath="78.4469" atv="50.2510" scale="0.062" html="D6-03" />
+  <hotspot name="chu_aqm_D6_04" style="kieu_chu_lo_toi" ath="77.7774" atv="51.6485" scale="0.064" html="D6-04" />
+  <hotspot name="chu_aqm_D6_05" style="kieu_chu_lo_toi" ath="77.1084" atv="53.1084" scale="0.066" html="D6-05" />
+  <hotspot name="chu_aqm_D6_06" style="kieu_chu_lo_toi" ath="76.2836" atv="54.6114" scale="0.068" html="D6-06" />
+  <hotspot name="chu_aqm_D6_07" style="kieu_chu_lo_toi" ath="75.4478" atv="56.1666" scale="0.070" html="D6-07" />
+  <hotspot name="chu_aqm_D6_08" style="kieu_chu_lo_toi" ath="72.3732" atv="55.7626" scale="0.069" html="D6-08" />
+  <hotspot name="chu_aqm_D6_09" style="kieu_chu_lo_toi" ath="73.3636" atv="54.2310" scale="0.068" html="D6-09" />
+  <hotspot name="chu_aqm_D6_10" style="kieu_chu_lo_toi" ath="74.3335" atv="52.7811" scale="0.066" html="D6-10" />
+  <hotspot name="chu_aqm_D6_11" style="kieu_chu_lo_toi" ath="75.1338" atv="51.3341" scale="0.064" html="D6-11" />
+  <hotspot name="chu_aqm_D6_12" style="kieu_chu_lo_toi" ath="75.9284" atv="49.9774" scale="0.062" html="D6-12" />
+  <hotspot name="chu_aqm_D6_13" style="kieu_chu_lo_toi" ath="76.1161" atv="48.5744" scale="0.060" html="D6-13" />
+  <hotspot name="chu_aqm_D6_14" style="kieu_chu_lo_toi" ath="76.8533" atv="47.1185" scale="0.058" html="D6-14" />
+  <hotspot name="chu_aqm_D7_01" style="kieu_chu_lo_toi" ath="84.3254" atv="59.0820" scale="0.074" html="D7-01" />
+  <hotspot name="chu_aqm_D7_02" style="kieu_chu_lo_toi" ath="83.2026" atv="60.6097" scale="0.075" html="D7-02" />
+  <hotspot name="chu_aqm_D7_03" style="kieu_chu_lo_toi" ath="82.6037" atv="62.4704" scale="0.077" html="D7-03" />
+  <hotspot name="chu_aqm_D7_04" style="kieu_chu_lo_toi" ath="81.8133" atv="64.8583" scale="0.080" html="D7-04" />
+  <hotspot name="chu_aqm_D7_05" style="kieu_chu_lo_toi" ath="80.9372" atv="66.8729" scale="0.082" html="D7-05" />
+  <hotspot name="chu_aqm_D7_06" style="kieu_chu_lo_toi" ath="79.9039" atv="68.8822" scale="0.084" html="D7-06" />
+  <hotspot name="chu_aqm_D7_07" style="kieu_chu_lo_toi" ath="78.5534" atv="71.0454" scale="0.086" html="D7-07" />
+  <hotspot name="chu_aqm_D7_08" style="kieu_chu_lo_toi" ath="76.8267" atv="73.2814" scale="0.087" html="D7-08" />
+  <hotspot name="chu_aqm_D7_09" style="kieu_chu_lo_toi" ath="74.6666" atv="75.5268" scale="0.089" html="D7-09" />
+  <hotspot name="chu_aqm_D7_10" style="kieu_chu_lo_toi" ath="72.4349" atv="78.4008" scale="0.090" html="D7-10" />
+  <hotspot name="chu_aqm_D8_01" style="kieu_chu_lo_toi" ath="74.1160" atv="58.2304" scale="0.073" html="D8-01" />
+  <hotspot name="chu_aqm_D8_02" style="kieu_chu_lo_toi" ath="73.8272" atv="59.8567" scale="0.074" html="D8-02" />
+  <hotspot name="chu_aqm_D8_03" style="kieu_chu_lo_toi" ath="72.3061" atv="61.6710" scale="0.077" html="D8-03" />
+  <hotspot name="chu_aqm_D8_04" style="kieu_chu_lo_toi" ath="67.2403" atv="60.9656" scale="0.076" html="D8-04" />
+  <hotspot name="chu_aqm_D8_05" style="kieu_chu_lo_toi" ath="69.1347" atv="59.1107" scale="0.074" html="D8-05" />
+  <hotspot name="chu_aqm_D8_06" style="kieu_chu_lo_toi" ath="70.8132" atv="57.7537" scale="0.072" html="D8-06" />
+  <hotspot name="chu_aqm_D9_01" style="kieu_chu_lo_toi" ath="67.3735" atv="66.7721" scale="0.082" html="D9-01" />
+  <hotspot name="chu_aqm_D9_02" style="kieu_chu_lo_toi" ath="60.6010" atv="65.5056" scale="0.080" html="D9-02" />
+  <hotspot name="chu_aqm_D9_03" style="kieu_chu_lo_toi" ath="54.9059" atv="64.1155" scale="0.079" html="D9-03" />
+  <hotspot name="chu_aqm_D9_04" style="kieu_chu_lo_toi" ath="49.2911" atv="62.3828" scale="0.077" html="D9-04" />
+  <hotspot name="chu_aqm_D9_05" style="kieu_chu_lo_toi" ath="44.8671" atv="64.4899" scale="0.079" html="D9-05" />
+  <hotspot name="chu_aqm_D9_06" style="kieu_chu_lo_toi" ath="49.5011" atv="66.1280" scale="0.081" html="D9-06" />
+  <hotspot name="chu_aqm_D9_07" style="kieu_chu_lo_toi" ath="56.6598" atv="68.0684" scale="0.083" html="D9-07" />
+  <hotspot name="chu_aqm_D9_08" style="kieu_chu_lo_toi" ath="62.5608" atv="69.2486" scale="0.084" html="D9-08" />
+  <!-- /CHU -->
+</scene>
+
+<scene name="pk_aqua_trong" title="PK The Aqua - tu trong nhin ra song" onstart="">
+  <view hlookat="0.9" vlookat="57" fov="107"
+        fovtype="HFOV" fovmin="12.0" fovmax="107"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/24-aqua-0535/24-aqua-0535.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2624" tiledimageheight="2624"><cube url="../pano/24-aqua-0535/24-aqua-0535.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1280" tiledimageheight="1280"><cube url="../pano/24-aqua-0535/24-aqua-0535.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/24-aqua-0535/24-aqua-0535.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+</scene>
+
+<include url="lo-aqua-trong.xml" />
+<!-- AQUA_TRONG_HET -->
+
+
+
+
+
+
+
+
+
+
 
 <!-- ==================================================================
      CANH 4 + 5 - RIVERA NAGOMI   (them 24/09/2026 toi, chat-nagomi)
@@ -716,4 +1969,8 @@
 
 <!-- 30/09 chu lo dung thang (Nagomi moi) -->
 <style name="kieu_chu_lo" type="text" keep="false" zorder="7" enabled="false" distorted="false" zoom="true" bg="false" bgborder="false" textshadow="1.5" css="font-family:Arial,Helvetica,sans-serif; font-size:40px; font-weight:bold; color:#FFFFFF; text-align:center; line-height:1.05;" />
+<!-- chu lo dung thang -->
+<style name="kieu_chu_lo_toi" type="text" keep="false" zorder="7" enabled="false" distorted="false" zoom="true" bg="false" bgborder="false" textshadow="0" css="font-family:Arial,Helvetica,sans-serif; font-size:40px; font-weight:bold; color:#1C1C1C; text-align:center; line-height:1.05;" />
+<!-- 01/10 o view (sang canh con) - chu to cho sale -->
+<style name="kieu_o_view" type="text" keep="false" zorder="9" distorted="false" zoom="false" handcursor="true" bg="true" bgcolor="0x003C4B" bgalpha="0.94" bgroundedge="10" bgborder="2 0xE0B14A 1.0" padding="12 20" bgshadow="0 4 14 0x000000 0.45" css="font-family:Montserrat,Arial,Helvetica,sans-serif; font-size:17px; font-weight:700; letter-spacing:1px; color:#FFFFFF; text-align:center; line-height:1.3;" />
 </krpano>
