@@ -100,7 +100,7 @@
   var css = ''
     /* ===================== QUẢ CẦU ===================== */
     + '#eraGlobe{position:fixed;right:var(--wp-space-md,16px);'
-    + 'bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-h,52px) + var(--wp-space-sm,12px)'
+    + 'bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-bar-h,var(--wp-nav-h,52px)) + var(--wp-space-sm,12px)'
     + ' + 64px /* nhuong cho cho nut contact goc phai duoi */);'
     /* 🔽 16/09: Anh Tony "giảm độ lớn cả thanh và quả cầu, khoảng 70% hiện tại,
        do nó đang hơi chiếm diện tích". Mọi số dưới đây = 70% bản cũ:
@@ -141,7 +141,7 @@
        Một cột teal đặt NGAY TRÊN quả cầu, cùng mép phải.
        Bo 2 góc đối nhau theo Group.svg (luật design system 12/09). */
     + '#eraZoom{position:fixed;right:var(--wp-space-md,16px);'
-    + 'bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-h,52px) + var(--wp-space-sm,12px)'
+    + 'bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-bar-h,var(--wp-nav-h,52px)) + var(--wp-space-sm,12px)'
     + ' + 64px + var(--wp-space-sm,12px)'
     + ' + 64px /* nhuong cho cho nut contact goc phai duoi */);'
     + 'z-index:var(--wp-z-overlay,50);width:34px;'
@@ -215,7 +215,7 @@
     + '#eraGlobe{width:52px;height:52px;right:10px;}'
     + '#eraGlobe .gb-ball{inset:6px;}#eraGlobe .gb-so{bottom:-13px;font-size:8px;}'
     + '#eraZoom{right:10px;width:30px;'
-    + 'bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-h,52px) + var(--wp-space-sm,12px)'
+    + 'bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-bar-h,var(--wp-nav-h,52px)) + var(--wp-space-sm,12px)'
     + ' + 52px + var(--wp-space-sm,12px)'
     + ' + 64px /* nhuong cho nut contact */);}'
     + '#eraZoom .z-nut{width:21px;height:21px;border-radius:0 7px 0 7px;}'
@@ -227,7 +227,7 @@
     + ':root{--ds-chua:55px;}'           /* cầu 45 + mép phải 10 */
     + '#eraZoom .z-ranh{display:none;}'
     + '#eraGlobe{width:45px;height:45px;}'
-    + '#eraZoom{bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-h,52px)'
+    + '#eraZoom{bottom:calc(var(--wp-space-xl,32px) + var(--wp-nav-bar-h,var(--wp-nav-h,52px))'
     + ' + var(--wp-space-sm,12px) + 45px + var(--wp-space-sm,12px)'
     + ' + 64px /* nhuong cho nut contact */);}}';
 
