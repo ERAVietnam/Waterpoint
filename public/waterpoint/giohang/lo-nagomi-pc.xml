@@ -1,0 +1,478 @@
+<krpano>
+<!-- 158 lo Rivera Nagomi tren PHOI CANH CDT (canh pk_nagomi_pc). SINH TU DONG boi flycam-moi-20260930/_can/dua_len_web_nagomi_pc.py.
+     Tien to lo_npc_. Style kieu_lo_nagomi khai trong lo-nagomi.xml / tour.xml. -->
+<hotspot name="lo_npc_A14_1" style="kieu_lo_nagomi" ma="A14-1" loai="TM">
+  <point ath="64.0090" atv="32.9049" /> <point ath="62.2593" atv="32.5767" /> <point ath="63.6472" atv="31.4399" /> <point ath="65.3307" atv="31.7226" />
+</hotspot>
+<hotspot name="lo_npc_A14_2" style="kieu_lo_nagomi" ma="A14-2" loai="TM">
+  <point ath="65.3462" atv="33.1392" /> <point ath="64.0090" atv="32.9049" /> <point ath="65.3307" atv="31.7226" /> <point ath="66.6141" atv="31.9232" />
+</hotspot>
+<hotspot name="lo_npc_A14_3" style="kieu_lo_nagomi" ma="A14-3" loai="TM">
+  <point ath="66.7178" atv="33.3669" /> <point ath="65.3462" atv="33.1392" /> <point ath="66.6141" atv="31.9232" /> <point ath="67.9281" atv="32.1176" />
+</hotspot>
+<hotspot name="lo_npc_A14_4" style="kieu_lo_nagomi" ma="A14-4" loai="TM">
+  <point ath="68.1075" atv="33.5888" /> <point ath="66.7020" atv="33.3643" /> <point ath="67.9130" atv="32.1154" /> <point ath="69.2568" atv="32.3070" />
+</hotspot>
+<hotspot name="lo_npc_A14_5" style="kieu_lo_nagomi" ma="A14-5" loai="TM">
+  <point ath="69.5435" atv="33.8227" /> <point ath="68.1075" atv="33.5888" /> <point ath="69.2568" atv="32.3070" /> <point ath="70.6259" atv="32.5079" />
+</hotspot>
+<hotspot name="lo_npc_A14_6" style="kieu_lo_nagomi" ma="A14-6" loai="TM">
+  <point ath="71.0031" atv="34.0853" /> <point ath="69.5268" atv="33.8196" /> <point ath="70.6100" atv="32.5052" /> <point ath="72.0121" atv="32.7368" />
+</hotspot>
+<hotspot name="lo_npc_A14_7" style="kieu_lo_nagomi" ma="A14-7" loai="TM">
+  <point ath="72.5188" atv="34.3389" /> <point ath="71.0031" atv="34.0853" /> <point ath="72.0121" atv="32.7368" /> <point ath="73.4495" atv="32.9577" />
+</hotspot>
+<hotspot name="lo_npc_A14_8" style="kieu_lo_nagomi" ma="A14-8" loai="TM">
+  <point ath="74.0721" atv="34.5788" /> <point ath="72.5188" atv="34.3389" /> <point ath="73.4495" atv="32.9577" /> <point ath="74.9203" atv="33.1664" />
+</hotspot>
+<hotspot name="lo_npc_A14_9" style="kieu_lo_nagomi" ma="A14-9" loai="TM">
+  <point ath="75.6592" atv="34.8031" /> <point ath="74.0721" atv="34.5788" /> <point ath="74.9203" atv="33.1664" /> <point ath="76.4211" atv="33.3613" />
+</hotspot>
+<hotspot name="lo_npc_A14_10" style="kieu_lo_nagomi" ma="A14-10" loai="TM">
+  <point ath="77.9712" atv="35.1630" /> <point ath="75.6592" atv="34.8031" /> <point ath="76.4211" atv="33.3613" /> <point ath="78.6039" atv="33.6733" />
+</hotspot>
+<hotspot name="lo_npc_A15_1" style="kieu_lo_nagomi" ma="A15-1" loai="TM">
+  <point ath="46.3197" atv="28.4439" /> <point ath="44.8463" atv="28.0049" /> <point ath="46.7107" atv="27.2993" /> <point ath="48.1466" atv="27.7116" />
+</hotspot>
+<hotspot name="lo_npc_A15_2" style="kieu_lo_nagomi" ma="A15-2" loai="TM">
+  <point ath="47.4410" atv="28.7685" /> <point ath="46.3197" atv="28.4439" /> <point ath="48.1466" atv="27.7116" /> <point ath="49.2383" atv="28.0161" />
+</hotspot>
+<hotspot name="lo_npc_A15_3" style="kieu_lo_nagomi" ma="A15-3" loai="TM">
+  <point ath="48.6337" atv="29.1206" /> <point ath="47.4410" atv="28.7685" /> <point ath="49.2383" atv="28.0161" /> <point ath="50.4031" atv="28.3402" />
+</hotspot>
+<hotspot name="lo_npc_A15_4" style="kieu_lo_nagomi" ma="A15-4" loai="TM">
+  <point ath="49.8719" atv="29.4817" /> <point ath="48.6337" atv="29.1206" /> <point ath="50.4031" atv="28.3402" /> <point ath="51.6125" atv="28.6697" />
+</hotspot>
+<hotspot name="lo_npc_A15_5" style="kieu_lo_nagomi" ma="A15-5" loai="TM">
+  <point ath="51.1434" atv="29.8423" /> <point ath="49.8719" atv="29.4817" /> <point ath="51.6125" atv="28.6697" /> <point ath="52.8527" atv="28.9975" />
+</hotspot>
+<hotspot name="lo_npc_A15_6" style="kieu_lo_nagomi" ma="A15-6" loai="TM">
+  <point ath="52.4437" atv="30.1987" /> <point ath="51.1434" atv="29.8423" /> <point ath="52.8527" atv="28.9975" /> <point ath="54.1189" atv="29.3210" />
+</hotspot>
+<hotspot name="lo_npc_A15_7" style="kieu_lo_nagomi" ma="A15-7" loai="TM">
+  <point ath="53.7729" atv="30.5515" /> <point ath="52.4437" atv="30.1987" /> <point ath="54.1189" atv="29.3210" /> <point ath="55.4116" atv="29.6402" />
+</hotspot>
+<hotspot name="lo_npc_A15_8" style="kieu_lo_nagomi" ma="A15-8" loai="TM">
+  <point ath="55.1249" atv="30.9021" /> <point ath="53.7729" atv="30.5515" /> <point ath="55.4116" atv="29.6402" /> <point ath="56.7264" atv="29.9558" />
+</hotspot>
+<hotspot name="lo_npc_A15_9" style="kieu_lo_nagomi" ma="A15-9" loai="TM">
+  <point ath="56.4905" atv="31.2547" /> <point ath="55.1249" atv="30.9021" /> <point ath="56.7264" atv="29.9558" /> <point ath="58.0573" atv="30.2705" />
+</hotspot>
+<hotspot name="lo_npc_A15_10" style="kieu_lo_nagomi" ma="A15-10" loai="TM">
+  <point ath="57.8936" atv="31.6023" /> <point ath="56.4905" atv="31.2547" /> <point ath="58.0573" atv="30.2705" /> <point ath="59.4217" atv="30.5798" />
+</hotspot>
+<hotspot name="lo_npc_A15_11" style="kieu_lo_nagomi" ma="A15-11" loai="TM">
+  <point ath="59.3291" atv="31.9420" /> <point ath="57.8936" atv="31.6023" /> <point ath="59.4217" atv="30.5798" /> <point ath="60.8145" atv="30.8812" />
+</hotspot>
+<hotspot name="lo_npc_A15_12" style="kieu_lo_nagomi" ma="A15-12" loai="TM">
+  <point ath="61.2842" atv="32.3786" /> <point ath="59.3291" atv="31.9420" /> <point ath="60.8145" atv="30.8812" /> <point ath="62.7065" atv="31.2674" />
+</hotspot>
+<hotspot name="lo_npc_B16_1" style="kieu_lo_nagomi" ma="B16-1" loai="NP">
+  <point ath="68.7036" atv="50.0645" /> <point ath="72.2121" atv="50.7142" /> <point ath="72.6079" atv="51.0671" /> <point ath="71.3397" atv="53.5883" /> <point ath="66.9275" atv="52.7503" />
+</hotspot>
+<hotspot name="lo_npc_B16_2" style="kieu_lo_nagomi" ma="B16-2" loai="NP">
+  <point ath="66.9275" atv="52.7503" /> <point ath="63.8410" atv="52.0860" /> <point ath="65.8809" atv="49.4933" /> <point ath="68.7036" atv="50.0645" />
+</hotspot>
+<hotspot name="lo_npc_B16_3" style="kieu_lo_nagomi" ma="B16-3" loai="NP">
+  <point ath="63.8410" atv="52.0860" /> <point ath="60.8813" atv="51.3541" /> <point ath="63.1563" atv="48.8645" /> <point ath="65.8809" atv="49.4933" />
+</hotspot>
+<hotspot name="lo_npc_B16_4" style="kieu_lo_nagomi" ma="B16-4" loai="NP">
+  <point ath="60.8813" atv="51.3541" /> <point ath="58.0545" atv="50.5628" /> <point ath="60.5358" atv="48.1844" /> <point ath="63.1563" atv="48.8645" />
+</hotspot>
+<hotspot name="lo_npc_B16_5" style="kieu_lo_nagomi" ma="B16-5" loai="NP">
+  <point ath="58.0545" atv="50.5628" /> <point ath="55.2787" atv="49.6928" /> <point ath="57.9435" atv="47.4356" /> <point ath="60.5358" atv="48.1844" />
+</hotspot>
+<hotspot name="lo_npc_B16_6" style="kieu_lo_nagomi" ma="B16-6" loai="NP">
+  <point ath="55.2787" atv="49.6928" /> <point ath="52.7472" atv="48.8363" /> <point ath="55.5368" atv="46.7012" /> <point ath="57.9435" atv="47.4356" />
+</hotspot>
+<hotspot name="lo_npc_B16_7" style="kieu_lo_nagomi" ma="B16-7" loai="NP">
+  <point ath="52.7472" atv="48.8363" /> <point ath="50.3442" atv="47.9552" /> <point ath="53.2232" atv="45.9439" /> <point ath="55.5368" atv="46.7012" />
+</hotspot>
+<hotspot name="lo_npc_B16_8" style="kieu_lo_nagomi" ma="B16-8" loai="NP">
+  <point ath="50.3442" atv="47.9552" /> <point ath="48.0668" atv="47.0493" /> <point ath="51.0099" atv="45.1615" /> <point ath="53.2232" atv="45.9439" />
+</hotspot>
+<hotspot name="lo_npc_B16_9" style="kieu_lo_nagomi" ma="B16-9" loai="NP">
+  <point ath="48.0668" atv="47.0493" /> <point ath="45.9112" atv="46.1230" /> <point ath="48.8981" atv="44.3573" /> <point ath="51.0099" atv="45.1615" />
+</hotspot>
+<hotspot name="lo_npc_B16_10" style="kieu_lo_nagomi" ma="B16-10" loai="NP">
+  <point ath="45.9097" atv="46.1224" /> <point ath="43.1563" atv="44.8367" /> <point ath="46.1733" atv="43.2303" /> <point ath="48.8967" atv="44.3567" />
+</hotspot>
+<hotspot name="lo_npc_B17_1" style="kieu_lo_nagomi" ma="B17-1" loai="NP">
+  <point ath="31.4348" atv="35.4285" /> <point ath="30.1916" atv="34.6462" /> <point ath="29.6671" atv="34.6009" /> <point ath="27.3421" atv="35.2341" /> <point ath="28.7187" atv="36.2419" />
+</hotspot>
+<hotspot name="lo_npc_B17_2" style="kieu_lo_nagomi" ma="B17-2" loai="NP">
+  <point ath="29.8000" atv="36.9812" /> <point ath="28.7187" atv="36.2419" /> <point ath="31.4348" atv="35.4285" /> <point ath="32.5611" atv="36.0995" />
+</hotspot>
+<hotspot name="lo_npc_B17_3" style="kieu_lo_nagomi" ma="B17-3" loai="NP">
+  <point ath="30.9413" atv="37.7377" /> <point ath="29.8008" atv="36.9818" /> <point ath="32.5619" atv="36.1000" /> <point ath="33.7448" atv="36.7839" />
+</hotspot>
+<hotspot name="lo_npc_B17_4" style="kieu_lo_nagomi" ma="B17-4" loai="NP">
+  <point ath="32.1394" atv="38.5088" /> <point ath="30.9413" atv="37.7377" /> <point ath="33.7448" atv="36.7839" /> <point ath="34.9823" atv="37.4793" />
+</hotspot>
+<hotspot name="lo_npc_B17_5" style="kieu_lo_nagomi" ma="B17-5" loai="NP">
+  <point ath="33.4061" atv="39.3032" /> <point ath="32.1403" atv="38.5094" /> <point ath="34.9832" atv="37.4798" /> <point ath="36.2855" atv="38.1951" />
+</hotspot>
+<hotspot name="lo_npc_B17_6" style="kieu_lo_nagomi" ma="B17-6" loai="NP">
+  <point ath="34.7560" atv="40.1370" /> <point ath="33.4061" atv="39.3032" /> <point ath="36.2855" atv="38.1951" /> <point ath="37.6700" atv="38.9508" />
+</hotspot>
+<hotspot name="lo_npc_B17_7" style="kieu_lo_nagomi" ma="B17-7" loai="NP">
+  <point ath="36.2247" atv="41.0485" /> <point ath="34.7560" atv="40.1370" /> <point ath="37.6700" atv="38.9508" /> <point ath="39.1744" atv="39.7905" />
+</hotspot>
+<hotspot name="lo_npc_B17_8" style="kieu_lo_nagomi" ma="B17-8" loai="NP">
+  <point ath="37.7849" atv="41.9742" /> <point ath="36.2247" atv="41.0485" /> <point ath="39.1744" atv="39.7905" /> <point ath="40.7647" atv="40.6395" />
+</hotspot>
+<hotspot name="lo_npc_B17_9" style="kieu_lo_nagomi" ma="B17-9" loai="NP">
+  <point ath="39.4350" atv="42.9059" /> <point ath="37.7849" atv="41.9742" /> <point ath="40.7647" atv="40.6395" /> <point ath="42.4378" atv="41.4901" />
+</hotspot>
+<hotspot name="lo_npc_B17_10" style="kieu_lo_nagomi" ma="B17-10" loai="NP">
+  <point ath="41.8450" atv="44.1820" /> <point ath="39.4350" atv="42.9059" /> <point ath="42.4378" atv="41.4901" /> <point ath="44.8646" atv="42.6485" />
+</hotspot>
+<hotspot name="lo_npc_B18_1" style="kieu_lo_nagomi" ma="B18-1" loai="NP">
+  <point ath="71.4983" atv="44.6988" /> <point ath="74.4429" atv="45.2233" /> <point ath="74.9023" atv="45.0569" /> <point ath="75.5148" atv="43.0634" /> <point ath="72.4387" atv="42.5174" />
+</hotspot>
+<hotspot name="lo_npc_B18_2" style="kieu_lo_nagomi" ma="B18-2" loai="NP">
+  <point ath="71.4983" atv="44.6988" /> <point ath="69.1246" atv="44.2684" /> <point ath="70.2519" atv="42.1392" /> <point ath="72.4387" atv="42.5174" />
+</hotspot>
+<hotspot name="lo_npc_B18_3" style="kieu_lo_nagomi" ma="B18-3" loai="NP">
+  <point ath="69.1246" atv="44.2684" /> <point ath="66.8152" atv="43.7974" /> <point ath="68.1200" atv="41.7274" /> <point ath="70.2519" atv="42.1392" />
+</hotspot>
+<hotspot name="lo_npc_B18_4" style="kieu_lo_nagomi" ma="B18-4" loai="NP">
+  <point ath="66.8152" atv="43.7974" /> <point ath="64.5774" atv="43.2906" /> <point ath="66.0493" atv="41.2858" /> <point ath="68.1200" atv="41.7274" />
+</hotspot>
+<hotspot name="lo_npc_B18_5" style="kieu_lo_nagomi" ma="B18-5" loai="NP">
+  <point ath="64.5774" atv="43.2906" /> <point ath="62.4105" atv="42.7520" /> <point ath="64.0390" atv="40.8177" /> <point ath="66.0493" atv="41.2858" />
+</hotspot>
+<hotspot name="lo_npc_B18_6" style="kieu_lo_nagomi" ma="B18-6" loai="NP">
+  <point ath="62.4105" atv="42.7520" /> <point ath="60.3032" atv="42.2169" /> <point ath="62.0830" atv="40.3590" /> <point ath="64.0390" atv="40.8177" />
+</hotspot>
+<hotspot name="lo_npc_B18_7" style="kieu_lo_nagomi" ma="B18-7" loai="NP">
+  <point ath="60.3032" atv="42.2169" /> <point ath="58.2577" atv="41.6703" /> <point ath="60.1808" atv="39.8936" /> <point ath="62.0830" atv="40.3590" />
+</hotspot>
+<hotspot name="lo_npc_B18_8" style="kieu_lo_nagomi" ma="B18-8" loai="NP">
+  <point ath="58.3743" atv="41.7026" /> <point ath="56.3912" atv="41.1369" /> <point ath="58.4400" atv="39.4400" /> <point ath="60.2894" atv="39.9210" />
+</hotspot>
+<hotspot name="lo_npc_B18_9" style="kieu_lo_nagomi" ma="B18-9" loai="NP">
+  <point ath="56.4116" atv="41.1429" /> <point ath="54.4985" atv="40.5591" /> <point ath="56.6692" atv="38.9489" /> <point ath="58.4591" atv="39.4451" />
+</hotspot>
+<hotspot name="lo_npc_B18_10" style="kieu_lo_nagomi" ma="B18-10" loai="NP">
+  <point ath="54.4999" atv="40.5596" /> <point ath="52.1125" atv="39.7728" /> <point ath="54.4212" atv="38.2773" /> <point ath="56.6704" atv="38.9493" />
+</hotspot>
+<hotspot name="lo_npc_B19_1" style="kieu_lo_nagomi" ma="B19-1" loai="NP">
+  <point ath="38.0572" atv="32.0122" /> <point ath="39.6397" atv="32.6756" /> <point ath="37.1991" atv="33.5332" /> <point ath="35.8683" atv="32.9037" /> <point ath="35.9277" atv="32.7188" />
+</hotspot>
+<hotspot name="lo_npc_B19_2" style="kieu_lo_nagomi" ma="B19-2" loai="NP">
+  <point ath="38.3930" atv="34.0803" /> <point ath="37.1702" atv="33.5206" /> <point ath="39.6112" atv="32.6639" /> <point ath="40.8586" atv="33.1759" />
+</hotspot>
+<hotspot name="lo_npc_B19_3" style="kieu_lo_nagomi" ma="B19-3" loai="NP">
+  <point ath="39.6689" atv="34.6477" /> <point ath="38.3930" atv="34.0803" /> <point ath="40.8586" atv="33.1759" /> <point ath="42.1546" atv="33.6938" />
+</hotspot>
+<hotspot name="lo_npc_B19_4" style="kieu_lo_nagomi" ma="B19-4" loai="NP">
+  <point ath="40.9947" atv="35.2205" /> <point ath="39.6689" atv="34.6477" /> <point ath="42.1546" atv="33.6938" /> <point ath="43.4967" atv="34.2145" />
+</hotspot>
+<hotspot name="lo_npc_B19_5" style="kieu_lo_nagomi" ma="B19-5" loai="NP">
+  <point ath="42.3169" atv="35.7795" /> <point ath="40.9389" atv="35.1967" /> <point ath="43.4403" atv="34.1929" /> <point ath="44.8290" atv="34.7204" />
+</hotspot>
+<hotspot name="lo_npc_B19_6" style="kieu_lo_nagomi" ma="B19-6" loai="NP">
+  <point ath="43.7592" atv="36.3912" /> <point ath="42.3169" atv="35.7795" /> <point ath="44.8290" atv="34.7204" /> <point ath="46.2714" atv="35.2714" />
+</hotspot>
+<hotspot name="lo_npc_B19_7" style="kieu_lo_nagomi" ma="B19-7" loai="NP">
+  <point ath="45.2951" atv="37.0785" /> <point ath="43.7592" atv="36.3912" /> <point ath="46.2714" atv="35.2714" /> <point ath="47.7862" atv="35.8879" />
+</hotspot>
+<hotspot name="lo_npc_B19_8" style="kieu_lo_nagomi" ma="B19-8" loai="NP">
+  <point ath="46.9010" atv="37.7661" /> <point ath="45.2951" atv="37.0785" /> <point ath="47.7862" atv="35.8879" /> <point ath="49.3636" atv="36.5028" />
+</hotspot>
+<hotspot name="lo_npc_B19_9" style="kieu_lo_nagomi" ma="B19-9" loai="NP">
+  <point ath="48.5753" atv="38.4497" /> <point ath="46.9010" atv="37.7661" /> <point ath="49.3636" atv="36.5028" /> <point ath="51.0016" atv="37.1120" />
+</hotspot>
+<hotspot name="lo_npc_B19_10" style="kieu_lo_nagomi" ma="B19-10" loai="NP">
+  <point ath="50.8552" atv="39.3265" /> <point ath="48.5753" atv="38.4497" /> <point ath="51.0016" atv="37.1120" /> <point ath="53.2211" atv="37.8904" />
+</hotspot>
+<hotspot name="lo_npc_C9_1" style="kieu_lo_nagomi" ma="C9-1" loai="SL">
+  <point ath="71.5820" atv="39.4668" /> <point ath="74.3422" atv="39.9027" /> <point ath="74.9476" atv="40.4484" /> <point ath="74.4350" atv="42.0384" /> <point ath="70.6351" atv="41.4038" />
+</hotspot>
+<hotspot name="lo_npc_C9_2" style="kieu_lo_nagomi" ma="C9-2" loai="SL">
+  <point ath="70.6351" atv="41.4038" /> <point ath="67.8255" atv="40.8626" /> <point ath="68.9778" atv="38.9928" /> <point ath="71.5820" atv="39.4668" />
+</hotspot>
+<hotspot name="lo_npc_C9_3" style="kieu_lo_nagomi" ma="C9-3" loai="SL">
+  <point ath="66.5354" atv="40.5890" /> <point ath="64.0146" atv="40.0196" /> <point ath="65.4374" atv="38.2602" /> <point ath="67.7801" atv="38.7540" />
+</hotspot>
+<hotspot name="lo_npc_C9_4" style="kieu_lo_nagomi" ma="C9-4" loai="SL">
+  <point ath="64.0146" atv="40.0196" /> <point ath="61.4470" atv="39.4229" /> <point ath="63.0500" atv="37.7520" /> <point ath="65.4374" atv="38.2602" />
+</hotspot>
+<hotspot name="lo_npc_C9_5" style="kieu_lo_nagomi" ma="C9-5" loai="SL">
+  <point ath="60.2603" atv="39.1330" /> <point ath="57.9639" atv="38.5367" /> <point ath="59.8022" atv="37.0028" /> <point ath="61.9448" atv="37.5067" />
+</hotspot>
+<hotspot name="lo_npc_C9_6" style="kieu_lo_nagomi" ma="C9-6" loai="SL">
+  <point ath="57.9639" atv="38.5367" /> <point ath="55.6445" atv="37.8818" /> <point ath="57.6275" atv="36.4481" /> <point ath="59.8022" atv="37.0028" />
+</hotspot>
+<hotspot name="lo_npc_C10_1" style="kieu_lo_nagomi" ma="C10-1" loai="SL">
+  <point ath="42.2291" atv="31.3359" /> <point ath="44.0707" atv="31.9943" /> <point ath="41.8196" atv="32.8969" /> <point ath="39.5356" atv="31.9895" /> <point ath="41.2857" atv="31.3414" />
+</hotspot>
+<hotspot name="lo_npc_C10_2" style="kieu_lo_nagomi" ma="C10-2" loai="SL">
+  <point ath="43.5181" atv="33.5397" /> <point ath="41.8461" atv="32.9011" /> <point ath="44.0894" atv="32.0009" /> <point ath="45.7700" atv="32.5829" />
+</hotspot>
+<hotspot name="lo_npc_C10_3" style="kieu_lo_nagomi" ma="C10-3" loai="SL">
+  <point ath="46.2403" atv="34.5413" /> <point ath="44.3276" atv="33.8408" /> <point ath="46.5813" atv="32.8563" /> <point ath="48.4892" atv="33.4894" />
+</hotspot>
+<hotspot name="lo_npc_C10_4" style="kieu_lo_nagomi" ma="C10-4" loai="SL">
+  <point ath="48.1556" atv="35.2759" /> <point ath="46.2403" atv="34.5413" /> <point ath="48.4892" atv="33.4894" /> <point ath="50.3770" atv="34.1475" />
+</hotspot>
+<hotspot name="lo_npc_C10_5" style="kieu_lo_nagomi" ma="C10-5" loai="SL">
+  <point ath="51.2805" atv="36.4439" /> <point ath="49.1080" atv="35.6430" /> <point ath="51.3092" atv="34.4750" /> <point ath="53.4280" atv="35.1873" />
+</hotspot>
+<hotspot name="lo_npc_C10_6" style="kieu_lo_nagomi" ma="C10-6" loai="SL">
+  <point ath="53.4453" atv="37.1917" /> <point ath="51.2805" atv="36.4439" /> <point ath="53.4280" atv="35.1873" /> <point ath="55.5292" atv="35.8499" />
+</hotspot>
+<hotspot name="lo_npc_C11_1" style="kieu_lo_nagomi" ma="C11-1" loai="SL">
+  <point ath="73.6046" atv="35.0855" /> <point ath="76.4598" atv="35.4862" /> <point ath="76.0559" atv="36.6365" /> <point ath="75.3040" atv="36.8799" /> <point ath="72.8974" atv="36.5222" />
+</hotspot>
+<hotspot name="lo_npc_C11_2" style="kieu_lo_nagomi" ma="C11-2" loai="SL">
+  <point ath="72.8974" atv="36.5222" /> <point ath="70.5329" atv="36.1221" /> <point ath="71.3829" atv="34.7264" /> <point ath="73.6046" atv="35.0855" />
+</hotspot>
+<hotspot name="lo_npc_C11_3" style="kieu_lo_nagomi" ma="C11-3" loai="SL">
+  <point ath="69.7618" atv="35.9810" /> <point ath="67.7435" atv="35.5973" /> <point ath="68.7603" atv="34.2589" /> <point ath="70.6580" atv="34.6001" />
+</hotspot>
+<hotspot name="lo_npc_C11_4" style="kieu_lo_nagomi" ma="C11-4" loai="SL">
+  <point ath="67.7435" atv="35.5973" /> <point ath="65.5413" atv="35.1953" /> <point ath="66.6898" atv="33.9125" /> <point ath="68.7603" atv="34.2589" />
+</hotspot>
+<hotspot name="lo_npc_C11_5" style="kieu_lo_nagomi" ma="C11-5" loai="SL">
+  <point ath="64.5452" atv="35.0090" /> <point ath="62.6874" atv="34.6429" /> <point ath="64.0034" atv="33.4426" /> <point ath="65.7526" atv="33.7538" />
+</hotspot>
+<hotspot name="lo_npc_C11_6" style="kieu_lo_nagomi" ma="C11-6" loai="SL">
+  <point ath="62.6874" atv="34.6429" /> <point ath="60.7027" atv="34.2213" /> <point ath="62.1296" atv="33.0838" /> <point ath="64.0034" atv="33.4426" />
+</hotspot>
+<hotspot name="lo_npc_C12_1" style="kieu_lo_nagomi" ma="C12-1" loai="SL">
+  <point ath="45.1153" atv="29.7734" /> <point ath="42.8165" atv="29.0427" /> <point ath="44.5737" atv="28.3796" /> <point ath="46.8523" atv="29.0621" />
+</hotspot>
+<hotspot name="lo_npc_C12_2" style="kieu_lo_nagomi" ma="C12-2" loai="SL">
+  <point ath="47.6008" atv="30.5640" /> <point ath="45.8690" atv="30.0162" /> <point ath="47.6017" atv="29.2896" /> <point ath="49.3229" atv="29.8025" />
+</hotspot>
+<hotspot name="lo_npc_C12_3" style="kieu_lo_nagomi" ma="C12-3" loai="SL">
+  <point ath="49.2397" atv="31.0656" /> <point ath="47.6008" atv="30.5640" /> <point ath="49.3229" atv="29.8025" /> <point ath="50.9489" atv="30.2707" />
+</hotspot>
+<hotspot name="lo_npc_C12_4" style="kieu_lo_nagomi" ma="C12-4" loai="SL">
+  <point ath="52.0894" atv="31.8974" /> <point ath="50.1880" atv="31.3469" /> <point ath="51.8878" atv="30.5325" /> <point ath="53.7651" atv="31.0403" />
+</hotspot>
+<hotspot name="lo_npc_C12_5" style="kieu_lo_nagomi" ma="C12-5" loai="SL">
+  <point ath="53.8664" atv="32.4214" /> <point ath="52.0894" atv="31.8974" /> <point ath="53.7651" atv="31.0403" /> <point ath="55.5075" atv="31.5086" />
+</hotspot>
+<hotspot name="lo_npc_C12_6" style="kieu_lo_nagomi" ma="C12-6" loai="SL">
+  <point ath="56.8689" atv="33.2682" /> <point ath="54.8087" atv="32.6956" /> <point ath="56.4279" atv="31.7505" /> <point ath="58.4346" atv="32.2544" />
+</hotspot>
+<hotspot name="lo_npc_C12_7" style="kieu_lo_nagomi" ma="C12-7" loai="SL">
+  <point ath="58.8051" atv="33.7732" /> <point ath="56.8689" atv="33.2682" /> <point ath="58.4346" atv="32.2544" /> <point ath="60.3140" atv="32.6971" />
+</hotspot>
+<hotspot name="lo_npc_D8_1" style="kieu_lo_nagomi" ma="D8-1" loai="VC">
+  <point ath="-76.0166" atv="56.2110" /> <point ath="-85.3612" atv="58.2344" /> <point ath="-80.9432" atv="62.8541" /> <point ath="-70.7488" atv="59.8632" />
+</hotspot>
+<hotspot name="lo_npc_D8_2" style="kieu_lo_nagomi" ma="D8-2" loai="VC">
+  <point ath="-67.5410" atv="52.2752" /> <point ath="-74.1279" atv="55.4264" /> <point ath="-68.5515" atv="59.0375" /> <point ath="-60.9919" atv="55.6041" />
+</hotspot>
+<hotspot name="lo_npc_D8_3" style="kieu_lo_nagomi" ma="D8-3" loai="VC">
+  <point ath="-61.0758" atv="48.2976" /> <point ath="-66.1133" atv="51.4727" /> <point ath="-59.4078" atv="54.7259" /> <point ath="-53.7645" atv="51.2447" />
+</hotspot>
+<hotspot name="lo_npc_D8_4" style="kieu_lo_nagomi" ma="D8-4" loai="VC">
+  <point ath="-55.9531" atv="44.6749" /> <point ath="-59.9634" atv="47.5539" /> <point ath="-52.5300" atv="50.4226" /> <point ath="-48.1087" atv="47.2272" />
+</hotspot>
+<hotspot name="lo_npc_D8_5" style="kieu_lo_nagomi" ma="D8-5" loai="VC">
+  <point ath="-51.7534" atv="41.2808" /> <point ath="-55.0391" atv="43.9724" /> <point ath="-47.1203" atv="46.4450" /> <point ath="-43.6105" atv="43.5073" /> <point ath="-43.6361" atv="43.4961" />
+</hotspot>
+<hotspot name="lo_npc_D8_6" style="kieu_lo_nagomi" ma="D8-6" loai="VC">
+  <point ath="-42.8056" atv="42.8045" /> <point ath="-40.7128" atv="40.8494" /> <point ath="-39.7665" atv="37.1424" /> <point ath="-46.9795" atv="36.9425" /> <point ath="-50.9984" atv="40.6481" />
+</hotspot>
+<hotspot name="lo_npc_D8_7" style="kieu_lo_nagomi" ma="D8-7" loai="VC">
+  <point ath="-33.4866" atv="40.6973" /> <point ath="-33.4596" atv="36.9314" /> <point ath="-38.5204" atv="37.1311" /> <point ath="-39.2710" atv="40.8948" />
+</hotspot>
+<hotspot name="lo_npc_D8_8" style="kieu_lo_nagomi" ma="D8-8" loai="VC">
+  <point ath="-23.1034" atv="39.6075" /> <point ath="-22.4915" atv="39.1017" /> <point ath="-23.7425" atv="35.9789" /> <point ath="-32.1920" atv="36.8434" /> <point ath="-32.0555" atv="40.6081" />
+</hotspot>
+<hotspot name="lo_npc_D9_6" style="kieu_lo_nagomi" ma="D9-6" loai="VB">
+  <point ath="-82.9169" atv="70.0439" /> <point ath="-101.2645" atv="71.7850" /> <point ath="-99.6065" atv="77.3861" /> <point ath="-74.1720" atv="74.9203" />
+</hotspot>
+<hotspot name="lo_npc_D9_7" style="kieu_lo_nagomi" ma="D9-7" loai="VB">
+  <point ath="-70.6374" atv="76.1835" /> <point ath="-98.7181" atv="78.9160" /> <point ath="-91.0225" atv="84.8027" /> <point ath="-49.4492" atv="80.3390" />
+</hotspot>
+<hotspot name="lo_npc_D10_1" style="kieu_lo_nagomi" ma="D10-1" loai="VB">
+  <point ath="-62.0089" atv="64.1321" /> <point ath="-73.5010" atv="68.0690" /> <point ath="-63.2231" atv="72.2971" /> <point ath="-51.7463" atv="67.3855" />
+</hotspot>
+<hotspot name="lo_npc_D10_2" style="kieu_lo_nagomi" ma="D10-2" loai="VB">
+  <point ath="-52.3555" atv="58.8065" /> <point ath="-59.7663" atv="63.0950" /> <point ath="-49.6079" atv="66.1137" /> <point ath="-43.2203" atv="61.0631" />
+</hotspot>
+<hotspot name="lo_npc_D10_3" style="kieu_lo_nagomi" ma="D10-3" loai="VB">
+  <point ath="-45.7895" atv="53.6131" /> <point ath="-50.8482" atv="57.7168" /> <point ath="-42.0086" atv="59.8142" /> <point ath="-37.8307" atv="55.2389" />
+</hotspot>
+<hotspot name="lo_npc_D10_4" style="kieu_lo_nagomi" ma="D10-4" loai="VB">
+  <point ath="-40.9189" atv="48.9244" /> <point ath="-44.6707" atv="52.6512" /> <point ath="-36.9637" atv="54.1751" /> <point ath="-34.0045" atv="50.0603" />
+</hotspot>
+<hotspot name="lo_npc_D10_5" style="kieu_lo_nagomi" ma="D10-5" loai="VB">
+  <point ath="-35.0750" atv="44.2031" /> <point ath="-37.3267" atv="45.0107" /> <point ath="-40.0935" atv="48.0335" /> <point ath="-33.3468" atv="49.1077" /> <point ath="-30.0125" atv="43.8874" />
+</hotspot>
+<hotspot name="lo_npc_D10_6" style="kieu_lo_nagomi" ma="D10-6" loai="VB">
+  <point ath="-22.8234" atv="43.0354" /> <point ath="-28.2529" atv="43.7180" /> <point ath="-31.4731" atv="49.3374" /> <point ath="-24.0909" atv="49.8971" /> <point ath="-22.0641" atv="43.3529" />
+</hotspot>
+<hotspot name="lo_npc_D10_7" style="kieu_lo_nagomi" ma="D10-7" loai="VB">
+  <point ath="-32.0572" atv="50.2852" /> <point ath="-34.7569" atv="54.4983" /> <point ath="-25.9048" atv="55.3759" /> <point ath="-24.4310" atv="50.9195" />
+</hotspot>
+<hotspot name="lo_npc_D10_8" style="kieu_lo_nagomi" ma="D10-8" loai="VB">
+  <point ath="-35.5361" atv="55.6000" /> <point ath="-39.3698" atv="60.2711" /> <point ath="-28.3744" atv="61.6235" /> <point ath="-26.3414" atv="56.5654" />
+</hotspot>
+<hotspot name="lo_npc_D10_9" style="kieu_lo_nagomi" ma="D10-9" loai="VB">
+  <point ath="-40.5113" atv="61.5725" /> <point ath="-46.3820" atv="66.8302" /> <point ath="-32.0632" atv="68.8583" /> <point ath="-28.9823" atv="62.9729" />
+</hotspot>
+<hotspot name="lo_npc_D10_10" style="kieu_lo_nagomi" ma="D10-10" loai="VB">
+  <point ath="-48.3705" atv="68.1572" /> <point ath="-59.4947" atv="73.3525" /> <point ath="-40.2183" atv="76.5404" /> <point ath="-33.1654" atv="70.3741" />
+</hotspot>
+<hotspot name="lo_npc_D13_1" style="kieu_lo_nagomi" ma="D13-1" loai="VA">
+  <point ath="1.3604" atv="71.7313" /> <point ath="0.3569" atv="67.7777" /> <point ath="-8.8434" atv="67.6537" /> <point ath="-10.2264" atv="68.1692" /> <point ath="-8.4308" atv="71.6338" />
+</hotspot>
+<hotspot name="lo_npc_D13_2" style="kieu_lo_nagomi" ma="D13-2" loai="VA">
+  <point ath="4.5259" atv="67.6640" /> <point ath="15.5591" atv="66.8204" /> <point ath="19.6405" atv="70.4769" /> <point ath="6.4647" atv="71.5755" />
+</hotspot>
+<hotspot name="lo_npc_D13_3" style="kieu_lo_nagomi" ma="D13-3" loai="VA">
+  <point ath="19.3145" atv="66.3361" /> <point ath="23.9946" atv="69.8648" /> <point ath="34.4679" atv="67.7272" /> <point ath="28.6942" atv="64.5981" />
+</hotspot>
+<hotspot name="lo_npc_D13_4" style="kieu_lo_nagomi" ma="D13-4" loai="VA">
+  <point ath="39.1413" atv="61.4981" /> <point ath="45.2790" atv="64.0489" /> <point ath="37.7105" atv="66.8123" /> <point ath="31.7398" atv="63.8385" />
+</hotspot>
+<hotspot name="lo_npc_D13_5" style="kieu_lo_nagomi" ma="D13-5" loai="VA">
+  <point ath="47.6114" atv="62.9860" /> <point ath="52.1536" atv="60.5428" /> <point ath="47.4501" atv="58.9241" /> <point ath="45.0773" atv="58.9778" /> <point ath="41.4983" atv="60.5791" />
+</hotspot>
+<hotspot name="lo_npc_D14_1" style="kieu_lo_nagomi" ma="D14-1" loai="VB">
+  <point ath="-10.4150" atv="61.2074" /> <point ath="-12.7020" atv="60.1519" /> <point ath="-13.3504" atv="56.0794" /> <point ath="-4.5612" atv="56.5437" /> <point ath="-5.1529" atv="61.4140" />
+</hotspot>
+<hotspot name="lo_npc_D14_2" style="kieu_lo_nagomi" ma="D14-2" loai="VB">
+  <point ath="-1.9722" atv="56.5762" /> <point ath="-2.0162" atv="61.4559" /> <point ath="6.6425" atv="61.1977" /> <point ath="5.1538" atv="56.3859" />
+</hotspot>
+<hotspot name="lo_npc_D14_3" style="kieu_lo_nagomi" ma="D14-3" loai="VB">
+  <point ath="7.7306" atv="56.2146" /> <point ath="9.7382" atv="60.9678" /> <point ath="17.8501" atv="59.9949" /> <point ath="14.6063" atv="55.4782" />
+</hotspot>
+<hotspot name="lo_npc_D14_4" style="kieu_lo_nagomi" ma="D14-4" loai="VB">
+  <point ath="17.0061" atv="55.1196" /> <point ath="20.6438" atv="59.5259" /> <point ath="27.7991" atv="57.9522" /> <point ath="23.2571" atv="53.8837" />
+</hotspot>
+<hotspot name="lo_npc_D14_5" style="kieu_lo_nagomi" ma="D14-5" loai="VB">
+  <point ath="25.3921" atv="53.3578" /> <point ath="30.1782" atv="57.2977" /> <point ath="37.0200" atv="55.0013" /> <point ath="37.2224" atv="54.0565" /> <point ath="32.7349" atv="51.1319" />
+</hotspot>
+<hotspot name="lo_npc_D14_6" style="kieu_lo_nagomi" ma="D14-6" loai="VB">
+  <point ath="20.9303" atv="48.7389" /> <point ath="24.3230" atv="52.3379" /> <point ath="31.4919" atv="50.2287" /> <point ath="28.0083" atv="47.4853" /> <point ath="26.5244" atv="47.2985" />
+</hotspot>
+<hotspot name="lo_npc_D14_7" style="kieu_lo_nagomi" ma="D14-7" loai="VB">
+  <point ath="13.7145" atv="50.0732" /> <point ath="16.2089" atv="53.9976" /> <point ath="22.2469" atv="52.8342" /> <point ath="19.0719" atv="49.1415" />
+</hotspot>
+<hotspot name="lo_npc_D14_8" style="kieu_lo_nagomi" ma="D14-8" loai="VB">
+  <point ath="6.0225" atv="50.8485" /> <point ath="7.3017" atv="55.0142" /> <point ath="13.8960" atv="54.3305" /> <point ath="11.6961" atv="50.3289" />
+</hotspot>
+<hotspot name="lo_npc_D14_9" style="kieu_lo_nagomi" ma="D14-9" loai="VB">
+  <point ath="-1.9326" atv="51.1001" /> <point ath="-1.9697" atv="55.3495" /> <point ath="4.8401" atv="55.1740" /> <point ath="3.9114" atv="50.9686" />
+</hotspot>
+<hotspot name="lo_npc_D14_10" style="kieu_lo_nagomi" ma="D14-10" loai="VB">
+  <point ath="-13.0737" atv="50.6107" /> <point ath="-4.0423" atv="51.0766" /> <point ath="-4.4396" atv="55.3189" /> <point ath="-13.5007" atv="54.8360" /> <point ath="-13.8508" atv="50.9452" />
+</hotspot>
+<hotspot name="lo_npc_D15_1" style="kieu_lo_nagomi" ma="D15-1" loai="VB">
+  <point ath="-14.0965" atv="45.0591" /> <point ath="-14.2327" atv="42.2834" /> <point ath="-12.9345" atv="41.1857" /> <point ath="-8.6076" atv="39.9843" /> <point ath="-10.3616" atv="46.2051" /> <point ath="-12.4386" atv="46.0478" />
+</hotspot>
+<hotspot name="lo_npc_D15_2" style="kieu_lo_nagomi" ma="D15-2" loai="VB">
+  <point ath="-7.8193" atv="43.0009" /> <point ath="-8.5899" atv="46.3139" /> <point ath="-3.6609" atv="46.4769" /> <point ath="-3.4551" atv="43.1129" />
+</hotspot>
+<hotspot name="lo_npc_D15_3" style="kieu_lo_nagomi" ma="D15-3" loai="VB">
+  <point ath="-1.8679" atv="43.1309" /> <point ath="-1.8775" atv="46.4966" /> <point ath="3.0637" atv="46.4084" /> <point ath="2.5190" atv="43.0605" />
+</hotspot>
+<hotspot name="lo_npc_D15_4" style="kieu_lo_nagomi" ma="D15-4" loai="VB">
+  <point ath="4.1064" atv="43.0007" /> <point ath="4.8533" atv="46.3234" /> <point ath="9.6908" atv="45.9499" /> <point ath="8.4494" atv="42.7077" />
+</hotspot>
+<hotspot name="lo_npc_D15_5" style="kieu_lo_nagomi" ma="D15-5" loai="VB">
+  <point ath="10.0059" atv="42.5605" /> <point ath="11.4252" atv="45.7641" /> <point ath="16.0757" atv="45.0500" /> <point ath="14.1742" atv="42.0083" />
+</hotspot>
+<hotspot name="lo_npc_D15_6" style="kieu_lo_nagomi" ma="D15-6" loai="VB">
+  <point ath="15.6425" atv="41.7736" /> <point ath="17.7086" atv="44.7378" /> <point ath="22.6907" atv="43.6120" /> <point ath="23.1263" atv="42.9826" /> <point ath="20.9721" atv="40.7265" />
+</hotspot>
+<hotspot name="lo_npc_D15_7" style="kieu_lo_nagomi" ma="D15-7" loai="VB">
+  <point ath="13.5517" atv="38.3847" /> <point ath="15.1542" atv="41.0250" /> <point ath="20.3593" atv="40.0510" /> <point ath="18.5927" atv="37.9998" /> <point ath="17.6080" atv="37.7709" />
+</hotspot>
+<hotspot name="lo_npc_D15_8" style="kieu_lo_nagomi" ma="D15-8" loai="VB">
+  <point ath="8.5717" atv="38.9265" /> <point ath="9.6696" atv="41.7559" /> <point ath="13.7244" atv="41.2423" /> <point ath="12.2483" atv="38.5507" />
+</hotspot>
+<hotspot name="lo_npc_D15_9" style="kieu_lo_nagomi" ma="D15-9" loai="VB">
+  <point ath="3.3884" atv="39.2548" /> <point ath="3.9335" atv="42.1674" /> <point ath="8.1561" atv="41.8930" /> <point ath="7.1977" atv="39.0351" />
+</hotspot>
+<hotspot name="lo_npc_D15_10" style="kieu_lo_nagomi" ma="D15-10" loai="VB">
+  <point ath="-1.8560" atv="39.3403" /> <point ath="-1.8700" atv="42.2879" /> <point ath="2.3913" atv="42.2238" /> <point ath="1.9881" atv="39.3021" />
+</hotspot>
+<hotspot name="lo_npc_D15_11" style="kieu_lo_nagomi" ma="D15-11" loai="VB">
+  <point ath="-4.6633" atv="39.3131" /> <point ath="-3.2464" atv="39.3253" /> <point ath="-3.4118" atv="42.2713" /> <point ath="-7.6328" atv="42.1645" /> <point ath="-7.0912" atv="39.5621" />
+</hotspot>
+<hotspot name="lo_npc_D18_1" style="kieu_lo_nagomi" ma="D18-1" loai="VA">
+  <point ath="67.3683" atv="56.7529" /> <point ath="65.4260" atv="57.1480" /> <point ath="58.4880" atv="55.5117" /> <point ath="61.3136" atv="52.8175" /> <point ath="68.9206" atv="54.4659" />
+</hotspot>
+<hotspot name="lo_npc_D18_2" style="kieu_lo_nagomi" ma="D18-2" loai="VA">
+  <point ath="50.7361" atv="53.0113" /> <point ath="56.3261" atv="54.8840" /> <point ath="59.2978" atv="52.2812" /> <point ath="54.0667" atv="50.6619" />
+</hotspot>
+<hotspot name="lo_npc_D18_3" style="kieu_lo_nagomi" ma="D18-3" loai="VA">
+  <point ath="44.3182" atv="50.2901" /> <point ath="48.9160" atv="52.3074" /> <point ath="52.3219" atv="50.0571" /> <point ath="47.8374" atv="48.3168" />
+</hotspot>
+<hotspot name="lo_npc_D18_4" style="kieu_lo_nagomi" ma="D18-4" loai="VA">
+  <point ath="38.9358" atv="47.4796" /> <point ath="42.7929" atv="49.5472" /> <point ath="46.3283" atv="47.6694" /> <point ath="42.4600" atv="45.8421" />
+</hotspot>
+<hotspot name="lo_npc_D19_1" style="kieu_lo_nagomi" ma="D19-1" loai="VA">
+  <point ath="33.3621" atv="44.0086" /> <point ath="36.3958" atv="45.9665" /> <point ath="39.8756" atv="44.4920" /> <point ath="36.7507" atv="42.6945" />
+</hotspot>
+<hotspot name="lo_npc_D19_2" style="kieu_lo_nagomi" ma="D19-2" loai="VA">
+  <point ath="29.7718" atv="41.4331" /> <point ath="32.3514" atv="43.3141" /> <point ath="35.7027" atv="42.0546" /> <point ath="33.0045" atv="40.3227" />
+</hotspot>
+<hotspot name="lo_npc_D19_3" style="kieu_lo_nagomi" ma="D19-3" loai="VA">
+  <point ath="26.8075" atv="39.1455" /> <point ath="28.9319" atv="40.8038" /> <point ath="32.1245" atv="39.7494" /> <point ath="29.8842" atv="38.2378" />
+</hotspot>
+<hotspot name="lo_npc_D19_4" style="kieu_lo_nagomi" ma="D19-4" loai="VA">
+  <point ath="24.4599" atv="36.4598" /> <point ath="24.1396" atv="36.9211" /> <point ath="26.0858" atv="38.5621" /> <point ath="29.1185" atv="37.7040" /> <point ath="26.6810" atv="35.9127" />
+</hotspot>
+<hotspot name="lo_npc_D20_1" style="kieu_lo_nagomi" ma="D20-1" loai="VB">
+  <point ath="-17.3344" atv="36.3548" /> <point ath="-17.8048" atv="36.8015" /> <point ath="-16.9279" atv="38.1778" /> <point ath="-16.0011" atv="38.3678" /> <point ath="-12.0758" atv="37.4979" /> <point ath="-13.6546" atv="35.5568" />
+</hotspot>
+<hotspot name="lo_npc_D20_2" style="kieu_lo_nagomi" ma="D20-2" loai="VB">
+  <point ath="-5.7537" atv="36.1892" /> <point ath="-8.0659" atv="34.0730" /> <point ath="-12.3380" atv="35.1482" /> <point ath="-10.6834" atv="37.0335" />
+</hotspot>
+<hotspot name="lo_npc_D20_3" style="kieu_lo_nagomi" ma="D20-3" loai="VB">
+  <point ath="-7.0815" atv="33.8959" /> <point ath="-4.2933" atv="36.3149" /> <point ath="-2.2913" atv="36.3256" /> <point ath="-1.7894" atv="32.3181" />
+</hotspot>
+<hotspot name="lo_npc_D20_4" style="kieu_lo_nagomi" ma="D20-4" loai="VB">
+  <point ath="-0.9189" atv="34.1204" /> <point ath="-1.0467" atv="36.3298" /> <point ath="2.3895" atv="36.2756" /> <point ath="2.2105" atv="34.0735" />
+</hotspot>
+<hotspot name="lo_npc_D20_5" style="kieu_lo_nagomi" ma="D20-5" loai="VB">
+  <point ath="3.3468" atv="34.0367" /> <point ath="3.6317" atv="36.2316" /> <point ath="7.0232" atv="36.0451" /> <point ath="6.4648" atv="33.8811" />
+</hotspot>
+<hotspot name="lo_npc_D20_6" style="kieu_lo_nagomi" ma="D20-6" loai="VB">
+  <point ath="7.5912" atv="33.8047" /> <point ath="8.2524" atv="35.9534" /> <point ath="11.5406" atv="35.6673" /> <point ath="10.6061" atv="33.5906" />
+</hotspot>
+<hotspot name="lo_npc_D20_7" style="kieu_lo_nagomi" ma="D20-7" loai="VB">
+  <point ath="11.6881" atv="33.4966" /> <point ath="12.7122" atv="35.5434" /> <point ath="15.8775" atv="35.1512" /> <point ath="14.6327" atv="33.1934" />
+</hotspot>
+<hotspot name="lo_npc_D20_8" style="kieu_lo_nagomi" ma="D20-8" loai="VB">
+  <point ath="15.6860" atv="33.0675" /> <point ath="17.0108" atv="34.9896" /> <point ath="20.0655" atv="34.4976" /> <point ath="18.5199" atv="32.6828" />
+</hotspot>
+<hotspot name="lo_npc_D20_9" style="kieu_lo_nagomi" ma="D20-9" loai="VB">
+  <point ath="19.5365" atv="32.5278" /> <point ath="21.1587" atv="34.3006" /> <point ath="24.0822" atv="33.7233" /> <point ath="22.2777" atv="32.0678" />
+</hotspot>
+<hotspot name="lo_npc_D20_10" style="kieu_lo_nagomi" ma="D20-10" loai="VB">
+  <point ath="27.0775" atv="33.0500" /> <point ath="27.4097" atv="32.5327" /> <point ath="25.8498" atv="31.3749" /> <point ath="23.2483" atv="31.8895" /> <point ath="25.1163" atv="33.4996" />
+</hotspot>
+<hotspot name="lo_npc_D20_11" style="kieu_lo_nagomi" ma="D20-11" loai="VB">
+  <point ath="24.0732" atv="29.9297" /> <point ath="25.3479" atv="30.9752" /> <point ath="22.7914" atv="31.4643" /> <point ath="21.3103" atv="30.0396" /> <point ath="23.0137" atv="29.7518" />
+</hotspot>
+<hotspot name="lo_npc_D20_12" style="kieu_lo_nagomi" ma="D20-12" loai="VB">
+  <point ath="17.9067" atv="30.5456" /> <point ath="19.1515" atv="32.0704" /> <point ath="21.8401" atv="31.6339" /> <point ath="20.4178" atv="30.1813" />
+</hotspot>
+<hotspot name="lo_npc_D20_13" style="kieu_lo_nagomi" ma="D20-13" loai="VB">
+  <point ath="14.3814" atv="30.9758" /> <point ath="15.3759" atv="32.5823" /> <point ath="18.1538" atv="32.2170" /> <point ath="16.9777" atv="30.6681" />
+</hotspot>
+<hotspot name="lo_npc_D20_14" style="kieu_lo_nagomi" ma="D20-14" loai="VB">
+  <point ath="10.7268" atv="31.3196" /> <point ath="11.4576" atv="32.9905" /> <point ath="14.3422" atv="32.7021" /> <point ath="13.4170" atv="31.0768" />
+</hotspot>
+<hotspot name="lo_npc_D20_15" style="kieu_lo_nagomi" ma="D20-15" loai="VB">
+  <point ath="6.9939" atv="31.5640" /> <point ath="7.4476" atv="33.2829" /> <point ath="10.3989" atv="33.0791" /> <point ath="9.7418" atv="31.3947" />
+</hotspot>
+<hotspot name="lo_npc_D20_16" style="kieu_lo_nagomi" ma="D20-16" loai="VA">
+  <point ath="3.2089" atv="32.2278" /> <point ath="3.3014" atv="33.5047" /> <point ath="6.3478" atv="33.3554" /> <point ath="5.9762" atv="31.6264" /> <point ath="5.5505" atv="31.6507" /> <point ath="5.5525" atv="31.6500" /> <point ath="3.2065" atv="32.2253" />
+</hotspot>
+<hotspot name="lo_npc_D20_17" style="kieu_lo_nagomi" ma="D20-17" loai="VA">
+  <point ath="-0.7067" atv="32.0288" /> <point ath="0.5918" atv="32.0726" /> <point ath="0.5950" atv="32.0746" /> <point ath="2.1588" atv="32.2582" /> <point ath="2.1611" atv="32.2607" /> <point ath="2.1900" atv="33.5409" /> <point ath="-0.8660" atv="33.5867" /> <point ath="-0.7071" atv="32.0323" />
+</hotspot>
+</krpano>
