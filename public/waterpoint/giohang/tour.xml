@@ -1762,6 +1762,267 @@
      khong co mai nha de khop rieng nhu Aqua). -->
 <include url="lo-nagomi.xml" />
 
+<!-- NAGOMI_PC_BAT_DAU  (05/10 sinh boi flycam-moi-20260930/_can/dua_len_web_nagomi_pc.py - DUNG SUA TAY)
+     Phoi canh 3D CDT (waterpoint.com.vn/riveranagomi/vr360, view 150 m ban ngay) + gio hang 158 lo. -->
+<!-- 05/10 nhan tien ich + ranh khu tren phoi canh CDT (mau bo Waterpoint) -->
+<style name="kieu_nhan_ti" type="text" keep="false" zorder="8" distorted="false" zoom="false" enabled="false" edge="bottom" oy="-10"
+       bg="true" bgcolor="0x003C4B" bgalpha="0.88" bgroundedge="9" bgborder="1 0xFFFFFF 0.35" padding="5 10"
+       css="font-family:Montserrat,Arial,Helvetica,sans-serif; font-size:12px; font-weight:600; color:#FFFFFF; white-space:nowrap;" />
+<style name="kieu_nhan_pk" type="text" keep="false" zorder="8" distorted="false" zoom="false" enabled="false" edge="bottom" oy="-10"
+       bg="true" bgcolor="0xE0B14A" bgalpha="0.95" bgroundedge="9" bgborder="0" padding="5 11"
+       css="font-family:Montserrat,Arial,Helvetica,sans-serif; font-size:12px; font-weight:700; color:#003C4B; white-space:nowrap;" />
+<style name="kieu_cham_ti" type="text" keep="false" zorder="8" distorted="false" zoom="false" enabled="false" html=" "
+       bg="true" bgcolor="0xFFFFFF" bgalpha="1" bgroundedge="5" bgborder="2 0x003C4B 1" width="10" height="10" padding="0" />
+<style name="kieu_ranh_khu" keep="false" zorder="4" enabled="false" fillalpha="0" bordercolor="0xE0B14A" borderalpha="0.95" borderwidth="3" />
+<!-- 06/10 Anh Tony "chu tren nay kho thay": chu trang tron chim tren mai nha sang -> vien nen teal trong mo (thu vien chu toi: van chim) -->
+<style name="kieu_chu_lo_pc" type="text" keep="false" zorder="7" enabled="false" distorted="false" zoom="true"
+       bg="true" bgcolor="0x003C4B" bgalpha="0.74" bgroundedge="14" bgborder="2 0xFFFFFF 0.30" padding="4 12" textshadow="0"
+       css="font-family:Montserrat,Arial,Helvetica,sans-serif; font-size:40px; font-weight:700; color:#FFFFFF; text-align:center; line-height:1.05;" />
+<scene name="pk_nagomi_pc" title="Rivera Nagomi - tren phoi canh CDT" onstart="">
+  <view hlookat="14" vlookat="53" fov="115"
+        fovtype="HFOV" fovmin="12.0" fovmax="115"
+        limitview="auto" maxpixelzoom="4.0" />
+  <preview url="../pano/25-nagomi-pc/25-nagomi-pc.tiles/preview.jpg" />
+  <image type="CUBE" multires="true" tilesize="512">
+    <level tiledimagewidth="2304" tiledimageheight="2304"><cube url="../pano/25-nagomi-pc/25-nagomi-pc.tiles/%s/l3/%v/l3_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="1152" tiledimageheight="1152"><cube url="../pano/25-nagomi-pc/25-nagomi-pc.tiles/%s/l2/%v/l2_%s_%v_%h.jpg" /></level>
+    <level tiledimagewidth="640" tiledimageheight="640"><cube url="../pano/25-nagomi-pc/25-nagomi-pc.tiles/%s/l1/%v/l1_%s_%v_%h.jpg" /></level>
+  </image>
+  <!-- NHAN CDT (29 tien ich/phan khu + ranh khu) - doi mau bo Waterpoint -->
+  <hotspot name="ranh_khu_nagomi" style="kieu_ranh_khu">
+  <point ath="-88.52983339049077" atv="65.12792599237332" /> <point ath="-99.23615820618284" atv="48.126915196749515" /> <point ath="-88.74310019461518" atv="46.91706244303782" /> <point ath="-79.0871793374802" atv="43.864040766862296" /> <point ath="-72.24802717910696" atv="40.53562106742898" /> <point ath="-67.90987708146892" atv="37.835437005470794" /> <point ath="-64.71428603112037" atv="35.37652159047545" /> <point ath="-62.28765526019692" atv="34.097809515481416" /> <point ath="-59.73848430876261" atv="33.13263462725648" /> <point ath="-56.725173805954746" atv="32.78415617515726" /> <point ath="-53.315562130600505" atv="33.231420677207986" /> <point ath="-36.0706572768227" atv="34.08772041088875" /> <point ath="-29.81177771326052" atv="34.02669690748311" /> <point ath="-17.91726117245936" atv="32.979105193410625" /> <point ath="-4.8544895041993055" atv="30.1345303229526" /> <point ath="-1.7661962167107648" atv="29.511201057660344" /> <point ath="-0.1917551925279776" atv="29.596607062302986" /> <point ath="1.6302414189991985" atv="30.120457024193847" /> <point ath="3.2996978001793127" atv="30.627589009961884" /> <point ath="5.286141748531852" atv="30.989976938357284" /> <point ath="8.908392798056871" atv="30.86011290317561" /> <point ath="27.464423141618507" atv="27.767001699016046" /> <point ath="32.744786417253955" atv="26.360737928854952" /> <point ath="36.51188305951549" atv="25.238539099855423" /> <point ath="39.18250300391064" atv="24.3192756389126" /> <point ath="39.525324388792306" atv="24.365456802928154" /> <point ath="41.60145914359864" atv="25.29603106835923" /> <point ath="43.66271969154402" atv="26.586293659731442" /> <point ath="43.96287319197842" atv="26.66871500790179" /> <point ath="45.9341750032692" atv="25.592889905154223" /> <point ath="46.21472089526087" atv="25.628660347050054" /> <point ath="81.78994731448383" atv="33.26847457625122" /> <point ath="82.40062792810059" atv="33.579486716311514" /> <point ath="82.64361137692438" atv="34.10481980045605" /> <point ath="78.40926654884738" atv="52.0905173764718" /> <point ath="77.63248847223474" atv="54.06146596827139" /> <point ath="72.9211649196235" atv="62.8670821098537" /> <point ath="72.12071950224849" atv="63.6081514435668" /> <point ath="70.49778906932472" atv="63.799887311356606" /> <point ath="58.12458464072271" atv="61.094874119322505" /> <point ath="57.03156905911636" atv="61.1297721448403" /> <point ath="-6.270445210154039" atv="74.85722327635762" /> <point ath="-7.674918944803683" atv="75.06566641543293" /> <point ath="0.4442005260869827" atv="80.66672052282755" /> <point ath="-0.05357296536693928" atv="81.01816374334908" /> <point ath="-84.64534882215533" atv="68.89787466750779" />
+</hotspot>
+  <hotspot name="ti_phan_khu_st_10" style="kieu_cham_ti" ath="69.8370166946232" atv="21.129902811917553" />
+  <hotspot name="tn_phan_khu_st_10" style="kieu_nhan_pk" ath="69.8370166946232" atv="21.129902811917553" html="ST10" />
+  <hotspot name="ti_phan_khu_st_8" style="kieu_cham_ti" ath="129.7128585275688" atv="19.00193680621507" />
+  <hotspot name="tn_phan_khu_st_8" style="kieu_nhan_pk" ath="129.7128585275688" atv="19.00193680621507" html="ST8" />
+  <hotspot name="ti_phan_khu_st_7" style="kieu_cham_ti" ath="148.2284201343093" atv="12.673100806295766" />
+  <hotspot name="tn_phan_khu_st_7" style="kieu_nhan_pk" ath="148.2284201343093" atv="12.673100806295766" html="ST7" />
+  <hotspot name="ti_phan_khu_ehome" style="kieu_cham_ti" ath="68.36" atv="3.16" />
+  <hotspot name="tn_phan_khu_ehome" style="kieu_nhan_pk" ath="68.36" atv="3.16" html="Ehome Southgate" />
+  <hotspot name="ti_cong_vien_central_park" style="kieu_cham_ti" ath="93.45" atv="9.74" />
+  <hotspot name="tn_cong_vien_central_park" style="kieu_nhan_ti" ath="93.45" atv="9.74" html="Công viên Central Park" />
+  <hotspot name="ti_club_house1" style="kieu_cham_ti" ath="81.02" atv="6.47" />
+  <hotspot name="tn_club_house1" style="kieu_nhan_ti" ath="81.02" atv="6.47" html="Country Club" />
+  <hotspot name="ti_truong_lien_cap_emasi_plus" style="kieu_cham_ti" ath="40.18" atv="16.33" />
+  <hotspot name="tn_truong_lien_cap_emasi_plus" style="kieu_nhan_ti" ath="40.18" atv="16.33" html="Trường liên cấp Emasi Plus" />
+  <hotspot name="ti_sales_gallery" style="kieu_cham_ti" ath="65.25" atv="5.96" />
+  <hotspot name="tn_sales_gallery" style="kieu_nhan_ti" ath="65.25" atv="5.96" html="Sales Gallery" />
+  <hotspot name="ti_to_hop_bus_hub_fnb" style="kieu_cham_ti" ath="71.05" atv="6.84" />
+  <hotspot name="tn_to_hop_bus_hub_fnb" style="kieu_nhan_ti" ath="71.05" atv="6.84" html="Tổ hợp Bus Hub &amp; FnB" />
+  <hotspot name="ti_cong_vien_bo_song_2" style="kieu_cham_ti" ath="121.86" atv="4.46" />
+  <hotspot name="tn_cong_vien_bo_song_2" style="kieu_nhan_ti" ath="121.86" atv="4.46" html="Công viên Bờ Sông" />
+  <hotspot name="ti_the_aqua" style="kieu_cham_ti" ath="138.04" atv="5.87" />
+  <hotspot name="tn_the_aqua" style="kieu_nhan_pk" ath="138.04" atv="5.87" html="The Aqua" />
+  <hotspot name="ti_vinh_nuoc_ngot_harbour" style="kieu_cham_ti" ath="159.48" atv="6.16" />
+  <hotspot name="tn_vinh_nuoc_ngot_harbour" style="kieu_nhan_ti" ath="159.48" atv="6.16" html="Vịnh nước ngọt Harbour" />
+  <hotspot name="ti_truong_mam_non_talent_kids" style="kieu_cham_ti" ath="139.46" atv="6.47" />
+  <hotspot name="tn_truong_mam_non_talent_kids" style="kieu_nhan_ti" ath="139.46" atv="6.47" html="Trường mầm non Talent Kids" />
+  <hotspot name="ti_san_tap_golf" style="kieu_cham_ti" ath="100.58" atv="9.32" />
+  <hotspot name="tn_san_tap_golf" style="kieu_nhan_ti" ath="100.58" atv="9.32" html="Sân tập Golf" />
+  <hotspot name="ti_truong_lien_cap_nguyen_khuyen" style="kieu_cham_ti" ath="117.04" atv="7.45" />
+  <hotspot name="tn_truong_lien_cap_nguyen_khuyen" style="kieu_nhan_ti" ath="117.04" atv="7.45" html="Trường liên cấp Nguyễn Khuyến" />
+  <hotspot name="ti_phan_khu_solaria_rise" style="kieu_cham_ti" ath="152.02" atv="6.09" />
+  <hotspot name="tn_phan_khu_solaria_rise" style="kieu_nhan_pk" ath="152.02" atv="6.09" html="Solaria Rise" />
+  <hotspot name="ti_lang_van_hoa_viet_nhat" style="kieu_cham_ti" ath="136.91" atv="11.01" />
+  <hotspot name="tn_lang_van_hoa_viet_nhat" style="kieu_nhan_ti" ath="136.91" atv="11.01" html="Làng văn hóa Việt Nhật" />
+  <hotspot name="ti_rung_di_san" style="kieu_cham_ti" ath="129.38" atv="11.02" />
+  <hotspot name="tn_rung_di_san" style="kieu_nhan_ti" ath="129.38" atv="11.02" html="Rừng Di Sản" />
+  <hotspot name="ti_park_village" style="kieu_cham_ti" ath="93.59" atv="12.71" />
+  <hotspot name="tn_park_village" style="kieu_nhan_pk" ath="93.59" atv="12.71" html="Park Village" />
+  <hotspot name="ti_clubhouse_ben_du_thuyen" style="kieu_cham_ti" ath="-171.50" atv="6.29" />
+  <hotspot name="tn_clubhouse_ben_du_thuyen" style="kieu_nhan_ti" ath="-171.50" atv="6.29" html="Clubhouse &amp; Bến Du thuyền Sunset" />
+  <hotspot name="ti_the_pearl" style="kieu_cham_ti" ath="175.41" atv="8.90" />
+  <hotspot name="tn_the_pearl" style="kieu_nhan_pk" ath="175.41" atv="8.90" html="The Pearl" />
+  <hotspot name="ti_rivera" style="kieu_cham_ti" ath="171.29" atv="24.07" />
+  <hotspot name="tn_rivera" style="kieu_nhan_pk" ath="171.29" atv="24.07" html="Rivera" />
+  <hotspot name="ti_ben_du_thuyen" style="kieu_cham_ti" ath="-150.24" atv="35.97" />
+  <hotspot name="tn_ben_du_thuyen" style="kieu_nhan_ti" ath="-150.24" atv="35.97" html="Bến du thuyền" />
+  <hotspot name="ti_cong_vien_bo_song" style="kieu_cham_ti" ath="-99.33" atv="49.42" />
+  <hotspot name="tn_cong_vien_bo_song" style="kieu_nhan_ti" ath="-99.33" atv="49.42" html="Công viên Bờ Sông" />
+  <hotspot name="ti_cong_vien_bo_kenh" style="kieu_cham_ti" ath="-28.64" atv="34.90" />
+  <hotspot name="tn_cong_vien_bo_kenh" style="kieu_nhan_ti" ath="-28.64" atv="34.90" html="Công viên bờ kênh" />
+  <hotspot name="ti_clubhouse" style="kieu_cham_ti" ath="50.17" atv="75.01" />
+  <hotspot name="tn_clubhouse" style="kieu_nhan_ti" ath="50.17" atv="75.01" html="Clubhouse" />
+  <hotspot name="ti_truong_mam_non" style="kieu_cham_ti" ath="40.29" atv="27.45" />
+  <hotspot name="tn_truong_mam_non" style="kieu_nhan_ti" ath="40.29" atv="27.45" html="Trường mầm non" />
+  <hotspot name="ti_cum_san_the_thao" style="kieu_cham_ti" ath="31.29" atv="30.53" />
+  <hotspot name="tn_cum_san_the_thao" style="kieu_nhan_ti" ath="31.29" atv="30.53" html="Cụm Sân thể thao" />
+  <hotspot name="ti_rivera_club" style="kieu_cham_ti" ath="-166.22" atv="37.01" />
+  <hotspot name="tn_rivera_club" style="kieu_nhan_ti" ath="-166.22" atv="37.01" html="River Club" />
+  <!-- CHU DUNG THANG -->
+  <hotspot name="chu_nm_A14_1" style="kieu_chu_lo_pc" ath="63.8144" atv="32.1657" scale="0.086" html="A14-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM6[/span]" />
+  <hotspot name="chu_nm_A14_10" style="kieu_chu_lo_pc" ath="77.1646" atv="34.2558" scale="0.107" html="A14-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM6a[/span]" />
+  <hotspot name="chu_nm_A14_2" style="kieu_chu_lo_pc" ath="65.3285" atv="32.4258" scale="0.067" html="A14-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A14_3" style="kieu_chu_lo_pc" ath="66.6550" atv="32.6400" scale="0.070" html="A14-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A14_4" style="kieu_chu_lo_pc" ath="67.9982" atv="32.8472" scale="0.072" html="A14-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A14_5" style="kieu_chu_lo_pc" ath="69.3867" atv="33.0598" scale="0.077" html="A14-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A14_6" style="kieu_chu_lo_pc" ath="70.7909" atv="33.2899" scale="0.080" html="A14-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A14_7" style="kieu_chu_lo_pc" ath="72.2487" atv="33.5328" scale="0.084" html="A14-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A14_8" style="kieu_chu_lo_pc" ath="73.7428" atv="33.7636" scale="0.086" html="A14-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A14_9" style="kieu_chu_lo_pc" ath="75.2706" atv="33.9805" scale="0.089" html="A14-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_1" style="kieu_chu_lo_pc" ath="46.5075" atv="27.8699" scale="0.062" html="A15-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM6[/span]" />
+  <hotspot name="chu_nm_A15_10" style="kieu_chu_lo_pc" ath="57.9686" atv="30.9310" scale="0.071" html="A15-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_11" style="kieu_chu_lo_pc" ath="59.3677" atv="31.2555" scale="0.071" html="A15-11[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_12" style="kieu_chu_lo_pc" ath="61.0357" atv="31.6230" scale="0.094" html="A15-12[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM6[/span]" />
+  <hotspot name="chu_nm_A15_2" style="kieu_chu_lo_pc" ath="47.7888" atv="28.2391" scale="0.060" html="A15-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_3" style="kieu_chu_lo_pc" ath="48.9314" atv="28.5655" scale="0.066" html="A15-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_4" style="kieu_chu_lo_pc" ath="50.1327" atv="28.9073" scale="0.070" html="A15-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_5" style="kieu_chu_lo_pc" ath="51.3726" atv="29.2520" scale="0.072" html="A15-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_6" style="kieu_chu_lo_pc" ath="52.6422" atv="29.5941" scale="0.074" html="A15-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_7" style="kieu_chu_lo_pc" ath="53.9394" atv="29.9321" scale="0.077" html="A15-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_8" style="kieu_chu_lo_pc" ath="55.2617" atv="30.2666" scale="0.079" html="A15-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_A15_9" style="kieu_chu_lo_pc" ath="56.6025" atv="30.5999" scale="0.082" html="A15-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]TM1[/span]" />
+  <hotspot name="chu_nm_B16_1" style="kieu_chu_lo_pc" ath="70.3686" atv="51.6571" scale="0.191" html="B16-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP3[/span]" />
+  <hotspot name="chu_nm_B16_10" style="kieu_chu_lo_pc" ath="46.0416" atv="44.6546" scale="0.152" html="B16-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP2[/span]" />
+  <hotspot name="chu_nm_B16_2" style="kieu_chu_lo_pc" ath="66.3556" atv="51.1117" scale="0.172" html="B16-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B16_3" style="kieu_chu_lo_pc" ath="63.4586" atv="50.4631" scale="0.169" html="B16-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B16_4" style="kieu_chu_lo_pc" ath="60.6765" atv="49.7555" scale="0.166" html="B16-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B16_5" style="kieu_chu_lo_pc" ath="57.9721" atv="48.9838" scale="0.168" html="B16-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B16_6" style="kieu_chu_lo_pc" ath="55.3962" atv="48.1811" scale="0.156" html="B16-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B16_7" style="kieu_chu_lo_pc" ath="52.9815" atv="47.3739" scale="0.152" html="B16-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B16_8" style="kieu_chu_lo_pc" ath="50.6784" atv="46.5422" scale="0.148" html="B16-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B16_9" style="kieu_chu_lo_pc" ath="48.4875" atv="45.6874" scale="0.144" html="B16-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B17_1" style="kieu_chu_lo_pc" ath="29.4732" atv="35.2381" scale="0.090" html="B17-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP3[/span]" />
+  <hotspot name="chu_nm_B17_10" style="kieu_chu_lo_pc" ath="42.1516" atv="42.8228" scale="0.139" html="B17-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP2[/span]" />
+  <hotspot name="chu_nm_B17_2" style="kieu_chu_lo_pc" ath="30.6336" atv="36.1969" scale="0.085" html="B17-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B17_3" style="kieu_chu_lo_pc" ath="31.7678" atv="36.9104" scale="0.089" html="B17-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B17_4" style="kieu_chu_lo_pc" ath="32.9584" atv="37.6374" scale="0.092" html="B17-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B17_5" style="kieu_chu_lo_pc" ath="34.2110" atv="38.3823" scale="0.097" html="B17-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B17_6" style="kieu_chu_lo_pc" ath="35.5373" atv="39.1575" scale="0.103" html="B17-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B17_7" style="kieu_chu_lo_pc" ath="36.9646" atv="39.9933" scale="0.114" html="B17-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B17_8" style="kieu_chu_lo_pc" ath="38.4964" atv="40.8753" scale="0.119" html="B17-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B17_9" style="kieu_chu_lo_pc" ath="40.1159" atv="41.7651" scale="0.122" html="B17-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B18_1" style="kieu_chu_lo_pc" ath="73.7569" atv="44.1222" scale="0.157" html="B18-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP3[/span]" />
+  <hotspot name="chu_nm_B18_10" style="kieu_chu_lo_pc" ath="54.4324" atv="39.4009" scale="0.125" html="B18-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP2[/span]" />
+  <hotspot name="chu_nm_B18_2" style="kieu_chu_lo_pc" ath="70.8338" atv="43.4128" scale="0.120" html="B18-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B18_3" style="kieu_chu_lo_pc" ath="68.5843" atv="42.9901" scale="0.119" html="B18-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B18_4" style="kieu_chu_lo_pc" ath="66.3977" atv="42.5324" scale="0.116" html="B18-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B18_5" style="kieu_chu_lo_pc" ath="64.2769" atv="42.0439" scale="0.113" html="B18-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B18_6" style="kieu_chu_lo_pc" ath="62.2175" atv="41.5440" scale="0.137" html="B18-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B18_7" style="kieu_chu_lo_pc" ath="60.2151" atv="41.0429" scale="0.133" html="B18-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B18_8" style="kieu_chu_lo_pc" ath="58.3828" atv="40.5583" scale="0.130" html="B18-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B18_9" style="kieu_chu_lo_pc" ath="56.5187" atv="40.0325" scale="0.125" html="B18-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B19_1" style="kieu_chu_lo_pc" ath="37.3406" atv="32.7766" scale="0.098" html="B19-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP3[/span]" />
+  <hotspot name="chu_nm_B19_10" style="kieu_chu_lo_pc" ath="50.9183" atv="38.2061" scale="0.120" html="B19-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP2[/span]" />
+  <hotspot name="chu_nm_B19_2" style="kieu_chu_lo_pc" ath="39.0126" atv="33.3677" scale="0.078" html="B19-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B19_3" style="kieu_chu_lo_pc" ath="40.2735" atv="33.9073" scale="0.080" html="B19-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B19_4" style="kieu_chu_lo_pc" ath="41.5839" atv="34.4523" scale="0.084" html="B19-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B19_5" style="kieu_chu_lo_pc" ath="42.8868" atv="34.9808" scale="0.088" html="B19-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B19_6" style="kieu_chu_lo_pc" ath="44.3000" atv="35.5493" scale="0.092" html="B19-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B19_7" style="kieu_chu_lo_pc" ath="45.7840" atv="36.1662" scale="0.103" html="B19-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B19_8" style="kieu_chu_lo_pc" ath="47.3430" atv="36.8179" scale="0.107" html="B19-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_B19_9" style="kieu_chu_lo_pc" ath="48.9674" atv="37.4668" scale="0.110" html="B19-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]NP1[/span]" />
+  <hotspot name="chu_nm_C10_1" style="kieu_chu_lo_pc" ath="41.7880" atv="31.9200" scale="0.108" html="C10-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL4[/span]" />
+  <hotspot name="chu_nm_C10_2" style="kieu_chu_lo_pc" ath="43.8089" atv="32.7639" scale="0.101" html="C10-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C10_3" style="kieu_chu_lo_pc" ath="46.4125" atv="33.6907" scale="0.094" html="C10-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C10_4" style="kieu_chu_lo_pc" ath="48.3189" atv="34.3723" scale="0.097" html="C10-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C10_5" style="kieu_chu_lo_pc" ath="51.2846" atv="35.4469" scale="0.113" html="C10-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C10_6" style="kieu_chu_lo_pc" ath="53.4247" atv="36.1776" scale="0.112" html="C10-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C11_1" style="kieu_chu_lo_pc" ath="74.8633" atv="36.1301" scale="0.106" html="C11-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL4[/span]" />
+  <hotspot name="chu_nm_C11_2" style="kieu_chu_lo_pc" ath="72.1052" atv="35.6201" scale="0.104" html="C11-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C11_3" style="kieu_chu_lo_pc" ath="69.2327" atv="35.1142" scale="0.103" html="C11-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C11_4" style="kieu_chu_lo_pc" ath="67.1856" atv="34.7468" scale="0.102" html="C11-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C11_5" style="kieu_chu_lo_pc" ath="64.2499" atv="34.2170" scale="0.097" html="C11-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C11_6" style="kieu_chu_lo_pc" ath="62.3832" atv="33.8533" scale="0.098" html="C11-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C12_1" style="kieu_chu_lo_pc" ath="44.8384" atv="29.0721" scale="0.080" html="C12-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL5[/span]" />
+  <hotspot name="chu_nm_C12_2" style="kieu_chu_lo_pc" ath="47.5995" atv="29.9237" scale="0.079" html="C12-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C12_3" style="kieu_chu_lo_pc" ath="49.2795" atv="30.4311" scale="0.074" html="C12-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C12_4" style="kieu_chu_lo_pc" ath="51.9837" atv="31.2105" scale="0.086" html="C12-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C12_5" style="kieu_chu_lo_pc" ath="53.8087" atv="31.7226" scale="0.084" html="C12-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C12_6" style="kieu_chu_lo_pc" ath="56.6363" atv="32.4988" scale="0.092" html="C12-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C12_7" style="kieu_chu_lo_pc" ath="58.6076" atv="33.0042" scale="0.095" html="C12-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C9_1" style="kieu_chu_lo_pc" ath="73.1871" atv="40.6650" scale="0.144" html="C9-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL4[/span]" />
+  <hotspot name="chu_nm_C9_2" style="kieu_chu_lo_pc" ath="69.7574" atv="40.1906" scale="0.142" html="C9-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C9_3" style="kieu_chu_lo_pc" ath="65.9458" atv="39.4139" scale="0.136" html="C9-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C9_4" style="kieu_chu_lo_pc" ath="63.4916" atv="38.8727" scale="0.137" html="C9-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C9_5" style="kieu_chu_lo_pc" ath="59.9981" atv="38.0533" scale="0.121" html="C9-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_C9_6" style="kieu_chu_lo_pc" ath="57.7645" atv="37.4765" scale="0.121" html="C9-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]SL2[/span]" />
+  <hotspot name="chu_nm_D10_1" style="kieu_chu_lo_pc" ath="-62.4854" atv="68.1524" scale="0.283" html="D10-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <hotspot name="chu_nm_D10_10" style="kieu_chu_lo_pc" ath="-45.2507" atv="72.3477" scale="0.301" html="D10-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <hotspot name="chu_nm_D10_2" style="kieu_chu_lo_pc" ath="-51.1823" atv="62.3964" scale="0.266" html="D10-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <hotspot name="chu_nm_D10_3" style="kieu_chu_lo_pc" ath="-44.0906" atv="56.6880" scale="0.245" html="D10-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <hotspot name="chu_nm_D10_4" style="kieu_chu_lo_pc" ath="-39.1209" atv="51.5216" scale="0.223" html="D10-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <hotspot name="chu_nm_D10_5" style="kieu_chu_lo_pc" ath="-35.1235" atv="46.0997" scale="0.199" html="D10-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB6[/span]" />
+  <hotspot name="chu_nm_D10_6" style="kieu_chu_lo_pc" ath="-25.6480" atv="45.9225" scale="0.200" html="D10-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB8[/span]" />
+  <hotspot name="chu_nm_D10_7" style="kieu_chu_lo_pc" ath="-29.2716" atv="52.8456" scale="0.233" html="D10-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <hotspot name="chu_nm_D10_8" style="kieu_chu_lo_pc" ath="-32.3880" atv="58.6222" scale="0.257" html="D10-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <hotspot name="chu_nm_D10_9" style="kieu_chu_lo_pc" ath="-36.9615" atv="65.2138" scale="0.284" html="D10-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <hotspot name="chu_nm_D13_1" style="kieu_chu_lo_pc" ath="-5.2675" atv="69.4631" scale="0.274" html="D13-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA4[/span]" />
+  <hotspot name="chu_nm_D13_2" style="kieu_chu_lo_pc" ath="11.5526" atv="69.2466" scale="0.274" html="D13-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA2[/span]" />
+  <hotspot name="chu_nm_D13_3" style="kieu_chu_lo_pc" ath="26.6375" atv="67.2300" scale="0.271" html="D13-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA2[/span]" />
+  <hotspot name="chu_nm_D13_4" style="kieu_chu_lo_pc" ath="38.4892" atv="64.1292" scale="0.266" html="D13-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA2[/span]" />
+  <hotspot name="chu_nm_D13_5" style="kieu_chu_lo_pc" ath="46.7370" atv="60.4473" scale="0.223" html="D13-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA4[/span]" />
+  <hotspot name="chu_nm_D14_1" style="kieu_chu_lo_pc" ath="-9.2592" atv="59.1336" scale="0.264" html="D14-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB3a[/span]" />
+  <hotspot name="chu_nm_D14_10" style="kieu_chu_lo_pc" ath="-9.8328" atv="52.6436" scale="0.238" html="D14-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB4[/span]" />
+  <hotspot name="chu_nm_D14_2" style="kieu_chu_lo_pc" ath="1.9396" atv="58.9643" scale="0.263" html="D14-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D14_3" style="kieu_chu_lo_pc" ath="12.4411" atv="58.2254" scale="0.262" html="D14-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D14_4" style="kieu_chu_lo_pc" ath="22.1244" atv="56.6822" scale="0.257" html="D14-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D14_5" style="kieu_chu_lo_pc" ath="32.5071" atv="54.2510" scale="0.248" html="D14-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB4[/span]" />
+  <hotspot name="chu_nm_D14_6" style="kieu_chu_lo_pc" ath="26.2630" atv="49.2714" scale="0.226" html="D14-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB4[/span]" />
+  <hotspot name="chu_nm_D14_7" style="kieu_chu_lo_pc" ath="17.7842" atv="51.5547" scale="0.232" html="D14-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D14_8" style="kieu_chu_lo_pc" ath="9.7097" atv="52.6733" scale="0.235" html="D14-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D14_9" style="kieu_chu_lo_pc" ath="1.2070" atv="53.1901" scale="0.238" html="D14-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D15_1" style="kieu_chu_lo_pc" ath="-12.0939" atv="43.4793" scale="0.187" html="D15-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB9[/span]" />
+  <hotspot name="chu_nm_D15_10" style="kieu_chu_lo_pc" ath="0.1620" atv="40.8063" scale="0.178" html="D15-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D15_11" style="kieu_chu_lo_pc" ath="-5.2030" atv="40.5416" scale="0.176" html="D15-11[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D15_2" style="kieu_chu_lo_pc" ath="-5.8770" atv="44.7500" scale="0.197" html="D15-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D15_3" style="kieu_chu_lo_pc" ath="0.4571" atv="44.7979" scale="0.197" html="D15-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D15_4" style="kieu_chu_lo_pc" ath="6.7676" atv="44.5195" scale="0.196" html="D15-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D15_5" style="kieu_chu_lo_pc" ath="12.9103" atv="43.8700" scale="0.193" html="D15-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D15_6" style="kieu_chu_lo_pc" ath="20.0262" atv="42.8033" scale="0.187" html="D15-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB4[/span]" />
+  <hotspot name="chu_nm_D15_7" style="kieu_chu_lo_pc" ath="17.0546" atv="39.0713" scale="0.168" html="D15-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB4[/span]" />
+  <hotspot name="chu_nm_D15_8" style="kieu_chu_lo_pc" ath="11.0468" atv="40.1367" scale="0.174" html="D15-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D15_9" style="kieu_chu_lo_pc" ath="5.6646" atv="40.6056" scale="0.176" html="D15-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D18_1" style="kieu_chu_lo_pc" ath="64.2596" atv="55.4007" scale="0.218" html="D18-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA3[/span]" />
+  <hotspot name="chu_nm_D18_2" style="kieu_chu_lo_pc" ath="55.0972" atv="52.7509" scale="0.215" html="D18-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA1[/span]" />
+  <hotspot name="chu_nm_D18_3" style="kieu_chu_lo_pc" ath="48.3419" atv="50.2779" scale="0.210" html="D18-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA1[/span]" />
+  <hotspot name="chu_nm_D18_4" style="kieu_chu_lo_pc" ath="42.6229" atv="47.6643" scale="0.199" html="D18-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA1[/span]" />
+  <hotspot name="chu_nm_D19_1" style="kieu_chu_lo_pc" ath="36.5918" atv="44.3136" scale="0.187" html="D19-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA1[/span]" />
+  <hotspot name="chu_nm_D19_2" style="kieu_chu_lo_pc" ath="32.7042" atv="41.8004" scale="0.173" html="D19-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA1[/span]" />
+  <hotspot name="chu_nm_D19_3" style="kieu_chu_lo_pc" ath="29.4357" atv="39.4997" scale="0.148" html="D19-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA1[/span]" />
+  <hotspot name="chu_nm_D19_4" style="kieu_chu_lo_pc" ath="26.0902" atv="37.1253" scale="0.155" html="D19-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA3[/span]" />
+  <hotspot name="chu_nm_D20_1" style="kieu_chu_lo_pc" ath="-15.6300" atv="37.1443" scale="0.150" html="D20-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB10[/span]" />
+  <hotspot name="chu_nm_D20_10" style="kieu_chu_lo_pc" ath="25.7370" atv="32.4782" scale="0.125" html="D20-10[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB3a[/span]" />
+  <hotspot name="chu_nm_D20_11" style="kieu_chu_lo_pc" ath="23.3049" atv="30.4390" scale="0.113" html="D20-11[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB3a[/span]" />
+  <hotspot name="chu_nm_D20_12" style="kieu_chu_lo_pc" ath="19.8265" atv="31.1161" scale="0.116" html="D20-12[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D20_13" style="kieu_chu_lo_pc" ath="16.2200" atv="31.6190" scale="0.118" html="D20-13[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D20_14" style="kieu_chu_lo_pc" ath="12.4842" atv="32.0305" scale="0.119" html="D20-14[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D20_15" style="kieu_chu_lo_pc" ath="8.6444" atv="32.3385" scale="0.120" html="D20-15[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D20_16" style="kieu_chu_lo_pc" ath="4.7375" atv="32.3269" scale="0.121" html="D20-16[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA1[/span]" />
+  <hotspot name="chu_nm_D20_17" style="kieu_chu_lo_pc" ath="0.6763" atv="32.4882" scale="0.108" html="D20-17[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VA1[/span]" />
+  <hotspot name="chu_nm_D20_2" style="kieu_chu_lo_pc" ath="-9.2091" atv="35.6370" scale="0.145" html="D20-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB7[/span]" />
+  <hotspot name="chu_nm_D20_3" style="kieu_chu_lo_pc" ath="-3.8626" atv="34.7316" scale="0.138" html="D20-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB9[/span]" />
+  <hotspot name="chu_nm_D20_4" style="kieu_chu_lo_pc" ath="0.6589" atv="35.2109" scale="0.144" html="D20-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D20_5" style="kieu_chu_lo_pc" ath="5.1155" atv="35.0597" scale="0.143" html="D20-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D20_6" style="kieu_chu_lo_pc" ath="9.4949" atv="34.7648" scale="0.140" html="D20-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D20_7" style="kieu_chu_lo_pc" ath="13.7241" atv="34.3569" scale="0.137" html="D20-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D20_8" style="kieu_chu_lo_pc" ath="17.8165" atv="33.8202" scale="0.133" html="D20-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D20_9" style="kieu_chu_lo_pc" ath="21.7596" atv="33.1658" scale="0.130" html="D20-9[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB2[/span]" />
+  <hotspot name="chu_nm_D8_1" style="kieu_chu_lo_pc" ath="-78.2329" atv="59.4049" scale="0.246" html="D8-1[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VC1a[/span]" />
+  <hotspot name="chu_nm_D8_2" style="kieu_chu_lo_pc" ath="-67.7888" atv="55.6744" scale="0.230" html="D8-2[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VC1[/span]" />
+  <hotspot name="chu_nm_D8_3" style="kieu_chu_lo_pc" ath="-60.1122" atv="51.5181" scale="0.214" html="D8-3[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VC2[/span]" />
+  <hotspot name="chu_nm_D8_4" style="kieu_chu_lo_pc" ath="-54.1766" atv="47.5526" scale="0.194" html="D8-4[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VC2[/span]" />
+  <hotspot name="chu_nm_D8_5" style="kieu_chu_lo_pc" ath="-48.2563" atv="43.8301" scale="0.179" html="D8-5[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VC2[/span]" />
+  <hotspot name="chu_nm_D8_6" style="kieu_chu_lo_pc" ath="-44.2461" atv="39.7528" scale="0.158" html="D8-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VC3[/span]" />
+  <hotspot name="chu_nm_D8_7" style="kieu_chu_lo_pc" ath="-36.1754" atv="38.9452" scale="0.157" html="D8-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VC2[/span]" />
+  <hotspot name="chu_nm_D8_8" style="kieu_chu_lo_pc" ath="-26.7061" atv="38.5113" scale="0.156" html="D8-8[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VC3[/span]" />
+  <hotspot name="chu_nm_D9_6" style="kieu_chu_lo_pc" ath="-89.1985" atv="73.8290" scale="0.293" html="D9-6[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <hotspot name="chu_nm_D9_7" style="kieu_chu_lo_pc" ath="-76.0344" atv="80.5799" scale="0.308" html="D9-7[br][span style=&apos;font-size:30px;font-weight:500;opacity:.82;&apos;]VB5[/span]" />
+  <!-- /CHU -->
+</scene>
+<include url="lo-nagomi-pc.xml" />
+<!-- NAGOMI_PC_HET -->
+
+
+
+
+
+
+
+
+
+
 <!-- ==================================================================
      CANH 6 + 7 - RIVERA NAGOMI BAN 2, NEN ANH PK PARK VILLAGE  (25/09/2026, chat-nagomi)
 
