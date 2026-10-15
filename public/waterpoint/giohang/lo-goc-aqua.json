@@ -18,7 +18,7 @@
   "cy": 180.43808516651296,
   "_doc": "matbang(X,Y) -> dat(sx,sy): sx=k*cos*(X-cx)-k*sin*(Y-cy); sy=k*sin*(X-cx)+k*cos*(Y-cy). Roi ath=atan2(sx,-sy), atv=asin(1/sqrt(sx^2+sy^2+1))."
  },
- "so_lo": 48,
+ "so_lo": 49,
  "lo": {
   "D4-01": {
    "loai": "gardengrand",
@@ -4027,7 +4027,51 @@
      27.912
     ]
    ]
+  },
+  "D19-02": {
+   "loai": "gardengrand",
+   "tam": [
+    38.3475,
+    31.1318
+   ],
+   "diem": [
+    [
+     36.6808,
+     30.898
+    ],
+    [
+     38.2961,
+     30.3833
+    ],
+    [
+     40.0281,
+     31.3392
+    ],
+    [
+     38.3852,
+     31.9067
+    ]
+   ],
+   "diem_that": [
+    [
+     36.6808,
+     30.898
+    ],
+    [
+     38.2961,
+     30.3833
+    ],
+    [
+     40.0281,
+     31.3392
+    ],
+    [
+     38.3852,
+     31.9067
+    ]
+   ]
   }
  },
- "_doc_01_10": "diem/diem_that/tam TINH LAI tren anh flycam moi aqua-0540-chu (pano web ../pano/17-aqua-0540-ve + 18-aqua-0540), flycam-moi-20260930/_can/dua_len_web_gd2.py - dung sua tay. Truong `can` la phep CU (anh cu) - khong con dung."
+ "_doc_01_10": "diem/diem_that/tam TINH LAI tren anh flycam moi aqua-0540-chu (pano web ../pano/17-aqua-0540-ve + 18-aqua-0540), flycam-moi-20260930/_can/dua_len_web_gd2.py - dung sua tay. Truong `can` la phep CU (anh cu) - khong con dung.",
+ "_d19_02": "13/10: them D19-02 (gio hang CDT 13/10) - sinh boi wp-thuc-te/_cap-nhat-gio-hang/d1902/chen_d1902.py"
 }
