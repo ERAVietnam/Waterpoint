@@ -90,6 +90,11 @@ window.ERA_BH = (function () {
        O trong / "không" / FALSE => khong phai ERA. */
     COT_ERA   : ['era doc quyen', 'era', 'doc quyen', 'hang era', 'era doc quyen?'],
     CO_ERA    : ['x', 'v', 'co', 'yes', 'y', '1', 'true', 'era', 'doc quyen', 'era doc quyen', '✓', '✔', '☑'],
+    /* 🆕 14/10 Anh Tony: "anh co link 360 chup tai mat dat, gan vao dung vi tri can" - cot link
+       Realsee.ai (the The Aqua). Doc RIENG thanh `link360`, KHONG in chuoi link ra hop thong tin:
+       trang giohang ve icon 360 tren khung lo + nut trong the can. */
+    COT_360   : ['link realsee.ai', 'link realsee', 'realsee', 'realsee.ai', 'link 360', 'link xem 360',
+                 'link 360 mat dat', '360', 'xem 360'],
 
     /* 🔴 4 trang thai - chep y ban PGBL da chay tu 12/08 de khoi phai nho
        hai quy uoc khac nhau. Anh Tony 17/09 de trong cot nay, nen hien gio
@@ -268,6 +273,14 @@ window.ERA_BH = (function () {
 
   /* Nhan MANG DONG (da tach tu CSV hoac tu file du phong), GHI THEM vao
      `bang`, tra ve so dong doc duoc. */
+  /* Link 360: chi nhan http(s). Go thieu `https://` (vd "realsee.ai/abc") thi tu them. */
+  function link360(s) {
+    s = nfc(s).trim();
+    if (!s) return '';
+    if (!/^https?:\/\//i.test(s)) s = /^[\w-]+(\.[\w-]+)+\//.test(s) ? 'https://' + s : '';
+    return s;
+  }
+
   function phanTich(hang, bang) {
     var iTD = timTieuDe(hang);
     if (iTD < 0) {
@@ -275,7 +288,7 @@ window.ERA_BH = (function () {
                       'đúng chữ "Mã sản phẩm" (hoặc "Mã lô" / "Mã căn").');
     }
     var cot = hang[iTD].map(function (s) { return nfc(s).trim(); });
-    var iMa = -1, iTT = -1, iLoai = -1, iDT = -1, iGia = -1, iEra = -1, j;
+    var iMa = -1, iTT = -1, iLoai = -1, iDT = -1, iGia = -1, iEra = -1, i360 = -1, j;
     for (j = 0; j < cot.length; j++) {
       var k = khongDau(cot[j]);
       if (iMa < 0 && C.COT_MA.indexOf(k) >= 0) iMa = j;
@@ -284,6 +297,7 @@ window.ERA_BH = (function () {
       if (iDT < 0 && C.COT_DT.indexOf(k) >= 0) iDT = j;
       if (iGia < 0 && C.COT_GIA.indexOf(k) >= 0) iGia = j;
       if (iEra < 0 && C.COT_ERA.indexOf(k) >= 0) iEra = j;
+      if (i360 < 0 && C.COT_360.indexOf(k) >= 0) i360 = j;
     }
     function o(r, j) { return j >= 0 ? nfc(r[j] == null ? '' : r[j]).trim() : ''; }
     var dem = 0;
@@ -298,7 +312,7 @@ window.ERA_BH = (function () {
         if (C.COT_AN.indexOf(khongDau(cot[j])) >= 0) continue;
         if (j === iTT) continue;                       /* hien rieng thanh chip */
         /* Loai hinh hien o dong dau hop thong tin, Gia hien rieng "~25 tỷ" */
-        if (j === iLoai || j === iGia) continue;
+        if (j === iLoai || j === iGia || j === i360) continue;
         var v = nfc(r[j] == null ? '' : r[j]).trim();
         if (v) truong.push([cot[j], v]);
       }
@@ -309,7 +323,8 @@ window.ERA_BH = (function () {
         loaiHinh: o(r, iLoai),                         /* '' = chua ghi */
         dtDat: soDT(o(r, iDT)),                        /* null = chua ghi */
         gia: giaTy(o(r, iGia)),                        /* null = chua co gia */
-        giaGoc: o(r, iGia)
+        giaGoc: o(r, iGia),
+        link360: link360(o(r, i360))                   /* '' = chua co link 360 */
       };
       dem++;
     }

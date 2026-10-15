@@ -256,6 +256,24 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 /* 25/09 Anh Tony: nut trong the can nen trung mau the => khong nhan ra la nut. Dung --wp-vang nhu #nut-lop */
 #lo-card .xem{--nen:var(--wp-vang);color:var(--wp-canh-teal);box-shadow:0 3px 10px rgba(0,0,0,.35)}
 #lo-card .xem:hover{--nen:#FFFFFF;color:var(--wp-canh-teal)}
+/* 14/10 nut "Xem 360° mat dat" - nen teal vien vang (khac nut vang "Xem thuc te" ben duoi) */
+#lo-card .x360{--nen:#003C4B;color:#FFFFFF;border:2px solid var(--wp-vang)}
+#lo-card .x360:hover{--nen:#00566B;color:#FFFFFF}
+#lo-card .x360 + .xem{margin-top:var(--wp-space-sm)}
+/* 14/10 icon 360 tren ban do - lop HTML (giong #lop-ma), duoi the can / bo loc */
+#lop-360{position:fixed;inset:0;pointer-events:none;z-index:11;overflow:hidden}
+#lop-360 .i360{position:absolute;left:0;top:0;padding:0;border:0;pointer-events:auto;cursor:pointer;
+  background:url(icon-360.png) center/contain no-repeat;transition:filter .15s}
+#lop-360 .i360:hover{filter:brightness(1.25)}
+/* 14/10 khung xem 360 mat dat (iframe Realsee) - phu ca man, tren moi lop */
+#v360{position:fixed;inset:0;z-index:calc(var(--wp-z-overlay) + 40);display:flex;flex-direction:column;
+  background:rgba(0,24,30,.94);padding:10px 10px calc(10px + env(safe-area-inset-bottom,0px))}
+#v360[hidden]{display:none}
+#v360 .dau{display:flex;align-items:center;gap:12px;min-height:52px;padding:0 6px 8px;color:#fff}
+#v360 .nhan{font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--wp-vang);font-weight:700}
+#v360 b{font-size:22px;letter-spacing:1px}
+#v360 .dong{margin-left:auto;height:44px;padding:0 18px;--r:12px;--nen:var(--wp-vang);color:#003C4B;font-weight:700;font-size:16px}
+#v360 iframe{flex:1;width:100%;border:0;border-radius:0 14px 0 14px;background:#000}
 #lo-card .nguon{margin-top:var(--wp-space-sm);font-size:11px;line-height:1.5;
   color:var(--wp-text-muted)}
 #lo-card .ngay{margin-top:var(--wp-space-xs);font-size:12px;color:var(--wp-text-soft)}
@@ -325,6 +343,13 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 #loc .c.on{--nen:var(--wp-primary-tint);color:#00232C;border-color:var(--wp-primary-tint)}
 #loc .c i{font-style:normal;font-weight:var(--wp-fw-regular);opacity:.85;margin-left:4px}
 #loc .c.rong{opacity:.45}
+/* 🆕 13/10 o nhap ma can - chu >= 16px de iPhone/iPad KHONG tu phong to trang khi bam vao o */
+#loc .ma{margin-top:6px}
+#loc .ma input{width:100%;height:44px;padding:0 12px;font:inherit;font-size:18px;font-weight:var(--wp-fw-bold);
+  letter-spacing:1px;text-transform:uppercase;color:var(--wp-text);background:rgba(0,35,44,.75);
+  border:1px solid var(--wp-hairline);border-radius:0 12px 0 12px;outline:none;-webkit-appearance:none}
+#loc .ma input::placeholder{color:var(--wp-text-muted);font-weight:var(--wp-fw-regular);letter-spacing:0;text-transform:none}
+#loc .ma input:focus{border-color:var(--wp-primary-tint)}
 #loc .dt{margin-top:6px;font-size:20px;font-weight:var(--wp-fw-bold)}
 #loc .dt small{font-size:14px;font-weight:var(--wp-fw-regular);color:var(--wp-text-soft)}
 #loc .rl{display:flex;align-items:center;gap:var(--wp-space-xs);margin-top:4px;
@@ -394,6 +419,8 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
   body.co-ngan #loc .dt small{font-size:12px}
   body.co-ngan #loc .rl{margin-top:0;font-size:12px}
   body.co-ngan #loc .rl span{width:28px}
+  body.co-ngan #loc .ma input{height:36px;font-size:16px;
+    background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);border-radius:0 9px 0 9px}
   body.co-ngan #loc input[type=range]{height:28px}
   body.co-ngan #loc input[type=range]::-webkit-slider-thumb{width:20px;height:20px;margin-top:-7px;border-width:2px}
   body.co-ngan #loc input[type=range]::-moz-range-thumb{width:18px;height:18px}
@@ -498,7 +525,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 <!-- 📋 Nguon bang hang (Google Sheet). ADDITIVE: go dong nay thi hop thong tin
      chi con ma lo + loai hinh, trang van chay. Dat TRUOC krpano.js de
      `ERA_BH` co san ngay khi canh dau tien san sang. -->
-<script src="../wp-banghang.js?nc=20260930a"></script>
+<script src="../wp-banghang.js?nc=20261014a"></script>
 
 <script src="../krpano.js"></script>
 <script>
@@ -1125,6 +1152,139 @@ function veMaCan() {
   }
 }
 window.veMaCan = veMaCan;
+
+/* ============================================================
+   🆕 14/10 ICON 360 MAT DAT  (Anh Tony: "anh co link 360 chup tai mat dat, can em gan vao dung vi
+   tri can. Dung 1 cai icon de bam vao xem tren mat bang gio hang + them 1 cai nut o bang xem chi
+   tiet khi click vao can")
+   · Link = cot "Link Realsee.ai" trong Sheet (wp-banghang.js -> `r.link360`). Them link cho can
+     khac / phan khu khac = chi them cot do trong Sheet, KHONG sua file nay.
+   · Can co link + dang sang (ERA, khop loc) -> hotspot `v360_<ma>` (anh icon-360.png) dat lech ve
+     GOC TREN-PHAI cua khung (o tam la chu ma can). Bam icon / nut trong the -> `eraMo360` mo khung
+     xem 360 (iframe Realsee, da kiem: realsee.ai KHONG chan nhung) ngay trong trang.
+   · Icon TO NHO THEO ZOOM: ~42% be ngang khung lo, kep 18-40 px => nhin toan khu khong roi,
+     zoom vao thi du to de bam. Tinh lai moi khung hinh khi goc nhin doi (events `era360`).
+   · Hotspot keep=false: doi canh / doi lop krpano xoa => `ve360()` tu tao lai (goi cuoi `veLo`
+     va `eraHienLo`).
+   ============================================================ */
+var V360 = {}, _co360 = 0;
+/* 🔴 BAY 99 (lan 2, do 14/10): icon la hotspot ANH krpano thi ve bang WebGL, NAM DUOI khung da giac
+   (SVG) => bam vao icon trung khung lo, khong mo duoc 360. => icon la NUT HTML trong lop `#lop-360`
+   (tren krpano, duoi the can / bo loc), vi tri tinh bang `spheretoscreen` moi khung hinh. */
+function link360(ma) {
+  var c = timCanh(canhDang);
+  var r = (window.ERA_BH && c && c.maSP) ? ERA_BH.lay(c.maSP(ma)) : null;
+  return (r && r.link360) || '';
+}
+function vec3(a, v) {
+  a *= Math.PI / 180; v *= Math.PI / 180;
+  return [Math.cos(v) * Math.sin(a), Math.sin(v), Math.cos(v) * Math.cos(a)];
+}
+/* Cap dinh XA NHAU NHAT cua khung (de do be ngang khung tren man hinh) - tinh 1 lan / lo */
+function cap360(d) {
+  var xa = -1, cap = [0, 1];
+  for (var i = 0; i < d.length; i++) for (var j = i + 1; j < d.length; j++) {
+    var p = vec3(d[i][0], d[i][1]), q = vec3(d[j][0], d[j][1]);
+    var k = (p[0] - q[0]) * (p[0] - q[0]) + (p[1] - q[1]) * (p[1] - q[1]) + (p[2] - q[2]) * (p[2] - q[2]);
+    if (k > xa) { xa = k; cap = [i, j]; }
+  }
+  return cap;
+}
+function ve360() {
+  if (!kp || !LO) return;
+  if (!ve360._ev) {
+    ve360._ev = true;
+    kp.set('events[era360].keep', true);
+    kp.set('events[era360].onviewchange', 'js(eraCo360());');
+  }
+  var lop = document.getElementById('lop-360');
+  if (!lop) {
+    lop = document.createElement('div'); lop.id = 'lop-360';
+    document.body.appendChild(lop);
+  }
+  var khoa = canhDang + '|' + lopDang;
+  if (ve360._khoa !== khoa) { lop.innerHTML = ''; V360 = {}; ve360._khoa = khoa; }   /* doi canh: dat lai cho dat icon */
+  var con = {};
+  for (var ma in LO.lo) {
+    var u = (laEra(ma) && hopLoc(ma)) ? link360(ma) : '';
+    if (!u) continue;
+    var x = V360[ma];
+    if (!x) {
+      var o = LO.lo[ma], e = document.createElement('button');
+      e.type = 'button'; e.className = 'i360';
+      e.setAttribute('aria-label', 'Xem 360 mặt đất căn ' + ma);
+      e.onclick = (function (m) { return function (ev) { ev.stopPropagation(); eraMo360(m); }; })(ma);
+      lop.appendChild(e);
+      x = V360[ma] = { el: e, cap: (o.diem && o.diem.length > 1) ? cap360(o.diem) : null };
+    }
+    con[ma] = 1;
+  }
+  for (var m in V360) if (!con[m]) { V360[m].el.remove(); delete V360[m]; }   /* bi loc ra / Sheet bo link */
+  co360();
+}
+/* Moi khung hinh: dat lai vi tri + co icon (~42% be ngang khung lo, kep 18-40 px) */
+function co360() {
+  if (_co360) return;
+  _co360 = requestAnimationFrame(function () {
+    _co360 = 0;
+    if (!kp || !LO) return;
+    var W = innerWidth, H = innerHeight;
+    for (var ma in V360) {
+      /* vi tri tinh TREN MAN HINH moi khung hinh: tu tam di 62% ve dinh khung o goc TREN-PHAI cua man
+         => xoay ban do (tim ma can tu xoay toi can) icon van o goc tren-phai, khong de len chu ma can */
+      var x = V360[ma], o = LO.lo[ma], t = o && kp.spheretoscreen(o.tam[0], o.tam[1]), s = null;
+      if (t && !isNaN(t.x)) {
+        var tot = null, bs = -1e9;
+        (o.diem || []).forEach(function (q) {
+          var p = kp.spheretoscreen(q[0], q[1]);
+          if (p && !isNaN(p.x) && (p.x - t.x) - (p.y - t.y) > bs) { bs = (p.x - t.x) - (p.y - t.y); tot = p; }
+        });
+        s = tot ? { x: t.x + (tot.x - t.x) * 0.62, y: t.y + (tot.y - t.y) * 0.62 } : t;
+      }
+      if (!s || s.x < -40 || s.y < -40 || s.x > W + 40 || s.y > H + 40) { x.el.style.display = 'none'; continue; }
+      var px = 24;
+      if (x.cap) {
+        var a = kp.spheretoscreen(o.diem[x.cap[0]][0], o.diem[x.cap[0]][1]);
+        var b = kp.spheretoscreen(o.diem[x.cap[1]][0], o.diem[x.cap[1]][1]);
+        if (a && b && !isNaN(a.x + b.x)) px = Math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)) * 0.42;
+      }
+      px = Math.round(Math.max(18, Math.min(40, px)));
+      x.el.style.display = '';
+      x.el.style.width = x.el.style.height = px + 'px';
+      x.el.style.transform = 'translate(' + (s.x - px / 2).toFixed(1) + 'px,' + (s.y - px / 2).toFixed(1) + 'px)';
+    }
+  });
+}
+window.eraCo360 = co360;
+
+/* Khung xem 360 ngay trong trang (iframe). Dong: nut Dong / phim Esc. Dong thi xoa src cho Realsee dung tai. */
+function eraMo360(ma) {
+  var u = link360(ma);
+  if (!u) return;
+  if (ma !== loDang && laEra(ma) && hopLoc(ma)) eraChonLo(ma);   /* the can hien phia sau, dong khung la thay ngay */
+  var K = document.getElementById('v360');
+  if (!K) {
+    K = document.createElement('div'); K.id = 'v360'; K.hidden = true;
+    K.setAttribute('role', 'dialog'); K.setAttribute('aria-label', 'Xem 360 mặt đất');
+    K.innerHTML = '<div class="dau"><span class="nhan">360° mặt đất</span><b id="v360-ma"></b>' +
+                  '<button type="button" class="k3d dong" onclick="eraDong360()">Đóng ✕</button></div>' +
+                  '<iframe id="v360-khung" title="Xem 360 mặt đất" allow="fullscreen; gyroscope; accelerometer; xr-spatial-tracking" allowfullscreen></iframe>';
+    document.body.appendChild(K);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !K.hidden) eraDong360(); });
+  }
+  var c = timCanh(canhDang);
+  document.getElementById('v360-ma').textContent = (c && c.maSP) ? c.maSP(ma) : ma;
+  document.getElementById('v360-khung').src = u;
+  K.hidden = false;
+}
+function eraDong360() {
+  var K = document.getElementById('v360');
+  if (!K) return;
+  K.hidden = true;
+  document.getElementById('v360-khung').src = 'about:blank';
+}
+window.eraMo360 = eraMo360;
+window.eraDong360 = eraDong360;
 document.addEventListener('click', function (e) {
   if (!e.target.closest || !e.target.closest('#nut-ma')) return;
   hienMa = !hienMa;
@@ -1238,6 +1398,7 @@ function eraHienLo() {
       });
     });
   });
+  if (typeof ve360 === 'function') ve360();   /* 14/10: doi lop (loadscene) xoa icon 360 -> tao lai */
 }
 
 /* Bat/tat + to mau khung lo cua phan khu dang xem - AN TOAN VOI THU TU TAI.
@@ -1517,7 +1678,9 @@ var KIEU_LO = {
   khongKhop:   { bw: 1.2, ba: 0.30, fa: 0.00, sw: 0, sa: 0.00 },  /* dang loc - can ERA KHONG khop */
   khongKhopMo: { bw: 1.0, ba: 0.20, fa: 0.00, sw: 0, sa: 0.00 },
   re:          { bw: 0.8, ba: 1.00, fa: 0.40, sa: 0.10 },          /* re chuot: CONG them bw/sa */
-  chon:        { bw: 3.8, ba: 1.00, fa: 0.18, fa2: 0.34, sw: 10, sa: 0.50 },  /* nhip fa <-> fa2 */
+  /* 14/10 Anh Tony: "mau hien thi can (dang chon) khong thay gi, chung mau nen - dung VIEN DO + RUOT VANG overlay
+     trong suot, van nhay" => can dang chon co mau RIENG (m = vien, f = ruot), KHONG theo bang mau phan khu. */
+  chon:        { m: '0xE3001B', f: '0xFFC400', bw: 5.0, ba: 1.00, fa: 0.30, fa2: 0.58, sw: 10, sa: 0.50 },  /* nhip fa <-> fa2 */
   khongEra:    { m: '0xFFFFFF', bw: 1.0, ba: 0.14, baMo: 0.06, fa: 0.0, sw: 0, sa: 0 }
 };
 /* 25/09: mau vien THEO PHAN KHU - `mauVien` trong CANH (khong co = C vang).
@@ -1545,7 +1708,10 @@ function kieuLo(ma, coTT, coChon) {
   var P = bangMau(), K = KIEU_LO, s;
   var day = P.day || 1;    /* 29/09: bang mau `E` ve vien manh hon (0.6) - moi kieu cung ti le */
   function ra(m, o, fa) { return { m: m, bw: o.bw * day, ba: o.ba, fa: fa == null ? o.fa : fa, sw: o.sw || 0, sa: o.sa || 0 }; }
-  if (ma === loDang) return ra(P.chon, K.chon, nhipChon ? K.chon.fa2 : K.chon.fa);
+  if (ma === loDang) {
+    s = ra(K.chon.m, K.chon, nhipChon ? K.chon.fa2 : K.chon.fa); s.f = K.chon.f;
+    return s;
+  }
   if (!laEra(ma)) {
     s = ra(K.khongEra.m, K.khongEra); if (coChon) s.ba = K.khongEra.baMo;
     /* 🆕 30/09 Anh Tony (Nagomi): "can nao trong gio hang co cot ERA doc quyen thi SANG LEN,
@@ -1688,7 +1854,7 @@ window.eraBangMau = function (x) {
 function datKieu(ma, k) {
   cacHS(ma).forEach(function (t) {     /* to ca 2 bo -> doi lop khong nhay mau */
     var h = 'hotspot[' + t + '].';
-    kp.set(h + 'bordercolor', k.m); kp.set(h + 'fillcolor', k.m);
+    kp.set(h + 'bordercolor', k.m); kp.set(h + 'fillcolor', k.f || k.m);   /* 14/10: `f` = mau ruot rieng (can dang chon) */
     kp.set(h + 'borderwidth', k.bw);
     kp.set(h + 'borderalpha', k.ba); kp.set(h + 'fillalpha', k.fa);
     datBong(t, k);
@@ -1708,6 +1874,7 @@ function veLo() {
     datKieu(ma, kieuLo(ma, coTT, coChon));
   }
   if (!!loDang !== !!_hChon) nhipCanChon();
+  ve360();       /* 14/10: icon 360 mat dat - an/hien theo loc, tao lai sau doi canh */
   veMaCan();     /* 06/10: chu ma can luon hien + chu ERA vang cam (phoi canh) - chay sau moi lan ve lai (Sheet ve muon, doi loc, doi canh) */
 }
 
@@ -1795,10 +1962,16 @@ function veCard() {
      Google Sheet..." - la huong dan cho quan tri, khach nhin thay. Can chua co
      cot nao thi hop chi con ma + loai hinh + trang thai, khong ghi gi them. */
 
+  /* 14/10: can co link 360 mat dat (cot "Link Realsee.ai") -> nut mo khung xem 360 */
+  if (link360(loDang)) {
+    h.push('<button type="button" class="k3d xem x360" onclick="eraMo360(\'' + thoat(loDang) + '\')">' +
+           'Xem 360° mặt đất</button>');
+  }
+
   if (lopDang === 've') {
     if (coAnhThat(c)) {    /* 25/09: Nagomi khong co nut nay */
       h.push('<button type="button" class="k3d xem" onclick="doiLop(\'that\')">' +
-             'Xem thực tế căn này</button>');
+             'Xem Flycam thực tế</button>');   /* 14/10 Anh Tony: doi chu cho tuong dong nut "Xem 360° mặt đất" */
     }
   } else {
     h.push('<button type="button" class="k3d xem" onclick="doiLop(\'ve\')">' +
@@ -2003,7 +2176,70 @@ var NHOM_GIA = [];         /* chip gia cua phan khu dang xem */
 var DT_BIEN = null;        /* [min, max] dien tich dat (lam tron ra ngoai) */
 var locMo = null;          /* null = chua ai bam -> theo kho man */
 
-function locMoi() { return { loai: {}, gia: {}, dtTu: null, dtDen: null }; }
+function locMoi() { return { loai: {}, gia: {}, dtTu: null, dtDen: null, ma: '' }; }
+
+/* ============================================================
+   🆕 13/10 O NHAP MA CAN  (Anh Tony: "o loc can, bo sung them o nhap ma can -
+   nho xu ly viec sale go co dau cham vd d12-09 hoac d12 09")
+   So theo NHOM chu / so, bo moi dau phan cach (- . / _ khoang trang):
+     `d12-09` = `d12 09` = `D12.09` = `d12/9` = `AQU-D12.09` = `d1209`  -> D12-09
+     PV `a1` = `A01` = `a 01` = `A00.01` = `V96-A00.01`                  -> A01
+     Nagomi `a14-07` = `A14.7` = `RIC-A14.07`                           -> A14-7
+   So: so sanh theo GIA TRI (09 = 9). Nhom cuoi cung cho phep go DO (D19 -> ca day D19).
+   Doi chieu ca ma ban ve (`D19-02`) lan ma san pham (`AQU-D19.02`), bat dau
+   tu BAT KY nhom nao (bo qua tien to AQU / V96 / RIC sale khong go).
+   Chi loc trong can ERA dang sang. Go DUNG 1 can -> tu bay toi + mo the can.
+   ============================================================ */
+function nhomMa(s) {
+  return String(s == null ? '' : s).toUpperCase().replace(/Đ/g, 'D').match(/[A-Z]+|\d+/g) || [];
+}
+/* q khop c bat dau tu nhom i? `du` = phai khop DU (khong chi go do) */
+function khopTu(q, c, i, du) {
+  if (c.length - i < q.length || (du && c.length - i !== q.length)) return false;
+  for (var j = 0; j < q.length; j++) {
+    var a = q[j], b = c[i + j], so = /\d/.test(a);
+    if (so !== /\d/.test(b)) return false;
+    var bang = so ? (+a === +b) : (a === b);
+    if (bang) continue;
+    if (du || j < q.length - 1) return false;
+    if (!(so ? b.indexOf(a) === 0 || b.indexOf(String(+a)) === 0 : b.indexOf(a) === 0)) return false;
+  }
+  return true;
+}
+function khopMa(ma, du) {
+  var q = nhomMa(LOC.ma);
+  if (!q.length) return true;
+  var c = timCanh(canhDang), ds = [ma];
+  if (c && c.maSP) ds.push(c.maSP(ma));
+  var qd = q.join('');
+  for (var k = 0; k < ds.length; k++) {
+    var g = nhomMa(ds[k]);
+    for (var i = 0; i < g.length; i++) {
+      if (khopTu(q, g, i, du)) return true;
+      /* go dinh lien `d1209` -> so chuoi lien (chi khi nguoi go khong tach nhom so) */
+      var lien = g.slice(i).join('');
+      if (du ? lien === qd : lien.indexOf(qd) === 0) return true;
+    }
+  }
+  return false;
+}
+function datMa(s) {
+  LOC.ma = s; LOC.maDu = false;
+  LOC.maDu = !!LOC.ma && dsEra().some(function (m) { return khopMa(m, true); });
+}
+/* Go dung 1 can ERA -> bay toi + mo the (y het link `?can=`) */
+function bayToiMa() {
+  if (!LOC.maDu || !LO) return;
+  var dung = dsEra().filter(function (m) { return hopLoc(m); });
+  if (dung.length !== 1 || dung[0] === loDang) return;
+  var o = LO.lo[dung[0]], t = o && o.tam, c = timCanh(canhDang);
+  if (t && kp) {
+    nguoiDaKeo = true;
+    kp.set('view.fovtype', 'HFOV');
+    kp.call('lookto(' + t[0] + ',' + t[1] + ',' + Math.min(40, c.goc.fov, kp.get('view.fov')) + ',smooth(),true,true)');
+  }
+  eraChonLo(dung[0]);
+}
 
 function locLaNganKeo() {
   return !!(window.matchMedia && matchMedia('(max-width:760px), (max-height:600px)').matches);
@@ -2038,6 +2274,8 @@ function dtDangLoc() {
 function hopLoc(ma, bo) {
   if (!LO || !LO.lo[ma]) return true;
   var t = ttLo(ma), k;
+  /* co can khop DUNG ma (vd `a1` = A01) thi chi sang can do, khong sang them A17, A19 */
+  if (bo !== 'ma' && LOC.ma && !khopMa(ma, LOC.maDu)) return false;
   if (bo !== 'loai') {
     for (k in LOC.loai) { if (!LOC.loai[t.loai]) return false; break; }
   }
@@ -2058,7 +2296,7 @@ function dsEra() {
 
 function soDangLoc() {
   var n = Object.keys(LOC.loai).length + Object.keys(LOC.gia).length;
-  return n + (dtDangLoc() ? 1 : 0);
+  return n + (dtDangLoc() ? 1 : 0) + (nhomMa(LOC.ma).length ? 1 : 0);
 }
 
 /* Dung khung bo loc cho phan khu dang xem (goi khi doi phan khu / nap xong) */
@@ -2089,6 +2327,10 @@ function dungLoc() {
   h.push('<div class="dau"><b>Lọc căn ERA</b>' +
          '<button type="button" data-hd="dong">Thu gọn ✕</button></div>');
   h.push('<div class="kq" id="loc-kq"></div>');
+  /* 13/10: o ma can dat TREN CUNG - sale hay tim theo ma khach hoi */
+  h.push('<h4>Mã căn</h4><div class="ma"><input type="search" id="loc-ma" value="' + thoat(LOC.ma) + '"' +
+         ' placeholder="VD: D12-09" autocomplete="off" autocorrect="off" autocapitalize="characters"' +
+         ' spellcheck="false" enterkeyhint="search" aria-label="Nhập mã căn"></div>');
   h.push('<h4>Loại sản phẩm</h4><div class="chips" id="loc-loai"></div>');
   if (DT_BIEN) {
     h.push('<h4>Diện tích đất</h4><div class="dt" id="loc-dt"></div>' +
@@ -2114,6 +2356,19 @@ function dungLoc() {
     a.oninput = function () { LOC.dtTu = Math.min(+a.value, +b.value); a.value = LOC.dtTu; apLoc(); };
     b.oninput = function () { LOC.dtDen = Math.max(+a.value, +b.value); b.value = LOC.dtDen; apLoc(); };
   }
+  var oMa = document.getElementById('loc-ma');
+  oMa.oninput = function () { datMa(oMa.value); apLoc(); bayToiMa(); };
+  /* krpano co phim zoom (A/Z/Y/Shift/Ctrl) - go chu trong o khong duoc lot ra ngoai */
+  ['keydown', 'keyup', 'keypress'].forEach(function (ev) {
+    oMa.addEventListener(ev, function (e) {
+      e.stopPropagation();
+      if (ev === 'keydown' && e.key === 'Enter') {      /* Enter: con 1 can thi bay toi, dong ban phim */
+        var con = dsEra().filter(function (m) { return hopLoc(m); });
+        if (con.length === 1 && con[0] !== loDang) { datMa(con[0]); oMa.value = con[0]; apLoc(); bayToiMa(); }
+        oMa.blur();
+      }
+    });
+  });
   P.onclick = function (ev) {
     var el = ev.target.closest ? ev.target.closest('button') : null;
     if (!el) return;
@@ -2214,6 +2469,7 @@ function apLoc() {
 
 function xoaLoc() {
   LOC = locMoi();
+  var oMa = document.getElementById('loc-ma'); if (oMa) oMa.value = '';
   if (DT_BIEN) {
     LOC.dtTu = DT_BIEN[0]; LOC.dtDen = DT_BIEN[1];
     var a = document.getElementById('loc-dt-tu'), b = document.getElementById('loc-dt-den');

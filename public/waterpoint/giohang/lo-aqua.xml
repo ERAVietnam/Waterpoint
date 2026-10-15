@@ -160,4 +160,7 @@
   <point ath="61.7584" atv="28.8234" /> <point ath="63.0489" atv="29.1126" /> <point ath="62.9074" atv="29.2392" /> <point ath="63.8725" atv="29.4483" /> <point ath="65.1757" atv="28.3624" /> <point ath="64.1669" atv="28.1611" /> <point ath="63.9912" atv="28.2875" /> <point ath="63.6477" atv="28.2163" /> <point ath="63.7951" atv="28.0849" /> <point ath="62.9711" atv="27.9120" />
 </hotspot>
 
+<hotspot name="lo_D19_02" style="kieu_lo_aqua" ma="D19-02" loai="gardengrand">
+  <point ath="36.6808" atv="30.8980" /> <point ath="38.2961" atv="30.3833" /> <point ath="40.0281" atv="31.3392" /> <point ath="38.3852" atv="31.9067" />
+</hotspot>
 </krpano>

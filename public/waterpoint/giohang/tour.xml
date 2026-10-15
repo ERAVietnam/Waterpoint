@@ -203,7 +203,7 @@
   <hotspot name="chu_aqm_D18_09" style="kieu_chu_lo_toi" ath="31.0666" atv="32.9953" scale="0.062" html="D18-09" />
   <hotspot name="chu_aqm_D18_10" style="kieu_chu_lo_toi" ath="33.2903" atv="32.3959" scale="0.061" html="D18-10" />
   <hotspot name="chu_aqm_D19_01" style="kieu_chu_lo_toi" ath="35.9589" atv="31.6120" scale="0.059" html="D19-01" />
-  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="38.3393" atv="31.1279" scale="0.058" html="D19-02" />
+  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="38.3393" atv="31.1279" scale="0.058" html="D19-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
   <hotspot name="chu_aqm_D19_03" style="kieu_chu_lo_toi" ath="40.3393" atv="30.4748" scale="0.056" html="D19-03" />
   <hotspot name="chu_aqm_D19_04" style="kieu_chu_lo_toi" ath="42.1213" atv="29.8311" scale="0.054" html="D19-04" />
   <hotspot name="chu_aqm_D19_05" style="kieu_chu_lo_toi" ath="44.0649" atv="28.6387" scale="0.051" html="D19-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
@@ -731,7 +731,7 @@
   <hotspot name="chu_aqm_D18_09" style="kieu_chu_lo_toi" ath="-106.7608" atv="25.9909" scale="0.047" html="D18-09" />
   <hotspot name="chu_aqm_D18_10" style="kieu_chu_lo_toi" ath="-106.2190" atv="25.2370" scale="0.045" html="D18-10" />
   <hotspot name="chu_aqm_D19_01" style="kieu_chu_lo_toi" ath="-105.5833" atv="24.3349" scale="0.043" html="D19-01" />
-  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="-104.7314" atv="23.6682" scale="0.041" html="D19-02" />
+  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="-104.7314" atv="23.6682" scale="0.041" html="D19-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
   <hotspot name="chu_aqm_D19_03" style="kieu_chu_lo_toi" ath="-104.2474" atv="23.0063" scale="0.040" html="D19-03" />
   <hotspot name="chu_aqm_D19_04" style="kieu_chu_lo_toi" ath="-103.8488" atv="22.4007" scale="0.038" html="D19-04" />
   <hotspot name="chu_aqm_D19_05" style="kieu_chu_lo_toi" ath="-103.8695" atv="21.5035" scale="0.036" html="D19-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
@@ -1034,7 +1034,7 @@
   <hotspot name="chu_aqm_D18_09" style="kieu_chu_lo_toi" ath="172.3163" atv="55.9872" scale="0.122" html="D18-09" />
   <hotspot name="chu_aqm_D18_10" style="kieu_chu_lo_toi" ath="178.4376" atv="56.2560" scale="0.122" html="D18-10" />
   <hotspot name="chu_aqm_D19_01" style="kieu_chu_lo_toi" ath="-173.7472" atv="56.1547" scale="0.122" html="D19-01" />
-  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="-167.1820" atv="56.2943" scale="0.122" html="D19-02" />
+  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="-167.1820" atv="56.2943" scale="0.122" html="D19-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
   <hotspot name="chu_aqm_D19_03" style="kieu_chu_lo_toi" ath="-161.0261" atv="55.5905" scale="0.121" html="D19-03" />
   <hotspot name="chu_aqm_D19_04" style="kieu_chu_lo_toi" ath="-155.5452" atv="54.6050" scale="0.119" html="D19-04" />
   <hotspot name="chu_aqm_D19_05" style="kieu_chu_lo_toi" ath="-149.1545" atv="51.9623" scale="0.113" html="D19-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />
@@ -1339,7 +1339,7 @@
   <hotspot name="chu_aqm_D18_09" style="kieu_chu_lo_toi" ath="-82.0146" atv="65.4290" scale="0.081" html="D18-09" />
   <hotspot name="chu_aqm_D18_10" style="kieu_chu_lo_toi" ath="-82.6374" atv="63.4713" scale="0.079" html="D18-10" />
   <hotspot name="chu_aqm_D19_01" style="kieu_chu_lo_toi" ath="-83.2956" atv="61.0795" scale="0.077" html="D19-01" />
-  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="-82.9122" atv="59.1462" scale="0.075" html="D19-02" />
+  <hotspot name="chu_aqm_D19_02" style="kieu_chu_lo_toi" ath="-82.9122" atv="59.1462" scale="0.075" html="D19-02[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Garden Grand[/span]" />
   <hotspot name="chu_aqm_D19_03" style="kieu_chu_lo_toi" ath="-83.2697" atv="57.3316" scale="0.073" html="D19-03" />
   <hotspot name="chu_aqm_D19_04" style="kieu_chu_lo_toi" ath="-83.6468" atv="55.6656" scale="0.071" html="D19-04" />
   <hotspot name="chu_aqm_D19_05" style="kieu_chu_lo_toi" ath="-85.2973" atv="53.3424" scale="0.068" html="D19-05[br][span style=&apos;font-size:26px;font-weight:normal;&apos;]Canal Grand[/span]" />

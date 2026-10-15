@@ -145,4 +145,7 @@
 <hotspot name="lo_aph_D30_13" style="kieu_lo_aqua" ma="D30-13" loai="gardengrand">
   <point ath="-105.4476" atv="52.9289" /> <point ath="-101.9574" atv="53.3832" /> <point ath="-102.0957" atv="53.7659" /> <point ath="-99.4508" atv="54.0389" /> <point ath="-98.2960" atv="50.7678" /> <point ath="-100.8479" atv="50.5217" /> <point ath="-101.0508" atv="50.9056" /> <point ath="-101.9280" atv="50.8062" /> <point ath="-101.7889" atv="50.4161" /> <point ath="-103.8714" atv="50.1535" />
 </hotspot>
+<hotspot name="lo_aph_D19_02" style="kieu_lo_aqua" ma="D19-02" loai="gardengrand">
+  <point ath="-170.3091" atv="54.8706" /> <point ath="-165.5257" atv="54.4184" /> <point ath="-163.7099" atv="57.6743" /> <point ath="-169.0922" atv="58.2260" />
+</hotspot>
 </krpano>

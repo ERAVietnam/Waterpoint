@@ -10,7 +10,7 @@
   "gardenvilla": "Garden Villa",
   "gardengrand": "Garden Grand Villa"
  },
- "so_lo": 48,
+ "so_lo": 49,
  "lo": {
   "D4-01": {
    "loai": "gardengrand",
@@ -2231,7 +2231,34 @@
     ]
    ],
    "hs": "lo_atg_D30_13"
+  },
+  "D19-02": {
+   "loai": "gardengrand",
+   "tam": [
+    -82.918,
+    59.1307
+   ],
+   "diem": [
+    [
+     -85.1446,
+     59.9972
+    ],
+    [
+     -85.3919,
+     58.499
+    ],
+    [
+     -80.8276,
+     58.275
+    ],
+    [
+     -80.308,
+     59.7514
+    ]
+   ],
+   "hs": "lo_atg_D19_02"
   }
  },
- "_doc_truoc": "48 can ERA PK The Aqua (toa do goc krpano) tren anh flycam aqua-0535-chu - canh con pk_aqua_trong (tu trong nhin ra song). Sinh boi flycam-moi-20260930/_can/dua_len_web_aqua_trong.py. Ten hotspot o truong `hs`."
+ "_doc_truoc": "48 can ERA PK The Aqua (toa do goc krpano) tren anh flycam aqua-0535-chu - canh con pk_aqua_trong (tu trong nhin ra song). Sinh boi flycam-moi-20260930/_can/dua_len_web_aqua_trong.py. Ten hotspot o truong `hs`.",
+ "_d19_02": "13/10: them D19-02 (gio hang CDT 13/10) - sinh boi wp-thuc-te/_cap-nhat-gio-hang/d1902/chen_d1902.py"
 }
