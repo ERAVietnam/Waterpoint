@@ -1222,37 +1222,66 @@ function ve360() {
   for (var m in V360) if (!con[m]) { V360[m].el.remove(); delete V360[m]; }   /* bi loc ra / Sheet bo link */
   co360();
 }
-/* Moi khung hinh: dat lai vi tri + co icon (~42% be ngang khung lo, kep 18-40 px) */
+/* Moi khung hinh: dat lai vi tri + co icon (~42% be ngang khung lo, kep 18-40 px)
+   🔴 15/10 (Anh Tony gui anh dien thoai: "tren PC ok nhung tren mobi bi lech"): `spheretoscreen` tra
+      toa do STAGE krpano, tren dien thoai stage NHO HON khung #pano (mobilescale) => phai nhan ti le
+      khung/stage `fx fy` + cong goc khung - y het `veNhan` (#lop-ma). May tinh ti le = 1 nen khong lo.
+   🔴 Bay 29/09 (ghi o veNhan): vua doi goc thi `spheretoscreen` con tinh theo ma tran KHUNG TRUOC
+      => sau moi lan goi, chay them 8 khung nua cho icon ve dung cho khi ngung xoay/zoom. */
+function trongDaGiac(pt, vo) {
+  for (var c = false, i = 0, j = vo.length - 1; i < vo.length; j = i++) {
+    var a = vo[i], d = vo[j];
+    if ((a.y > pt.y) !== (d.y > pt.y) && pt.x < (d.x - a.x) * (pt.y - a.y) / (d.y - a.y) + a.x) c = !c;
+  }
+  return c;
+}
 function co360() {
+  co360._them = 8;
   if (_co360) return;
-  _co360 = requestAnimationFrame(function () {
+  _co360 = requestAnimationFrame(function chay() {
     _co360 = 0;
     if (!kp || !LO) return;
-    var W = innerWidth, H = innerHeight;
+    var sw = +kp.get('stagewidth'), sh = +kp.get('stageheight');
+    var r = document.getElementById('pano').getBoundingClientRect();
+    if (!(sw > 0 && sh > 0)) return;
+    var fx = r.width / sw, fy = r.height / sh, W = innerWidth, H = innerHeight;
+    var vv = vecTo(+kp.get('view.hlookat'), +kp.get('view.vlookat'));
+    function man(h, v) {                     /* goc cau -> toa do CSS; sau lung camera -> null */
+      var q = vecTo(h, v);
+      if (vv[0] * q[0] + vv[1] * q[1] + vv[2] * q[2] < 0.09) return null;
+      var p = kp.spheretoscreen(h, v);
+      return (p && !isNaN(p.x) && !isNaN(p.y)) ? { x: r.left + p.x * fx, y: r.top + p.y * fy } : null;
+    }
     for (var ma in V360) {
       /* vi tri tinh TREN MAN HINH moi khung hinh: tu tam di 62% ve dinh khung o goc TREN-PHAI cua man
          => xoay ban do (tim ma can tu xoay toi can) icon van o goc tren-phai, khong de len chu ma can */
-      var x = V360[ma], o = LO.lo[ma], t = o && kp.spheretoscreen(o.tam[0], o.tam[1]), s = null;
-      if (t && !isNaN(t.x)) {
-        var tot = null, bs = -1e9;
+      var x = V360[ma], o = LO.lo[ma], t = o && man(o.tam[0], o.tam[1]), s = null;
+      if (t) {
+        var tot = null, bs = -1e9, vo = [];
         (o.diem || []).forEach(function (q) {
-          var p = kp.spheretoscreen(q[0], q[1]);
-          if (p && !isNaN(p.x) && (p.x - t.x) - (p.y - t.y) > bs) { bs = (p.x - t.x) - (p.y - t.y); tot = p; }
+          var p = man(q[0], q[1]);
+          if (p) vo.push(p);
+          if (p && (p.x - t.x) - (p.y - t.y) > bs) { bs = (p.x - t.x) - (p.y - t.y); tot = p; }
         });
-        s = tot ? { x: t.x + (tot.x - t.x) * 0.62, y: t.y + (tot.y - t.y) * 0.62 } : t;
+        s = t;
+        /* khung chu L / lom: diem 62% co the roi ra ngoai -> lui dan ve tam cho toi khi nam trong khung */
+        if (tot) for (var k = 0.62; k > 0.05; k -= 0.12) {
+          var th = { x: t.x + (tot.x - t.x) * k, y: t.y + (tot.y - t.y) * k };
+          if (vo.length < 3 || trongDaGiac(th, vo)) { s = th; break; }
+        }
       }
       if (!s || s.x < -40 || s.y < -40 || s.x > W + 40 || s.y > H + 40) { x.el.style.display = 'none'; continue; }
       var px = 24;
       if (x.cap) {
-        var a = kp.spheretoscreen(o.diem[x.cap[0]][0], o.diem[x.cap[0]][1]);
-        var b = kp.spheretoscreen(o.diem[x.cap[1]][0], o.diem[x.cap[1]][1]);
-        if (a && b && !isNaN(a.x + b.x)) px = Math.sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)) * 0.42;
+        var a = man(o.diem[x.cap[0]][0], o.diem[x.cap[0]][1]), c = man(o.diem[x.cap[1]][0], o.diem[x.cap[1]][1]);
+        if (a && c) px = Math.sqrt((a.x - c.x) * (a.x - c.x) + (a.y - c.y) * (a.y - c.y)) * 0.42;
       }
       px = Math.round(Math.max(18, Math.min(40, px)));
       x.el.style.display = '';
       x.el.style.width = x.el.style.height = px + 'px';
       x.el.style.transform = 'translate(' + (s.x - px / 2).toFixed(1) + 'px,' + (s.y - px / 2).toFixed(1) + 'px)';
     }
+    if (--co360._them > 0) _co360 = requestAnimationFrame(chay);
   });
 }
 window.eraCo360 = co360;
