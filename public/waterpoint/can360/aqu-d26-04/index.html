@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8">
+<title>AQU-D26.04 · The Aqua Signature · Canal Grand Villa · VC1.2A</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="description" content="Căn AQU-D26.04 The Aqua Signature – Waterpoint: ảnh 360° mặt đất và layout mẫu Canal Grand Villa · VC1.2A.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--wp-primary:#003C4B;--wp-vang:#E0B14A;--wp-tint:#7FD3E3;--kinh:rgba(0,35,44,.62);--vien:rgba(255,255,255,.18);--font:Montserrat,Arial,Helvetica,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:#000;color:#fff;font-family:var(--font);overflow:hidden;-webkit-tap-highlight-color:transparent}
+#pano{position:absolute;inset:0}
+
+/* Thanh tren: ma can + 2 the */
+#dau{position:absolute;z-index:20;top:calc(10px + env(safe-area-inset-top));left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;padding:6px 6px 6px 14px;border-radius:999px;background:var(--kinh);border:1px solid var(--vien);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);white-space:nowrap;max-width:calc(100vw - 16px)}
+#dau .ma{font-weight:700;font-size:14px;letter-spacing:.3px}
+#the{display:flex;gap:4px}
+#the button{font:500 13px var(--font);color:#fff;background:transparent;border:1px solid var(--vien);border-radius:999px;padding:7px 14px;cursor:pointer}
+#the button.chon{background:var(--wp-vang);border-color:var(--wp-vang);color:#00232C;font-weight:700}
+
+/* The 2: layout */
+#layout{position:absolute;inset:0;z-index:10;background:#F4F6F7;color:#0F2830;display:none;padding-top:calc(64px + env(safe-area-inset-top))}
+body.xem-layout #layout{display:flex}
+body.xem-layout #goi-y{display:none}
+#ben{width:300px;flex:none;padding:12px 18px 18px;overflow:auto;border-right:1px solid #DDE3E5;background:#fff}
+#ben h1{font-size:20px;margin:4px 0 2px;color:var(--wp-primary)}
+#ben .phu{font-size:13px;color:#4A6168;margin:0 0 14px}
+#ben dl{display:grid;grid-template-columns:1fr;gap:8px;margin:0 0 14px;font-size:14px}
+#ben dl div{display:flex;justify-content:space-between;gap:12px;padding-bottom:7px;border-bottom:1px solid #EEF1F2}
+#ben dt{color:#4A6168}#ben dd{margin:0;font-weight:700;text-align:right}
+#tang{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+#tang button{font:500 13px var(--font);padding:8px 12px;border-radius:999px;border:1px solid #C9D3D6;background:#fff;color:#0F2830;cursor:pointer}
+#tang button.chon{background:var(--wp-primary);border-color:var(--wp-primary);color:#fff}
+#ben .luu-y a{color:inherit}
+#ben .luu-y{font-size:11.5px;line-height:1.5;color:#6B7F84;margin:0}
+#khung{position:relative;flex:1;min-width:0;overflow:auto;display:flex;touch-action:pan-x pan-y}
+#khung img{margin:auto;display:block;max-width:none;user-select:none;-webkit-user-drag:none;cursor:zoom-in}
+#khung.to img{cursor:zoom-out}
+#zoom{position:absolute;z-index:12;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:6px}
+#zoom button{width:40px;height:40px;border-radius:50%;border:1px solid #C9D3D6;background:#fff;color:#0F2830;font:700 20px var(--font);cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+body:not(.xem-layout) #zoom{display:none}
+
+#goi-y{position:absolute;z-index:5;left:50%;bottom:calc(16px + env(safe-area-inset-bottom));transform:translateX(-50%);font-size:12px;padding:6px 12px;border-radius:999px;background:var(--kinh);border:1px solid var(--vien);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
+
+@media (max-width:760px){
+  #dau{padding-left:12px;gap:8px}#dau .ma{font-size:13px}
+  #the button{padding:7px 11px;font-size:12.5px}
+  #layout{flex-direction:column}
+  #ben{width:auto;border-right:0;border-bottom:1px solid #DDE3E5;padding:10px 14px 10px;max-height:none;overflow:visible}
+  #ben h1{font-size:17px}#ben .phu{margin-bottom:8px}
+  #ben dl{grid-template-columns:repeat(3,auto);gap:2px 10px;font-size:12.5px;margin-bottom:10px}
+  #ben dl div{flex-direction:column;justify-content:flex-start;gap:0;padding:0;border:0}#ben dd{text-align:left}
+  #tang{margin:0 -14px 4px;padding:0 14px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+  #tang::-webkit-scrollbar{display:none}
+  #tang button{flex:none;padding:7px 11px;font-size:12.5px}
+  #ben .luu-y{display:none}
+}
+</style>
+</head><body>
+<div id="pano"></div>
+
+<div id="dau">
+  <span class="ma">AQU-D26.04</span>
+  <div id="the" role="tablist">
+    <button role="tab" data-the="360" class="chon">Hình 360°</button>
+    <button role="tab" data-the="layout">Layout căn</button>
+  </div>
+</div>
+<div id="goi-y">Kéo để xoay · ảnh chụp tại mặt đất</div>
+
+<section id="layout" aria-label="Layout căn">
+  <aside id="ben">
+    <h1>Canal Grand Villa · VC1.2A</h1>
+    <p class="phu">The Aqua Signature · Waterpoint</p>
+    <dl>
+      <div><dt>Diện tích đất</dt><dd>523,47 m²</dd></div>
+      <div><dt>Diện tích sàn (mẫu)</dt><dd>~477 m²</dd></div>
+      <div><dt>Phòng ngủ</dt><dd>4+1</dd></div>
+      <div><dt>WC</dt><dd>7</dd></div>
+      <div><dt>Hiện trạng</dt><dd>Đã xây</dd></div>
+    </dl>
+    <div id="tang"></div>
+    <p class="luu-y">* Mẫu điển hình tham khảo theo <a href="https://waterpoint.com.vn/theaqua/san-pham/signature-canal-grand-villa/" target="_blank" rel="noopener">website chủ đầu tư</a>. Diện tích sàn thực tế thay đổi theo vị trí lô; mẫu chính thức được đính kèm hợp đồng mua bán.</p>
+  </aside>
+  <div id="khung"><img id="anh" alt=""></div>
+</section>
+<div id="zoom"><button id="z-cong" aria-label="Phóng to">+</button><button id="z-tru" aria-label="Thu nhỏ">−</button></div>
+
+<script src="../krpano.js"></script>
+<script>
+embedpano({xml:"tour.xml", target:"pano", html5:"only", passQueryParameters:true});
+
+var NUT=[{"n": "Tầng 1", "a": "../_mau/aquasignature-canal-vc1-2a/1.jpg"}, {"n": "Tầng 2", "a": "../_mau/aquasignature-canal-vc1-2a/2.jpg"}, {"n": "Tầng 3", "a": "../_mau/aquasignature-canal-vc1-2a/3.jpg"}, {"n": "Phối cảnh", "a": "../_mau/aquasignature-canal-vc1-2a/4.jpg"}], MAU_TEN="Canal Grand Villa · VC1.2A";
+var anh=document.getElementById('anh'), khung=document.getElementById('khung'), muc=1;
+
+function vua(){ // muc 1 = vua khung; >1 = phong to, keo/cuon de xem
+  var w=anh.naturalWidth||1, h=anh.naturalHeight||1;
+  var k=Math.min((khung.clientWidth-16)/w,(khung.clientHeight-16)/h)*muc;
+  anh.style.width=Math.round(w*k)+'px'; anh.style.height=Math.round(h*k)+'px';
+  khung.classList.toggle('to',muc>1);
+}
+function doiMuc(m,cx,cy){
+  var tx=(khung.scrollLeft+(cx==null?khung.clientWidth/2:cx))/khung.scrollWidth,
+      ty=(khung.scrollTop+(cy==null?khung.clientHeight/2:cy))/khung.scrollHeight;
+  muc=Math.max(1,Math.min(4,m)); vua();
+  khung.scrollLeft=tx*khung.scrollWidth-(cx==null?khung.clientWidth/2:cx);
+  khung.scrollTop=ty*khung.scrollHeight-(cy==null?khung.clientHeight/2:cy);
+}
+anh.addEventListener('load',function(){muc=1;vua();});
+anh.addEventListener('click',function(e){var r=khung.getBoundingClientRect();doiMuc(muc>1?1:2.5,e.clientX-r.left,e.clientY-r.top);});
+document.getElementById('z-cong').onclick=function(){doiMuc(muc+0.75);};
+document.getElementById('z-tru').onclick=function(){doiMuc(muc-0.75);};
+window.addEventListener('resize',vua);
+
+// Keo de cuon khi da phong to (chuot)
+(function(){var keo=null;
+  khung.addEventListener('mousedown',function(e){if(muc>1){keo={x:e.clientX,y:e.clientY,l:khung.scrollLeft,t:khung.scrollTop,di:0};e.preventDefault();}});
+  window.addEventListener('mousemove',function(e){if(!keo)return;keo.di+=Math.abs(e.movementX)+Math.abs(e.movementY);khung.scrollLeft=keo.l-(e.clientX-keo.x);khung.scrollTop=keo.t-(e.clientY-keo.y);});
+  window.addEventListener('mouseup',function(){if(keo&&keo.di>4){anh.addEventListener('click',function c(ev){ev.stopImmediatePropagation();anh.removeEventListener('click',c,true);},true);}keo=null;});
+})();
+
+var tangEl=document.getElementById('tang');
+function chonAnh(k){
+  tangEl.querySelectorAll('button').forEach(function(x,i){x.classList.toggle('chon',i===k);});
+  anh.src=NUT[k].a; anh.alt=NUT[k].n+' – '+MAU_TEN;
+}
+NUT.forEach(function(x,i){var b=document.createElement('button');b.type='button';b.textContent=x.n;b.onclick=function(){chonAnh(i);};tangEl.appendChild(b);});
+chonAnh(0);
+
+function moThe(t){
+  document.body.classList.toggle('xem-layout',t==='layout');
+  document.querySelectorAll('#the button').forEach(function(x){x.classList.toggle('chon',x.dataset.the===t);});
+  if(t==='layout') vua();
+  if(location.hash!=='#'+t) history.replaceState(null,'','#'+t);
+}
+document.querySelectorAll('#the button').forEach(function(b){b.onclick=function(){moThe(b.dataset.the);};});
+moThe(location.hash==='#layout'?'layout':'360');
+</script>
+</body></html>

@@ -274,6 +274,9 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 #v360 b{font-size:22px;letter-spacing:1px}
 #v360 .dong{margin-left:auto;height:44px;padding:0 18px;--r:12px;--nen:var(--wp-vang);color:#003C4B;font-weight:700;font-size:16px}
 #v360 iframe{flex:1;width:100%;border:0;border-radius:0 14px 0 14px;background:#000}
+/* 15/10 dien thoai: thanh dau khung khong xuong dong (ma + Dong), an chu nhan - trang rieng da co ma can */
+#v360 .dau b,#v360 .dong{white-space:nowrap}
+@media (max-width:500px){#v360 .nhan{display:none}}
 #lo-card .nguon{margin-top:var(--wp-space-sm);font-size:11px;line-height:1.5;
   color:var(--wp-text-muted)}
 #lo-card .ngay{margin-top:var(--wp-space-xs);font-size:12px;color:var(--wp-text-soft)}
@@ -1171,9 +1174,28 @@ var V360 = {}, _co360 = 0;
 /* 🔴 BAY 99 (lan 2, do 14/10): icon la hotspot ANH krpano thi ve bang WebGL, NAM DUOI khung da giac
    (SVG) => bam vao icon trung khung lo, khong mo duoc 360. => icon la NUT HTML trong lop `#lop-360`
    (tren krpano, duoi the can / bo loc), vi tri tinh bang `spheretoscreen` moi khung hinh. */
+/* 15/10 Anh Tony: "can D16 01 da lam - thay source cua Realsee bang cai minh moi lam".
+   Can nao da co TRANG RIENG (anh 360 tai tu Realsee chieu bang krpano + the Layout can) thi
+   mo trang do thay link Realsee trong Sheet. Them can: chep goi vao `can360/<ma>/` + them 1 dong. */
+/* 15/10 (lan 2) Anh: "lay danh sach toan bo trang realsee tren link, doi het ve trang cua minh" -> 44 can.
+   Danh sach sinh boi _cap-nhat-gio-hang/can360/dung_can360.py (can360/trang360.json). Can co link Realsee
+   trong Sheet nhung CHUA co trang (vd them link moi) thi van mo Realsee. */
+var TRANG360 = {};
+[
+  'AQU-D04.01', 'AQU-D04.06', 'AQU-D13.04', 'AQU-D13.05', 'AQU-D13.11', 'AQU-D14.02',
+  'AQU-D14.04', 'AQU-D14.06', 'AQU-D14.07', 'AQU-D14.08', 'AQU-D14.09', 'AQU-D14.10',
+  'AQU-D14.11', 'AQU-D15.09', 'AQU-D15.10', 'AQU-D15.13', 'AQU-D16.01', 'AQU-D16.02',
+  'AQU-D17.01', 'AQU-D17.03', 'AQU-D19.05', 'AQU-D21.03', 'AQU-D22.11', 'AQU-D24.04',
+  'AQU-D25.04', 'AQU-D26.02', 'AQU-D26.04', 'AQU-D27.05', 'AQU-D27.06', 'AQU-D27.07',
+  'AQU-D27.08', 'AQU-D27.10', 'AQU-D28.02', 'AQU-D29.07', 'AQU-D29.09', 'AQU-D29.10',
+  'AQU-D29.11', 'AQU-D29.12', 'AQU-D29.13', 'AQU-D30.07', 'AQU-D30.08', 'AQU-D30.11',
+  'AQU-D30.12', 'AQU-D30.13'
+].forEach(function (m) { TRANG360[m] = '../can360/' + m.toLowerCase().replace(/\./g, '-') + '/'; });
 function link360(ma) {
   var c = timCanh(canhDang);
-  var r = (window.ERA_BH && c && c.maSP) ? ERA_BH.lay(c.maSP(ma)) : null;
+  var sp = (c && c.maSP) ? c.maSP(ma) : ma;
+  if (TRANG360[sp]) return TRANG360[sp];
+  var r = window.ERA_BH ? ERA_BH.lay(sp) : null;
   return (r && r.link360) || '';
 }
 function vec3(a, v) {
@@ -1302,7 +1324,9 @@ function eraMo360(ma) {
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !K.hidden) eraDong360(); });
   }
   var c = timCanh(canhDang);
-  document.getElementById('v360-ma').textContent = (c && c.maSP) ? c.maSP(ma) : ma;
+  var sp = (c && c.maSP) ? c.maSP(ma) : ma;
+  document.getElementById('v360-ma').textContent = sp;
+  K.querySelector('.nhan').textContent = TRANG360[sp] ? '360° · Layout căn' : '360° mặt đất';
   document.getElementById('v360-khung').src = u;
   K.hidden = false;
 }
