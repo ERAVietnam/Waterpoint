@@ -1,0 +1,12 @@
+<krpano version="1.19" onstart="loadscene(get(scene[0].name));">
+  <!-- AQU-D14.11 - anh 360 mat dat lay tu Realsee https://realsee.ai/Ae44jkNW (tai-realsee.py, 15/10/2026).
+       Single-res cube 2048px/mat, nen lai q82. Goc mo dau = initial cua Realsee (longitude 0). -->
+  <control mouse="drag" zoomtocursor="false" />
+  <autorotate enabled="true" waittime="4" speed="3" horizon="0" tofov="90" />
+  <scene name="can" title="AQU-D14.11 - 360 mat dat">
+    <view hlookat="0" vlookat="0" fov="90" fovmin="30" fovmax="120" maxpixelzoom="1.5" limitview="auto" />
+    <image><cube url="pano/0/pano_%s.jpg" /></image>
+    <!-- 16/10: huy hieu mat duong che vet nhoe chan may, dau ^ chia ve phia can (huong 0) -->
+    <hotspot name="chi_nha" url="pano/chi-nha.png" distorted="true" ath="0" atv="90" scale="1.0" enabled="false" zorder="1" />
+  </scene>
+</krpano>
