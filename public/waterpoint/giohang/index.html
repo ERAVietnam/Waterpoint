@@ -248,6 +248,13 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 #lo-card dt{color:var(--wp-text-muted);font-size:var(--wp-fs-label);letter-spacing:.4px;
   align-self:center}
 #lo-card dd{font-weight:var(--wp-fw-bold);word-break:break-word}
+/* 23/10 2 o gia - sale doc ra mieng nen so to, nhan nho o tren.
+   Chieu 23/10 Anh bo che => so day du "24.231.202.187 đ" qua dai cho 2 cot => xep chong 1 cot */
+#lo-card .gia{margin-top:var(--wp-space-sm);display:grid;grid-template-columns:1fr;gap:6px}
+#lo-card .gia > div{padding:8px 10px;border:1px solid rgba(255,255,255,.18);border-radius:0 10px 0 10px}
+#lo-card .gia span{display:block;font-size:11px;line-height:1.35;letter-spacing:.4px;color:var(--wp-text-muted)}
+#lo-card .gia b{display:block;margin-top:2px;font-size:22px;line-height:1.15;white-space:nowrap;font-variant-numeric:tabular-nums}
+#lo-card .gia-chu{margin-top:4px;font-size:11px;color:var(--wp-text-soft)}
 #lo-card .trong{margin-top:var(--wp-space-sm);font-size:13px;line-height:1.55;
   color:var(--wp-text-muted)}
 #lo-card .xem{width:100%;margin-top:var(--wp-space-md);height:var(--wp-control-h-lg);
@@ -487,8 +494,31 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
   #ngan .trang button{height:40px;--r:9px;font-size:10px;gap:2px}
   #ngan .pk.on,#ngan .con button.on,#ngan .trang button.on{--nen:var(--wp-vang);color:#00232C;border-color:var(--wp-vang)}
 }
+/* ================================================================
+   🆕 23/10 Anh Tony: "lam thu hieu ung kinh mo o 2 cai bo loc, hien tai 1 mau xau qua"
+   KINH MO cho the can (#lo-card) + bang Loc can ERA (#loc), may tinh + iPad + dien thoai.
+   Bat mac dinh (class `kinh` tren body). So voi ban cu: them ?kinh=0 vao link.
+   Nen 45-55% (truoc 90%) + nhoe 16px + tang mau canh phia sau + vien sang manh + vet sang mep tren.
+   🔴 Safari iPad can ca -webkit-backdrop-filter (ban cu thieu o desktop).
+   ================================================================ */
+body.kinh #lo-card,body.kinh #loc,body.kinh.co-ngan #loc{
+  /* 23/10 chieu Anh: duoi trong hon tren ~20% (.58 -> .46). Lan 2: "bo xanh dot chuoi, lay xanh goc tang do dam"
+     => gradient nhieu diem CUNG tong xanh goc (0,60,75), xuong duoi dam dan (mau toi hon bu cho nen trong hon) */
+  background:linear-gradient(180deg,rgba(0,72,90,.58) 0%,rgba(0,64,80,.56) 40%,rgba(0,52,67,.52) 72%,rgba(0,40,54,.46) 100%);
+  backdrop-filter:blur(16px) saturate(170%);-webkit-backdrop-filter:blur(16px) saturate(170%);
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 12px 32px rgba(0,0,0,.30),inset 0 1px 0 rgba(255,255,255,.28);
+  text-shadow:0 1px 2px rgba(0,0,0,.35)}
+body.kinh #loc .c{--nen:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16)}
+body.kinh #loc .c:hover{--nen:rgba(255,255,255,.18)}
+body.kinh #loc .c.on{--nen:var(--wp-primary-tint);color:#00232C;border-color:var(--wp-primary-tint);text-shadow:none}
+body.kinh #loc .ma input{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18)}
+body.kinh #loc .ma input:focus{border-color:var(--wp-primary-tint)}
+body.kinh #lo-card .gia > div{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18)}
+body.kinh #lo-card .xem,body.kinh #loc .xoa{text-shadow:none}
 </style>
 </head><body>
+<script>/* 23/10 kinh mo - ?kinh=0 = ban cu */ if (!/[?&]kinh=0(&|$)/.test(location.search)) document.body.classList.add('kinh');</script>
 
 <div id="pano"></div>
 <div id="lop-ma"></div>
@@ -528,7 +558,7 @@ button{font-family:var(--wp-font);cursor:pointer;border:0}
 <!-- 📋 Nguon bang hang (Google Sheet). ADDITIVE: go dong nay thi hop thong tin
      chi con ma lo + loai hinh, trang van chay. Dat TRUOC krpano.js de
      `ERA_BH` co san ngay khi canh dau tien san sang. -->
-<script src="../wp-banghang.js?nc=20261014a"></script>
+<script src="../wp-banghang.js?nc=20261023b"></script>
 
 <script src="../krpano.js"></script>
 <script>
@@ -2000,12 +2030,27 @@ function veCard() {
     h.push('<span class="chip" style="background:' + ERA_BH.mau(r.trangThai) + '">' +
            thoat(r.trangThai) + '</span>');
   }
-  if (r && (r.truong.length || r.gia)) {
-    h.push('<dl>');
-    /* 🆕 24/09: gia chi ghi 2 chu so co nghia => hien "~25 tỷ" */
-    if (r.gia) {
-      h.push('<dt>Giá bán</dt><dd>~' + thoat(ERA_BH.vietSo(r.gia.v)) + ' tỷ</dd>');
+  /* 🆕 23/10 Anh Tony: "hien thi 2 gia, chi 2 so dau thoi vd 25,xxx tỷ".
+     Sheet co cot "Giá không tài trợ lãi suất" (= r.gia) + "Giá có tài trợ lãi suất" (= r.gia2).
+     Chieu 23/10 Anh: "cho full gia luon, ko che nua" => in DAY DU "24.231.202.187 đ" (ERA_BH.giaDu).
+     Chi co cot "Giá bán" => 1 o. */
+  if (r && (r.gia || r.gia2)) {
+    var o2 = [];
+    if (r.gia2) {
+      if (r.gia) o2.push(['Giá không tài trợ lãi suất', r.gia]);
+      o2.push(['Giá có tài trợ lãi suất', r.gia2]);
+    } else {
+      o2.push(['Giá bán', r.gia]);
     }
+    h.push('<div class="gia">');
+    o2.forEach(function (g) {
+      h.push('<div><span>' + thoat(g[0]) + '</span><b>' + thoat(ERA_BH.giaDu(g[1])) + '</b></div>');
+    });
+    h.push('</div>');
+    if (r.gia2) h.push('<div class="gia-chu">Đã gồm VAT, chưa gồm phí bảo trì.</div>');
+  }
+  if (r && r.truong.length) {
+    h.push('<dl>');
     r.truong.forEach(function (t) {
       h.push('<dt>' + thoat(t[0]) + '</dt><dd>' + thoat(t[1]) + '</dd>');
     });

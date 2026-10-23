@@ -79,7 +79,12 @@ window.ERA_BH = (function () {
          · "Giá bán"            -> `gia` = giaTy(...) (xem ham ben duoi). */
     COT_LOAI  : ['loai hinh', 'loai hinh san pham', 'loai san pham'],
     COT_DT    : ['dien tich dat (m2)', 'dien tich dat', 'dien tich dat (m²)'],
-    COT_GIA   : ['gia ban', 'gia', 'gia ban (ty)'],
+    COT_GIA   : ['gia ban', 'gia', 'gia ban (ty)',
+                 'gia khong tai tro lai suat', 'gia khong ttls', 'gia khong tai tro ls'],
+    /* 🆕 23/10 Anh Tony: "hien thi 2 gia, chi 2 so dau thoi vd 25,xxx tỷ" - bang gia CDT
+       co 2 cot: KHONG tai tro lai suat (= `gia`, dung cho bo loc) va CO tai tro lai suat
+       (= `gia2`, chi hien trong the can). In DAY DU bang `giaDu()` (23/10 chieu: bo che). */
+    COT_GIA2  : ['gia co tai tro lai suat', 'gia co ttls', 'gia co tai tro ls'],
 
     /* 🆕 30/09 Anh Tony (Nagomi): "tao bang FULL ma can, can nao co cot ERA doc quyen
        thi sang len, khong thi an di - lam 1 lan code, lan sau chi cap nhat Google Sheet".
@@ -191,6 +196,24 @@ window.ERA_BH = (function () {
   }
   function lamTron(x) { return Math.round(x * 1e6) / 1e6; }
 
+  /* 🆕 23/10 (chieu) Anh Tony: "cho full gia luon, ko che nua" - IN GIA DAY DU.
+     Nhan ket qua giaTy() (dung `goc` = chu nguyen van trong Sheet, KHONG dung `v`
+     vi `v` da cat ve 2 chu so cho bo loc):
+        24231202187 · "24.231.202.187" · "24,231,202,187 đ" -> "24.231.202.187 đ"
+        "25,5 tỷ" (ghi tat theo tỷ/triệu) -> "25,5 tỷ"
+        con chu "x" (ban che cu "24,xxx tỷ") -> in nguyen van. */
+  function giaDu(g) {
+    if (!g) return '';
+    if (/x/i.test(g.goc)) return g.goc;
+    var k = khongDau(g.goc), m = k.match(/\d[\d.,]*/);
+    var so = m ? soVN(m[0].replace(/[.,]+$/, '')) : NaN;
+    var sau = m ? k.slice(m.index + m[0].length) : '';
+    if (so >= 1e6 && !/^\s*(ty|t\b|b\b|bil|trieu|tr\b|m\b|mil)/.test(sau)) {
+      return String(Math.round(so)).replace(/\B(?=(\d{3})+(?!\d))/g, '.') + ' đ';
+    }
+    return g.goc;
+  }
+
   /* 2,4 -> "2,4" · 25 -> "25" (dau phay thap phan kieu VN) */
   function vietSo(x) {
     return String(lamTron(x)).replace('.', ',');
@@ -288,7 +311,7 @@ window.ERA_BH = (function () {
                       'đúng chữ "Mã sản phẩm" (hoặc "Mã lô" / "Mã căn").');
     }
     var cot = hang[iTD].map(function (s) { return nfc(s).trim(); });
-    var iMa = -1, iTT = -1, iLoai = -1, iDT = -1, iGia = -1, iEra = -1, i360 = -1, j;
+    var iMa = -1, iTT = -1, iLoai = -1, iDT = -1, iGia = -1, iGia2 = -1, iEra = -1, i360 = -1, j;
     for (j = 0; j < cot.length; j++) {
       var k = khongDau(cot[j]);
       if (iMa < 0 && C.COT_MA.indexOf(k) >= 0) iMa = j;
@@ -296,6 +319,7 @@ window.ERA_BH = (function () {
       if (iLoai < 0 && C.COT_LOAI.indexOf(k) >= 0) iLoai = j;
       if (iDT < 0 && C.COT_DT.indexOf(k) >= 0) iDT = j;
       if (iGia < 0 && C.COT_GIA.indexOf(k) >= 0) iGia = j;
+      if (iGia2 < 0 && C.COT_GIA2.indexOf(k) >= 0) iGia2 = j;
       if (iEra < 0 && C.COT_ERA.indexOf(k) >= 0) iEra = j;
       if (i360 < 0 && C.COT_360.indexOf(k) >= 0) i360 = j;
     }
@@ -312,7 +336,7 @@ window.ERA_BH = (function () {
         if (C.COT_AN.indexOf(khongDau(cot[j])) >= 0) continue;
         if (j === iTT) continue;                       /* hien rieng thanh chip */
         /* Loai hinh hien o dong dau hop thong tin, Gia hien rieng "~25 tỷ" */
-        if (j === iLoai || j === iGia || j === i360) continue;
+        if (j === iLoai || j === iGia || j === iGia2 || j === i360) continue;
         var v = nfc(r[j] == null ? '' : r[j]).trim();
         if (v) truong.push([cot[j], v]);
       }
@@ -324,6 +348,7 @@ window.ERA_BH = (function () {
         dtDat: soDT(o(r, iDT)),                        /* null = chua ghi */
         gia: giaTy(o(r, iGia)),                        /* null = chua co gia */
         giaGoc: o(r, iGia),
+        gia2: giaTy(o(r, iGia2)),                      /* 23/10: gia CO tai tro lai suat */
         link360: link360(o(r, i360))                   /* '' = chua co link 360 */
       };
       dem++;
@@ -410,7 +435,7 @@ window.ERA_BH = (function () {
 
   return {
     C: C, nap: nap, lay: lay, trangThai: trangThai, tatCa: tatCa,
-    chuanMa: chuanMa, chuanTT: chuanTT, giaTy: giaTy, soDT: soDT, vietSo: vietSo, chiaNhomGia: chiaNhomGia,
+    chuanMa: chuanMa, chuanTT: chuanTT, giaTy: giaTy, soDT: soDT, vietSo: vietSo, giaDu: giaDu, chiaNhomGia: chiaNhomGia,
     khongDau: khongDau, mau: function (tt) { return C.MAU[tt] || C.MAU[C.MAC_DINH]; }
   };
 })();
