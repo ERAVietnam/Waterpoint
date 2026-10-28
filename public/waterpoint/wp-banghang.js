@@ -359,8 +359,10 @@ window.ERA_BH = (function () {
   var _bang = null, _nguon = 'chua-nap', _luc = null, _loi = '';
 
   function layCSV(ten) {
+    /* 27/10 `headers=1`: khong co thi gviz TU DOAN so dong tieu de - the Nagomi bi gop 28 dong dau
+       vao tieu de => mat cot "Ma san pham" => ca Sheet roi ve du phong (mat gia + can moi tren web that). */
     var u = 'https://docs.google.com/spreadsheets/d/' + C.SHEET_ID +
-            '/gviz/tq?tqx=out:csv&sheet=' + encodeURIComponent(ten);
+            '/gviz/tq?tqx=out:csv&headers=1&sheet=' + encodeURIComponent(ten);
     var ac = null, hen = null;
     try { ac = new AbortController(); } catch (e) {}
     if (ac) hen = setTimeout(function () { try { ac.abort(); } catch (e) {} }, C.TIMEOUT_MS);

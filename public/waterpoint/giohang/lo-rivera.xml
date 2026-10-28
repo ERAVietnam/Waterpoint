@@ -1,0 +1,13 @@
+<krpano>
+<!-- 3 can Rivera 2 tren ANH FLYCAM THAT (canh pk_rivera, pano-hd/06-rivera). SINH TU DONG boi 03-SAN-XUAT/B-tour360/rivera-2/dung_rivera_that.py - DUNG SUA TAY.
+     Tien to lo_rv_ (rieng, keep=true). -->
+<hotspot name="lo_rv_N04" style="kieu_lo_rivera" ma="N04">
+  <point ath="112.2836" atv="67.5562" /> <point ath="115.2413" atv="69.7320" /> <point ath="107.5801" atv="70.7389" /> <point ath="105.3539" atv="68.4250" />
+</hotspot>
+<hotspot name="lo_rv_O05" style="kieu_lo_rivera" ma="O05">
+  <point ath="164.6230" atv="78.5299" /> <point ath="178.2748" atv="78.8791" /> <point ath="178.1083" atv="80.9167" /> <point ath="161.5064" atv="80.4852" />
+</hotspot>
+<hotspot name="lo_rv_O04" style="kieu_lo_rivera" ma="O04">
+  <point ath="160.6338" atv="80.6949" /> <point ath="177.8542" atv="81.1594" /> <point ath="177.2747" atv="84.1023" /> <point ath="152.4349" atv="83.4149" />
+</hotspot>
+</krpano>

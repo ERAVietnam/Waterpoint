@@ -558,7 +558,7 @@ body.kinh #lo-card .xem,body.kinh #loc .xoa{text-shadow:none}
 <!-- 📋 Nguon bang hang (Google Sheet). ADDITIVE: go dong nay thi hop thong tin
      chi con ma lo + loai hinh, trang van chay. Dat TRUOC krpano.js de
      `ERA_BH` co san ngay khi canh dau tien san sang. -->
-<script src="../wp-banghang.js?nc=20261023b"></script>
+<script src="../wp-banghang.js?nc=20261027"></script>
 
 <script src="../krpano.js"></script>
 <script>
@@ -758,6 +758,20 @@ var CANH = [
     ngayChup: 'phối cảnh CĐT',
     maSP: maNagomi },
 
+  /* 🆕 27/10 Anh Tony (chat-rivera3): 3 can Rivera 2 (RI2-N00.04 · O00.05 · O00.04) - "lam tren thuc te".
+     Anh = flycam PK Rivera trang Thuc te (`../pano-hd/06-rivera/`, KHONG chep tile). Chi anh that, khong lop ban ve.
+     lechBac 125,2 = `_yaw` canh6_rivera (canh.json) - goc chuan h 179 => song o tren (Tay Bac).
+     Sinh boi 03-SAN-XUAT/B-tour360/rivera-2/dung_rivera_that.py. Sheet: the "Rivera". */
+  { id: 'pk_rivera', ten: 'PK Rivera', lechBac: 125.2,
+    goc: { h: 179, v: 90, fov: 70, fovtype: 'HFOV' },
+    mauVien: 'G',
+    fileLo: 'lo-goc-rivera.json',
+    ngayChup: '05/09/2026',
+    maSP: function (ma) {     /* N04 -> RI2-N00.04 */
+      var m = String(ma).match(/^([A-Z])(\d+)$/);
+      return m ? 'RI2-' + m[1] + '00.' + (m[2].length < 2 ? '0' : '') + m[2] : ma;
+    } },
+
 
   /* 🆕 01/10 Anh Tony: "gio hang co nhieu scene de xem, nen tim cach de Agent biet co nhieu scene - tao them
      2 o view hoac menu con, de xem tiep phan khu aqua trai va phai". => 2 CANH CON cua pk_aqua (`cha`):
@@ -848,6 +862,7 @@ var LINK_PK = {
   'pk_nagomi': ['nagomi', 'rivera-nagomi', 'pk-rivera-nagomi', 'rivera', 'nagomi-thuc-te', 'nagomi-tt'],   /* 06/10 tra lai: Top down = mac dinh */
   'pk_nagomi_pv': ['nagomi-2', 'nagomi2', 'rivera-nagomi-2', 'pk-rivera-nagomi-2', 'nagomi-d2'],
   'pk_nagomi_pc': ['nagomi-phoi-canh', 'nagomi-pc', 'nagomi-3', 'nagomi3'],   /* 05/10 phoi canh CDT */
+  'pk_rivera': ['rivera-2', 'rivera2', 'pk-rivera', 'pk-rivera-2', 'ri2'],   /* 27/10 - 'rivera' tran van la Nagomi (link cu) */
   'pk_aqua_trong': ['aqua-trong', 'aqua-tu-trong', 'the-aqua-trong'],   /* 01/10 toi */
   'pk_aqua_trai': ['aqua-1', 'the-aqua-1', 'aqua1', 'aqua-trai', 'aqua-cum-trai', 'the-aqua-trai'],   /* 01/10 canh con - doi ten The Aqua 1 (link cu van vao) */
   'pk_aqua_phai': ['aqua-2', 'the-aqua-2', 'aqua2', 'aqua-phai', 'aqua-cum-phai', 'the-aqua-phai']
@@ -1228,6 +1243,17 @@ function link360(ma) {
   var r = window.ERA_BH ? ERA_BH.lay(sp) : null;
   return (r && r.link360) || '';
 }
+/* 27/10 Anh Tony (Rivera 2): "chua co hinh chup 360, nhung van lam cai layout" => trang CHI the Layout.
+   Khong icon 360 tren ban do (chua co anh), chi nut "Xem layout căn" trong the can, mo cung khung #v360.
+   Sinh boi 03-SAN-XUAT/B-tour360/rivera-2/dung_layout_rivera.py. Co anh 360 roi thi chuyen ma sang TRANG360. */
+/* 28/10 Anh Tony: "tam thoi bo cai layout ra ngoai, chi co ban tren flycam" => de rong; bat lai: bo // dong duoi. */
+var TRANG_LAYOUT = {
+  // 'RI2-N00.04': '../can360/ri2-n00-04/', 'RI2-O00.04': '../can360/ri2-o00-04/', 'RI2-O00.05': '../can360/ri2-o00-05/'
+};
+function linkLayout(ma) {
+  var c = timCanh(canhDang);
+  return TRANG_LAYOUT[(c && c.maSP) ? c.maSP(ma) : ma] || '';
+}
 function vec3(a, v) {
   a *= Math.PI / 180; v *= Math.PI / 180;
   return [Math.cos(v) * Math.sin(a), Math.sin(v), Math.cos(v) * Math.cos(a)];
@@ -1340,7 +1366,7 @@ window.eraCo360 = co360;
 
 /* Khung xem 360 ngay trong trang (iframe). Dong: nut Dong / phim Esc. Dong thi xoa src cho Realsee dung tai. */
 function eraMo360(ma) {
-  var u = link360(ma);
+  var u = link360(ma) || linkLayout(ma);
   if (!u) return;
   if (ma !== loDang && laEra(ma) && hopLoc(ma)) eraChonLo(ma);   /* the can hien phia sau, dong khung la thay ngay */
   var K = document.getElementById('v360');
@@ -1356,7 +1382,7 @@ function eraMo360(ma) {
   var c = timCanh(canhDang);
   var sp = (c && c.maSP) ? c.maSP(ma) : ma;
   document.getElementById('v360-ma').textContent = sp;
-  K.querySelector('.nhan').textContent = TRANG360[sp] ? '360° · Layout căn' : '360° mặt đất';
+  K.querySelector('.nhan').textContent = TRANG360[sp] ? '360° · Layout căn' : (link360(ma) ? '360° mặt đất' : 'Layout căn');
   document.getElementById('v360-khung').src = u;
   K.hidden = false;
 }
@@ -2064,6 +2090,9 @@ function veCard() {
   if (link360(loDang)) {
     h.push('<button type="button" class="k3d xem x360" onclick="eraMo360(\'' + thoat(loDang) + '\')">' +
            'Xem 360° mặt đất</button>');
+  } else if (linkLayout(loDang)) {   /* 27/10: chua co 360 - chi layout */
+    h.push('<button type="button" class="k3d xem" onclick="eraMo360(\'' + thoat(loDang) + '\')">' +
+           'Xem layout căn</button>');
   }
 
   if (lopDang === 've') {
@@ -2072,8 +2101,10 @@ function veCard() {
              'Xem Flycam thực tế</button>');   /* 14/10 Anh Tony: doi chu cho tuong dong nut "Xem 360° mặt đất" */
     }
   } else {
-    h.push('<button type="button" class="k3d xem" onclick="doiLop(\'ve\')">' +
-           'Quay lại bản vẽ</button>');
+    if (c && c.canhVe) {   /* 27/10: PK Rivera chi co anh that - khong co ban ve de quay lai */
+      h.push('<button type="button" class="k3d xem" onclick="doiLop(\'ve\')">' +
+             'Quay lại bản vẽ</button>');
+    }
     if (c && c.ngayChup) {
       h.push('<div class="ngay">Ảnh flycam chụp ' + thoat(c.ngayChup) +
              ' — một số căn còn đang hoàn thiện.</div>');
@@ -2149,7 +2180,12 @@ function veNutLop() {
   var n = document.getElementById('nut-lop');
   if (!n) return;
   var c = timCanh(canhDang);
-  if (!c || !c.canhVe) { n.hidden = true; return; }
+  if (!c || !c.canhVe) {   /* 27/10: phan khu CHI anh that (PK Rivera) */
+    n.hidden = true;
+    var p1 = document.getElementById('brand-phu');
+    if (p1 && c) p1.textContent = 'Giỏ hàng · Ảnh thực tế';
+    return;
+  }
   if (!coAnhThat(c)) {     /* 25/09: Nagomi - khong nut doi lop, chi ban ve */
     n.hidden = true;
     var p0 = document.getElementById('brand-phu');
@@ -2620,7 +2656,7 @@ embedpano({
     if (t && !LINK.id) { canhDang = t[0]; lopDang = t[1]; }
     /* 25/09: mo bang ?startscene=pk_nagomi (anh that) => dua ve ban ve,
        phan khu co `khongAnhThat` khong co duong nao vao anh that. */
-    if (t && lopDang === 'that' && !coAnhThat(timCanh(canhDang))) {
+    if (t && lopDang === 'that' && !coAnhThat(timCanh(canhDang)) && (timCanh(canhDang) || {}).canhVe) {   /* 27/10: PK Rivera khong co ban ve - giu anh that */
       lopDang = 've';
       kp.call('loadscene(' + tenScene(canhDang, 've') + ', null, null, BLEND(0.5))');
     }
